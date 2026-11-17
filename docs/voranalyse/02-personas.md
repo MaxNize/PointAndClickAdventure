@@ -17,7 +17,7 @@ Schritt 2 der Voranalyse. Je eine Persona pro Spieler-Stakeholder aus [Stakehold
 | Ziel | Dort weiterspielen, wo sie aufgehört hat |
 | Frust | Lange Ladezeiten, verlorener Fortschritt, Warten beim Raumwechsel |
 | Zitat | „Wenn ich nach der Pause alles nochmal machen muss, bin ich raus.“ |
-| Treibt | NF-A-01, NF-A-02, NF-V-03, NF-E-01, NF-E-03 |
+| Treibt | NF-A-01, NF-A-02, NF-V-03, NF-E-01, NF-E-03, FA-G-06 (kein Sammeln von Ressourcen) |
 
 ## P-02 · Jonas, der Genre-Fan
 
@@ -30,7 +30,7 @@ Schritt 2 der Voranalyse. Je eine Persona pro Spieler-Stakeholder aus [Stakehold
 | Ziel | Rätsel, die mit Logik lösbar sind |
 | Frust | Sackgassen ohne Ausweg, Pixelsuche, ruckelnde Animationen, Fehler, die den Fortschritt blockieren |
 | Zitat | „Ein Rätsel darf schwer sein. Es darf nur nicht kaputt sein.“ |
-| Treibt | NF-V-01, NF-V-02, NF-V-04, NF-E-02; Ausbau: Sackgassen-Suche |
+| Treibt | NF-V-01, NF-V-02, NF-V-04, NF-E-02, FA-G-02 bis FA-G-04, FA-G-07; Ausbau: Sackgassen-Suche |
 
 ## P-03 · Kim, aus dem Team
 
@@ -59,6 +59,7 @@ Schritt 2 der Voranalyse. Je eine Persona pro Spieler-Stakeholder aus [Stakehold
 | NF-E-02 Bildrate | | ● | |
 | NF-E-03 Raumwechsel | ● | | |
 | FA-E Engine | ● | ● | |
+| FA-G Gegenstände | ● | ● | |
 | FA-DEV Entwicklungsmodus | | | ● |
 
 NF-W-01 bis NF-W-07 dienen keiner Persona direkt. Sie sichern, dass die übrigen Anforderungen unter Agentenarbeit haltbar bleiben (SH-01, SH-02).

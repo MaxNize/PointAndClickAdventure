@@ -11,10 +11,17 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] Bewertungskriterien und Abgabeform
 
 ## Produkt
-- [ ] Spielkonzept: Setting, Ton, Länge, erstes Release. Daraus folgen die FA zum Spielinhalt (mind. 15 FA gesamt, 11 stehen: FA-E und FA-DEV).
+- [ ] Spielkonzept: Setting, Ton, Länge, erstes Release. FA-Vorgabe (mind. 15) ist mit 19 erfüllt.
 - [ ] Projektsteckbrief: Projektname, Ziel, Abgrenzung
 
+## Rückfragen an Creative (Fabian, Benedict)
+- [ ] **Meilenstein:** Was ist ein Meilenstein? Vorschlag: ein benanntes Flag im Lösungsweg, das die Engine beim Lösen eines Rätsels setzt (FA-G-03).
+- [ ] **Ressourcen:** Wenn sie unbegrenzt sind (FA-G-06), sind sie dann Inventargegenstände, oder reicht ein freigeschaltetes Rezept?
+- [ ] **Verbrauch:** Wird ein Alchemiegegenstand beim Einsetzen verbraucht? Wird ein Questgegenstand beim Einsetzen verbraucht, und kann man ihn danach erneut erhalten (FA-G-07)?
+- [ ] **Ungültige Kombination:** Bekommt der Spieler eine Rückmeldung, z. B. einen Text der Figur (FA-G-04)?
+
 ## Rückfragen an die Architektur (Lars, Benedict)
+- [ ] **Inhaltsformat für Gegenstände:** `items.json` um Typ und Höchstmenge erweitern, dazu Rezepte, Kombinationen und Einsatzorte als JSON (siehe [Gegenstände](creative/gegenstaende.md#folgen-für-das-engine-konzept)).
 - [ ] **FA-E-07, Einheit:** „2 px vom Klickpunkt“ in SVG-Einheiten oder Bildschirmpixeln? Und was passiert bei einem Klick außerhalb der begehbaren Fläche?
 - [ ] **NF-E-03, Messbedingungen:** Assets schon geladen oder mit gedrosselter Verbindung? Ohne Bedingung ist der Wert nicht reproduzierbar.
 - [ ] **NF-E-02, Gate:** Die Bildrate wird manuell gemessen. Zusätzlich ein CI-Näherungswert (Playwright-Trace mit CPU-Drosselung, Frame-Zeit)?

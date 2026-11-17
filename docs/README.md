@@ -7,8 +7,9 @@
 | 0 | [Vorgaben aus dem Modul](vorgaben-modul.md) | Lieferumfang, Tabellenformat, Qualitätskriterien |
 | 1 | [Stakeholder und Rollen](voranalyse/01-stakeholder-und-rollen.md) | 6 Stakeholder, 2 Systemrollen, 6 Projektrollen mit Besetzung |
 | 2 | [Personas](voranalyse/02-personas.md) | 3 Proto-Personas mit Abdeckungsmatrix |
-| 3 | [Anforderungen](voranalyse/03-anforderungen.md) | 16 NF, 11 FA (Engine, Entwicklungsmodus), 15 Prozess-Gates |
+| 3 | [Anforderungen](voranalyse/03-anforderungen.md) | 16 NF, 19 FA (Engine, Gegenstände, Entwicklungsmodus), 15 Prozess-Gates |
 | – | [Engine-Konzept](architektur/engine-konzept.md) | Architektur-Vorgabe mit ID-Zuordnung |
+| – | [Gegenstände](creative/gegenstaende.md) | Creative-Vorgabe mit Begriffen und ID-Zuordnung |
 
 Begleitend: [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
 
@@ -23,7 +24,7 @@ Jede Stufe verweist über IDs auf die nächste. So lässt sich jede Anforderung 
 | `PR-nn` | Projektrolle (PO, SM, Architekt, …) | Stakeholder und Rollen |
 | `P-nn` | Persona | Personas |
 | `NF-<A\|V\|E\|W>-nn` | Nicht-funktionale Anforderung nach Akzeptanz, Verlässlichkeit, Effizienz, Wartbarkeit | Anforderungen |
-| `FA-<bereich>-nn` | Funktionale Anforderung: `FA-E` = Engine (Nummern aus der Architektur-Liste), `FA-DEV` = Entwicklungsmodus | Anforderungen |
+| `FA-<bereich>-nn` | Funktionale Anforderung: `FA-E` = Engine (Nummern aus der Architektur-Liste), `FA-G` = Gegenstände, `FA-DEV` = Entwicklungsmodus | Anforderungen |
 | `EP-nn` | Entwicklungsprozess und Gates | Anforderungen |
 
 IDs werden nie neu vergeben. Fällt eine Anforderung weg, bleibt die ID mit Vermerk „gestrichen“ stehen.

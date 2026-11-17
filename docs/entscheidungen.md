@@ -18,3 +18,4 @@ Jede Entscheidung mit Datum, Begründung und verworfenen Alternativen. Einträge
 | 2026-11-17 | Stakeholder Peer-Team, Kommilitonen als Testspieler, Spieler mit Einschränkungen, Asset-Urheber gestrichen; Persona Meike gestrichen | Folgen aus den Entscheidungen oben; Peer-Prüfung bleibt als Qualitätskriterium in den Modulvorgaben | – |
 | 2026-11-17 | Asset-Budget je Raum gestrichen; Dateigröße, Duplikate, ungenutzte Abhängigkeiten zugesagt (NF-W-05 bis NF-W-07) | Teamentscheidung | – |
 | 2026-11-17 | IDs neu durchnummeriert statt „gestrichen“ | Noch nichts committet, keine externen Verweise | – |
+| 2026-11-17 | Creative-Anforderungen Alchemie und Questgegenstände übernommen als FA-G-01 bis FA-G-08 | Vorgabe Creative; Wortlaut nur bei Verstößen gegen die Qualitätskriterien angepasst, FA-02 geteilt ([Gegenstände](creative/gegenstaende.md)) | – |

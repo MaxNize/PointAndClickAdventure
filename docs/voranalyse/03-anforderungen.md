@@ -1,6 +1,6 @@
 # Anforderungen
 
-Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md) (Abdeckung), [Engine-Konzept](../architektur/engine-konzept.md) (Architektur) und [Quellen](../quellen.md) (Referenzprojekte).
+Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md) (Abdeckung), [Engine-Konzept](../architektur/engine-konzept.md) (Architektur), [Gegenstände](../creative/gegenstaende.md) (Creative) und [Quellen](../quellen.md) (Referenzprojekte).
 
 ## Grundsätze
 
@@ -11,7 +11,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 
 **Begriffe:** *Spiellogik* = `src/engine/core`, reines TypeScript mit Zustand und Regeln. *Spielinhalt* = Räume, Figuren, Gegenstände, Animationen, Dialoge, Lösungsweg als SVG- und JSON-Dateien unter `content/`. *Gate-Lauf* = `make ci`, lokal und in der CI gleich. *Nutzerrolle*: Systemrollen Spieler und Entwickler, Projektrollen Team, Architekt und Agent (siehe [Stakeholder und Rollen](01-stakeholder-und-rollen.md)). In Teil 4 meint „System“ das Repository mit seiner Pipeline.
 
-**Umfang der Zusage:** 16 NF, 11 FA (5 Engine, 6 Entwicklungsmodus), 15 Prozess-Gates. Weitere FA folgen aus dem Spielkonzept und der vollständigen Engine-Liste.
+**Umfang der Zusage:** 16 NF, 19 FA (5 Engine, 8 Gegenstände, 6 Entwicklungsmodus), 15 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
 
 ## 1. Nicht-funktionale Anforderungen
 
@@ -26,7 +26,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 
 | ID | Bereich | Nutzerrolle | Anforderung | Akzeptanzkriterium |
 |---|---|---|---|---|
-| NF-V-01 | Inhalt konsistent | Spieler | Das System muss nur Spielinhalte ausliefern, deren ID-Verweise vollständig auflösbar sind. | Content-Validator: Zod-Schemas plus Verweisprüfung (Zielräume der Ausgänge, Figur-, Gegenstands- und Animations-IDs, `hotspot-`-IDs zwischen SVG und JSON): 0 Fehler. Der Validator hat eigene Tests mit fehlerhaften Dateien. |
+| NF-V-01 | Inhalt konsistent | Spieler | Das System muss nur Spielinhalte ausliefern, deren ID-Verweise vollständig auflösbar sind. | Content-Validator: Zod-Schemas plus Verweisprüfung (Zielräume der Ausgänge, Figur-, Gegenstands- und Animations-IDs, `hotspot-`-IDs zwischen SVG und JSON, Rezepte erzeugen keine Questgegenstände): 0 Fehler. Der Validator hat eigene Tests mit fehlerhaften Dateien. |
 | NF-V-02 | Lösbarkeit | Spieler | Das System muss das Spiel über den hinterlegten Lösungsweg vom Start bis zum Ende spielbar halten. | Headless-Test spielt den Lösungsweg gegen die Spiellogik ab: Endzustand erreicht. |
 | NF-V-03 | Spielstand | Spieler | Das System muss einen gespeicherten Spielstand nach dem Neuladen der Seite unverändert wiederherstellen. | E2E-Test: speichern, neu laden, laden. Abweichende Zustandsfelder: 0. |
 | NF-V-04 | Fehlerraum | Spieler | Das System muss bei einer ungültigen Raumdefinition weiterlaufen. | E2E-Test mit ungültiger Test-Raumdefinition: Fehlerraum wird angezeigt, 0 unbehandelte Fehler in der Konsole (Architektur N-04). |
@@ -53,7 +53,9 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 
 **Zusammenhang:** Inhalte kommen nur als SVG und JSON ins Spiel (NF-W-01). Agenten und Creative können sie ändern, ohne Code anzufassen. NF-V-01 und NF-V-02 beweisen danach in jedem Lauf, dass das Spiel konsistent und lösbar bleibt. NF-V-04 fängt zur Laufzeit ab, was trotzdem durchrutscht. Das alles geht schnell im Gate, weil die Spiellogik ohne Browser läuft (NF-W-02).
 
-## 2. Funktionale Anforderungen: Engine
+## 2. Funktionale Anforderungen
+
+### 2.1 Engine
 
 Aus dem [Engine-Konzept](../architektur/engine-konzept.md) der Architektur. Die Nummern folgen der Architektur-Liste, Lücken sind dort noch nicht geliefert.
 
@@ -65,7 +67,22 @@ Aus dem [Engine-Konzept](../architektur/engine-konzept.md) der Architektur. Die 
 | FA-E-10 | Tiefenskalierung | Spieler | Das System muss die Spielfigur abhängig von ihrer y-Position skalieren. | Unit-Test: Abweichung vom Sollwert an oberem und unterem Rand der begehbaren Fläche höchstens 1 %. |
 | FA-E-16 | Raumwechsel | Spieler | Das System muss beim Anklicken eines Ausgang-Hotspots den verknüpften Zielraum laden. | E2E-Test: Die Figur erscheint am definierten Eintrittspunkt. |
 
-## 3. Funktionale Anforderungen: Entwicklungsmodus
+### 2.2 Gegenstände
+
+Von Creative, Begriffe und Änderungen am Wortlaut: [Gegenstände](../creative/gegenstaende.md).
+
+| ID | Bereich | Nutzerrolle | Anforderung | Akzeptanzkriterium |
+|---|---|---|---|---|
+| FA-G-01 | Herstellen | Spieler | Das System muss dem Spieler ermöglichen, mithilfe des Rezeptbuchs Alchemiegegenstände herzustellen. | Wählt der Spieler ein freigeschaltetes Rezept, erscheint der zugehörige Alchemiegegenstand im Inventar. |
+| FA-G-02 | Einsetzen: Rätsel | Spieler | Das System muss dem Spieler ermöglichen, einen hergestellten Alchemiegegenstand zum Lösen eines Rätsels zu verwenden. | Wird der vorgesehene Alchemiegegenstand am vorgesehenen Hotspot eingesetzt, gilt das Rätsel als gelöst (Flag gesetzt). |
+| FA-G-03 | Rezeptbuch | Spieler | Das System muss das Rezeptbuch mit jedem erreichten Meilenstein um die dafür vorgesehenen Rezepte erweitern. | Beim Erreichen eines Meilensteins erscheinen dessen Rezepte im Rezeptbuch. Rezepte früherer Meilensteine bleiben verfügbar. |
+| FA-G-04 | Questgegenstände | Spieler | Das System muss jede nicht vorgesehene Kombination mit einem Questgegenstand ablehnen. | Eine ungültige Kombination wird nicht ausgeführt. Alle beteiligten Gegenstände bleiben unverändert im Inventar. |
+| FA-G-05 | Questgegenstände | Spieler | Das System muss Questgegenstände aus dem Rezeptbuch ausschließen. | E2E-Test mit allen Rezepten freigeschaltet: Das Rezeptbuch zeigt 0 Questgegenstände. |
+| FA-G-06 | Ressourcen | Spieler | Das System muss Ressourcen für die Herstellung von Alchemiegegenständen unbegrenzt bereitstellen. | Unit-Test: 100 Herstellungen desselben Gegenstands hintereinander gelingen. Der Ressourcenbestand ist danach unverändert. |
+| FA-G-07 | Questgegenstände | Spieler | Das System muss die Anzahl jedes Questgegenstands auf die für die Quest festgelegte Menge begrenzen. | Bei erreichter Menge wird jeder weitere Erhalt abgelehnt. Inventarbestand = festgelegte Menge. |
+| FA-G-08 | Einsetzen: Information | Spieler | Das System muss dem Spieler ermöglichen, einen hergestellten Alchemiegegenstand zum Freischalten einer Information zu verwenden. | Wird der vorgesehene Alchemiegegenstand am vorgesehenen Hotspot eingesetzt, wird die hinterlegte Information angezeigt. |
+
+### 2.3 Entwicklungsmodus
 
 Beim Testen direkt an eine Stelle des Spiels springen (Persona P-03). Testzustände entstehen aus den Checkpoints des Lösungswegs, den Creative pflegt. Ändert sich ein Raum, fällt ein veralteter Zustand im Gate auf.
 

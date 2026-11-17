@@ -18,6 +18,7 @@ Start: [docs/README.md](docs/README.md). Kurz:
 3. [Personas](docs/voranalyse/02-personas.md)
 4. [Anforderungen](docs/voranalyse/03-anforderungen.md)
 5. [Engine-Konzept](docs/architektur/engine-konzept.md)
+6. [Gegenstände](docs/creative/gegenstaende.md)
 
 ## Team
 

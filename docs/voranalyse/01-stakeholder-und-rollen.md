@@ -47,7 +47,7 @@ Vorgehen: Scrum. Sieben Personen, Besetzung vom Team festgelegt.
 | PR-01 | Product Owner | Max | Backlog, Priorisierung, Abnahme gegen Akzeptanzkriterien, vertritt die Personas | Story auf „fertig“ setzen |
 | PR-02 | Scrum Master | Dimi | Prozess, Hindernisse, Definition of Done | Story abnehmen, wenn PR-01 sie selbst umgesetzt hat |
 | PR-03 | Architekt | Lars, Benedict | [Engine-Konzept](../architektur/engine-konzept.md), Architekturgrenzen, Gates, Schwellenwerte, `AGENTS.md`, Pipeline | Code-Owner der Gate-Dateien (EP-11) |
-| PR-04 | Creative | Fabian, Benedict | Story, Räume, Figuren, Gegenstände, Animationen, Rätsel, Dialoge, Ton, Lösungsweg mit Checkpoints. Alle Assets entstehen im Team. | Code-Owner von `content/` |
+| PR-04 | Creative | Fabian, Benedict | Story, Räume, Figuren, Gegenstände, Animationen, Rätsel, Dialoge, Ton, Lösungsweg mit Checkpoints. Vorgabe zu Alchemie und Quests: [Gegenstände](../creative/gegenstaende.md). Alle Assets entstehen im Team. | Code-Owner von `content/` |
 | PR-05 | Fullstack-Entwickler | Ivan, Mahmud | Spiellogik, Oberfläche, Entwicklungsmodus, Tests | – |
 | PR-06 | Agent | – | Aufgaben einer Story im eigenen Worktree | Rechte und Verbote: EP-11 bis EP-15 |
 
