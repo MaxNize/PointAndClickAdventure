@@ -9,7 +9,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 - **Startwerte** (markiert) stammen aus Referenz-Repos oder Google-Schwellen. Sie werden nach der ersten Messung fest und danach nur verschärft.
 - **Stack** laut [Engine-Konzept](../architektur/engine-konzept.md): React, TypeScript, Vite, SVG-Räume, Zod, GSAP. Prüfwerkzeuge: Vitest, Playwright, Lighthouse, ESLint, jscpd, knip.
 
-**Begriffe:** *Spiellogik* = `src/engine/core`, reines TypeScript mit Zustand und Regeln. *Spielinhalt* = Räume, Figuren, Gegenstände, Animationen, Dialoge, Lösungsweg als SVG- und JSON-Dateien unter `content/`. *Gate-Lauf* = `make ci`, lokal und in der CI gleich. *Nutzerrolle*: Systemrollen Spieler und Entwickler, Projektrollen Team, Architekt und Agent (siehe [Stakeholder und Rollen](01-stakeholder-und-rollen.md)). In Teil 4 meint „System“ das Repository mit seiner Pipeline.
+**Begriffe:** *Spiellogik* = `src/engine/core`, reines TypeScript mit Zustand und Regeln. *Spielinhalt* = Räume, Figuren, Gegenstände, Animationen, Dialoge, Lösungsweg als SVG- und JSON-Dateien unter `content/`. *Gate-Lauf* = `make ci`, lokal und in der CI gleich. *Nutzerrolle*: Systemrollen Spieler und Entwickler, Projektrollen Team, Architekt und Agent (siehe [Stakeholder und Rollen](01-stakeholder-und-rollen.md)). In Teil 3 meint „System“ das Repository mit seiner Pipeline.
 
 **Umfang der Zusage:** 16 NF, 19 FA (5 Engine, 8 Gegenstände, 6 Entwicklungsmodus), 15 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
 
@@ -37,7 +37,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 |---|---|---|---|---|
 | NF-E-01 | Ladezeit | Spieler | Das System muss den Startraum mit einem Largest Contentful Paint von höchstens 2,5 s anzeigen. | Lighthouse, Desktop-Profil, Median aus 3 Läufen: ≤ 2,5 s (Startwert). |
 | NF-E-02 | Bildrate | Spieler | Das System muss im Referenzraum mindestens 60 Bilder pro Sekunde darstellen. | Median über 30 s in den Chrome DevTools auf einem Lenovo Yoga 7 2-in-1 14AKP10 bei 1920×1080 (Architektur N-06). Manuelle Messung vor jedem Release, kein CI-Gate. |
-| NF-E-03 | Raumwechsel | Spieler | Das System muss einen Raumwechsel in unter 1 Sekunde abschließen. | Playwright misst die Zeit vom Klick auf den Ausgang bis zur Darstellung des Zielraums: < 1 s (Architektur N-07). Messbedingungen offen. |
+| NF-E-03 | Raumwechsel | Spieler | Das System muss einen Raumwechsel in unter 1 Sekunde abschließen. | Playwright, Chromium Desktop-Profil, Assets des Zielraums bereits geladen, keine Drosselung: Zeit vom Klick auf den Ausgang bis zur Darstellung des Zielraums, Median aus 5 Läufen < 1 s (Architektur N-07, Messbedingungen Startwert). |
 
 ### Wartbarkeit
 
@@ -51,7 +51,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 | NF-W-06 | Duplikate | Team | Das System muss den Anteil duplizierter Quellzeilen auf höchstens 1 % begrenzen. | jscpd über `src/`: ≤ 1 % (Startwert, PflanzenDex QG-K5). Der Wert sinkt nur. |
 | NF-W-07 | Abhängigkeiten | Team | Das System muss ohne ungenutzte Abhängigkeiten auskommen. | knip: 0 ungenutzte Pakete in `package.json` (PflanzenDex QG-C7). |
 
-**Zusammenhang:** Inhalte kommen nur als SVG und JSON ins Spiel (NF-W-01). Agenten und Creative können sie ändern, ohne Code anzufassen. NF-V-01 und NF-V-02 beweisen danach in jedem Lauf, dass das Spiel konsistent und lösbar bleibt. NF-V-04 fängt zur Laufzeit ab, was trotzdem durchrutscht. Das alles geht schnell im Gate, weil die Spiellogik ohne Browser läuft (NF-W-02).
+**Zusammenhang:** Inhalte kommen nur als SVG und JSON ins Spiel (NF-W-01). Agenten und Creative können sie ändern, ohne Code anzufassen. NF-V-01 und NF-V-02 beweisen danach in jedem Lauf, dass das Spiel konsistent und lösbar bleibt. NF-V-04 fängt zur Laufzeit ab, was trotzdem durchrutscht. Das alles läuft im Gate ohne Browserstart, weil die Spiellogik ohne Browser läuft (NF-W-02).
 
 ## 2. Funktionale Anforderungen
 
@@ -97,7 +97,7 @@ Beim Testen direkt an eine Stelle des Spiels springen (Persona P-03). Testzustä
 
 Exportierte Zustände (FA-DEV-03) liegen unter `content/states/manual/`. Der Content-Validator prüft sie mit. Bricht eine Inhaltsänderung einen davon, wird er gelöscht oder neu exportiert.
 
-## 4. Entwicklungsprozess und Gates
+## 3. Entwicklungsprozess und Gates
 
 Diese Anforderungen betreffen Repository und Pipeline, nicht das Spiel. Sie zählen weder zu FA noch zu NF. Ohne sie könnte ein Agent ein Gate abschwächen, um einen roten Lauf grün zu machen.
 
@@ -121,7 +121,7 @@ Diese Anforderungen betreffen Repository und Pipeline, nicht das Spiel. Sie zäh
 
 EP-02 bis EP-04 und EP-11 wirken über den Git-Hoster, also für jedes Agenten-Werkzeug. EP-12 und EP-15 brauchen Hooks im Agenten-Werkzeug. Fehlen sie, fängt die CI denselben Fehler später.
 
-## 5. Nicht zugesagt
+## 4. Nicht zugesagt
 
 **Ausbau**, wenn die Zusage steht:
 

@@ -23,7 +23,7 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 ## Rückfragen an die Architektur (Lars, Benedict)
 - [ ] **Inhaltsformat für Gegenstände:** `items.json` um Typ und Höchstmenge erweitern, dazu Rezepte, Kombinationen und Einsatzorte als JSON (siehe [Gegenstände](creative/gegenstaende.md#folgen-für-das-engine-konzept)).
 - [ ] **FA-E-07, Einheit:** „2 px vom Klickpunkt“ in SVG-Einheiten oder Bildschirmpixeln? Und was passiert bei einem Klick außerhalb der begehbaren Fläche?
-- [ ] **NF-E-03, Messbedingungen:** Assets schon geladen oder mit gedrosselter Verbindung? Ohne Bedingung ist der Wert nicht reproduzierbar.
+- [ ] **NF-E-03, Messbedingungen:** Vorschlag steht im Kriterium (Assets geladen, ungedrosselt, Median aus 5 Läufen). Architektur bestätigt?
 - [ ] **NF-E-02, Gate:** Die Bildrate wird manuell gemessen. Zusätzlich ein CI-Näherungswert (Playwright-Trace mit CPU-Drosselung, Frame-Zeit)?
 - [ ] **Vollständige Liste:** E-02 bis E-04, E-06, E-08, E-09, E-11 bis E-15 und die übrigen N-IDs fehlen noch.
 - [ ] **Ablageort der Inhalte:** `content/` als Wurzel für Räume, Figuren, Gegenstände, Animationen bestätigen.
@@ -35,6 +35,6 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] Claim gegen Doppelarbeit: bei 7 Personen plus Agenten wahrscheinlich nötig
 
 ## Mit dem Team bestätigen
-- [ ] Zusage: 16 NF, 11 FA, 15 EP
+- [ ] Zusage: 16 NF, 19 FA, 15 EP
 - [ ] Akzeptanz-Vorschläge NF-A-01 (Browser) und NF-A-02 (ab 1280 px Fensterbreite) bestätigen
 - [ ] Personas P-01 bis P-03 als Arbeitsgrundlage

@@ -1,6 +1,6 @@
 # Alchemie- und Questgegenstände
 
-Vorgabe von Creative (PR-04), eingegangen 2026-11-17. Die Anforderungen stehen mit Projekt-IDs `FA-G-nn` in [Anforderungen](../voranalyse/03-anforderungen.md), Abschnitt 2.3. Die Zuordnung und alle Änderungen am Wortlaut stehen unten.
+Vorgabe von Creative (PR-04), eingegangen 2026-11-17. Die Anforderungen stehen mit Projekt-IDs `FA-G-nn` in [Anforderungen](../voranalyse/03-anforderungen.md), Abschnitt 2.2. Die Zuordnung und alle Änderungen am Wortlaut stehen unten.
 
 ## Begriffe
 
