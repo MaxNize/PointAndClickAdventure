@@ -10,7 +10,7 @@
 | 3 | [Anforderungen](voranalyse/03-anforderungen.md) | 16 NF, 11 FA (Engine, Entwicklungsmodus), 15 Prozess-Gates |
 | – | [Engine-Konzept](architektur/engine-konzept.md) | Architektur-Vorgabe mit ID-Zuordnung |
 
-Begleitend: [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
+Begleitend: [Projektsteckbrief](projektsteckbrief.md) (Entwurf) · [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
 
 ## ID-Schema
 
