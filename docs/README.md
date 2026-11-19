@@ -16,7 +16,7 @@
 | – | [Anforderungsvorschläge](architektur/anforderungs-vorschlaege.md) | 25 neue FA mit vorläufiger ID und 2 Änderungen, Entscheidung durch den PO |
 | – | [Umsetzungsplan](architektur/umsetzungsplan.md) | Vorgeschlagene Reihenfolge der Erstimplementierung |
 
-Begleitend: [Projektsteckbrief](projektsteckbrief.md) (Entwurf) · [Issues aus Anforderungen anlegen](prozess/issues-aus-anforderungen.md) · [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
+Begleitend: [Projektsteckbrief](projektsteckbrief.md) (Entwurf) · [Issues aus Anforderungen anlegen](prozess/issues-aus-anforderungen.md) · [Doku-Gates](architektur/gates.md) · [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
 
 ## ID-Schema
 

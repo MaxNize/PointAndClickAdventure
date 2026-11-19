@@ -1,0 +1,37 @@
+# Pipeline für die Doku-Gates (EP-17 bis EP-23). Der Job heißt `ci-status`, damit EP-02 ihn als
+# Pflicht-Check eintragen kann. Architektur (EP-01) ersetzt die Schritte später durch `make ci`
+# und ergänzt weitere Jobs, die `ci-status` zusammenfasst.
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  issues: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci-status:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Tests der Doku-Gates
+        run: node --test "tools/check/docs/*.test.mjs"
+      - name: Doku-Gates (EP-17 bis EP-23)
+        run: node tools/check/docs/run-all.mjs
