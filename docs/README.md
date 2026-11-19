@@ -34,3 +34,4 @@ IDs werden nie neu vergeben. Fällt eine Anforderung weg, bleibt die ID mit Verm
 - Neue Anforderungen erfüllen die [Qualitätskriterien](vorgaben-modul.md#qualitätskriterien).
 - Jede Entscheidung bekommt eine Zeile in [Entscheidungen](entscheidungen.md), jede offene Frage eine in [Offene Fragen](offene-fragen.md).
 - Ändert sich eine Anforderung, werden Personas-Abdeckung und Verweise in derselben Änderung nachgezogen.
+[kaputt](gibt-es-nicht.md)
