@@ -7,8 +7,9 @@ Regeln für KI-Agenten (Claude Code, Codex, Copilot, …) in diesem Repo. Mensch
 ## Bevor du anfängst
 
 1. Lies [docs/README.md](docs/README.md). Die Anforderungen stehen in [docs/voranalyse/03-anforderungen.md](docs/voranalyse/03-anforderungen.md).
-2. Jede Aufgabe gehört zu einer Story mit ID. Ohne Story kein Code: Schlag zuerst die Story vor (EP-08).
+2. Jede Code-Aufgabe gehört zu einer Story mit ID. Ohne Story kein Code: Schlag zuerst die Story vor (EP-08). Doku- und Prozessaufgaben laufen über ein Issue mit Label `prozess` und enthalten keinen Code.
 3. Arbeite in einem eigenen Git-Worktree mit eigenem Branch, nie im Hauptverzeichnis (EP-14).
+4. Lies [docs/prozess/entwicklungsprozess.md](docs/prozess/entwicklungsprozess.md). Nimm nur Stories im aktuellen Sprint mit Status „Bereit“ und ohne offene „Blocked by“-Beziehung.
 
 ## Während der Arbeit
 
@@ -32,4 +33,4 @@ Gate-Dateien legen fest, was „fertig“ heißt: CI-Workflows, Git-Hooks, Lint-
 
 1. Führe `make ci` nach deiner letzten Änderung aus. Berichte das Ergebnis ehrlich: Befehl, Exit-Code, bei Fehlern die Ausgabe. Nie „sollte funktionieren“ (EP-15).
 2. Committe nur, wenn du darum gebeten wirst. Format: Conventional Commits (EP-06).
-3. Öffne den PR mit der Vorlage, inklusive Abschnitt „KI-Beteiligung“. Wer dich gestartet hat, gilt als Autor. Freigeben muss eine andere Person (EP-03).
+3. Öffne den PR mit der Vorlage, inklusive Abschnitt „KI-Beteiligung“, Story-ID im Titel und `Closes #n` im Text, sonst bleibt das Board stehen. Wer dich gestartet hat, gilt als Autor. Freigeben muss eine andere Person (EP-03), nach der Freigaberegel im Entwicklungsprozess. Die Abnahme gegen das Akzeptanzkriterium macht der PO vor dem Merge.
