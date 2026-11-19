@@ -44,7 +44,7 @@ Beantwortet 2026-11-19 (siehe [Entscheidungen](entscheidungen.md)):
 - [ ] Claim gegen Doppelarbeit: bei 7 Personen plus Agenten wahrscheinlich nötig
 
 ## Mit dem Team bestätigen
-- [ ] Zusage: 16 NF, 19 FA, 15 EP
+- [ ] Zusage: 16 NF, 19 FA, 22 EP
 - [ ] [Anforderungsvorschläge der Architektur](architektur/anforderungs-vorschlaege.md) im Planning am 26.11. entscheiden, zusammen mit Issue #78: 25 neue FA mit vorläufiger ID, Änderungen an FA-E-05 und FA-E-07. Dabei prüfen, ob der Umfang im Semester realistisch ist (Qualitätskriterium 5).
 - [ ] Akzeptanz-Vorschläge NF-A-01 (Browser) und NF-A-02 (ab 1280 px Fensterbreite) bestätigen
 - [ ] Personas P-01 bis P-03 als Arbeitsgrundlage, dazu der Vorschlag P-04 Creative ([Autoren-Workflow](architektur/autoren-workflow.md#persona-vorschlag-p-04))
