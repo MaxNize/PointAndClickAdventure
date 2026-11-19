@@ -16,6 +16,7 @@ Regeln für KI-Agenten (Claude Code, Codex, Copilot, …) in diesem Repo. Mensch
 - **Inhalte nur als SVG und JSON:** Räume, Figuren, Gegenstände und Animationen kommen ohne Codeänderung ins Spiel (NF-W-01). Musst du für neuen Inhalt `.ts`/`.tsx` ändern, fehlt eine Engine-Funktion: Schlag sie als Story vor.
 - **Spiellogik ohne Browser:** `src/engine/core` importiert weder React noch GSAP und nutzt keine Browser-Globals (NF-W-02). React stellt nur dar und meldet Ereignisse über den Event-Bus.
 - **Tests aus Akzeptanzkriterien:** Jeder Test trägt die Story-ID im Namen (EP-07).
+- **Issues aus Anforderungen:** Lies [docs/prozess/issues-aus-anforderungen.md](docs/prozess/issues-aus-anforderungen.md), bevor du Issues anlegst. Zeig dem PO erst eine Vorschau. `Aufwand`, `Sprint`, `Priorität` und den Status „Bereit“ setzt du nicht.
 - **Fehler mit Code:** Fehler tragen einen stabilen Code `<bereich>.<grund>`, z. B. `state.unknown`.
 - **Neue Anforderungen** erfüllen die [Qualitätskriterien](docs/vorgaben-modul.md#qualitätskriterien): „Das System muss …“, eine Anforderung pro Zeile, messbar.
 - **Sprache:** Doku, UI-Texte und Commits auf Deutsch. Bezeichner im Code auf Englisch.
