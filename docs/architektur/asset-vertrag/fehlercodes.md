@@ -26,6 +26,11 @@ Teil des [Asset-Vertrags](README.md), **Status: Entwurf**.
 | `room.item-placed-twice` | Gegenstand im selben Raum mehrfach platziert |
 | `room.point-outside-walkable` | Punkt außerhalb der begehbaren Fläche |
 | `room.walkable-invalid` | Polygon ungültig |
+| `room.part-duplicate` | Teilname doppelt im Raum oder verletzt das ID-Format |
+| `room.part-in-hotspots` | Teil in der Gruppe `hotspots` |
+| `room.part-unmapped` | Teil im SVG ohne Eintrag in `parts` oder `animations` |
+| `room.part-unknown` | Teilname in `room.json` ohne `data-part` im SVG |
+| `room.animation-origin-missing` | Raumanimation mit Drehung oder Skalierung ohne `origin` |
 | `character.view-missing` | Ansichtsgruppe fehlt |
 | `character.part-duplicate` | Teilname doppelt in einer Ansicht |
 | `character.anchor-missing` | Anker fehlt |

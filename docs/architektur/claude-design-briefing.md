@@ -45,6 +45,9 @@ Technische Vorgaben Raum (verbindlich):
 - Für jedes anklickbare Objekt eine einfache Form (rect, polygon, path) in <g id="hotspots">
   mit id="hotspot-<name>" und fill="transparent", deckungsgleich über dem gezeichneten Objekt.
   Anklickbare Objekte: <Liste, z. B. hotspot-tuer, hotspot-kiste>
+- Objekte mit mehreren Zuständen oder mit Bewegung als eigene Gruppe mit data-part="<name>"
+  in ihrer Ebene. Zustände übereinander zeichnen, je Zustand eine Gruppe.
+  Teile: <Liste, z. B. tuer-zu, tuer-offen, flamme>
 - Lass für die Figuren eine freie Bodenfläche im unteren Bilddrittel.
 - Zeichne keine Figuren in den Raum.
 <gemeinsame technische Vorgaben>

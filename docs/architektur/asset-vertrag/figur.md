@@ -76,7 +76,7 @@ Objekt `Animationsname → Animation`.
 | `duration` | Sekunden | ja | Länge eines Durchlaufs |
 | `views.side`, `views.front`, `views.back` | Objekt mit `tracks` | siehe Pflicht-Animationen | Spuren je Ansicht |
 | `tracks[].part` | Teilname | ja | Animiertes Teil |
-| `tracks[].keyframes[]` | `{ t, rotate?, x?, y?, scale?, opacity?, ease? }` | ja | `t` in Sekunden ab 0. Werte relativ zur Ruhepose: `rotate` in Grad um den Drehpunkt, `x`/`y` Verschiebung in Figurkoordinaten, `scale` Faktor, `opacity` 0–1. `ease`: `linear`, `in`, `out`, `inOut`. |
+| `tracks[].keyframes[]` | `{ t, rotate?, x?, y?, scale?, scaleX?, scaleY?, opacity?, ease? }` | ja | `t` in Sekunden ab 0. Werte relativ zur Ruhepose: `rotate` in Grad um den Drehpunkt, `x`/`y` Verschiebung in Figurkoordinaten, `scale` Faktor, `scaleX`/`scaleY` Faktor je Achse (z. B. Blinzeln), `opacity` 0–1. `ease`: `linear`, `in`, `out`, `inOut`. |
 
 **Pflicht-Animationen:** `idle` und `walk` in allen drei Ansichten, `talk` in `side` und `front`. Fehlt `talk` in `back`, spielt die Engine dort `idle`. Das Beispiel zeigt nur `idle`.
 
@@ -97,6 +97,6 @@ Objekt `Animationsname → Animation`.
 |---|---|
 | Pflicht-Animationen vorhanden | `animation.required-missing` |
 | Jedes `part` existiert als `data-part` in der Gruppe der Ansicht | `animation.part-unknown` |
-| Jedes animierte Teil mit `rotate` oder `scale` hat einen Drehpunkt in `pivots` | `character.pivot-missing` |
+| Jedes animierte Teil mit `rotate`, `scale`, `scaleX` oder `scaleY` hat einen Drehpunkt in `pivots` | `character.pivot-missing` |
 | Keyframes aufsteigend nach `t`, letztes `t` ≤ `duration` | `animation.keyframes-invalid` |
 
