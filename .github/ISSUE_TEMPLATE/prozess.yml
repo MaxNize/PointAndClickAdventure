@@ -1,0 +1,29 @@
+name: Prozessaufgabe
+description: Aufgabe für Projekt, Prozess oder Abgabe ohne Story-ID, z. B. Frist, Absprache, Dokument.
+labels: [prozess]
+body:
+  - type: textarea
+    id: ziel
+    attributes:
+      label: Ziel
+    validations:
+      required: true
+  - type: input
+    id: zustaendig
+    attributes:
+      label: Zuständig
+      description: Name und Projektrolle (PR-01 bis PR-06)
+    validations:
+      required: true
+  - type: input
+    id: frist
+    attributes:
+      label: Frist
+      placeholder: TT.MM.JJJJ, Uhrzeit
+  - type: textarea
+    id: ergebnis
+    attributes:
+      label: Ergebnis
+      description: Woran erkennen wir, dass die Aufgabe fertig ist?
+    validations:
+      required: true
