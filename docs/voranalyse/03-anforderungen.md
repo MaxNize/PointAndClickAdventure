@@ -11,7 +11,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 
 **Begriffe:** *Spiellogik* = `src/engine/core`, reines TypeScript mit Zustand und Regeln. *Spielinhalt* = Räume, Figuren, Gegenstände, Animationen, Dialoge, Lösungsweg als SVG- und JSON-Dateien unter `content/`. *Gate-Lauf* = `make ci`, lokal und in der CI gleich. *Nutzerrolle*: Systemrollen Spieler und Entwickler, Projektrollen Team, Architekt und Agent (siehe [Stakeholder und Rollen](01-stakeholder-und-rollen.md)). In Teil 3 meint „System“ das Repository mit seiner Pipeline.
 
-**Umfang der Zusage:** 16 NF, 19 FA (5 Engine, 8 Gegenstände, 6 Entwicklungsmodus), 15 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
+**Umfang der Zusage:** 16 NF, 19 FA (5 Engine, 8 Gegenstände, 6 Entwicklungsmodus), 22 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
 
 ## 1. Nicht-funktionale Anforderungen
 
@@ -118,6 +118,13 @@ Diese Anforderungen betreffen Repository und Pipeline, nicht das Spiel. Sie zäh
 | EP-13 | Agentenregeln | Agent | Das System muss die Arbeitsregeln für Agenten in der Datei `AGENTS.md` bereitstellen. | Prüfskript bestätigt die Pflichtabschnitte: Story-Referenz, Gate-Lauf, Worktree, verbotene Befehle. |
 | EP-14 | Isolation | Agent | Das System muss jede Agentenaufgabe in einem eigenen Git-Worktree starten. | `make worktree STORY=<id>` legt Worktree und Branch an. Start im Hauptverzeichnis: Exit-Code 1. |
 | EP-15 | Fertig-Meldung | Agent | Das System muss eine Fertig-Meldung ohne Gate-Lauf nach der letzten Codeänderung zurückweisen. | Stop-Hook vergleicht letzte Änderung mit letztem `make ci`. Liegt die Änderung später, meldet er den fehlenden Lauf. |
+| EP-17 | Doku-Links | Team | Das System muss alle relativen Links und Anker in Markdown-Dateien auflösbar halten. | `node tools/check/docs/check-links.mjs` über alle versionierten `.md`-Dateien: 0 nicht auflösbare Links oder Anker. Fehler nennt `docs.link_broken`, Datei und Zeile. |
+| EP-18 | Katalog-IDs | Team | Das System muss jede ID des Anforderungskatalogs genau einmal definieren. | `node tools/check/docs/check-ids.mjs`: 0 doppelt definierte IDs in `03-anforderungen.md`. Fehler nennt `docs.id_duplicate`, Datei und Zeile. |
+| EP-19 | ID-Verweise | Team | Das System muss jeden Verweis auf eine Projekt-ID auf eine im Katalog definierte ID zeigen lassen. | `node tools/check/docs/check-ids.mjs`: 0 Verweise auf nicht definierte IDs in allen versionierten `.md`-Dateien. Ausgenommen sind die vorläufigen IDs in `tools/check/docs/ids.baseline.json`. Die Baseline darf nur schrumpfen. Fehler nennt `docs.id_undefined` oder `docs.id_baseline_stale`, Datei und Zeile. |
+| EP-20 | Zusage-Zahlen | Team | Das System muss die in der Doku genannten Anzahlen von NF, FA und EP mit den Zeilen des Anforderungskatalogs in Einklang halten. | `node tools/check/docs/check-counts.mjs`: 0 Zahlen, die von der Zeilenzahl abweichen, und 0 nicht mehr gefundene Fundstellen. Fehler nennt `docs.count_mismatch`, Datei und Zeile. |
+| EP-21 | Backlog-Abgleich | Team | Das System muss jede Anforderung des Katalogs durch genau ein Issue mit unverändertem Wortlaut abbilden. | `node tools/check/docs/check-backlog.mjs` gegen die GitHub-Issues: 0 Anforderungen ohne oder mit mehreren Issues, 0 Issues mit abweichender Anforderung oder abweichendem Akzeptanzkriterium. Issues mit Label `prozess` sind ausgenommen. Fehler nennt `docs.backlog_missing`, `docs.backlog_duplicate`, `docs.backlog_drift` oder `docs.backlog_orphan` und die ID. |
+| EP-22 | Doku-Größe | Team | Das System muss jede Markdown-Datei auf höchstens 200 Zeilen begrenzen. | `node tools/check/docs/check-doc-size.mjs`: 0 versionierte `.md`-Dateien über 200 Zeilen (Startwert, Schwelle in `tools/check/docs/limits.json`, wird nur gesenkt). Fehler nennt `docs.file_too_long`, Datei und Zeilenzahl. |
+| EP-23 | Repo-Root | Team | Das System muss das Repo-Root auf eine feste Liste von Einträgen begrenzen. | `node tools/check/docs/check-root.mjs`: 0 versionierte Einträge im Root außerhalb von `tools/check/docs/root-allowlist.json`. Fehler nennt `docs.root_unexpected` und den Eintrag. |
 
 EP-02 bis EP-04 und EP-11 wirken über den Git-Hoster, also für jedes Agenten-Werkzeug. EP-12 und EP-15 brauchen Hooks im Agenten-Werkzeug. Fehlen sie, fängt die CI denselben Fehler später.
 

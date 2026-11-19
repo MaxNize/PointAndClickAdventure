@@ -15,18 +15,27 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] Projektsteckbrief: Projektname, Ziel, Abgrenzung
 
 ## Rückfragen an Creative (Fabian, Benedict)
-- [ ] **Meilenstein:** Was ist ein Meilenstein? Vorschlag: ein benanntes Flag im Lösungsweg, das die Engine beim Lösen eines Rätsels setzt (FA-G-03).
-- [ ] **Ressourcen:** Wenn sie unbegrenzt sind (FA-G-06), sind sie dann Inventargegenstände, oder reicht ein freigeschaltetes Rezept?
-- [ ] **Verbrauch:** Wird ein Alchemiegegenstand beim Einsetzen verbraucht? Wird ein Questgegenstand beim Einsetzen verbraucht, und kann man ihn danach erneut erhalten (FA-G-07)?
-- [ ] **Ungültige Kombination:** Bekommt der Spieler eine Rückmeldung, z. B. einen Text der Figur (FA-G-04)?
+- [ ] **Meilenstein:** Was ist ein Meilenstein? Vorschlag: ein benanntes Flag im Lösungsweg, das die Engine beim Lösen eines Rätsels setzt (FA-G-03). Der [Asset-Vertrag](architektur/asset-vertrag/gegenstand.md#rezept) nimmt das bis zur Antwort an (Issue #71).
+- [ ] **Ressourcen:** Wenn sie unbegrenzt sind (FA-G-06), sind sie dann Inventargegenstände, oder reicht ein freigeschaltetes Rezept? Annahme im Asset-Vertrag: keine Inventargegenstände, Zutaten nur als Text im Rezeptbuch (Issue #76).
+- [ ] **Verbrauch:** Wird ein Alchemiegegenstand beim Einsetzen verbraucht? Wird ein Questgegenstand beim Einsetzen verbraucht, und kann man ihn danach erneut erhalten (FA-G-07)? Der Asset-Vertrag lässt das je Einsatzort offen (`removeItem`). Annahme: Die Höchstmenge gilt für den Bestand im Inventar.
+- [ ] **Ungültige Kombination:** Bekommt der Spieler eine Rückmeldung, z. B. einen Text der Figur (FA-G-04)? Annahme im Asset-Vertrag: der Standardtext `defaults.combine` aus `game.json`.
 
 ## Rückfragen an die Architektur (Lars, Benedict)
-- [ ] **Inhaltsformat für Gegenstände:** `items.json` um Typ und Höchstmenge erweitern, dazu Rezepte, Kombinationen und Einsatzorte als JSON (siehe [Gegenstände](creative/gegenstaende.md#folgen-für-das-engine-konzept)).
-- [ ] **FA-E-07, Einheit:** „2 px vom Klickpunkt“ in SVG-Einheiten oder Bildschirmpixeln? Und was passiert bei einem Klick außerhalb der begehbaren Fläche?
 - [ ] **NF-E-03, Messbedingungen:** Vorschlag steht im Kriterium (Assets geladen, ungedrosselt, Median aus 5 Läufen). Architektur bestätigt?
 - [ ] **NF-E-02, Gate:** Die Bildrate wird manuell gemessen. Zusätzlich ein CI-Näherungswert (Playwright-Trace mit CPU-Drosselung, Frame-Zeit)?
-- [ ] **Vollständige Liste:** E-02 bis E-04, E-06, E-08, E-09, E-11 bis E-15 und die übrigen N-IDs fehlen noch.
-- [ ] **Ablageort der Inhalte:** `content/` als Wurzel für Räume, Figuren, Gegenstände, Animationen bestätigen.
+- [ ] **Vollständige N-Liste:** N-02, N-03, N-05, N-08 bis N-10 fehlen noch.
+
+Beantwortet 2026-11-19 (siehe [Entscheidungen](entscheidungen.md)):
+- Inhaltsformat für Gegenstände: im [Asset-Vertrag](architektur/asset-vertrag/gegenstand.md), Entwurf
+- FA-E-07-Einheit (viewBox-Einheiten) und Klick außerhalb der Fläche: Der Wortlaut im Katalog und in Issue #25 ändert sich erst nach Entscheidung des PO ([Anforderungsvorschläge](architektur/anforderungs-vorschlaege.md))
+- E-Liste: als Architektur-Liste erarbeitet, Projekt-IDs vorläufig
+- `content/` als Wurzel
+
+## Asset-Vertrag und Werkzeuge
+- [ ] **Spike Claude Design:** Erzeugt Claude Design eine einzelne SVG ohne `<style>`, `<text>`, `<image>`? Bleiben IDs und `data-part` erhalten? Ergebnis in den [Asset-Vertrag](architektur/asset-vertrag/README.md#spike-claude-design), danach Status „verbindlich“.
+- [ ] **Abstimmung Schema:** Der Asset-Vertrag ist der Schema-Entwurf aus Issue #69. Abstimmung mit Fabian und Ivan steht aus.
+- [ ] **Ton und Musik:** Spätere Erweiterung des Vertrags. Würde NF-W-01 über SVG und JSON hinaus erweitern.
+- [ ] **Flags:** In v1 nur boolesch. Reicht das für die Rätsel aus dem Spielkonzept, oder braucht es Zähler?
 
 ## Technik
 - [ ] Rulesets auf GitHub einrichten (EP-02 bis EP-04, EP-11), sobald das Team Zugriff hat
@@ -35,6 +44,7 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] Claim gegen Doppelarbeit: bei 7 Personen plus Agenten wahrscheinlich nötig
 
 ## Mit dem Team bestätigen
-- [ ] Zusage: 16 NF, 19 FA, 15 EP
+- [ ] Zusage: 16 NF, 19 FA, 22 EP
+- [ ] [Anforderungsvorschläge der Architektur](architektur/anforderungs-vorschlaege.md) im Planning am 26.11. entscheiden, zusammen mit Issue #78: 25 neue FA mit vorläufiger ID, Änderungen an FA-E-05 und FA-E-07. Dabei prüfen, ob der Umfang im Semester realistisch ist (Qualitätskriterium 5).
 - [ ] Akzeptanz-Vorschläge NF-A-01 (Browser) und NF-A-02 (ab 1280 px Fensterbreite) bestätigen
-- [ ] Personas P-01 bis P-03 als Arbeitsgrundlage
+- [ ] Personas P-01 bis P-03 als Arbeitsgrundlage, dazu der Vorschlag P-04 Creative ([Autoren-Workflow](architektur/autoren-workflow.md#persona-vorschlag-p-04))
