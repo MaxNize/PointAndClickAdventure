@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" width="400" height="800"><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern></defs><style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+#side_hair_back,#side_bangs,#side_face{display:none}</style>
+<g id="characterBack" >
+  <ellipse class="groundshadow" cx="200" cy="772" rx="62" ry="7"/>
+
+
+  <g id="back_legs"><g id="back_leg_l"><path class="stocking" d="M161,346 C155,420 160,500 165,545 C159,600 163,680 167,745 L180,745 C183,690 188,620 185,560 C189,505 194,430 199,350 Z"/><path class="shade" d="M199,350 C194,430 189,505 185,560 C188,620 183,690 180,745 L176,745 C179,680 182,600 179,552 C183,490 187,430 191,350 Z"/><g id="back_boot_l"><path class="boot" d="M157,574 L189,574 L186,594 C184,650 182,700 181,744 L184,762 Q179,773 169,773 Q156,773 157,764 L163,744 C162,700 161,650 160,594 Z"/><path class="shade" d="M186,594 C184,650 182,700 181,744 L175,744 C177,700 179,650 180,594 Z"/><path class="bootdark" d="M154,566 L192,566 L189,590 L158,590 Z"/><path class="strap" d="M160,644 L185,638 L185,645 L160,651 Z"/><rect class="buckle" x="173" y="637" width="7" height="9" rx="1"/><path class="strap" d="M161,704 L183,698 L183,705 L161,711 Z"/><rect class="buckle" x="173" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="162" cy="578" r="1.6"/><circle class="brass" cx="185" cy="578" r="1.6"/><circle class="brass" cx="162" cy="584" r="1.6"/><circle class="brass" cx="185" cy="584" r="1.6"/></g><rect class="bootdark" x="176" y="756" width="12" height="17" rx="2"/></g><g id="back_leg_r"><path class="stocking" d="M239,346 C245,420 240,500 235,545 C241,600 237,680 233,745 L220,745 C217,690 212,620 215,560 C211,505 206,430 201,350 Z"/><path class="shade" d="M201,350 C206,430 211,505 215,560 C212,620 217,690 220,745 L224,745 C221,680 218,600 221,552 C217,490 213,430 209,350 Z"/><g id="back_boot_r"><path class="boot" d="M243,574 L211,574 L214,594 C216,650 218,700 219,744 L216,762 Q221,773 231,773 Q244,773 243,764 L237,744 C238,700 239,650 240,594 Z"/><path class="shade" d="M214,594 C216,650 218,700 219,744 L225,744 C223,700 221,650 220,594 Z"/><path class="bootdark" d="M246,566 L208,566 L211,590 L242,590 Z"/><path class="strap" d="M240,644 L215,638 L215,645 L240,651 Z"/><rect class="buckle" x="220" y="637" width="7" height="9" rx="1"/><path class="strap" d="M239,704 L217,698 L217,705 L239,711 Z"/><rect class="buckle" x="220" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="238" cy="578" r="1.6"/><circle class="brass" cx="215" cy="578" r="1.6"/><circle class="brass" cx="238" cy="584" r="1.6"/><circle class="brass" cx="215" cy="584" r="1.6"/></g><rect class="bootdark" x="212" y="756" width="12" height="17" rx="2"/></g></g>
+
+  <g id="back_skirt">
+    <path class="bloomers" d="M168,366 L232,366 L236,408 Q230.9,413.0 225.7,408.0 Q220.6,413.0 215.4,408.0 Q210.3,413.0 205.1,408.0 Q200.0,413.0 194.9,408.0 Q189.7,413.0 184.6,408.0 Q179.4,413.0 174.3,408.0 Q169.1,413.0 164.0,408.0 Z"/>
+    <path class="skirt2" d="M170,330 L230,330 C250,350 262,372 272,396 Q264.8,404.0 257.6,396.0 Q250.4,404.0 243.2,396.0 Q236.0,404.0 228.8,396.0 Q221.6,404.0 214.4,396.0 Q207.2,404.0 200.0,396.0 Q192.8,404.0 185.6,396.0 Q178.4,404.0 171.2,396.0 Q164.0,404.0 156.8,396.0 Q149.6,404.0 142.4,396.0 Q135.2,404.0 128.0,396.0 C138,372 150,350 170,330 Z"/>
+    <path class="skirt1" d="M176,312 Q200,318 224,312 C240,332 250,352 258,372 Q251.6,379.0 245.1,372.0 Q238.7,379.0 232.2,372.0 Q225.8,379.0 219.3,372.0 Q212.9,379.0 206.4,372.0 Q200.0,379.0 193.6,372.0 Q187.1,379.0 180.7,372.0 Q174.2,379.0 167.8,372.0 Q161.3,379.0 154.9,372.0 Q148.4,379.0 142.0,372.0 C150,352 160,332 176,312 Z"/>
+    <path class="line" d="M186,322 Q182,346 174,368 M200,324 L200,372 M214,322 Q218,346 226,368"/>
+  </g>
+
+  <g id="back_torso">
+    <rect class="skin" x="193" y="190" width="14" height="34"/>
+    <path class="blouse" d="M167,222 Q200,213 233,222 C237,240 235,255 230,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="shade" d="M167,222 L176,220 C172,238 172,254 176,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="line" d="M200,224 L200,262"/>
+    <path class="corset" d="M171,262 Q200,255 229,262 L231,286 Q222,300 225,318 Q200,325 175,318 Q178,300 169,286 Z"/>
+    <path class="corsetpanel" d="M192,260 L208,260 L208,322 L192,322 Z"/>
+    <path class="lace" d="M194,268 L206,275 M206,268 L194,275"/><path class="lace" d="M194,275 L206,282 M206,275 L194,282"/><path class="lace" d="M194,282 L206,289 M206,282 L194,289"/><path class="lace" d="M194,289 L206,296 M206,289 L194,296"/><path class="lace" d="M194,296 L206,303 M206,296 L194,303"/><path class="lace" d="M194,303 L206,310 M206,303 L194,310"/><path class="lace" d="M194,310 L206,317 M206,310 L194,317"/>
+    <path class="lace" d="M200,316 Q192,322 188,330 M200,316 Q208,322 212,330"/>
+    <circle class="brass" cx="200" cy="316" r="2.6"/>
+    <path class="strap" d="M178,221 L186,220 L214,262 L206,264 Z"/>
+    <path class="strap" d="M222,221 L214,220 L186,262 L194,264 Z"/>
+    <circle class="brass" cx="200" cy="242" r="5"/><circle class="corset" cx="200" cy="242" r="2.2"/>
+    <path class="strap" d="M174,312 Q200,322 226,312 L227,320 Q200,330 173,320 Z"/>
+    <rect class="pouch" x="159" y="316" width="19" height="19" rx="3"/>
+    <path class="bootdark" d="M159,316 L178,316 L178,323 L159,323 Z"/>
+  </g>
+
+  <!-- Schleppe hängt hinten und liegt von hinten gesehen vorne -->
+  <g id="back_train">
+    <path class="skirtback" d="M178,318 C136,380 112,500 96,640 Q128,608 150,662 Q176,614 200,656 Q224,614 250,662 Q272,608 304,640 C288,500 264,380 222,318 Z"/>
+    <path class="shade" d="M200,330 C206,420 214,540 218,640 Q208,618 200,656 C198,540 198,420 200,330 Z"/>
+  </g>
+
+  <g id="back_arm_l"><g transform="rotate(8 168 230)"><path class="blouse" d="M146,286 L166,286 L164,356 L150,356 Z"/><path class="shade" d="M146,286 L152,286 L152,356 L150,356 Z"/><path class="jabot" d="M146,352 L168,352 L169,364 Q165.0,368.0 161.0,364.0 Q157.0,368.0 153.0,364.0 Q149.0,368.0 145.0,364.0 Z"/><ellipse class="skin" cx="157" cy="373" rx="9" ry="11"/><path class="blouse" d="M172,222 C150,220 140,242 143,266 L147,292 L167,292 C170,268 173,246 178,232 Z"/><path class="line" d="M156,236 Q152,256 156,280"/></g></g>
+  <g id="back_arm_r"><g transform="rotate(-8 232 230)"><path class="blouse" d="M254,286 L234,286 L236,356 L250,356 Z"/><path class="shade" d="M254,286 L248,286 L248,356 L250,356 Z"/><path class="jabot" d="M232,352 L254,352 L255,364 Q251.0,368.0 247.0,364.0 Q243.0,368.0 239.0,364.0 Q235.0,368.0 231.0,364.0 Z"/><ellipse class="skin" cx="243" cy="373" rx="9" ry="11"/><circle class="glow" cx="242" cy="398" r="21"/><rect class="vialglass" x="238" y="374" width="8" height="13" rx="1"/><rect class="cork" x="237" y="370" width="10" height="6" rx="1"/><circle class="vialglass" cx="242" cy="398" r="11.5"/><path class="liquid" d="M230.5,399 Q236,396 242,399 Q248,402 253.5,399 A11.5,11.5 0 0 1 230.5,399 Z"/><path class="blouse" d="M228,222 C250,220 260,242 257,266 L253,292 L233,292 C230,268 227,246 222,232 Z"/><path class="line" d="M244,236 Q248,256 244,280"/></g></g>
+
+  <g id="back_head">
+    <path class="skin" d="M158,130 C158,104 178,92 200,92 C222,92 242,104 242,130 L242,180 C232,196 168,196 158,180 Z"/>
+    <g id="back_hair">
+      <path class="hair" d="M150,112 C134,140 130,170 132,208 L132,208 L140,219 L148,208 L156,219 L164,208 L172,219 L180,208 L188,219 L196,208 L204,219 L212,208 L220,219 L228,208 L236,219 L244,208 L252,219 L260,208 L268,219 C270,170 266,140 250,112 Z"/>
+      <path class="hairshine" d="M150,140 Q146,160 147,184 L151,174 Q152,156 155,144 Z"/>
+      <path class="hairshine" d="M245,140 Q249,160 248,180 L245,171 Q244,155 241,144 Z"/>
+      <path class="hairline" d="M166,124 C162,150 160,176 160,204 M184,120 C182,148 181,176 182,204 M200,118 L200,206 M216,120 C218,148 219,176 218,204 M234,124 C238,150 240,176 240,204"/>
+    </g>
+    <g id="back_cap" transform="rotate(4 200 100)">
+      <ellipse class="cap" cx="200" cy="96" rx="70" ry="32"/>
+      <path class="cel" d="M132,100 Q200,128 268,100 Q270,88 262,80 Q200,108 138,80 Q130,88 132,100 Z"/>
+      <path class="line" d="M200,64 L200,108 M200,64 Q178,80 150,104 M200,64 Q222,80 250,104"/>
+      <path class="capdark" d="M132,104 Q200,124 268,104 Q270,120 200,128 Q130,120 132,104 Z"/>
+      <circle class="capdark" cx="200" cy="65" r="5"/>
+      <path class="strap" d="M130,94 Q200,110 270,94 L270,102 Q200,118 130,102 Z"/>
+      <rect class="buckle" x="194" y="104" width="12" height="9" rx="2"/>
+    </g>
+  </g>
+</g>
+</svg>

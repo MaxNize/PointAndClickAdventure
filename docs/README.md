@@ -10,6 +10,7 @@
 | 3 | [Anforderungen](voranalyse/03-anforderungen.md) | 16 NF, 19 FA (Engine, Gegenstände, Entwicklungsmodus), 23 Prozess-Gates |
 | – | [Engine-Konzept](architektur/engine-konzept.md) | Architektur: Schichten, Befehle, Zeitmodell, Eingabe, ID-Zuordnung |
 | – | [Gegenstände](creative/gegenstaende.md) | Creative-Vorgabe mit Begriffen und ID-Zuordnung |
+| – | [Artstyle](creative/artstyle.md) | Scherenschnitt im Dämmerlicht: Palette, Regeln für Räume, Figuren, Gegenstände, Animationen (Entwurf) |
 | – | [Asset-Vertrag](architektur/asset-vertrag/README.md) | Format aller Inhaltsdateien unter `content/`, Fehlercodes (Entwurf bis Spike) |
 | – | [Briefing Claude Design](architektur/claude-design-briefing.md) | Prompt-Vorlagen für Räume, Figuren, Gegenstände |
 | – | [Autoren-Workflow](architektur/autoren-workflow.md) | Wie Creative aus Assets ein Spiel baut, Werkzeuge |

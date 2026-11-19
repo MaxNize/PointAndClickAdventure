@@ -20,6 +20,8 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] **Verbrauch:** Wird ein Alchemiegegenstand beim Einsetzen verbraucht? Wird ein Questgegenstand beim Einsetzen verbraucht, und kann man ihn danach erneut erhalten (FA-G-07)? Der Asset-Vertrag lässt das je Einsatzort offen (`removeItem`). Annahme: Die Höchstmenge gilt für den Bestand im Inventar.
 - [ ] **Ungültige Kombination:** Bekommt der Spieler eine Rückmeldung, z. B. einen Text der Figur (FA-G-04)? Annahme im Asset-Vertrag: der Standardtext `defaults.combine` aus `game.json`.
 
+- [ ] **Artstyle:** Trägt Creative den Vorschlag „Scherenschnitt im Dämmerlicht“ mit ([Artstyle](creative/artstyle.md), Issue #1)?
+
 ## Rückfragen an die Architektur (Lars, Benedict)
 - [ ] **NF-E-03, Messbedingungen:** Vorschlag steht im Kriterium (Assets geladen, ungedrosselt, Median aus 5 Läufen). Architektur bestätigt?
 - [ ] **NF-E-02, Gate:** Die Bildrate wird manuell gemessen. Zusätzlich ein CI-Näherungswert (Playwright-Trace mit CPU-Drosselung, Frame-Zeit)?
