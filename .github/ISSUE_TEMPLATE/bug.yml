@@ -1,0 +1,32 @@
+name: Fehler
+description: Das System verhält sich anders, als die Anforderung beschreibt.
+labels: [bug]
+body:
+  - type: input
+    id: id
+    attributes:
+      label: Betroffene Story-ID
+      placeholder: FA-E-05
+    validations:
+      required: true
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Gegeben / Wenn / Dann
+      description: Ausgangszustand, Aktion, erwartetes und tatsächliches Ergebnis. Daraus wird der Regressionstest.
+      value: |
+        Gegeben:
+        Wenn:
+        Dann erwartet:
+        Tatsächlich:
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version oder Commit
+  - type: textarea
+    id: kontext
+    attributes:
+      label: Kontext
+      description: Browser mit Version, Fenstergröße, Screenshot, bei Fehlern im Entwicklungsmodus die `?state=`-ID.

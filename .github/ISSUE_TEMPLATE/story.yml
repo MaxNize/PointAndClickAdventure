@@ -1,0 +1,37 @@
+name: Story oder Enabler
+description: Arbeitspaket aus dem Anforderungskatalog. Die Doku ist maßgeblich, das Issue verweist nur darauf.
+labels: [story]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Neue Anforderungen stehen zuerst in `docs/voranalyse/03-anforderungen.md` (nach den [Qualitätskriterien](../blob/main/docs/vorgaben-modul.md#qualitätskriterien)). Das Issue kommt danach.
+        Setze nach dem Anlegen im Projekt: Typ, Bereich, Priorität, Aufwand. Den Sprint setzt das Planning.
+  - type: input
+    id: id
+    attributes:
+      label: Story-ID
+      placeholder: FA-E-01, NF-W-03 oder EP-05
+    validations:
+      required: true
+  - type: textarea
+    id: anforderung
+    attributes:
+      label: Anforderung
+      description: „Das System muss …“, unverändert aus dem Anforderungskatalog. Bei Abweichung gilt der Katalog.
+    validations:
+      required: true
+  - type: textarea
+    id: kriterium
+    attributes:
+      label: Akzeptanzkriterium
+      description: Unverändert aus dem Anforderungskatalog. Daraus entstehen die Tests (EP-07).
+    validations:
+      required: true
+  - type: textarea
+    id: abhaengigkeiten
+    attributes:
+      label: Abhängigkeiten
+      value: |
+        **Blockiert durch:**
+        **Blockiert:**
