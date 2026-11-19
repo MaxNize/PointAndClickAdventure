@@ -1,0 +1,94 @@
+{
+  "mentions": [
+    {
+      "file": "docs/README.md",
+      "pattern": "(\\d+) NF, \\d+ FA \\(Engine",
+      "group": "NF"
+    },
+    {
+      "file": "docs/README.md",
+      "pattern": "\\d+ NF, (\\d+) FA \\(Engine",
+      "group": "FA"
+    },
+    {
+      "file": "docs/README.md",
+      "pattern": "(\\d+) Prozess-Gates",
+      "group": "EP"
+    },
+    {
+      "file": "docs/voranalyse/03-anforderungen.md",
+      "pattern": "Umfang der Zusage:\\*\\* (\\d+) NF",
+      "group": "NF"
+    },
+    {
+      "file": "docs/voranalyse/03-anforderungen.md",
+      "pattern": "NF, (\\d+) FA \\(",
+      "group": "FA"
+    },
+    {
+      "file": "docs/voranalyse/03-anforderungen.md",
+      "pattern": "\\((\\d+) Engine, ",
+      "group": "FA-E"
+    },
+    {
+      "file": "docs/voranalyse/03-anforderungen.md",
+      "pattern": "Engine, (\\d+) Gegenstände",
+      "group": "FA-G"
+    },
+    {
+      "file": "docs/voranalyse/03-anforderungen.md",
+      "pattern": "Gegenstände, (\\d+) Entwicklungsmodus\\)",
+      "group": "FA-DEV"
+    },
+    {
+      "file": "docs/voranalyse/03-anforderungen.md",
+      "pattern": "(\\d+) Prozess-Gates\\.",
+      "group": "EP"
+    },
+    {
+      "file": "docs/offene-fragen.md",
+      "pattern": "Zusage: (\\d+) NF",
+      "group": "NF"
+    },
+    {
+      "file": "docs/offene-fragen.md",
+      "pattern": "Zusage: \\d+ NF, (\\d+) FA",
+      "group": "FA"
+    },
+    {
+      "file": "docs/offene-fragen.md",
+      "pattern": "FA, (\\d+) EP",
+      "group": "EP"
+    },
+    {
+      "file": "docs/offene-fragen.md",
+      "pattern": "FA-Vorgabe \\(mind\\. 15\\) ist mit (\\d+) erfüllt",
+      "group": "FA"
+    },
+    {
+      "file": "docs/vorgaben-modul.md",
+      "pattern": "\\| mind\\. 15 \\| (\\d+) \\(",
+      "group": "FA"
+    },
+    {
+      "file": "docs/vorgaben-modul.md",
+      "pattern": "\\((\\d+) Engine, ",
+      "group": "FA-E"
+    },
+    {
+      "file": "docs/vorgaben-modul.md",
+      "pattern": "Engine, (\\d+) Gegenstände",
+      "group": "FA-G"
+    },
+    {
+      "file": "docs/vorgaben-modul.md",
+      "pattern": "Gegenstände, (\\d+) Entwicklungsmodus\\)",
+      "group": "FA-DEV"
+    },
+    {
+      "file": "docs/vorgaben-modul.md",
+      "pattern": "Wartbarkeit, messbar \\| (\\d+) \\|",
+      "group": "NF"
+    }
+  ]
+}
