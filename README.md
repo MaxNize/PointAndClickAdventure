@@ -19,6 +19,7 @@ Start: [docs/README.md](docs/README.md). Kurz:
 4. [Anforderungen](docs/voranalyse/03-anforderungen.md)
 5. [Engine-Konzept](docs/architektur/engine-konzept.md)
 6. [Gegenstände](docs/creative/gegenstaende.md)
+7. [Asset-Vertrag](docs/architektur/asset-vertrag/README.md) und [Autoren-Workflow](docs/architektur/autoren-workflow.md): für alle, die Inhalte erstellen
 
 ## Team
 
