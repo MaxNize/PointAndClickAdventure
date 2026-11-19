@@ -7,7 +7,7 @@
 | 0 | [Vorgaben aus dem Modul](vorgaben-modul.md) | Lieferumfang, Tabellenformat, Qualitätskriterien |
 | 1 | [Stakeholder und Rollen](voranalyse/01-stakeholder-und-rollen.md) | 6 Stakeholder, 2 Systemrollen, 6 Projektrollen mit Besetzung |
 | 2 | [Personas](voranalyse/02-personas.md) | 3 Proto-Personas mit Abdeckungsmatrix |
-| 3 | [Anforderungen](voranalyse/03-anforderungen.md) | 16 NF, 19 FA (Engine, Gegenstände, Entwicklungsmodus), 15 Prozess-Gates |
+| 3 | [Anforderungen](voranalyse/03-anforderungen.md) | 16 NF, 19 FA (Engine, Gegenstände, Entwicklungsmodus), 22 Prozess-Gates |
 | – | [Engine-Konzept](architektur/engine-konzept.md) | Architektur-Vorgabe mit ID-Zuordnung |
 | – | [Gegenstände](creative/gegenstaende.md) | Creative-Vorgabe mit Begriffen und ID-Zuordnung |
 

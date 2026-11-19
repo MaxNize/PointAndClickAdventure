@@ -35,6 +35,6 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] Claim gegen Doppelarbeit: bei 7 Personen plus Agenten wahrscheinlich nötig
 
 ## Mit dem Team bestätigen
-- [ ] Zusage: 16 NF, 19 FA, 15 EP
+- [ ] Zusage: 16 NF, 19 FA, 22 EP
 - [ ] Akzeptanz-Vorschläge NF-A-01 (Browser) und NF-A-02 (ab 1280 px Fensterbreite) bestätigen
 - [ ] Personas P-01 bis P-03 als Arbeitsgrundlage
