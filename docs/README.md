@@ -11,7 +11,7 @@
 | – | [Engine-Konzept](architektur/engine-konzept.md) | Architektur-Vorgabe mit ID-Zuordnung |
 | – | [Gegenstände](creative/gegenstaende.md) | Creative-Vorgabe mit Begriffen und ID-Zuordnung |
 
-Begleitend: [Projektsteckbrief](projektsteckbrief.md) (Entwurf) · [Issues aus Anforderungen anlegen](prozess/issues-aus-anforderungen.md) · [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
+Begleitend: [Projektsteckbrief](projektsteckbrief.md) (Entwurf) · [Issues aus Anforderungen anlegen](prozess/issues-aus-anforderungen.md) · [Doku-Gates](architektur/gates.md) · [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
 
 ## ID-Schema
 
