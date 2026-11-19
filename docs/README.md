@@ -8,8 +8,13 @@
 | 1 | [Stakeholder und Rollen](voranalyse/01-stakeholder-und-rollen.md) | 6 Stakeholder, 2 Systemrollen, 6 Projektrollen mit Besetzung |
 | 2 | [Personas](voranalyse/02-personas.md) | 3 Proto-Personas mit Abdeckungsmatrix |
 | 3 | [Anforderungen](voranalyse/03-anforderungen.md) | 16 NF, 19 FA (Engine, Gegenstände, Entwicklungsmodus), 22 Prozess-Gates |
-| – | [Engine-Konzept](architektur/engine-konzept.md) | Architektur-Vorgabe mit ID-Zuordnung |
+| – | [Engine-Konzept](architektur/engine-konzept.md) | Architektur: Schichten, Befehle, Zeitmodell, Eingabe, ID-Zuordnung |
 | – | [Gegenstände](creative/gegenstaende.md) | Creative-Vorgabe mit Begriffen und ID-Zuordnung |
+| – | [Asset-Vertrag](architektur/asset-vertrag/README.md) | Format aller Inhaltsdateien unter `content/`, Fehlercodes (Entwurf bis Spike) |
+| – | [Briefing Claude Design](architektur/claude-design-briefing.md) | Prompt-Vorlagen für Räume, Figuren, Gegenstände |
+| – | [Autoren-Workflow](architektur/autoren-workflow.md) | Wie Creative aus Assets ein Spiel baut, Werkzeuge |
+| – | [Anforderungsvorschläge](architektur/anforderungs-vorschlaege.md) | 25 neue FA mit vorläufiger ID und 2 Änderungen, Entscheidung durch den PO |
+| – | [Umsetzungsplan](architektur/umsetzungsplan.md) | Vorgeschlagene Reihenfolge der Erstimplementierung |
 
 Begleitend: [Projektsteckbrief](projektsteckbrief.md) (Entwurf) · [Issues aus Anforderungen anlegen](prozess/issues-aus-anforderungen.md) · [Entscheidungen](entscheidungen.md) · [Offene Fragen](offene-fragen.md) · [Quellen](quellen.md)
 
