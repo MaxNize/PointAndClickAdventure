@@ -1,0 +1,7 @@
+#!/bin/sh
+# EP-24: ordnet geschlossene Tickets dem Sprint zu. Best effort, blockiert den Push nie.
+command -v node >/dev/null 2>&1 || exit 0
+command -v gh >/dev/null 2>&1 || exit 0
+root="$(git rev-parse --show-toplevel)" || exit 0
+node "$root/tools/project/sync-sprint.mjs" --best-effort || true
+exit 0

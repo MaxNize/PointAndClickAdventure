@@ -33,5 +33,7 @@ jobs:
           node-version: 22
       - name: Tests der Doku-Gates
         run: node --test "tools/check/docs/*.test.mjs"
+      - name: Tests der Sprint-Zuordnung (EP-24)
+        run: node --test tools/project/sync-sprint.test.mjs
       - name: Doku-Gates (EP-17 bis EP-23)
         run: node tools/check/docs/run-all.mjs
