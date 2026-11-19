@@ -6,7 +6,7 @@ Prüfen Katalog, Doku und Backlog. Reines Node ohne Pakete, die Skripte liegen i
 |---|---|---|---|---|
 | EP-17 | Links und Anker | `check-links.mjs` | `docs.link_broken` | nein |
 | EP-18 | ID doppelt definiert | `check-ids.mjs` | `docs.id_duplicate` | nein |
-| EP-19 | ID-Verweis ins Leere | `check-ids.mjs` | `docs.id_undefined` | nein |
+| EP-19 | ID-Verweis ins Leere | `check-ids.mjs` | `docs.id_undefined`, `docs.id_baseline_stale` | nein |
 | EP-20 | Zusage-Zahlen | `check-counts.mjs` | `docs.count_mismatch` | nein |
 | EP-21 | Katalog und Issues | `check-backlog.mjs` | `docs.backlog_missing`, `_duplicate`, `_drift`, `_orphan`, `_unavailable` | ja, `gh` |
 | EP-22 | Markdown-Größe | `check-doc-size.mjs` | `docs.file_too_long` | nein |
@@ -27,6 +27,7 @@ Ein Fund steht als `<regel> <datei>:<zeile> <meldung>` auf stderr, Exit-Code 1.
 | Datei | Inhalt |
 |---|---|
 | `counts.config.json` | Fundstellen der Zusage-Zahlen. Verschwindet eine Fundstelle, schlägt EP-20 an. |
+| `ids.baseline.json` | Vorläufige IDs aus den Vorschlägen der Architektur, die der Katalog noch nicht kennt (EP-19). Darf nur schrumpfen: Eine inzwischen definierte oder nirgends mehr verwiesene ID muss raus. |
 | `limits.json` | Zeilengrenze für Markdown (200, wird nur gesenkt) |
 | `root-allowlist.json` | Erlaubte Einträge im Root, `*` als Platzhalter |
 

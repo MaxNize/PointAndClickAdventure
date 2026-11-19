@@ -32,3 +32,21 @@ test("EP-19: ID-Bereiche in Tabellenzeilen anderer Dateien definieren nichts", (
   const files = { [CATALOG]: catalog("FA-E-01"), "docs/b.md": "| FA-G-01 | Tabelle |" };
   assert.equal(findIdProblems(files)[0].rule, "docs.id_undefined");
 });
+
+test("EP-19: ID aus der Baseline ist erlaubt, eine neue undefinierte ID nicht", () => {
+  const files = { [CATALOG]: catalog("FA-E-01"), "docs/a.md": "FA-E-03 und NF-W-09" };
+  const problems = findIdProblems(files, ["FA-E-03"]);
+  assert.deepEqual(problems.map((p) => p.rule), ["docs.id_undefined"]);
+  assert.match(problems[0].message, /NF-W-09/);
+});
+test("EP-19: ID in der Baseline, die jetzt im Katalog steht, ist ein Fund (Baseline schrumpft)", () => {
+  const files = { [CATALOG]: catalog("FA-E-01", "FA-E-03"), "docs/a.md": "FA-E-03" };
+  const [p] = findIdProblems(files, ["FA-E-03"]);
+  assert.equal(p.rule, "docs.id_baseline_stale");
+  assert.match(p.message, /im Katalog definiert/);
+});
+test("EP-19: ID in der Baseline, die nirgends mehr verwiesen wird, ist ein Fund", () => {
+  const [p] = findIdProblems({ [CATALOG]: catalog("FA-E-01"), "docs/a.md": "nichts" }, ["FA-E-03"]);
+  assert.equal(p.rule, "docs.id_baseline_stale");
+  assert.match(p.message, /nirgends mehr verwiesen/);
+});
