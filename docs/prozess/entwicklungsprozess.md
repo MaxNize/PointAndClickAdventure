@@ -76,6 +76,7 @@ Bis `make worktree` existiert (EP-14): Worktree unter `../worktrees/<kurzname>`,
 
 - **Planning:** Das Team schätzt `Aufwand` mit 1, 2, 3, 5, 8 und ordnet Stories dem Sprint zu. Alles über 8 wird geteilt. Alle Anforderungen im Katalog sind Zusagen.
 - **Burndown:** Der Scrum Master legt ihn aus dem Projekt an (Insights) und legt am Sprint-Ende einen Screenshot ab.
+- **Sprint-Zuordnung (EP-24):** Ein geschlossenes Ticket gehört dem Sprint, in dem es geschlossen wurde, egal welchen Sprint es vorher hatte. Das setzt `node tools/project/sync-sprint.mjs`. Der `pre-push`-Hook startet es bei jedem Push, ohne den Push zu blockieren. Einrichten, einmal pro Klon: `git config core.hooksPath .githooks`. Wirksam ist er nur bei Personen mit Schreibrecht im Projekt. Vor dem Review prüft `node tools/project/sync-sprint.mjs --check`, ob alles stimmt.
 - **Review und Retro:** Am Review-Tag zeigt das Team die Ergebnisse. Die Retro-Notizen stehen mit dem Burndown in `docs/prozess/sprint-<n>.md`.
 
 ## Belege für die Präsentation

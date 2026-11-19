@@ -1,0 +1,9 @@
+#!/bin/sh
+# Führt die Skripte in .githooks/pre-push.d/ der Reihe nach aus.
+# Scheitert eines, bricht der Push ab. Einrichten (einmal pro Klon): git config core.hooksPath .githooks
+dir="$(dirname "$0")/pre-push.d"
+[ -d "$dir" ] || exit 0
+for script in "$dir"/*; do
+  [ -x "$script" ] || continue
+  "$script" "$@" </dev/null || exit $?
+done
