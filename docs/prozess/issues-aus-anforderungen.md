@@ -7,7 +7,7 @@ Für Architektur, Creative und ihre Agenten. Der Anforderungskatalog ([`03-anfor
 | Schritt | Wer | Ergebnis |
 |---|---|---|
 | 1 | Autor (Mensch oder Agent) | Anforderung steht im Katalog, nach den [Qualitätskriterien](../vorgaben-modul.md#qualitätskriterien) und mit neuer ID. Eigener PR, Freigabe nach der [Freigaberegel](../entscheidungen.md). |
-| 2 | Autor | Erst nach dem Merge: Issue anlegen (siehe unten). Die Vorschau geht vorher an den PO. |
+| 2 | Autor | Nach der Freigabe des Katalog-PRs, **vor dem Merge**: Vorschau an den PO, dann die Issues anlegen (siehe unten). EP-21 verlangt für jede Katalogzeile ein Issue, sonst ist der PR rot. Wird der PR verworfen, schließt der Autor die Issues wieder. |
 | 3 | PO | Prüft Wortlaut, Typ, Bereich und Abhängigkeiten. Setzt den Status auf **Bereit**. |
 | 4 | Team | Schätzt `Aufwand` und ordnet den **Sprint** zu, im Sprint Planning. |
 
