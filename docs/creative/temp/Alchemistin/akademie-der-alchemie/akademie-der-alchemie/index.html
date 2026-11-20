@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akademie der Alchemie – Demo-Szene</title>
+<style>
+:root{--ui:#2a1a14;--ui2:#3b2620;--gold:#e0ad4a;--cream:#f6ecd8}
+*{box-sizing:border-box}
+html,body{margin:0;background:#140e10;color:var(--cream);font-family:Georgia,"Times New Roman",serif}
+#app{max-width:1280px;margin:0 auto;padding:10px}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:6px 4px 10px}
+header h1{font-size:18px;margin:0;color:var(--gold);letter-spacing:.5px}
+#objective{flex:1;min-width:220px;font-size:14px;background:var(--ui2);border:1px solid #5a3a2c;border-radius:8px;padding:6px 10px}
+#objective b{color:var(--gold)}
+button{font:inherit;font-size:13px;color:var(--cream);background:var(--ui2);border:1px solid #6b4836;border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--gold);color:#fff}
+#stage{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;box-shadow:0 6px 30px #000a}
+#stage svg{display:block;width:100%;height:100%}
+#tip{position:absolute;pointer-events:none;background:#000c;color:#fff;font-size:13px;padding:3px 8px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-150%);display:none}
+#dialog{position:absolute;left:3%;right:3%;bottom:3%;background:#1d1210ee;border:2px solid var(--gold);border-radius:12px;padding:10px 16px;font-size:15px;line-height:1.45;display:none;cursor:pointer}
+#dialog .who{color:var(--gold);font-weight:bold;margin-right:6px}
+#inv{display:flex;gap:8px;flex-wrap:wrap;align-items:center;min-height:68px;margin-top:10px;background:var(--ui);border:1px solid #5a3a2c;border-radius:10px;padding:8px 10px}
+#inv .lbl{font-size:12px;opacity:.7;margin-right:4px}
+.item{display:flex;flex-direction:column;align-items:center;width:74px;padding:4px 2px;border:1px solid #5a3a2c;border-radius:8px;background:var(--ui2);cursor:pointer;font-size:11px;text-align:center;user-select:none}
+.item:hover{border-color:var(--gold)}
+.item.sel{border-color:var(--gold);background:#5a3a1c;box-shadow:0 0 10px #e0ad4a88}
+.item svg{width:30px;height:34px}
+.modal{position:absolute;inset:0;background:#000a;display:none;align-items:center;justify-content:center}
+.card{background:#24170f;border:2px solid var(--gold);border-radius:14px;padding:16px 20px;width:min(560px,92%);max-height:90%;overflow:auto}
+.card h2{margin:0 0 8px;color:var(--gold);font-size:19px}
+.slots{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px 0}
+.slot{width:96px;height:96px;border:2px dashed #8a6a4e;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;cursor:pointer}
+.slot svg{width:36px;height:40px}
+.plus{font-size:26px;color:var(--gold)}
+#alcInv{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}
+#alcMsg{min-height:44px;text-align:center;font-size:14px;margin:8px 0}
+.row{display:flex;gap:8px;justify-content:center}
+#recipes li{margin:5px 0}
+#recipes .locked{opacity:.75;color:#e9a0a0}
+#end h2{font-size:24px}
+body.dark #stage{box-shadow:0 6px 30px #000}
+.bub{animation:bub 1.6s infinite ease-in}
+.b2{animation-delay:.5s}.b3{animation-delay:1s}
+@keyframes bub{0%{transform:translateY(0);opacity:0}20%{opacity:.9}100%{transform:translateY(-34px);opacity:0}}
+.flicker{animation:fl .35s infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+.flicker2{animation:fl .27s infinite alternate-reverse;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes fl{from{transform:scaleY(1)}to{transform:scaleY(1.12) scaleX(.94)}}
+.blink{animation:blink 5s infinite;transform-box:fill-box;transform-origin:50% 50%}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+#crystal{animation:pulse 2s infinite alternate}
+@keyframes pulse{from{opacity:.85}to{opacity:1}}
+#player{pointer-events:none}
+#hits rect{fill:transparent;cursor:pointer}
+#hits rect.floor{cursor:crosshair}
+/* Charakter: Farbe */
+body.color #player *{stroke-linejoin:round;stroke-linecap:round}
+body.color #player .skin, body.color #player .hair, body.color #player .cap, body.color #player .capdark, body.color #player .blouse, body.color #player .jabot, body.color #player .strap, body.color #player .corset, body.color #player .corsetpanel, body.color #player .skirt1, body.color #player .skirt2, body.color #player .skirtback, body.color #player .bloomers, body.color #player .stocking, body.color #player .boot, body.color #player .bootdark, body.color #player .pouch, body.color #player .brass, body.color #player .cork, body.color #player .vialglass, body.color #player .eyewhite{stroke:#3b2219;stroke-width:2.2}
+body.color #player .skin{fill:#fde4d4}
+body.color #player .cel{fill:#c4685a;opacity:.32}
+body.color #player .hair{fill:#b8482c}
+body.color #player .hairshine{fill:#f28a5e}
+body.color #player .hairline{fill:none;stroke:#6e2416;stroke-width:1.3}
+body.color #player .cap{fill:#7b5038}
+body.color #player .capdark{fill:#4f3021}
+body.color #player .brass{fill:#e0ad4a}
+body.color #player .brassring{fill:none;stroke:#e0ad4a;stroke-width:2}
+body.color #player .lens{fill:#7fd3c8;stroke:#3b2219;stroke-width:1.5}
+body.color #player .lensshine{fill:#fff;opacity:.9}
+body.color #player .eyewhite{fill:#fff;stroke-width:0}
+body.color #player .iris{fill:url(#irisG);stroke:#5a2a10;stroke-width:.8}
+body.color #player .pupil{fill:#2a120a}
+body.color #player .irisshadow{fill:#3b2219;opacity:.35}
+body.color #player .hl{fill:#fff}
+body.color #player .lash{fill:none;stroke:#2a140c;stroke-width:2.2}
+body.color #player .crease{fill:none;stroke:#8a4a3a;stroke-width:1;opacity:.7}
+body.color #player .irisglow{fill:#ffe9a8;opacity:.55}
+body.color #player .blush{fill:#f59a92;opacity:.4}
+body.color #player .mouthline{fill:none;stroke:#8a3a32;stroke-width:1.5}
+body.color #player .lowlash{fill:none;stroke:#3b2219;stroke-width:1.2}
+body.color #player .nose{fill:none;stroke:#c98a76;stroke-width:1.5}
+body.color #player .mouth{fill:#c0544c;stroke:#3b2219;stroke-width:1.2}
+body.color #player .blushline{fill:none;stroke:#ee7f7a;stroke-width:1.4;opacity:.8}
+body.color #player .blouse{fill:#fbf3e3}
+body.color #player .jabot{fill:#fff8ec}
+body.color #player .gem{fill:#8a2f5a}
+body.color #player .strap{fill:#64402c}
+body.color #player .buckle{fill:none;stroke:#e0ad4a;stroke-width:2}
+body.color #player .corset{fill:#57321f}
+body.color #player .corsetpanel{fill:#8c5c3c}
+body.color #player .lace{stroke:#f6d9a8;stroke-width:1.6;fill:none}
+body.color #player .skirt1{fill:#7d4c32}
+body.color #player .skirt2{fill:#a3745a}
+body.color #player .skirtback{fill:#9c7a9a;opacity:.85}
+body.color #player .bloomers{fill:#fff8ec}
+body.color #player .stocking{fill:#f6d6c2}
+body.color #player .tattoo{fill:none;stroke:#c2463e;stroke-width:1.6}
+body.color #player .boot{fill:#432619}
+body.color #player .bootdark{fill:#2c1810}
+body.color #player .pouch{fill:#7b5038}
+body.color #player .vialglass{fill:#eafaf6;fill-opacity:.45}
+body.color #player .liquid{fill:#3fe08a}
+body.color #player .liquid2{fill:#ff8c4a}
+body.color #player .cork{fill:#b88a5a}
+body.color #player .bubble{fill:#eafff1}
+body.color #player .highlight{fill:none;stroke:#fff;stroke-width:2.2}
+body.color #player .glow{fill:url(#glowG)}
+body.color #player .shade{fill:#5b2a4a;opacity:.22}
+body.color #player .line{fill:none;stroke:#3b2219;stroke-width:1.2;opacity:.6}
+body.color #player .groundshadow{fill:#5b2a4a;opacity:.25}
+body.color #player .sparkle{fill:#fff6c9}
+body.color #player .brow2{fill:#8a2f1c;stroke:#6e2416;stroke-width:.6}
+body.color #player #side_face_sil{display:none}
+body.color #player #side_hair_back{display:none}
+body.color #player #side_hair_back_cel{display:none}
+body.color #player #side_skullhair{display:none}
+/* Charakter: Scherenschnitt */
+body.dark #player .skin, body.dark #player .hair, body.dark #player .cap, body.dark #player .capdark, body.dark #player .blouse, body.dark #player .jabot, body.dark #player .strap, body.dark #player .corset, body.dark #player .corsetpanel, body.dark #player .skirt1, body.dark #player .skirt2, body.dark #player .bloomers, body.dark #player .stocking, body.dark #player .boot, body.dark #player .bootdark, body.dark #player .pouch, body.dark #player .brass, body.dark #player .cork, body.dark #player .gem{fill:#140e10}
+body.dark #player .skirtback{fill:#140e10;opacity:.82}
+body.dark #player .jabot{stroke:#140e10}
+body.dark #player .brassring, body.dark #player .buckle{fill:none;stroke:#140e10;stroke-width:2}
+body.dark #player .lens{fill:#ffcf6b}
+body.dark #player .glint{fill:#ffcf6b}
+body.dark #player .eye, body.dark #player .lid, body.dark #player .brow, body.dark #player .nose, body.dark #player .mouth, body.dark #player .blush, body.dark #player .freckle, body.dark #player .line, body.dark #player .tattoo, body.dark #player .shade, body.dark #player .lace{display:none}
+body.dark #player .vialglass{fill:#140e10}
+body.dark #player .liquid{fill:#7dffb0}
+body.dark #player .liquid2{fill:#ff9a4f}
+body.dark #player .bubble{fill:#eafff1}
+body.dark #player .highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+body.dark #player .glow{fill:url(#glowG)}
+body.dark #player .groundshadow{display:none}
+body.dark #player #hair_back{display:none}
+body.dark #player .eyewhite, body.dark #player .iris, body.dark #player .pupil, body.dark #player .irisshadow, body.dark #player .irisglow, body.dark #player .crease, body.dark #player .lash, body.dark #player .lowlash, body.dark #player .brow2, body.dark #player .hairshine, body.dark #player .hairline, body.dark #player .cel, body.dark #player .mouthline, body.dark #player .blushline{display:none}
+body.dark #player .hl{fill:#ffcf6b}
+body.dark #player .lensshine{fill:#fff3d0}
+body.dark #player .sparkle{fill:#fff1c4}
+body.dark #player .lens{fill:#ffcf6b}
+body.dark #player .skin, body.dark #player .hair, body.dark #player .cap, body.dark #player .capdark, body.dark #player .blouse, body.dark #player .jabot, body.dark #player .strap, body.dark #player .corset, body.dark #player .corsetpanel, body.dark #player .skirt1, body.dark #player .skirt2, body.dark #player .bloomers, body.dark #player .stocking, body.dark #player .boot, body.dark #player .bootdark, body.dark #player .pouch, body.dark #player .brass, body.dark #player .cork, body.dark #player .gem{stroke:#140e10;stroke-width:1.2}
+body.dark #player #side_hair_back{display:none}
+body.dark #player #side_bangs{display:none}
+body.dark #player #side_face{display:none}
+body.dark #player #side_skullhair{display:none}
+/* Szene: Farbe */
+body.color #scene .s-wall{fill:#8b766b}
+body.color #scene .s-floor{fill:#6e4a32}
+body.color #scene .s-plank{stroke:#4d3121;stroke-width:2;fill:none}
+body.color #scene .s-floorcircle{fill:none;stroke:#f3e6c8;stroke-width:2;opacity:.35}
+body.color #scene .s-wood, body.color #scene .s-lid{fill:#7b5038;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-woodd{fill:#553521;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-woodline{stroke:#4a2d1c;stroke-width:2;fill:none}
+body.color #scene .s-shelfback{fill:#4a2f20}
+body.color #scene .s-stone{fill:#a8978b;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-stone2{fill:#9a877a;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-mortar{stroke:#6f5d52;stroke-width:2;fill:none}
+body.color #scene .s-sky{fill:url(#skyG)}
+body.color #scene .s-moon{fill:#fff3c4}
+body.color #scene .s-stars{fill:#fff}
+body.color #scene .s-candle{fill:#f3ead2;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-flame2{fill:#ffd84a}
+body.color #scene .s-flame1{fill:#ff8a2a}
+body.color #scene .s-glass{fill:#dff4f0;fill-opacity:.45;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-water{fill:#4aa8e0}
+body.color #scene .s-earth{fill:#7a4f2e}
+body.color #scene .s-iron{fill:#8d939b}
+body.color #scene .s-potion1{fill:#b35bd1}
+body.color #scene .s-potion2{fill:#e2504a}
+body.color #scene .s-paper{fill:#efe3c4}
+body.color #scene .s-label{font:bold 8px Georgia,serif;fill:#3b2219}
+body.color #scene .s-book1{fill:#8a2f3a;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-book2{fill:#2f5a8a;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-book3{fill:#a0742a;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-bookband{fill:#e0ad4a}
+body.color #scene .s-crystal{fill:#ffd84a;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-crystalhl{stroke:#fff;stroke-width:2;fill:none}
+body.color #scene .s-crystalglow{fill:url(#crystalG)}
+body.color #scene .s-dead{stroke:#7a5a3a;stroke-width:3;fill:none;stroke-linecap:round}
+body.color #scene .s-deadleaf{fill:#9a7a4a}
+body.color #scene .s-vine{stroke:#3f7f32;stroke-width:7;fill:none;stroke-linecap:round}
+body.color #scene .s-leaf{fill:#6dbb4a;stroke:#2f5a24;stroke-width:1.5}
+body.color #scene .s-flower{fill:#f2a7c4;stroke:#3b2219;stroke-width:1}
+body.color #scene .s-pot{fill:#c0693f;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-board{fill:#2f3d34;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-chalk{fill:#f3efe2;font-family:"Segoe Print","Comic Sans MS","Chalkboard SE",cursive}
+body.color #scene .s-chalkline{stroke:#f3efe2;stroke-width:2;fill:none;opacity:.85}
+body.color #scene .s-chalkpiece{fill:#fff}
+body.color #scene .s-owl{fill:#8a6a4e;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-owlbelly{fill:#dcc6a2}
+body.color #scene .s-owleye{fill:#ffcf6b;stroke:#3b2219;stroke-width:1.5}
+body.color #scene .s-owlpupil{fill:#2a140c}
+body.color #scene .s-beak{fill:#e0ad4a}
+body.color #scene .s-owlfeet{stroke:#e0ad4a;stroke-width:3}
+body.color #scene .s-metal{fill:#4a4a55;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-metald{fill:#2e2e36;stroke:#3b2219;stroke-width:2;stroke-linejoin:round}
+body.color #scene .s-brew{fill:var(--brew,#9be7ff)}
+body.color #scene .s-brewglow{fill:url(#brewG)}
+body.color #scene .s-bubble{fill:#fff;opacity:.8}
+body.color #scene .s-hole{fill:#1a120e}
+body.color #scene .s-coal{fill:#2a1a14}
+body.color #scene .s-fireglow{fill:url(#fireG)}
+body.color #scene .s-plate{font:bold 9px Georgia,serif;fill:#e0ad4a}
+body.color #scene .s-keyhole{fill:#120a08}
+body.color #scene .s-lightpool, body.color #scene .s-floorshade{display:none}
+body.color #scene .s-doorlight{fill:url(#doorLight)}
+body.color #scene .s-ice{fill:#bfe9f5;fill-opacity:.75;stroke:#5a9ab0;stroke-width:2}
+body.color #scene .s-icehl{stroke:#fff;stroke-width:2.5;fill:none;stroke-linecap:round}
+body.color #scene .s-key{fill:#e0ad4a;stroke:#e0ad4a}
+/* Szene: Scherenschnitt */
+body.dark #scene .s-wall{fill:url(#duskWall)}
+body.dark #scene .s-bricks{opacity:.35}
+body.dark #scene .s-floor{fill:url(#floorG)}
+body.dark #scene .s-floorshade{display:none}
+body.dark #scene .s-plank{stroke:#5a3236;stroke-width:1.5;fill:none;opacity:.8}
+body.dark #scene .s-lightpool{fill:url(#poolG)}
+body.dark #scene .s-floorcircle{fill:none;stroke:#ffcf6b;stroke-width:2;opacity:.3}
+body.dark #scene /* Mittelgrund: Möbel */
+.s-wood, body.dark #scene .s-stone, body.dark #scene .s-stone2, body.dark #scene .s-metal, body.dark #scene .s-candle{fill:#3a242b;stroke:#d98a62;stroke-width:1.6;stroke-linejoin:round}
+body.dark #scene .s-woodd, body.dark #scene .s-metald{fill:#33202a;stroke:#b5665a;stroke-width:1.3;stroke-linejoin:round}
+body.dark #scene .s-shelfback, body.dark #scene .s-hole{fill:#2a181d}
+body.dark #scene .s-board{fill:#4a2c33;stroke:#b5665a;stroke-width:1.3;stroke-linejoin:round}
+body.dark #scene .s-woodline, body.dark #scene .s-mortar{stroke:#6a3e42;stroke-width:1.8;fill:none}
+body.dark #scene .s-book1{fill:#5a3238;stroke:#b5665a;stroke-width:1.3;stroke-linejoin:round}
+body.dark #scene .s-book2{fill:#46293a;stroke:#b5665a;stroke-width:1.3;stroke-linejoin:round}
+body.dark #scene .s-book3{fill:#66403e;stroke:#b5665a;stroke-width:1.3;stroke-linejoin:round}
+body.dark #scene .s-bookband{fill:#8a5a3a}
+body.dark #scene .s-paper{fill:#d9b98e}
+body.dark #scene .s-label{font:bold 8px Georgia,serif;fill:#2e1c22}
+body.dark #scene .s-plate{font:bold 9px Georgia,serif;fill:#c9824a}
+body.dark #scene .s-chalkpiece{fill:#ffcf6b;opacity:.5}
+body.dark #scene /* Vordergrund */
+.s-pot, body.dark #scene .s-coal{fill:#2e1c22;stroke:#d98a62;stroke-width:1.6;stroke-linejoin:round}
+body.dark #scene .s-glass{fill:#6a454b;stroke:#b5665a;stroke-width:1.3;stroke-linejoin:round}
+body.dark #scene .s-lid{fill:#8a5e58;stroke:#b5665a;stroke-width:1.3;stroke-linejoin:round}
+body.dark #scene .s-sky{fill:url(#duskSky)}
+body.dark #scene .s-moon{fill:#fff8e0}
+body.dark #scene .s-stars{display:none}
+body.dark #scene .s-flame2{fill:#ffd84a}
+body.dark #scene .s-flame1{fill:#ff8a2a}
+body.dark #scene .s-water{fill:#5ac8ff}
+body.dark #scene .s-earth{fill:#c98a4e}
+body.dark #scene .s-iron{fill:#b8c0cc}
+body.dark #scene .s-potion1{fill:#c77bff}
+body.dark #scene .s-potion2{fill:#ff6a5a}
+body.dark #scene .s-crystal{fill:#ffe46b}
+body.dark #scene .s-crystalhl{stroke:#fff;stroke-width:2;fill:none}
+body.dark #scene .s-crystalglow{fill:url(#crystalG)}
+body.dark #scene .s-dead{stroke:#2e1c22;stroke-width:3;fill:none}
+body.dark #scene .s-deadleaf{fill:#2e1c22}
+body.dark #scene .s-vine{stroke:#2e1c22;stroke-width:7;fill:none;stroke-linecap:round}
+body.dark #scene .s-leaf{fill:#2f3a28;stroke:#d98a62;stroke-width:1}
+body.dark #scene .s-flower{fill:#ffb3d1}
+body.dark #scene .s-chalk{fill:#ffcf6b;opacity:.6;font-family:"Segoe Print","Comic Sans MS","Chalkboard SE",cursive}
+body.dark #scene .s-chalkline{stroke:#ffcf6b;stroke-width:2;fill:none;opacity:.45}
+body.dark #scene .s-owl{fill:#2e1c22;stroke:#d98a62;stroke-width:1.6;stroke-linejoin:round}
+body.dark #scene .s-owlbelly{fill:#55343a}
+body.dark #scene .s-owleye{fill:#ffcf6b}
+body.dark #scene .s-owlpupil{fill:#2e1c22}
+body.dark #scene .s-beak{fill:#c9824a}
+body.dark #scene .s-owlfeet{stroke:#c9824a;stroke-width:3}
+body.dark #scene .s-brew{fill:var(--brew,#9be7ff)}
+body.dark #scene .s-brewglow{fill:url(#brewG)}
+body.dark #scene .s-bubble{fill:#fff;opacity:.8}
+body.dark #scene .s-fireglow{fill:url(#fireG)}
+body.dark #scene .s-keyhole{fill:#ffcf6b}
+body.dark #scene .s-doorlight{fill:url(#doorLight)}
+body.dark #scene .s-ice{fill:#bfe9f5;fill-opacity:.55;stroke:#d8f6ff;stroke-width:1.5}
+body.dark #scene .s-icehl{stroke:#fff;stroke-width:2.5;fill:none}
+body.dark #scene .s-key{fill:#ffcf6b;stroke:#ffcf6b}
+body.dark #scene .s-vignette{opacity:.25}
+body.nolines #scene .s-wood, body.nolines #scene .s-woodd, body.nolines #scene .s-stone, body.nolines #scene .s-stone2, body.nolines #scene .s-metal, body.nolines #scene .s-metald, body.nolines #scene .s-candle, body.nolines #scene .s-board, body.nolines #scene .s-book1, body.nolines #scene .s-book2, body.nolines #scene .s-book3, body.nolines #scene .s-pot, body.nolines #scene .s-lid, body.nolines #scene .s-coal, body.nolines #scene .s-glass, body.nolines #scene .s-owl, body.nolines #scene .s-crystal, body.nolines #scene .s-leaf, body.nolines #scene .s-owleye, body.nolines #scene .s-ice, body.nolines #scene .s-flower{stroke:none}
+</style>
+</head>
+<body class="dark nolines">
+<div id="app">
+  <header>
+    <h1>⚗ Akademie der Alchemie – Lehrsaal</h1>
+    <div id="objective"><b>Aufgabe:</b> <span id="objText"></span></div>
+    <span id="ver" style="font-size:12px;opacity:.6">Stand: 19.11. 23:42</span>
+    <button id="btnRecipes">📖 Rezeptbuch</button>
+          </header>
+
+  <div id="stage">
+    <svg id="svg" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+<pattern id="bricks" width="80" height="40" patternUnits="userSpaceOnUse">
+  <path d="M0,0.5 L80,0.5 M0,20.5 L80,20.5 M0.5,0 L0.5,20 M40.5,20 L40.5,40" stroke="#5f4d46" stroke-width="1.5" fill="none" opacity=".55"/>
+</pattern>
+<linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d2650"/><stop offset="1" stop-color="#4a4f86"/></linearGradient>
+<linearGradient id="duskSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe2a6"/><stop offset="1" stop-color="#f29a5e"/></linearGradient>
+<radialGradient id="duskWall" cx=".3" cy=".45" r=".85"><stop offset="0" stop-color="#e8a16a"/><stop offset=".45" stop-color="#9a4e44"/><stop offset="1" stop-color="#42243a"/></radialGradient>
+<linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e353a"/><stop offset="1" stop-color="#321d24"/></linearGradient>
+<linearGradient id="poolG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a5a" stop-opacity=".2"/><stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/></linearGradient>
+<radialGradient id="vignette" cx=".5" cy=".5" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>
+<radialGradient id="crystalG"><stop offset="0" stop-color="#fff08a" stop-opacity=".8"/><stop offset="1" stop-color="#fff08a" stop-opacity="0"/></radialGradient>
+<radialGradient id="fireG"><stop offset="0" stop-color="#ffb347" stop-opacity=".75"/><stop offset="1" stop-color="#ff7a2a" stop-opacity="0"/></radialGradient>
+<radialGradient id="brewG"><stop offset="0" style="stop-color:var(--brew,#9be7ff);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--brew,#9be7ff);stop-opacity:0"/></radialGradient>
+<radialGradient id="doorLight" cx=".5" cy=".6" r=".7"><stop offset="0" stop-color="#fff4cf"/><stop offset="1" stop-color="#f2b866"/></radialGradient>
+<linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern></defs>
+      
+<g id="scene">
+  <!-- Wand & Boden -->
+  <rect class="s-wall" x="0" y="0" width="1280" height="600"/>
+  <rect class="s-bricks" x="0" y="0" width="1280" height="600" fill="url(#bricks)"/>
+  <rect class="s-woodd" x="0" y="584" width="1280" height="16"/>
+  <rect class="s-floor" x="0" y="600" width="1280" height="120"/>
+  <path class="s-plank" d="M0,632 L1280,632 M0,668 L1280,668 M0,704 L1280,704 M210,600 L200,632 M520,632 L512,668 M860,600 L866,632 M1100,668 L1110,704 M330,668 L322,704 M720,668 L724,704"/>
+  <rect class="s-floorshade" x="0" y="600" width="1280" height="120"/>
+  <path class="s-lightpool" d="M150,604 L370,604 L470,720 L120,720 Z"/>
+  <ellipse class="s-floorcircle" cx="780" cy="672" rx="130" ry="24"/>
+  <ellipse class="s-floorcircle" cx="780" cy="672" rx="104" ry="18"/>
+  <path class="s-floorcircle" d="M676,672 L884,672 M780,648 L780,696 M707,659 L853,685 M707,685 L853,659"/>
+
+  <!-- Fenster -->
+  <path class="s-stone" d="M168,404 L168,176 A92,92 0 0 1 352,176 L352,404 Z"/>
+  <path class="s-sky" d="M184,396 L184,178 A76,76 0 0 1 336,178 L336,396 Z"/>
+  <g class="s-stars"><circle cx="214" cy="200" r="1.8"/><circle cx="236" cy="150" r="1.4"/><circle cx="312" cy="250" r="1.6"/><circle cx="222" cy="300" r="1.2"/><circle cx="300" cy="330" r="1.5"/><circle cx="210" cy="360" r="1.3"/></g>
+  <circle class="s-moon" cx="296" cy="176" r="22"/>
+  <circle class="s-sky" cx="306" cy="170" r="18"/>
+  <rect class="s-stone" x="256" y="100" width="8" height="298"/>
+  <rect class="s-stone" x="184" y="272" width="152" height="7"/>
+  <rect class="s-stone" x="156" y="396" width="208" height="16" rx="3"/>
+  <path class="s-candle" d="M196,396 L196,372 L204,372 L204,396 Z"/><path class="s-flame2 flicker" d="M200,370 Q194,362 200,352 Q206,362 200,370 Z"/>
+
+  <!-- Pult mit Eisblock -->
+  <rect class="s-wood" x="82" y="470" width="16" height="130"/>
+  <rect class="s-woodd" x="58" y="592" width="64" height="12" rx="3"/>
+  <path class="s-woodd" d="M42,472 L138,458 L138,472 L42,486 Z"/>
+  <ellipse id="puddle" class="s-water" cx="92" cy="646" rx="48" ry="7" style="display:none"/>
+  <g id="iceBlock">
+    <rect class="s-ice" x="54" y="388" width="72" height="74" rx="9"/>
+    <g opacity=".75"><g class="s-key"><circle cx="81" cy="424" r="6.5" fill="none" stroke-width="3.5"/><rect x="87" y="422.2" width="22" height="3.6"/><rect x="102" y="425" width="3" height="6"/><rect x="107" y="425" width="3" height="8"/></g></g>
+    <path class="s-icehl" d="M64,400 L74,398 M62,410 L62,440 M114,446 L116,454"/>
+  </g>
+  <g id="keyLoose" style="display:none"><g class="s-key"><circle cx="81" cy="456" r="6.5" fill="none" stroke-width="3.5"/><rect x="87" y="454.2" width="22" height="3.6"/><rect x="102" y="457" width="3" height="6"/><rect x="107" y="457" width="3" height="8"/></g></g>
+
+  <!-- Regal -->
+  <rect class="s-wood" x="378" y="60" width="184" height="540" rx="3"/>
+  <rect class="s-shelfback" x="390" y="72" width="160" height="516"/>
+  <g id="crystal">
+    <circle class="s-crystalglow" cx="470" cy="128" r="48"/>
+    <path class="s-crystal" d="M470,96 L488,128 L470,158 L452,128 Z"/>
+    <path class="s-crystalhl" d="M470,100 L476,128 L470,154"/>
+  </g>
+  <rect class="s-book1" x="398" y="196" width="16" height="104" rx="2"/><rect class="s-bookband" x="398" y="210" width="16" height="4"/><rect class="s-book2" x="416" y="208" width="13" height="92" rx="2"/><rect class="s-bookband" x="416" y="222" width="13" height="4"/><rect class="s-book3" x="431" y="184" width="18" height="116" rx="2"/><rect class="s-bookband" x="431" y="198" width="18" height="4"/><rect class="s-book1" x="451" y="202" width="14" height="98" rx="2"/><rect class="s-bookband" x="451" y="216" width="14" height="4"/><rect class="s-book2" x="467" y="190" width="17" height="110" rx="2"/><rect class="s-bookband" x="467" y="204" width="17" height="4"/><path class="s-book3" d="M496,300 L516,206 L532,210 L512,300 Z"/>
+  <rect class="s-glass" x="404" y="374" width="36" height="46" rx="7"/><rect class="s-water" x="407" y="390" width="30" height="27" rx="5"/><rect class="s-lid" x="406" y="368" width="32" height="8" rx="2"/><rect class="s-paper" x="410" y="393" width="24" height="13" rx="1"/><text class="s-label" x="422" y="403" text-anchor="middle">Aqua</text>
+  <rect class="s-glass" x="458" y="374" width="36" height="46" rx="7"/><rect class="s-earth" x="461" y="390" width="30" height="27" rx="5"/><rect class="s-lid" x="460" y="368" width="32" height="8" rx="2"/><rect class="s-paper" x="464" y="393" width="24" height="13" rx="1"/><text class="s-label" x="476" y="403" text-anchor="middle">Terra</text>
+  <rect class="s-glass" x="512" y="384" width="26" height="36" rx="6"/><rect class="s-potion1" x="515" y="398" width="20" height="19" rx="4"/>
+  <rect class="s-glass" x="404" y="474" width="36" height="46" rx="7"/><rect class="s-iron" x="407" y="490" width="30" height="27" rx="5"/><rect class="s-lid" x="406" y="468" width="32" height="8" rx="2"/><rect class="s-paper" x="410" y="493" width="24" height="13" rx="1"/><text class="s-label" x="422" y="503" text-anchor="middle">Ferrum</text>
+  <rect class="s-glass" x="458" y="486" width="22" height="34" rx="5"/><rect class="s-potion2" x="461" y="500" width="16" height="17" rx="4"/>
+  <rect class="s-glass" x="490" y="474" width="26" height="46" rx="6"/><rect class="s-potion1" x="493" y="494" width="20" height="23" rx="4"/>
+  <rect class="s-book2" x="396" y="560" width="120" height="14" rx="2"/><rect class="s-book1" x="404" y="546" width="104" height="14" rx="2"/>
+  <g class="s-wood"><rect x="378" y="156" width="184" height="10"/><rect x="378" y="298" width="184" height="10"/>
+    <rect x="378" y="418" width="184" height="10"/><rect x="378" y="518" width="184" height="10"/></g>
+
+  <!-- Pflanze -->
+  <g id="plantDead">
+    <path class="s-dead" d="M600,592 Q588,560 566,566 M600,592 Q606,552 628,560 M600,592 Q598,556 601,538 Q605,528 595,522"/>
+    <ellipse class="s-deadleaf" cx="566" cy="568" rx="7" ry="3" transform="rotate(30 566 568)"/>
+    <ellipse class="s-deadleaf" cx="628" cy="562" rx="7" ry="3" transform="rotate(-20 628 562)"/>
+  </g>
+  <g id="vine" style="display:none">
+    <path class="s-vine" d="M600,592 C585,520 602,470 576,420 C556,380 590,330 570,280 C556,240 586,190 568,140 C560,112 576,92 566,70"/>
+    <g class="s-leaf">
+      <ellipse cx="588" cy="540" rx="13" ry="6" transform="rotate(-30 588 540)"/><ellipse cx="612" cy="560" rx="13" ry="6" transform="rotate(25 612 560)"/>
+      <ellipse cx="596" cy="470" rx="12" ry="6" transform="rotate(20 596 470)"/><ellipse cx="566" cy="420" rx="12" ry="6" transform="rotate(-25 566 420)"/>
+      <ellipse cx="590" cy="350" rx="12" ry="6" transform="rotate(25 590 350)"/><ellipse cx="562" cy="300" rx="12" ry="6" transform="rotate(-30 562 300)"/>
+      <ellipse cx="586" cy="220" rx="12" ry="6" transform="rotate(20 586 220)"/><ellipse cx="560" cy="160" rx="12" ry="6" transform="rotate(-25 560 160)"/>
+      <ellipse cx="578" cy="100" rx="11" ry="5" transform="rotate(20 578 100)"/>
+    </g>
+    <g class="s-flower"><circle cx="602" cy="440" r="5"/><circle cx="575" cy="250" r="5"/><circle cx="570" cy="80" r="5"/></g>
+  </g>
+  <path class="s-pot" d="M576,640 L570,600 L630,600 L624,640 Z"/>
+  <rect class="s-pot" x="565" y="590" width="70" height="13" rx="3"/>
+
+  <!-- Tafel -->
+  <rect class="s-wood" x="652" y="102" width="276" height="206" rx="4"/>
+  <rect class="s-board" x="664" y="114" width="252" height="182"/>
+  <g class="s-chalk">
+    <text x="680" y="146" font-size="18" textLength="196" lengthAdjust="spacingAndGlyphs">Lektion 1: Transmutation</text>
+    <text x="680" y="182" font-size="16">Wasser + Erde = ?</text>
+    <text x="680" y="208" font-size="16">Wasser + Feuer = ?</text>
+    <text x="680" y="234" font-size="13" textLength="160" lengthAdjust="spacingAndGlyphs">(Feuer gibt's im Athanor)</text>
+    <text x="680" y="276" font-size="14" textLength="196" lengthAdjust="spacingAndGlyphs">Schlüssel ⇒ erst im 2. Lehrjahr!</text>
+  </g>
+  <g class="s-chalkline">
+    <path d="M680,152 L876,152"/><circle cx="878" cy="204" r="26"/><path d="M878,180 L900,216 L856,216 Z"/>
+    <rect x="890" y="264" width="14" height="12" rx="2"/><path d="M893,264 Q893,254 897,254 Q901,254 901,264"/>
+  </g>
+  <rect class="s-chalkpiece" x="700" y="296" width="14" height="5" rx="2"/>
+
+  <!-- Eule -->
+  <g id="owl">
+    <path class="s-owl" d="M880,78 L884,62 L892,72 L898,72 L906,62 L910,78 Z"/>
+    <ellipse class="s-owl" cx="895" cy="88" rx="19" ry="23"/>
+    <ellipse class="s-owlbelly" cx="895" cy="96" rx="11" ry="13"/>
+    <circle class="s-owleye" cx="888" cy="81" r="6.5"/><circle class="s-owleye" cx="902" cy="81" r="6.5"/>
+    <g class="blink"><circle class="s-owlpupil" cx="888" cy="81" r="3"/><circle class="s-owlpupil" cx="902" cy="81" r="3"/></g>
+    <path class="s-beak" d="M892,86 L898,86 L895,92 Z"/>
+    <path class="s-owlfeet" d="M889,110 L889,104 M901,110 L901,104"/>
+  </g>
+
+  <!-- Werkbank & Kessel -->
+  <rect class="s-wood" x="680" y="512" width="14" height="128"/><rect class="s-wood" x="866" y="512" width="14" height="128"/>
+  <rect class="s-woodd" x="674" y="514" width="212" height="22"/>
+  <rect class="s-wood" x="664" y="502" width="232" height="14" rx="3"/>
+  <circle id="brewGlow" class="s-brewglow" cx="780" cy="448" r="80"/>
+  <path class="s-metal" d="M736,462 Q734,506 780,506 Q826,506 824,462 Z"/>
+  <path class="s-metald" d="M750,504 L744,512 M810,504 L816,512"/>
+  <ellipse class="s-metald" cx="780" cy="462" rx="47" ry="10"/>
+  <ellipse id="brew" class="s-brew" cx="780" cy="463" rx="39" ry="6.5"/>
+  <g class="s-bubble"><circle class="bub b1" cx="766" cy="458" r="3"/><circle class="bub b2" cx="790" cy="458" r="2.3"/><circle class="bub b3" cx="780" cy="458" r="2"/></g>
+  <path class="s-metal" d="M684,502 L690,484 L712,484 L718,502 Z"/><path class="s-woodd" d="M706,486 L722,466"/>
+  <rect class="s-book1" x="836" y="490" width="44" height="12" rx="2"/><rect class="s-paper" x="840" y="482" width="36" height="8" rx="1"/>
+
+  <!-- Athanor -->
+  <rect class="s-stone2" x="996" y="236" width="40" height="90"/>
+  <path class="s-stone2" d="M958,600 L958,362 Q958,318 1016,314 Q1074,318 1074,362 L1074,600 Z"/>
+  <path class="s-mortar" d="M958,400 L1074,400 M958,450 L1074,450 M958,500 L1074,500 M958,550 L1074,550 M1000,362 L1000,400 M1040,400 L1040,450 M990,450 L990,500 M1050,500 L1050,550 M1012,318 L1012,362"/>
+  <path class="s-hole" d="M980,586 L980,520 A36,36 0 0 1 1052,520 L1052,586 Z"/>
+  <g id="fire" style="display:none">
+    <circle class="s-fireglow" cx="1016" cy="548" r="90"/>
+    <path class="s-flame1 flicker" d="M986,584 Q990,540 1006,524 Q1004,552 1016,560 Q1022,528 1040,512 Q1048,556 1044,584 Z"/>
+    <path class="s-flame2 flicker2" d="M998,584 Q1002,556 1012,546 Q1012,566 1020,568 Q1026,548 1034,540 Q1040,566 1034,584 Z"/>
+  </g>
+  <rect class="s-coal" x="984" y="580" width="64" height="8" rx="3"/>
+  <rect class="s-metal" x="992" y="340" width="48" height="14" rx="2"/>
+  <text class="s-plate" x="1016" y="351" text-anchor="middle">ATHANOR</text>
+
+  <!-- Tür -->
+  <path class="s-stone2" d="M1108,600 L1108,282 A77,77 0 0 1 1262,282 L1262,600 Z"/>
+  <path id="doorway" class="s-hole" d="M1124,600 L1124,286 A61,61 0 0 1 1246,286 L1246,600 Z"/>
+  <g id="doorPanel">
+    <path class="s-wood" d="M1124,600 L1124,286 A61,61 0 0 1 1246,286 L1246,600 Z"/>
+    <path class="s-woodline" d="M1155,600 L1155,244 M1185,600 L1185,226 M1215,600 L1215,244"/>
+    <rect class="s-metal" x="1124" y="330" width="122" height="10"/><rect class="s-metal" x="1124" y="526" width="122" height="10"/>
+    <rect class="s-metal" x="1220" y="418" width="18" height="34" rx="2"/>
+    <circle class="s-keyhole" cx="1229" cy="430" r="3.5"/><rect class="s-keyhole" x="1227.5" y="430" width="3" height="10"/>
+  </g>
+
+  <path id="doorLeaf" class="s-wood" style="display:none" d="M1124,600 L1124,286 Q1126,246 1142,232 L1152,238 L1152,612 Z"/>
+  <rect class="s-vignette" x="0" y="0" width="1280" height="720" fill="url(#vignette)"/>
+</g>
+
+      <g id="player" transform="translate(300,690)">
+        <g id="flip" transform="scale(0.5,0.5)">
+          <g id="bob"><g transform="translate(-200,-773)">
+<g id="character">
+  <ellipse class="groundshadow" cx="200" cy="772" rx="72" ry="7"/>
+
+  <g id="skirt_back">
+    <path class="skirtback" d="M172,316 C128,380 108,500 90,640 Q128,608 150,662 Q176,614 200,656 Q224,614 250,662 Q272,608 310,640 C292,500 272,380 228,316 Z"/>
+    <path class="shade" d="M206,380 C240,460 252,560 250,662 Q224,614 200,656 Z"/>
+  </g>
+
+  <path id="hair_back" class="hair" d="M150,112 C126,170 124,250 130,304 L145,284 L150,316 L163,278 L168,236 L232,236 L237,278 L250,316 L255,284 L270,304 C276,250 274,170 250,112 Z"/><path class="cel" d="M136,240 C134,270 134,290 136,296 L145,284 L150,316 L158,290 C150,270 146,250 146,236 Z"/>
+
+  <g id="legs"><g id="front_leg_l"><path class="stocking" d="M161,346 C155,420 160,500 165,545 C159,600 163,680 167,745 L180,745 C183,690 188,620 185,560 C189,505 194,430 199,350 Z"/><path class="shade" d="M199,350 C194,430 189,505 185,560 C188,620 183,690 180,745 L176,745 C179,680 182,600 179,552 C183,490 187,430 191,350 Z"/></g><g id="front_leg_r"><path class="stocking" d="M239,346 C245,420 240,500 235,545 C241,600 237,680 233,745 L220,745 C217,690 212,620 215,560 C211,505 206,430 201,350 Z"/><path class="shade" d="M201,350 C206,430 211,505 215,560 C212,620 217,690 220,745 L224,745 C221,680 218,600 221,552 C217,490 213,430 209,350 Z"/></g>
+    <path class="tattoo" d="M159,470 Q174,477 190,470 M168,478 L180,478"/>
+  </g>
+  <g id="boot_l"><path class="boot" d="M157,574 L189,574 L186,594 C184,650 182,700 181,744 L184,762 Q179,773 169,773 Q156,773 157,764 L163,744 C162,700 161,650 160,594 Z"/><path class="shade" d="M186,594 C184,650 182,700 181,744 L175,744 C177,700 179,650 180,594 Z"/><path class="bootdark" d="M154,566 L192,566 L189,590 L158,590 Z"/><path class="strap" d="M160,644 L185,638 L185,645 L160,651 Z"/><rect class="buckle" x="173" y="637" width="7" height="9" rx="1"/><path class="strap" d="M161,704 L183,698 L183,705 L161,711 Z"/><rect class="buckle" x="173" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="162" cy="578" r="1.6"/><circle class="brass" cx="185" cy="578" r="1.6"/><circle class="brass" cx="162" cy="584" r="1.6"/><circle class="brass" cx="185" cy="584" r="1.6"/></g><g id="boot_r"><path class="boot" d="M243,574 L211,574 L214,594 C216,650 218,700 219,744 L216,762 Q221,773 231,773 Q244,773 243,764 L237,744 C238,700 239,650 240,594 Z"/><path class="shade" d="M214,594 C216,650 218,700 219,744 L225,744 C223,700 221,650 220,594 Z"/><path class="bootdark" d="M246,566 L208,566 L211,590 L242,590 Z"/><path class="strap" d="M240,644 L215,638 L215,645 L240,651 Z"/><rect class="buckle" x="220" y="637" width="7" height="9" rx="1"/><path class="strap" d="M239,704 L217,698 L217,705 L239,711 Z"/><rect class="buckle" x="220" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="238" cy="578" r="1.6"/><circle class="brass" cx="215" cy="578" r="1.6"/><circle class="brass" cx="238" cy="584" r="1.6"/><circle class="brass" cx="215" cy="584" r="1.6"/></g>
+
+  <g id="skirt_front">
+    <path class="bloomers" d="M168,366 L232,366 L236,408 Q230.9,413.0 225.7,408.0 Q220.6,413.0 215.4,408.0 Q210.3,413.0 205.1,408.0 Q200.0,413.0 194.9,408.0 Q189.7,413.0 184.6,408.0 Q179.4,413.0 174.3,408.0 Q169.1,413.0 164.0,408.0 Z"/>
+    <path class="skirt2" d="M170,330 L230,330 C250,350 262,372 272,396 Q264.8,404.0 257.6,396.0 Q250.4,404.0 243.2,396.0 Q236.0,404.0 228.8,396.0 Q221.6,404.0 214.4,396.0 Q207.2,404.0 200.0,396.0 Q192.8,404.0 185.6,396.0 Q178.4,404.0 171.2,396.0 Q164.0,404.0 156.8,396.0 Q149.6,404.0 142.4,396.0 Q135.2,404.0 128.0,396.0 C138,372 150,350 170,330 Z"/>
+    <path class="shade" d="M230,330 C250,350 262,372 272,396 Q263,404 254,396 C244,370 236,350 222,330 Z"/>
+    <path class="skirt1" d="M176,312 Q200,318 224,312 C240,332 250,352 258,372 Q251.6,379.0 245.1,372.0 Q238.7,379.0 232.2,372.0 Q225.8,379.0 219.3,372.0 Q212.9,379.0 206.4,372.0 Q200.0,379.0 193.6,372.0 Q187.1,379.0 180.7,372.0 Q174.2,379.0 167.8,372.0 Q161.3,379.0 154.9,372.0 Q148.4,379.0 142.0,372.0 C150,352 160,332 176,312 Z"/>
+    <path class="line" d="M186,322 Q182,346 174,368 M200,324 L200,372 M214,322 Q218,346 226,368"/>
+  </g>
+
+  <g id="torso">
+    <rect class="skin" x="193" y="186" width="14" height="34"/>
+    <path class="shade" d="M193,186 L207,186 L207,202 Q200,207 193,202 Z"/>
+    <path class="blouse" d="M167,222 Q200,213 233,222 C237,240 235,255 230,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="shade" d="M167,222 L176,220 C172,238 172,254 176,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="jabot" d="M191,204 Q200,199 209,204 L210,216 Q207.5,220.0 205.0,216.0 Q202.5,220.0 200.0,216.0 Q197.5,220.0 195.0,216.0 Q192.5,220.0 190.0,216.0 Z"/><path class="jabot" d="M188,217 Q200,212 212,217 L213,229 Q209.8,233.0 206.5,229.0 Q203.2,233.0 200.0,229.0 Q196.8,233.0 193.5,229.0 Q190.2,233.0 187.0,229.0 Z"/><path class="jabot" d="M185,230 Q200,225 215,230 L216,242 Q212.0,246.0 208.0,242.0 Q204.0,246.0 200.0,242.0 Q196.0,246.0 192.0,242.0 Q188.0,246.0 184.0,242.0 Z"/>
+    <circle class="brass" cx="200" cy="211" r="5"/><circle class="gem" cx="200" cy="211" r="2.5"/>
+    <path class="strap" d="M178,221 L185,220 L189,266 L182,266 Z"/>
+    <path class="strap" d="M222,221 L215,220 L211,266 L218,266 Z"/>
+    <rect class="buckle" x="180" y="238" width="7" height="8"/><rect class="buckle" x="213" y="238" width="7" height="8"/>
+    <path class="corset" d="M171,262 Q200,255 229,262 L231,286 Q222,300 225,318 Q200,325 175,318 Q178,300 169,286 Z"/>
+    <path class="shade" d="M171,262 L179,261 Q176,290 182,320 L175,318 Q178,300 169,286 Z"/>
+    <path class="corsetpanel" d="M192,260 L208,260 L208,322 L192,322 Z"/>
+    <path class="lace" d="M194,266 L206,273 M206,266 L194,273"/><path class="lace" d="M194,273 L206,280 M206,273 L194,280"/><path class="lace" d="M194,280 L206,287 M206,280 L194,287"/><path class="lace" d="M194,287 L206,294 M206,287 L194,294"/><path class="lace" d="M194,294 L206,301 M206,294 L194,301"/><path class="lace" d="M194,301 L206,308 M206,301 L194,308"/><path class="lace" d="M194,308 L206,315 M206,308 L194,315"/>
+    <circle class="brass" cx="178" cy="268" r="2"/><circle class="brass" cx="222" cy="268" r="2"/>
+    <circle class="brass" cx="180" cy="312" r="2"/><circle class="brass" cx="220" cy="312" r="2"/>
+    <path class="strap" d="M174,312 Q200,322 226,312 L227,320 Q200,330 173,320 Z"/>
+    <rect class="vialglass" x="231" y="304" width="6" height="20" rx="3"/>
+    <rect class="liquid2" x="232" y="313" width="4" height="10" rx="2"/>
+    <rect class="pouch" x="222" y="316" width="19" height="19" rx="3"/>
+    <path class="bootdark" d="M222,316 L241,316 L241,323 L222,323 Z"/>
+  </g>
+
+  <!-- LINKER ARM: Hand in der Hüfte -->
+  <g id="arm_l">
+    <path class="blouse" d="M170,222 C147,217 134,240 139,262 L133,292 Q137,301 148,299 L156,274 C162,258 168,244 173,236 Z"/>
+    <path class="shade" d="M139,262 L133,292 Q137,301 148,299 L143,292 Q141,276 146,262 Z"/>
+    <path class="blouse" d="M141,287 L171,309 L165,320 L134,298 Z"/>
+    <path class="jabot" d="M160,304 L174,312 L170,322 Q167.7,320.0 165.3,316.0 Q163.0,320.0 160.7,316.0 Q158.3,320.0 156.0,316.0 Z"/>
+    <path class="skin" d="M168,312 Q178,308 182,316 Q181,326 174,328 Q167,324 168,312 Z"/>
+  </g>
+
+  <!-- RECHTER ARM: hebt den Kolben -->
+  <g id="arm_r">
+    <path class="blouse" d="M230,222 C253,217 266,240 261,262 L267,288 Q263,297 252,295 L246,272 C240,258 234,244 227,236 Z"/>
+    <path class="blouse" d="M254,292 L273,218 L287,222 L268,293 Z"/>
+    <path class="shade" d="M254,292 L273,218 L279,219 L262,293 Z"/>
+    <path class="jabot" d="M270,214 L291,219 L289,231 Q285.5,230.0 282.0,226.0 Q278.5,230.0 275.0,226.0 Q271.5,230.0 268.0,226.0 Z"/>
+    <path class="skin" d="M276,214 Q274,200 282,197 Q291,198 290,208 Q288,216 276,214 Z"/>
+    <g id="flask">
+      <circle class="glow" cx="284" cy="172" r="36"/>
+      <rect class="vialglass" x="278" y="134" width="12" height="22" rx="2"/>
+      <rect class="cork" x="276" y="126" width="16" height="10" rx="2"/>
+      <circle class="vialglass" cx="284" cy="176" r="19"/>
+      <path class="liquid" d="M266,178 Q275,172 284,178 Q293,184 302,178 A18,18 0 0 1 266,178 Z"/>
+      <circle class="bubble" cx="279" cy="186" r="2.3"/><circle class="bubble" cx="290" cy="182" r="1.6"/>
+      <path class="highlight" d="M272,168 Q275,161 280,159"/>
+    </g>
+  </g>
+
+  <!-- KOPF (Anime) -->
+  <g id="head">
+    <circle class="skin" cx="151" cy="154" r="6"/><circle class="skin" cx="249" cy="154" r="6"/>
+    <circle class="brassring" cx="150" cy="164" r="3.5"/><circle class="brassring" cx="250" cy="164" r="3.5"/>
+    <path class="skin" d="M151,124 C149,160 162,184 188,196 Q200,200 212,196 C238,184 251,160 249,124 Q200,114 151,124 Z"/>
+    <!-- Cel-Schatten unter Pony und Mütze -->
+    <path class="cel" d="M152,146 L164,148 L173,149 L184,130 L196,148 L205,128 L217,147 L226,132 L237,151 L248,144 L249,124 Q200,114 151,124 Z"/>
+    <ellipse class="blush" cx="172" cy="176" rx="9" ry="3.5"/><ellipse class="blush" cx="228" cy="176" rx="9" ry="3.5"/>
+    <g id="eye_l">
+      <clipPath id="clip_l"><path d="M168,156 Q179.5,145 191.5,156 Q192,168 180,170 Q168,168 168,156 Z"/></clipPath>
+      <path class="eyewhite" d="M168,156 Q179.5,145 191.5,156 Q192,168 180,170 Q168,168 168,156 Z"/>
+      <g clip-path="url(#clip_l)">
+        <ellipse class="iris" cx="179.5" cy="160" rx="8.2" ry="9.6"/>
+        <ellipse class="irisglow" cx="179.5" cy="165" rx="5.5" ry="3"/>
+        <ellipse class="pupil" cx="179.5" cy="159.5" rx="3" ry="3.6"/>
+        <path class="irisshadow" d="M164,140 L196,140 L196,154 Q180,149 164,154 Z"/>
+      </g>
+      <circle class="hl" cx="183" cy="156.5" r="2.2"/>
+      <circle class="hl" cx="176" cy="164" r="1"/>
+      <path class="lash" d="M167,156 Q179.5,143.5 192.5,156"/>
+      <path class="lash" d="M167,156 L164.5,154"/>
+      <path class="lowlash" d="M168.5,164 Q171,169.5 177,170.5"/>
+    </g>
+    <g id="eye_r">
+      <clipPath id="clip_r"><path d="M232,156 Q220.5,145 208.5,156 Q208,168 220,170 Q232,168 232,156 Z"/></clipPath>
+      <path class="eyewhite" d="M232,156 Q220.5,145 208.5,156 Q208,168 220,170 Q232,168 232,156 Z"/>
+      <g clip-path="url(#clip_r)">
+        <ellipse class="iris" cx="220.5" cy="160" rx="8.2" ry="9.6"/>
+        <ellipse class="irisglow" cx="220.5" cy="165" rx="5.5" ry="3"/>
+        <ellipse class="pupil" cx="220.5" cy="159.5" rx="3" ry="3.6"/>
+        <path class="irisshadow" d="M204,140 L236,140 L236,154 Q220,149 204,154 Z"/>
+      </g>
+      <circle class="hl" cx="217" cy="156.5" r="2.2"/>
+      <circle class="hl" cx="224" cy="164" r="1"/>
+      <path class="lash" d="M233,156 Q220.5,143.5 207.5,156"/>
+      <path class="lash" d="M233,156 L235.5,154"/>
+      <path class="lowlash" d="M231.5,164 Q229,169.5 223,170.5"/>
+    </g>
+    <path class="nose" d="M200.5,174 l-1.5,2"/>
+    <path class="mouthline" d="M196,186 Q200,188.5 204,186"/>
+    <!-- Seitensträhnen -->
+    <path class="hair" d="M158,118 Q144,160 148,206 L156,190 L159,212 Q170,170 168,132 Z"/>
+    <path class="hair" d="M242,118 Q256,160 252,206 L244,190 L241,212 Q230,170 232,132 Z"/>
+    <path class="hairshine" d="M152,160 Q151,172 152,184 L156,176 Z M248,160 Q249,172 248,184 L244,176 Z"/>
+    <!-- Pony mit Zacken -->
+    <path class="hair" d="M152,146 Q150,106 200,100 Q250,106 248,146 L242,136 L237,143 L226,124 L217,139 L205,120 L196,140 L184,122 L173,141 L164,128 L158,144 Z"/>
+    <path class="hairline" d="M184,124 Q190,116 194,110 M205,122 Q206,114 204,108 M226,126 Q224,118 220,112"/>
+    <!-- Augenbrauen (über dem Pony) -->
+    <g id="brows"><path class="brow2" d="M174.5,142.5 Q177.5,135.5 185,135 Q190,135.5 189,140 Q187.5,143 183,142 Q178.5,141.5 174.5,142.5 Z"/><path class="brow2" d="M225.5,142.5 Q222.5,135.5 215,135 Q210,135.5 211,140 Q212.5,143 217,142 Q221.5,141.5 225.5,142.5 Z"/></g>
+    <!-- Mütze, leicht schräg -->
+    <g id="cap" transform="rotate(-7 200 100)">
+      <ellipse class="cap" cx="198" cy="94" rx="70" ry="32"/>
+      <path class="cel" d="M140,104 Q200,126 258,104 Q262,92 255,84 Q200,108 138,90 Z"/>
+      <path class="line" d="M198,62 Q176,78 148,102 M198,62 Q222,78 250,102"/>
+      <path class="capdark" d="M144,106 Q200,122 256,106 Q260,122 200,130 Q140,122 144,106 Z"/>
+      <circle class="capdark" cx="198" cy="63" r="5"/>
+      <path class="strap" d="M130,94 Q198,78 266,94 L266,102 Q198,86 130,102 Z"/>
+      <circle class="brass" cx="178" cy="90" r="15"/><circle class="brass" cx="220" cy="90" r="15"/>
+      <circle class="lens" cx="178" cy="90" r="10"/><circle class="lens" cx="220" cy="90" r="10"/>
+      <path class="lensshine" d="M171,86 L177,82 L180,85 L174,89 Z M213,86 L219,82 L222,85 L216,89 Z"/>
+      <rect class="brass" x="192" y="87" width="14" height="6" rx="2"/>
+    </g>
+  </g>
+</g>
+
+<g id="characterSide" style="display:none">
+  <ellipse class="groundshadow" cx="210" cy="772" rx="46" ry="6"/>
+
+  <path class="skirtback" d="M186,322 C150,384 110,486 68,624 Q100,602 120,646 Q140,604 162,634 C178,522 198,420 216,330 Z"/>
+  <path class="shade" d="M186,322 C150,384 110,486 68,624 Q100,602 120,646 L130,560 C150,470 170,400 196,330 Z"/>
+
+  <g id="side_arm_far"><g id="side_arm_far_fore"><path class="blouse" d="M194,284 L214,284 L212,372 L198,372 Z"/><path class="shade" d="M194,284 L200,284 L200,372 L198,372 Z"/><path class="jabot" d="M194,368 L216,368 L217,380 Q213.0,384.0 209.0,380.0 Q205.0,384.0 201.0,380.0 Q197.0,384.0 193.0,380.0 Z"/><ellipse class="skin" cx="205" cy="389" rx="9" ry="11"/><path class="shade" d="M194,284 L214,284 L212,372 L198,372 Z"/></g><path class="blouse" d="M188,226 C176,240 178,272 192,290 L216,290 C228,272 228,240 214,226 Z"/><path class="shade" d="M188,226 C176,240 178,272 192,290 L216,290 C228,272 228,240 214,226 Z"/></g>
+  <g id="side_leg_far"><path class="stocking" d="M188,352 C184,430 190,500 195,550 L216,553 C220,500 224,430 222,352 Z"/><path class="shade" d="M188,352 C184,430 190,500 195,550 L201,550 C197,500 194,430 196,352 Z"/><path class="shade" d="M188,352 C184,430 190,500 195,550 L216,553 C220,500 224,430 222,352 Z"/><g id="side_leg_far_shin"><circle class="stocking" cx="206" cy="550" r="10.5"/><path class="stocking" d="M196,546 C189,600 194,680 199,745 L213,745 C216,690 219,620 216,553 Z"/><path class="shade" d="M196,546 C189,600 194,680 199,745 L204,745 C201,680 197,600 202,546 Z"/><path class="boot" d="M189,572 L222,572 L220,594 C218,650 217,700 216,738 L240,750 Q248,758 242,768 L198,768 L194,760 L192,742 C191,700 190,650 191,594 Z"/><path class="bootdark" d="M186,564 L225,564 L222,590 L189,590 Z"/><path class="strap" d="M190,644 L219,638 L219,645 L190,651 Z"/><rect class="buckle" x="202" y="637" width="7" height="9" rx="1"/><path class="strap" d="M191,704 L218,698 L218,705 L191,711 Z"/><rect class="buckle" x="202" y="697" width="7" height="9" rx="1"/><rect class="bootdark" x="194" y="756" width="13" height="12"/><circle class="shade" cx="206" cy="550" r="10.5"/><path class="shade" d="M196,546 C189,600 194,680 199,745 L213,745 C216,690 219,620 216,553 Z"/><path class="shade" d="M189,572 L222,572 L220,594 C218,650 217,700 216,738 L240,750 Q248,758 242,768 L198,768 L194,760 L192,742 C191,700 190,650 191,594 Z"/></g></g>
+
+  <path id="side_hair_back" class="hair" d="M206,98 C164,98 142,124 142,170 C140,232 130,282 114,318 L132,302 L134,328 L150,298 L160,314 C170,272 178,222 188,182 C194,162 210,142 216,122 Z"/>
+  <path id="side_hair_back_cel" class="cel" d="M142,190 C140,240 132,284 118,314 L132,302 L134,328 L146,292 C150,260 152,226 152,196 Z"/>
+
+  <g id="side_leg_near"><path class="stocking" d="M188,352 C184,430 190,500 195,550 L216,553 C220,500 224,430 222,352 Z"/><path class="shade" d="M188,352 C184,430 190,500 195,550 L201,550 C197,500 194,430 196,352 Z"/><g id="side_leg_near_shin"><circle class="stocking" cx="206" cy="550" r="10.5"/><path class="stocking" d="M196,546 C189,600 194,680 199,745 L213,745 C216,690 219,620 216,553 Z"/><path class="shade" d="M196,546 C189,600 194,680 199,745 L204,745 C201,680 197,600 202,546 Z"/><path class="boot" d="M189,572 L222,572 L220,594 C218,650 217,700 216,738 L240,750 Q248,758 242,768 L198,768 L194,760 L192,742 C191,700 190,650 191,594 Z"/><path class="bootdark" d="M186,564 L225,564 L222,590 L189,590 Z"/><path class="strap" d="M190,644 L219,638 L219,645 L190,651 Z"/><rect class="buckle" x="202" y="637" width="7" height="9" rx="1"/><path class="strap" d="M191,704 L218,698 L218,705 L191,711 Z"/><rect class="buckle" x="202" y="697" width="7" height="9" rx="1"/><rect class="bootdark" x="194" y="756" width="13" height="12"/></g></g>
+
+  <g id="side_torso">
+    <rect class="skin" x="196.3" y="184" width="18.3" height="40"/>
+    <path class="shade" d="M196,184 L213,184 L213,200 Q205,206 196,200 Z"/>
+    <path class="blouse" d="M188,222 C178,240 176,264 182,290 L226,290 C232,272 234,250 228,232 Q218,220 205,218 Z"/>
+    <path class="shade" d="M188,222 C178,240 176,264 182,290 L192,290 C188,266 188,242 196,222 Z"/>
+    <path class="jabot" d="M221,200 Q229,196 233,200 L235,210 Q231.5,213.0 228.0,210.0 Q224.5,213.0 221.0,210.0 Z"/><path class="jabot" d="M221,213 Q229,209 233,213 L235,223 Q231.5,226.0 228.0,223.0 Q224.5,226.0 221.0,223.0 Z"/><path class="jabot" d="M221,226 Q229,222 233,226 L235,236 Q231.5,239.0 228.0,236.0 Q224.5,239.0 221.0,236.0 Z"/>
+    <path class="strap" d="M205,221 L212,221 L215,264 L208,264 Z"/>
+    <path class="corset" d="M180,262 Q206,256 229,262 L230,290 Q225,305 227,322 Q204,328 183,322 Q185,305 180,290 Z"/>
+    <path class="corsetpanel" d="M221,262 L229,262 L230,290 Q225,305 227,322 L221,323 Z"/>
+    <path class="lace" d="M223,266 L229,272"/><path class="lace" d="M223,273 L229,279"/><path class="lace" d="M223,280 L229,286"/><path class="lace" d="M223,287 L229,293"/><path class="lace" d="M223,294 L229,300"/><path class="lace" d="M223,301 L229,307"/><path class="lace" d="M223,308 L229,314"/><path class="lace" d="M223,315 L229,321"/>
+    <path class="shade" d="M180,262 L190,261 Q188,292 192,324 L183,322 Q185,305 180,290 Z"/>
+    <path class="strap" d="M182,314 Q205,322 228,314 L229,322 Q205,330 181,322 Z"/>
+    <rect class="pouch" x="172" y="316" width="18" height="20" rx="3"/>
+    <path class="bootdark" d="M172,316 L190,316 L190,323 L172,323 Z"/>
+  </g>
+
+  <g id="side_skirt">
+    <path class="bloomers" d="M178,366 L234,366 L238,406 Q232.7,411.0 227.3,406.0 Q222.0,411.0 216.7,406.0 Q211.3,411.0 206.0,406.0 Q200.7,411.0 195.3,406.0 Q190.0,411.0 184.7,406.0 Q179.3,411.0 174.0,406.0 Z"/>
+    <path class="skirt2" d="M180,330 L232,330 C248,352 256,374 262,396 Q255.8,404.0 249.6,396.0 Q243.3,404.0 237.1,396.0 Q230.9,404.0 224.7,396.0 Q218.4,404.0 212.2,396.0 Q206.0,404.0 199.8,396.0 Q193.6,404.0 187.3,396.0 Q181.1,404.0 174.9,396.0 Q168.7,404.0 162.4,396.0 Q156.2,404.0 150.0,396.0 C156,372 166,352 180,330 Z"/>
+    <path class="shade" d="M180,330 L192,330 C180,352 172,374 166,396 Q158,404 150,396 C156,372 166,352 180,330 Z"/>
+    <path class="skirt1" d="M182,314 Q206,320 229,314 C241,334 249,354 255,372 Q248.9,379.0 242.9,372.0 Q236.8,379.0 230.8,372.0 Q224.7,379.0 218.6,372.0 Q212.6,379.0 206.5,372.0 Q200.4,379.0 194.4,372.0 Q188.3,379.0 182.2,372.0 Q176.2,379.0 170.1,372.0 Q164.1,379.0 158.0,372.0 C164,352 172,332 182,314 Z"/>
+    <path class="line" d="M196,322 Q190,346 182,370 M214,322 Q220,346 228,370"/>
+  </g>
+
+  <g id="side_arm_near"><g id="side_arm_near_fore"><path class="blouse" d="M194,284 L214,284 L212,372 L198,372 Z"/><path class="shade" d="M194,284 L200,284 L200,372 L198,372 Z"/><path class="jabot" d="M194,368 L216,368 L217,380 Q213.0,384.0 209.0,380.0 Q205.0,384.0 201.0,380.0 Q197.0,384.0 193.0,380.0 Z"/><ellipse class="skin" cx="205" cy="389" rx="9" ry="11"/><circle class="glow" cx="206" cy="414" r="21"/><rect class="vialglass" x="202" y="390" width="8" height="13" rx="1"/><rect class="cork" x="201" y="386" width="10" height="6" rx="1"/><circle class="vialglass" cx="206" cy="414" r="11.5"/><path class="liquid" d="M194.5,415 Q200,412 206,415 Q212,418 217.5,415 A11.5,11.5 0 0 1 194.5,415 Z"/></g><path class="blouse" d="M188,226 C176,240 178,272 192,290 L216,290 C228,272 228,240 214,226 Z"/></g>
+
+  <g id="side_head">
+    <path id="side_face" class="skin" d="M162,140 C162,102 186,96 200,96.5 C215,96.8 230,104 239,114 C243,119 245,124 245.4,130 L245.7,142 C245.4,146 244,148 243.9,150 C244.5,152 246,153.5 248,154.6 C251,156 254.5,157.4 256.5,158.8 L256.8,162 C256.6,164 256,166 254.8,168 C254.2,170 254.1,172 254.1,176 C254,178 252.8,179.5 251.5,180.4 C250.6,181.2 250,182 250,184 C249.6,185.6 248.9,186.6 248.8,188 L248.6,194 C248.4,196.5 248,198 246.5,199.4 C245.3,200.1 243,200.2 240,200.2 L230,199.4 C222,198.5 214,197.2 210,195.6 C206,194 203.5,191.5 201.5,188 C200,185 199,183 197.5,182 C190,184 176,178 168,166 C162,158 162,150 162,140 Z"/><path id="side_face_sil" class="skin" d="M162,140 C162,102 186,96 200,96.5 C215,96.8 230,104 239,114 C243,118 246.5,122 247,128 L247,139 L245.6,140.5 L245.6,147.5 C246.5,149.5 248.5,150.6 251,151.4 L256.5,152.6 C257.8,153.1 258.4,154 258.4,155 L258.4,158.5 C258.2,159.4 257.2,159.8 256.9,160.5 L256.9,163 C256.6,163.7 255.6,164 255.5,165 L255.5,171 C255.3,172 254.3,172.3 254.1,173.2 L254,174.4 C253.4,175.2 252.8,175.6 252.4,176.3 C251.8,177 251.4,177.6 251.3,178.6 C251,179.4 250.1,179.6 249.9,180.6 L249.9,188.4 C249.6,189.2 248.6,189.6 248.4,190.6 C248.2,191.8 247.5,192.6 246.2,193.1 C244,193.6 240,193.6 236,193.4 L231,193.1 C227,192.6 223,191.6 220.3,190.9 L214.6,190.3 L196.3,190.3 L196.3,185 C190,184 176,178 168,166 C162,158 162,150 162,140 Z"/><g id="side_bob"><path class="hair" d="M149.2,215.1 L147.3,213.5 L144.6,208.9 L143.2,207.5 L140.1,210.8 L138.2,209.2 L138.5,190.7 L140.0,172.3 L141.0,146.8 L142.0,138.7 L143.8,131.4 L146.8,123.1 L150.9,114.5 L152.5,112.9 L153.3,112.9 L158.3,115.4 L161.1,116.1 L163.1,118.2 L164.4,117.2 L171.4,118.9 L175.7,119.4 L179.2,122.2 L181.0,120.4 L191.9,121.4 L195.9,121.4 L197.9,121.7 L201.4,124.7 L204.2,121.9 L204.7,121.9 L206.2,123.2 L208.2,121.2 L208.8,121.4 L210.0,120.4 L212.0,120.2 L213.5,119.4 L215.3,119.7 L220.9,117.7 L221.9,117.9 L224.6,116.9 L226.2,117.2 L227.2,116.1 L231.2,115.1 L233.5,114.1 L236.0,113.9 L237.0,114.9 L238.0,113.9 L242.8,113.6 L246.8,113.1 L248.1,112.6 L249.1,113.4 L250.1,112.4 L253.4,112.1 L254.7,111.6 L256.2,113.1 L257.7,111.6 L259.5,111.6 L261.7,112.4 L263.7,113.6 L267.2,117.0 L267.2,124.9 L265.5,126.5 L264.0,126.0 L260.7,125.7 L259.0,126.0 L257.3,127.4 L257.6,132.9 L262.4,136.7 L265.6,141.0 L265.9,142.3 L264.3,143.9 L261.5,142.1 L258.2,141.1 L255.2,143.7 L252.8,140.8 L253.5,139.7 L252.4,138.6 L250.5,140.0 L248.5,146.8 L246.6,148.7 L245.0,147.1 L242.2,138.0 L241.2,137.0 L242.4,134.9 L242.2,133.7 L239.8,131.3 L238.8,132.0 L236.8,132.0 L233.2,133.1 L232.7,133.6 L232.2,133.6 L231.2,132.6 L229.8,133.9 L229.6,134.7 L231.0,136.6 L231.8,136.7 L229.7,136.6 L225.7,141.1 L223.8,139.2 L222.8,137.0 L221.6,135.8 L220.9,135.3 L219.5,136.7 L218.2,142.3 L217.7,149.6 L217.2,150.1 L217.5,151.4 L217.0,151.9 L218.0,156.9 L218.7,166.8 L218.2,179.1 L217.2,186.2 L215.9,191.7 L213.7,194.0 L215.1,195.4 L215.3,195.2 L216.6,196.7 L217.3,196.7 L217.5,197.0 L217.0,198.3 L215.4,199.6 L215.4,201.1 L213.8,202.7 L213.0,202.2 L208.2,208.3 L206.4,204.9 L204.2,202.5 L197.0,210.4 L196.9,211.6 L195.5,210.2 L195.5,206.1 L195.0,204.6 L193.4,203.0 L189.0,207.4 L186.6,210.6 L185.4,209.4 L184.7,207.7 L183.0,206.3 L181.6,207.9 L181.1,210.4 L179.0,212.3 L173.7,207.5 L172.2,207.0 L164.9,214.8 L157.8,207.8 L156.5,207.5 L149.2,215.1 Z"/><path class="hairshine" d="M150.5,146 Q147,162 146.5,180 L150.5,171 Q151.5,158 153.5,149 Z"/><path class="hairline" d="M162,138 C158,162 156,184 155,205 M177,134 C174,158 172,182 171,204 M192,134 C190,156 189,178 188,200 M206,132 C205,152 205,172 204,192"/></g>
+    
+    <ellipse class="blush" cx="237" cy="167" rx="7.5" ry="3.3"/>
+    <g id="side_eye">
+      <ellipse class="iris" cx="231.2" cy="152.2" rx="3" ry="7.8"/>
+      <ellipse class="irisglow" cx="231.2" cy="157" rx="2" ry="2.2"/>
+      <ellipse class="pupil" cx="231.1" cy="153.4" rx="1.4" ry="3.4"/>
+      <ellipse class="hl" cx="231.2" cy="149.3" rx="1.5" ry="3"/><circle class="hl" cx="226.6" cy="157.8" r="1.15"/>
+      <ellipse class="lowlash" cx="231.2" cy="152.2" rx="3" ry="7.8"/>
+      <path class="lash" d="M236.4,141.6 Q229,138.4 224.8,142.4 Q221,146.6 219,153.6"/>
+      <path class="lowlash" d="M222,157.6 Q225.5,160.3 228.6,161.2"/>
+    </g>
+    <path class="mouthline" d="M248.6,180.2 L243,180.1 Q241,180.4 240.2,181.7"/>
+    <!-- Haare -->
+    <g id="side_bangs">
+      <path class="cel" d="M245.6,128 L245.6,149 L242.5,151 L238.5,140 L232.5,147.5 L227.5,136 L220.5,144 L215,131 Z"/>
+      <path class="hair" d="M252,121 C259,117.5 265.5,120.5 268.5,127.5 C262.5,124.5 258.5,125 254.5,128 Z"/>
+      <path class="hair" d="M256.5,133.5 C262.5,135 266,140 266.5,146.5 C263,142 259.6,140.8 256.2,141 Z"/>
+      <path class="hair" d="M162,142 C158,102 196,86 222,92 C240,96 252,106 255.5,118 C257.6,127 257.6,136 256.6,142 L258.6,150.5 L251,137.5 L246.6,151.5 L241,134 L236.6,146.5 L231,131 L225.6,142.5 L219,129 C208,128 198,130 188,140 L178,128 L170,146 Z"/>
+      <path class="hairshine" d="M234,116 Q245,113 252.5,121 L249.5,123.5 Q243,118.5 236,120 Z"/>
+      <path class="hairshine" d="M243,128 Q249,130 251.5,137.5 L248.6,136 Q246,131.6 243,130.6 Z"/>
+      <path class="hairline" d="M244,108 Q251,124 252.6,140 M232,112 Q238,124 240,133 M221,114 Q226,123 227,129"/>
+    </g>
+    
+    
+    <g id="side_brow"><path class="brow2" d="M229,136.4 Q233,132.4 239,132.2 Q242.5,132.7 241.8,135.5 Q240.6,137.1 237.6,136.7 Q233,136.3 229,136.4 Z"/></g>
+    <!-- Mütze im Profil -->
+    <g id="side_cap" transform="rotate(-6 206 100)">
+      <ellipse class="cap" cx="204" cy="98" rx="60" ry="30"/>
+      <path class="cel" d="M146,104 Q204,126 262,104 Q266,92 258,84 Q204,108 144,90 Z"/>
+      <path class="line" d="M204,68 Q184,82 160,104 M204,68 Q224,82 246,104"/>
+      <path class="capdark" d="M222,110 Q266,104 280,118 Q256,128 222,124 Z"/>
+      <path class="capdark" d="M146,106 Q204,124 262,108 Q264,120 204,130 Q146,122 146,106 Z"/>
+      <circle class="capdark" cx="204" cy="69" r="5"/>
+      <path class="strap" d="M144,96 Q204,82 264,96 L264,104 Q204,90 144,104 Z"/>
+      <circle class="brass" cx="244" cy="94" r="13"/>
+      <ellipse class="lens" cx="245" cy="94" rx="6" ry="9"/>
+      <path class="lensshine" d="M241,89 L245,86 L247,88 L243,92 Z"/>
+    </g>
+  </g>
+</g>
+
+<g id="characterBack" style="display:none">
+  <ellipse class="groundshadow" cx="200" cy="772" rx="62" ry="7"/>
+
+
+  <g id="back_legs"><g id="back_leg_l"><path class="stocking" d="M161,346 C155,420 160,500 165,545 C159,600 163,680 167,745 L180,745 C183,690 188,620 185,560 C189,505 194,430 199,350 Z"/><path class="shade" d="M199,350 C194,430 189,505 185,560 C188,620 183,690 180,745 L176,745 C179,680 182,600 179,552 C183,490 187,430 191,350 Z"/><g id="back_boot_l"><path class="boot" d="M157,574 L189,574 L186,594 C184,650 182,700 181,744 L184,762 Q179,773 169,773 Q156,773 157,764 L163,744 C162,700 161,650 160,594 Z"/><path class="shade" d="M186,594 C184,650 182,700 181,744 L175,744 C177,700 179,650 180,594 Z"/><path class="bootdark" d="M154,566 L192,566 L189,590 L158,590 Z"/><path class="strap" d="M160,644 L185,638 L185,645 L160,651 Z"/><rect class="buckle" x="173" y="637" width="7" height="9" rx="1"/><path class="strap" d="M161,704 L183,698 L183,705 L161,711 Z"/><rect class="buckle" x="173" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="162" cy="578" r="1.6"/><circle class="brass" cx="185" cy="578" r="1.6"/><circle class="brass" cx="162" cy="584" r="1.6"/><circle class="brass" cx="185" cy="584" r="1.6"/></g><rect class="bootdark" x="176" y="756" width="12" height="17" rx="2"/></g><g id="back_leg_r"><path class="stocking" d="M239,346 C245,420 240,500 235,545 C241,600 237,680 233,745 L220,745 C217,690 212,620 215,560 C211,505 206,430 201,350 Z"/><path class="shade" d="M201,350 C206,430 211,505 215,560 C212,620 217,690 220,745 L224,745 C221,680 218,600 221,552 C217,490 213,430 209,350 Z"/><g id="back_boot_r"><path class="boot" d="M243,574 L211,574 L214,594 C216,650 218,700 219,744 L216,762 Q221,773 231,773 Q244,773 243,764 L237,744 C238,700 239,650 240,594 Z"/><path class="shade" d="M214,594 C216,650 218,700 219,744 L225,744 C223,700 221,650 220,594 Z"/><path class="bootdark" d="M246,566 L208,566 L211,590 L242,590 Z"/><path class="strap" d="M240,644 L215,638 L215,645 L240,651 Z"/><rect class="buckle" x="220" y="637" width="7" height="9" rx="1"/><path class="strap" d="M239,704 L217,698 L217,705 L239,711 Z"/><rect class="buckle" x="220" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="238" cy="578" r="1.6"/><circle class="brass" cx="215" cy="578" r="1.6"/><circle class="brass" cx="238" cy="584" r="1.6"/><circle class="brass" cx="215" cy="584" r="1.6"/></g><rect class="bootdark" x="212" y="756" width="12" height="17" rx="2"/></g></g>
+
+  <g id="back_skirt">
+    <path class="bloomers" d="M168,366 L232,366 L236,408 Q230.9,413.0 225.7,408.0 Q220.6,413.0 215.4,408.0 Q210.3,413.0 205.1,408.0 Q200.0,413.0 194.9,408.0 Q189.7,413.0 184.6,408.0 Q179.4,413.0 174.3,408.0 Q169.1,413.0 164.0,408.0 Z"/>
+    <path class="skirt2" d="M170,330 L230,330 C250,350 262,372 272,396 Q264.8,404.0 257.6,396.0 Q250.4,404.0 243.2,396.0 Q236.0,404.0 228.8,396.0 Q221.6,404.0 214.4,396.0 Q207.2,404.0 200.0,396.0 Q192.8,404.0 185.6,396.0 Q178.4,404.0 171.2,396.0 Q164.0,404.0 156.8,396.0 Q149.6,404.0 142.4,396.0 Q135.2,404.0 128.0,396.0 C138,372 150,350 170,330 Z"/>
+    <path class="skirt1" d="M176,312 Q200,318 224,312 C240,332 250,352 258,372 Q251.6,379.0 245.1,372.0 Q238.7,379.0 232.2,372.0 Q225.8,379.0 219.3,372.0 Q212.9,379.0 206.4,372.0 Q200.0,379.0 193.6,372.0 Q187.1,379.0 180.7,372.0 Q174.2,379.0 167.8,372.0 Q161.3,379.0 154.9,372.0 Q148.4,379.0 142.0,372.0 C150,352 160,332 176,312 Z"/>
+    <path class="line" d="M186,322 Q182,346 174,368 M200,324 L200,372 M214,322 Q218,346 226,368"/>
+  </g>
+
+  <g id="back_torso">
+    <rect class="skin" x="193" y="190" width="14" height="34"/>
+    <path class="blouse" d="M167,222 Q200,213 233,222 C237,240 235,255 230,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="shade" d="M167,222 L176,220 C172,238 172,254 176,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="line" d="M200,224 L200,262"/>
+    <path class="corset" d="M171,262 Q200,255 229,262 L231,286 Q222,300 225,318 Q200,325 175,318 Q178,300 169,286 Z"/>
+    <path class="corsetpanel" d="M192,260 L208,260 L208,322 L192,322 Z"/>
+    <path class="lace" d="M194,268 L206,275 M206,268 L194,275"/><path class="lace" d="M194,275 L206,282 M206,275 L194,282"/><path class="lace" d="M194,282 L206,289 M206,282 L194,289"/><path class="lace" d="M194,289 L206,296 M206,289 L194,296"/><path class="lace" d="M194,296 L206,303 M206,296 L194,303"/><path class="lace" d="M194,303 L206,310 M206,303 L194,310"/><path class="lace" d="M194,310 L206,317 M206,310 L194,317"/>
+    <path class="lace" d="M200,316 Q192,322 188,330 M200,316 Q208,322 212,330"/>
+    <circle class="brass" cx="200" cy="316" r="2.6"/>
+    <path class="strap" d="M178,221 L186,220 L214,262 L206,264 Z"/>
+    <path class="strap" d="M222,221 L214,220 L186,262 L194,264 Z"/>
+    <circle class="brass" cx="200" cy="242" r="5"/><circle class="corset" cx="200" cy="242" r="2.2"/>
+    <path class="strap" d="M174,312 Q200,322 226,312 L227,320 Q200,330 173,320 Z"/>
+    <rect class="pouch" x="159" y="316" width="19" height="19" rx="3"/>
+    <path class="bootdark" d="M159,316 L178,316 L178,323 L159,323 Z"/>
+  </g>
+
+  <!-- Schleppe hängt hinten und liegt von hinten gesehen vorne -->
+  <g id="back_train">
+    <path class="skirtback" d="M178,318 C136,380 112,500 96,640 Q128,608 150,662 Q176,614 200,656 Q224,614 250,662 Q272,608 304,640 C288,500 264,380 222,318 Z"/>
+    <path class="shade" d="M200,330 C206,420 214,540 218,640 Q208,618 200,656 C198,540 198,420 200,330 Z"/>
+  </g>
+
+  <g id="back_arm_l"><g transform="rotate(8 168 230)"><path class="blouse" d="M146,286 L166,286 L164,356 L150,356 Z"/><path class="shade" d="M146,286 L152,286 L152,356 L150,356 Z"/><path class="jabot" d="M146,352 L168,352 L169,364 Q165.0,368.0 161.0,364.0 Q157.0,368.0 153.0,364.0 Q149.0,368.0 145.0,364.0 Z"/><ellipse class="skin" cx="157" cy="373" rx="9" ry="11"/><path class="blouse" d="M172,222 C150,220 140,242 143,266 L147,292 L167,292 C170,268 173,246 178,232 Z"/><path class="line" d="M156,236 Q152,256 156,280"/></g></g>
+  <g id="back_arm_r"><g transform="rotate(-8 232 230)"><path class="blouse" d="M254,286 L234,286 L236,356 L250,356 Z"/><path class="shade" d="M254,286 L248,286 L248,356 L250,356 Z"/><path class="jabot" d="M232,352 L254,352 L255,364 Q251.0,368.0 247.0,364.0 Q243.0,368.0 239.0,364.0 Q235.0,368.0 231.0,364.0 Z"/><ellipse class="skin" cx="243" cy="373" rx="9" ry="11"/><circle class="glow" cx="242" cy="398" r="21"/><rect class="vialglass" x="238" y="374" width="8" height="13" rx="1"/><rect class="cork" x="237" y="370" width="10" height="6" rx="1"/><circle class="vialglass" cx="242" cy="398" r="11.5"/><path class="liquid" d="M230.5,399 Q236,396 242,399 Q248,402 253.5,399 A11.5,11.5 0 0 1 230.5,399 Z"/><path class="blouse" d="M228,222 C250,220 260,242 257,266 L253,292 L233,292 C230,268 227,246 222,232 Z"/><path class="line" d="M244,236 Q248,256 244,280"/></g></g>
+
+  <g id="back_head">
+    <path class="skin" d="M158,130 C158,104 178,92 200,92 C222,92 242,104 242,130 L242,180 C232,196 168,196 158,180 Z"/>
+    <g id="back_hair">
+      <path class="hair" d="M150,112 C134,140 130,170 132,208 L132,208 L140,219 L148,208 L156,219 L164,208 L172,219 L180,208 L188,219 L196,208 L204,219 L212,208 L220,219 L228,208 L236,219 L244,208 L252,219 L260,208 L268,219 C270,170 266,140 250,112 Z"/>
+      <path class="hairshine" d="M150,140 Q146,160 147,184 L151,174 Q152,156 155,144 Z"/>
+      <path class="hairshine" d="M245,140 Q249,160 248,180 L245,171 Q244,155 241,144 Z"/>
+      <path class="hairline" d="M166,124 C162,150 160,176 160,204 M184,120 C182,148 181,176 182,204 M200,118 L200,206 M216,120 C218,148 219,176 218,204 M234,124 C238,150 240,176 240,204"/>
+    </g>
+    <g id="back_cap" transform="rotate(4 200 100)">
+      <ellipse class="cap" cx="200" cy="96" rx="70" ry="32"/>
+      <path class="cel" d="M132,100 Q200,128 268,100 Q270,88 262,80 Q200,108 138,80 Q130,88 132,100 Z"/>
+      <path class="line" d="M200,64 L200,108 M200,64 Q178,80 150,104 M200,64 Q222,80 250,104"/>
+      <path class="capdark" d="M132,104 Q200,124 268,104 Q270,120 200,128 Q130,120 132,104 Z"/>
+      <circle class="capdark" cx="200" cy="65" r="5"/>
+      <path class="strap" d="M130,94 Q200,110 270,94 L270,102 Q200,118 130,102 Z"/>
+      <rect class="buckle" x="194" y="104" width="12" height="9" rx="2"/>
+    </g>
+  </g>
+</g>
+</g></g>
+        </g>
+      </g>
+      <g id="hits"></g>
+    </svg>
+    <div id="tip"></div>
+    <div id="dialog"><span class="who"></span><span class="txt"></span></div>
+
+    <div class="modal" id="alchemy"><div class="card">
+      <h2>Kessel der Transmutation</h2>
+      <div style="font-size:13px;opacity:.85">Wähle zwei Stoffe aus deinem Inventar. Klick auf einen Platz, um ihn zu leeren.</div>
+      <div class="slots"><div class="slot" id="slotA">leer</div><div class="plus">+</div><div class="slot" id="slotB">leer</div></div>
+      <div id="alcInv"></div>
+      <div id="alcMsg"></div>
+      <div class="row"><button id="btnTrans">✨ Transmutieren</button><button id="btnAlcClose">Schließen</button></div>
+    </div></div>
+
+    <div class="modal" id="book"><div class="card">
+      <h2>Rezeptbuch – 1. Lehrjahr</h2>
+      <ul id="recipes"></ul>
+      <div class="row"><button id="btnBookClose">Schließen</button></div>
+    </div></div>
+
+    <div class="modal" id="end"><div class="card" style="text-align:center">
+      <h2>Tutorial geschafft! 🎓</h2>
+      <p>Du hast deine ersten Stoffe transmutiert und den Lehrsaal verlassen.<br>
+      Als Nächstes würde der „Gang der Prüfungen“ warten (nicht Teil dieser Demo).</p>
+      <p style="font-size:13px;opacity:.8">Schlüssel selbst herzustellen lernst du übrigens erst im 2. Lehrjahr.</p>
+      <div class="row"><button onclick="location.reload()">Nochmal spielen</button><button onclick="document.getElementById('end').style.display='none'">Weiter umsehen</button></div>
+    </div></div>
+  </div>
+
+  <div id="inv"><span class="lbl">Inventar:</span></div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const svg = $('#svg');
+
+/* ---------- Daten ---------- */
+const ITEMS = {
+  wasser:  {n:'Wasser',        c:'#4aa8e0', d:'Ein Krug klares Quellwasser.'},
+  erde:    {n:'Erde',          c:'#8a5a34', d:'Lockere, dunkle Gartenerde.'},
+  eisen:   {n:'Eisenspäne',    c:'#8d939b', d:'Feine Späne aus der Schulschmiede.'},
+  feuer:   {n:'Feueressenz',   c:'#ff7a2a', d:'Eine Phiole voll gebändigter Flamme.'},
+  kristall:{n:'Funkenkristall',c:'#ffd84a', d:'Knistert leise und schlägt Funken, wenn man ihn reibt.'},
+  schlamm: {n:'Nährschlamm',   c:'#6b8a3a', d:'Riecht nach Frühling. Und ein bisschen nach Moor.'},
+  dampf:   {n:'Dampf',         c:'#dfe8ee', d:'Heißer Dampf, sicher verkorkt.'},
+  barren:  {n:'Eisenbarren',   c:'#6d737b', d:'Ein kleiner Barren rohes Eisen.'},
+  keramik: {n:'Keramik',       c:'#c0693f', d:'Ein Stück gebrannter Ton. Hübsch, aber nutzlos.'},
+  rost:    {n:'Rost',          c:'#a0522d', d:'Rostiges Pulver. Darauf wäre niemand stolz.'},
+  schluessel:{n:'Alter Schlüssel', c:'#e0ad4a', d:'Ein schwerer Messingschlüssel.', key:true},
+};
+const RECIPES = [
+  ['wasser','erde','schlamm'], ['wasser','feuer','dampf'], ['eisen','feuer','barren'],
+  ['erde','feuer','keramik'],  ['eisen','wasser','rost'],
+];
+const OBJECTIVES = [
+  'Sprich mit Magister Uhu (die Eule auf der Tafel).',
+  'Hol Wasser und Erde aus dem Regal.',
+  'Kombiniere Wasser und Erde am Kessel.',
+  'Rette die vertrocknete Pflanze.',
+  'Hol den Funkenkristall oben aus dem Regal.',
+  'Entfache den Athanor (Ofen).',
+  'Befreie den Schlüssel aus dem Eisblock.',
+  'Öffne die Tür.',
+  'Tutorial abgeschlossen!'
+];
+const HINTS = [
+  'Huhu! Willkommen im ersten Lehrjahr. Alchemie heißt: zwei Stoffe im Kessel vereinen und daraus einen neuen erschaffen. Hol dir zuerst Wasser und Erde aus dem Regal.',
+  'Wasser und Erde stehen im Regal, mittleres Fach.',
+  'Geh zum Kessel auf der Werkbank und leg beide Zutaten hinein.',
+  'Diese arme Pflanze … Nährschlamm wirkt Wunder. Wähle ihn im Inventar aus und klick dann auf die Pflanze.',
+  'Mit der Ranke kommst du jetzt bis ganz nach oben ins Regal.',
+  'Ein Funkenkristall entfacht jeden Athanor. Benutz ihn mit dem Ofen.',
+  'Eis schmilzt man sanft, sonst verbiegt der Schlüssel. Was entsteht wohl, wenn Wasser auf Feuer trifft?',
+  'Na los, die Tür wartet!',
+  'Ausgezeichnet! Im zweiten Lehrjahr lernst du dann, Schlüssel selbst zu transmutieren. Huhu!'
+];
+const HS = [ // id, Name, x,y,w,h, Laufziel x, Laufziel y (Bodentiefe vor dem Gegenstand)
+  ['ice','Eisblock',48,370,90,100,150,648], ['window','Fenster',168,90,184,300,262,645],
+  ['crystal','Funkenkristall',392,74,156,84,612,652], ['books','Bücher',394,168,152,130,470,645],
+  ['water','Wasserkrug',400,362,46,60,430,645], ['earth','Erdtopf',454,362,46,60,486,645],
+  ['iron','Eisenspäne',400,462,46,58,430,645], ['plant','Vertrocknete Pflanze',556,515,90,128,660,656],
+  ['owl','Magister Uhu',872,56,46,60,880,645], ['board','Tafel',652,102,276,206,780,645],
+  ['cauldron','Kessel',726,420,108,90,780,652], ['furnace','Athanor',956,236,120,364,1012,645],
+  ['door','Tür',1108,206,154,394,1150,645],
+];
+
+/* ---------- Zustand ---------- */
+const S = {inv:[], sel:null, stage:0, found:new Set(), f:{}, x:300, y:690, dir:1, pose:'idle', busy:false};
+const has = id => S.inv.includes(id);
+
+/* ---------- UI ---------- */
+function flaskIcon(c, isKey){
+  if(isKey) return `<svg viewBox="0 0 30 34"><circle cx="9" cy="17" r="6" fill="none" stroke="${c}" stroke-width="3.5"/><rect x="14" y="15.3" width="14" height="3.4" fill="${c}"/><rect x="22" y="18" width="3" height="6" fill="${c}"/></svg>`;
+  return `<svg viewBox="0 0 30 34"><rect x="11" y="2" width="8" height="5" rx="1" fill="#b88a5a"/><path d="M12,7 L18,7 L18,13 L26,27 Q27,32 22,32 L8,32 Q3,32 4,27 L12,13 Z" fill="#e9f6f3" fill-opacity=".35" stroke="#f6ecd8" stroke-width="1.5"/><path d="M7,22 L23,22 L26,27 Q27,31 22,31 L8,31 Q3,31 4,27 Z" fill="${c}"/></svg>`;
+}
+function renderInv(){
+  const box = $('#inv'); box.innerHTML = '<span class="lbl">Inventar:</span>';
+  if(!S.inv.length) box.innerHTML += '<span class="lbl">(leer)</span>';
+  S.inv.forEach(id=>{
+    const it = ITEMS[id], el = document.createElement('div');
+    el.className = 'item' + (S.sel===id?' sel':'');
+    el.title = it.d;
+    el.innerHTML = flaskIcon(it.c, it.key) + it.n;
+    el.onclick = () => { S.sel = S.sel===id ? null : id; renderInv(); if(S.sel) say(it.d + ' – Klick auf ein Objekt, um es damit zu benutzen.'); };
+    box.appendChild(el);
+  });
+}
+function addItem(id){ if(!has(id)) S.inv.push(id); renderInv(); checkStage(); }
+function removeItem(id){ S.inv = S.inv.filter(i=>i!==id); if(S.sel===id) S.sel=null; renderInv(); }
+let dlgTimer;
+function say(txt, who='Alchemistin'){
+  const d = $('#dialog'); d.querySelector('.who').textContent = who + ':'; d.querySelector('.txt').textContent = txt;
+  d.style.display = 'block'; clearTimeout(dlgTimer);
+  dlgTimer = setTimeout(()=> d.style.display='none', Math.max(3500, txt.length*55));
+}
+$('#dialog').onclick = () => $('#dialog').style.display='none';
+function setStage(n){ if(n>S.stage){ S.stage=n; } $('#objText').textContent = OBJECTIVES[S.stage]; }
+function checkStage(){
+  if(S.stage===1 && has('wasser') && has('erde')) setStage(2);
+}
+const show = (id,on=true) => { $('#'+id).style.display = on ? '' : 'none'; };
+
+/* ---------- Hotspots ---------- */
+const hits = $('#hits');
+const NS = 'http://www.w3.org/2000/svg';
+const floor = document.createElementNS(NS,'rect');
+Object.entries({x:0,y:0,width:1280,height:720,class:'floor'}).forEach(([k,v])=>floor.setAttribute(k,v));
+floor.dataset.hs = 'floor'; hits.appendChild(floor);
+HS.forEach(([id,name,x,y,w,h])=>{
+  const r = document.createElementNS(NS,'rect');
+  Object.entries({x,y,width:w,height:h}).forEach(([k,v])=>r.setAttribute(k,v));
+  r.dataset.hs = id; hits.appendChild(r);
+});
+function hsName(id){
+  const base = HS.find(h=>h[0]===id)[1];
+  if(id==='ice' && S.f.melted) return S.f.keyTaken ? 'Pfütze' : 'Schlüssel';
+  if(id==='plant' && S.f.vine) return 'Kletterranke';
+  if(id==='crystal' && S.f.crystal) return 'Leeres Fach';
+  if(id==='furnace' && S.f.lit) return 'Athanor (brennt)';
+  if(id==='door' && S.f.open) return 'Offene Tür';
+  return base;
+}
+function svgPoint(e){
+  const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+  return p.matrixTransform(svg.getScreenCTM().inverse());
+}
+hits.addEventListener('mousemove', e=>{
+  const t = e.target.dataset.hs, tip = $('#tip');
+  if(!t || t==='floor'){ tip.style.display='none'; return; }
+  const r = $('#stage').getBoundingClientRect();
+  tip.textContent = S.sel ? `Benutze ${ITEMS[S.sel].n} mit ${hsName(t)}` : hsName(t);
+  tip.style.left = (e.clientX - r.left) + 'px'; tip.style.top = (e.clientY - r.top) + 'px'; tip.style.display='block';
+});
+hits.addEventListener('mouseleave', ()=> $('#tip').style.display='none');
+hits.addEventListener('click', e=>{
+  if(S.busy) return;
+  const t = e.target.dataset.hs;
+  if(t==='floor'){ const p = svgPoint(e); walkTo(p.x, null, p.y >= 600 ? p.y : null); return; }
+  const h = HS.find(h=>h[0]===t);
+  walkTo(h[6], ()=>{ face(h[2]+h[4]/2); S.sel ? useOn(S.sel,t) : interact(t); }, h[7]);
+});
+hits.addEventListener('contextmenu', e=>{ e.preventDefault(); S.sel=null; renderInv(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ S.sel=null; renderInv(); closeModals(); } });
+
+/* ---------- Laufen ----------
+   Posen: 'idle' (Frontansicht steht), 'side' (seitlich, nach links gespiegelt),
+   'front' (läuft nach vorn/unten), 'back' (läuft nach hinten/oben).
+   Der Boden reicht von FLOOR_MIN (hinten) bis FLOOR_MAX (vorn); hinten wird die Figur kleiner. */
+const FLOOR_MIN = 645, FLOOR_MAX = 705, DEPTH = 2.2;   // DEPTH: Tiefe ist gestaucht -> langsamer in y
+let walkCb=null, target=null, last=0, phase=0, running=false;
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+function depthScale(y){ return 0.44 + (y-FLOOR_MIN)/(FLOOR_MAX-FLOOR_MIN)*0.08; }
+function setPlayer(){
+  const sc = depthScale(S.y), sx = S.pose==='side' ? sc*S.dir : sc;
+  $('#player').setAttribute('transform',`translate(${S.x.toFixed(1)},${S.y.toFixed(1)})`);
+  $('#flip').setAttribute('transform',`scale(${sx.toFixed(4)},${sc.toFixed(4)})`);
+}
+function setPose(p){
+  if(p===true) p='side'; if(p===false) p='idle';
+  S.pose = p; S.walking = p!=='idle';
+  $('#character').style.display = (p==='idle'||p==='front') ? '' : 'none';
+  $('#characterSide').style.display = p==='side' ? '' : 'none';
+  $('#characterBack').style.display = p==='back' ? '' : 'none';
+  resetJoints();
+  if(p==='idle'){ phase = 0; $('#bob').removeAttribute('transform'); }
+  setPlayer();
+}
+const rot = (sel,deg,cx,cy) => $(sel).setAttribute('transform',`rotate(${deg.toFixed(2)} ${cx} ${cy})`);
+const lift = (sel,dy) => $(sel).setAttribute('transform',`translate(0 ${dy.toFixed(2)})`);
+const LEG_T = 198, LEG_S = 223, LEG = LEG_T + LEG_S, HIP_A = 20;   // Ober-/Unterschenkel (lokale Einheiten), Hüftausschlag
+const STRIDE_PER_RAD = 2*LEG*Math.sin(HIP_A*Math.PI/180)/Math.PI;    // Weg pro Phasen-Radiant -> Füße rutschen nicht
+function animateSide(ph){
+  /* Seitlicher Gang: Hüfte schwingt, das Schwungbein beugt das Knie früh nach dem Abdrücken.
+     Die Körperhöhe wird aus der Beinstellung berechnet, so dass das Standbein immer den Boden berührt. */
+  let ground = Infinity;
+  [['#side_leg_near', ph], ['#side_leg_far', ph + Math.PI]].forEach(([sel,p])=>{
+    const hip = -HIP_A*Math.sin(p);
+    const swing = Math.max(0, Math.cos(p + 0.6));
+    const knee = 4 + 44*Math.pow(swing, 1.4);
+    rot(sel, hip, 205, 352); rot(sel+'_shin', knee, 206, 550);
+    const h = hip*Math.PI/180, k = (hip + knee)*Math.PI/180;
+    ground = Math.min(ground, LEG - (LEG_T*Math.cos(h) + LEG_S*Math.cos(k)));   // wie weit der Fuß über dem Boden schwebt
+  });
+  [['#side_arm_near', ph + Math.PI], ['#side_arm_far', ph]].forEach(([sel,p])=>{
+    rot(sel, -16*Math.sin(p), 205, 232); rot(sel+'_fore', -12 - 16*Math.max(0, Math.sin(p)), 204, 288);
+  });
+  $('#bob').setAttribute('transform', `translate(0 ${ground.toFixed(2)}) rotate(3 205 770)`);
+}
+function animateStraight(ph, legs, arms){
+  /* Laufen auf die Kamera zu oder weg: Beine heben sich weich abwechselnd,
+     der Körper ist am höchsten, wenn ein Bein durchschwingt, und pendelt leicht. */
+  const a = Math.sin(ph), sl = Math.max(0, a), sr = Math.max(0, -a);
+  const hl = -13*sl*sl*(3-2*sl), hr = -13*sr*sr*(3-2*sr);
+  legs[0].forEach(sel => lift(sel, hl)); legs[1].forEach(sel => lift(sel, hr));
+  if(arms){
+    // Von hinten schwingen die Arme vor/zurück: leichte Verkürzung, Pendeln nur nach außen, nie über den Körper.
+    const sw = (sel, out, cx, k) => $(sel).setAttribute('transform',
+      `rotate(${out.toFixed(2)} ${cx} 230) translate(${cx} 230) scale(1 ${k.toFixed(3)}) translate(${-cx} -230)`);
+    sw(arms[0],  4*sl, 168, 1 - 0.09*sr);
+    sw(arms[1], -4*sr, 232, 1 - 0.09*sl);
+  }
+  const bob = -Math.abs(a)*6, sway = 1.6*a;
+  $('#bob').setAttribute('transform', `translate(0 ${bob.toFixed(2)}) rotate(${sway.toFixed(2)} 200 770)`);
+}
+function animateWalk(ph){
+  if(S.pose==='side') animateSide(ph);
+  else if(S.pose==='front') animateStraight(ph, [['#front_leg_l','#boot_l'],['#front_leg_r','#boot_r']]);
+  else if(S.pose==='back') animateStraight(ph, [['#back_leg_l'],['#back_leg_r']], ['#back_arm_l','#back_arm_r']);   // Stiefel + Absatz stecken in der Beingruppe
+}
+function animateJoints(ph){ animateSide(ph); }   // Kompatibilität (Tests)
+function resetJoints(){
+  ['#side_leg_near','#side_leg_far','#side_arm_near','#side_arm_far','#side_leg_near_shin','#side_leg_far_shin',
+   '#side_arm_near_fore','#side_arm_far_fore','#front_leg_l','#front_leg_r','#boot_l','#boot_r',
+   '#back_leg_l','#back_leg_r','#back_boot_l','#back_boot_r','#back_arm_l','#back_arm_r']
+    .forEach(s=>{ const el=$(s); if(el) el.removeAttribute('transform'); });
+}
+function face(){ /* Frontansicht bleibt im Stand immer ungespiegelt */ }
+function choosePose(dx, dy){
+  const p = Math.abs(dy)*DEPTH > Math.abs(dx) ? (dy < 0 ? 'back' : 'front') : 'side';
+  if(Math.abs(dx) > 0.5) S.dir = dx > 0 ? 1 : -1;
+  if(p !== S.pose) setPose(p); else setPlayer();
+}
+function walkTo(x, cb, y){
+  target = {x: clamp(x, 60, 1220), y: (y===undefined || y===null) ? S.y : clamp(y, FLOOR_MIN, FLOOR_MAX)};
+  walkCb = cb || null;
+  const dx = target.x - S.x, dy = target.y - S.y;
+  if(Math.hypot(dx, dy*DEPTH) < 3){ target=null; setPose('idle'); const c=walkCb; walkCb=null; c&&c(); return; }
+  choosePose(dx, dy);
+  if(!running){ running = true; last = 0; requestAnimationFrame(step); }
+}
+function step(ts){
+  if(!target){ running=false; return; }
+  const dt = last ? Math.min(.05,(ts-last)/1000) : 0; last = ts;
+  const dx = target.x - S.x, dy = target.y - S.y;
+  const dist = Math.hypot(dx, dy*DEPTH), mv = 330*dt;
+  if(dist <= mv){
+    S.x = target.x; S.y = target.y; target = null; running = false; setPose('idle');
+    const c = walkCb; walkCb = null; c && c(); return;
+  }
+  S.x += dx/dist*mv; S.y += dy/dist*mv;
+  phase += mv/(STRIDE_PER_RAD*depthScale(S.y));
+  animateWalk(phase); setPlayer(); requestAnimationFrame(step);
+}
+
+/* ---------- Interaktion ohne Gegenstand ---------- */
+function takeBase(id, msg){
+  if(has(id)) return say(`Ich habe schon ${ITEMS[id].n} dabei.`);
+  addItem(id); say(msg);
+}
+function interact(id){
+  const f = S.f;
+  switch(id){
+    case 'owl':
+      say(HINTS[S.stage], 'Magister Uhu'); if(S.stage===0) setStage(1); return;
+    case 'board':
+      return say('Auf der Tafel steht: „Wasser + Erde = ?“ und „Wasser + Feuer = ?“. Darunter, dick unterstrichen: „Schlüssel ⇒ erst im 2. Lehrjahr!“');
+    case 'window':
+      return say('Die Sterne stehen günstig für Transmutationen. Sagt jedenfalls Magister Uhu.');
+    case 'books':
+      return say('„Grundlagen der Transmutation, Band 1“. Band 2, „Schlösser & Schlüssel“, ist für Erstjährige gesperrt.');
+    case 'water': return takeBase('wasser','Ich fülle eine Phiole mit Wasser.');
+    case 'earth': return takeBase('erde','Eine Handvoll Erde. Ganz schön krümelig.');
+    case 'iron':  return takeBase('eisen','Eisenspäne. Vorsichtig, die pieksen.');
+    case 'crystal':
+      if(f.crystal) return say('Das Fach ist jetzt leer.');
+      if(!f.vine) return say('Ganz oben im Regal funkelt ein Kristall. Viel zu hoch für mich …');
+      f.crystal = true; show('crystal',false); addItem('kristall'); setStage(5);
+      return say('Ich klettere die Ranke hoch … geschafft! Der Funkenkristall gehört mir.');
+    case 'plant':
+      return say(f.vine ? 'Die Ranke reicht bis ganz nach oben ins Regal.' : 'Eine völlig vertrocknete Kletterpflanze. Die braucht mehr als nur Wasser.');
+    case 'cauldron': return openAlchemy();
+    case 'furnace':
+      if(!f.lit) return say('Der Athanor ist kalt. Ich bräuchte etwas, das Funken schlägt …');
+      return takeBase('feuer','Ich fange etwas Feuer in einer Phiole ein. Autsch, heiß!');
+    case 'ice':
+      if(!f.melted) return say('Ein Eisblock … und darin eingefroren: ein Schlüssel! Mit bloßen Händen bekomme ich den nie heraus.');
+      if(f.keyTaken) return say('Nur noch eine Pfütze.');
+      f.keyTaken = true; show('keyLoose',false); addItem('schluessel'); setStage(7);
+      return say('Der Schlüssel! Damit komme ich hier raus.');
+    case 'door':
+      return say(f.open ? 'Der Weg ist frei!' : 'Verschlossen. Ein großes Messingschloss.');
+  }
+}
+
+/* ---------- Gegenstand benutzen mit ---------- */
+function useOn(item, id){
+  const f = S.f, n = ITEMS[item].n;
+  if(id==='cauldron') return openAlchemy(item);
+  if(id==='plant' && item==='schlamm' && !f.vine){
+    removeItem('schlamm'); f.vine = true; show('plantDead',false); show('vine'); setStage(4);
+    return say('Die Pflanze saugt den Schlamm auf – und wächst und wächst! Die Ranke reicht bis ganz oben ins Regal.');
+  }
+  if(id==='plant' && item==='wasser') return say('Wasser allein reicht nicht. Die Erde im Topf ist völlig ausgelaugt.');
+  if(id==='furnace' && item==='kristall' && !f.lit){
+    removeItem('kristall'); f.lit = true; show('fire'); setStage(6);
+    return say('Ich reibe den Kristall – Funken sprühen, und der Athanor erwacht fauchend zum Leben!');
+  }
+  if(id==='ice' && !f.melted){
+    if(item==='dampf'){
+      removeItem('dampf'); f.melted = true; show('iceBlock',false); show('puddle'); show('keyLoose');
+      return say('Der heiße Dampf schmilzt das Eis ganz sanft. Da liegt der Schlüssel!');
+    }
+    if(item==='feuer') return say('Direktes Feuer? Das würde den Schlüssel verformen. Ich brauche etwas Sanfteres …');
+    if(item==='wasser') return say('Noch mehr Wasser macht nur noch mehr Eis.');
+  }
+  if(id==='door' && !f.open){
+    if(item==='schluessel'){
+      removeItem('schluessel'); f.open = true; setStage(8);
+      show('doorPanel',false); show('doorLeaf');
+      $('#doorway').setAttribute('class','s-doorlight');
+      say('Klick! Die Tür schwingt auf. Mein erstes Rätsel ist gelöst!');
+      setTimeout(()=> $('#end').style.display='flex', 1600);
+      return;
+    }
+    if(item==='barren') return say('Ich könnte versuchen, aus dem Barren einen Schlüssel zu transmutieren … aber Schlüssel sind viel zu komplex. Das lernt man erst im 2. Lehrjahr.');
+    return say(`Mit ${n} bekomme ich die Tür nicht auf.`);
+  }
+  if(id==='owl') return say('Huhu! Zeig mir das lieber, wenn du etwas damit erreicht hast.', 'Magister Uhu');
+  say(`${n} mit ${hsName(id)}? Das funktioniert so nicht.`);
+}
+
+/* ---------- Alchemie ---------- */
+const slots = [null,null];
+function openAlchemy(pre){
+  slots[0]=null; slots[1]=null; if(pre){ slots[0]=pre; S.sel=null; renderInv(); }
+  $('#alcMsg').textContent=''; renderAlc(); $('#alchemy').style.display='flex';
+}
+function renderAlc(){
+  ['#slotA','#slotB'].forEach((s,i)=>{
+    const id = slots[i];
+    $(s).innerHTML = id ? flaskIcon(ITEMS[id].c, ITEMS[id].key) + ITEMS[id].n : 'leer';
+    $(s).onclick = () => { slots[i]=null; renderAlc(); };
+  });
+  const box = $('#alcInv'); box.innerHTML='';
+  if(!S.inv.length) box.innerHTML = '<span style="opacity:.7;font-size:13px">Dein Inventar ist leer.</span>';
+  S.inv.filter(id=>!slots.includes(id)).forEach(id=>{
+    const el = document.createElement('div'); el.className='item';
+    el.innerHTML = flaskIcon(ITEMS[id].c, ITEMS[id].key) + ITEMS[id].n;
+    el.onclick = () => { const i = slots[0]===null?0:(slots[1]===null?1:-1); if(i>=0){ slots[i]=id; renderAlc(); } };
+    box.appendChild(el);
+  });
+}
+$('#btnTrans').onclick = () => {
+  const [a,b] = slots, msg = $('#alcMsg');
+  if(!a || !b) return msg.textContent = 'Ich brauche zwei Stoffe.';
+  if(a==='schluessel' || b==='schluessel') return msg.textContent = 'Den Schlüssel schmelze ich bestimmt nicht ein!';
+  const r = RECIPES.find(r => (r[0]===a&&r[1]===b)||(r[0]===b&&r[1]===a));
+  if(!r){
+    if(a==='barren'||b==='barren') return msg.textContent = 'Daraus einen Schlüssel formen? Schlüssel-Transmutation steht erst im 2. Lehrjahr auf dem Lehrplan – viel zu komplex!';
+    return msg.textContent = 'Die Stoffe stoßen sich ab. Nichts passiert.';
+  }
+  const out = r[2];
+  removeItem(a); removeItem(b); addItem(out); S.found.add(out);
+  document.documentElement.style.setProperty('--brew', ITEMS[out].c);
+  slots[0]=null; slots[1]=null; renderAlc();
+  msg.innerHTML = `✨ Es brodelt und zischt … <b>${ITEMS[out].n}</b> entsteht!<br><span style="font-size:12px;opacity:.8">${ITEMS[out].d}</span>`;
+  if(out==='schlamm' && S.stage<=2) setStage(3);
+};
+$('#btnAlcClose').onclick = () => $('#alchemy').style.display='none';
+
+/* ---------- Rezeptbuch ---------- */
+$('#btnRecipes').onclick = () => {
+  const ul = $('#recipes'); ul.innerHTML='';
+  RECIPES.forEach(([a,b,c])=>{
+    const li = document.createElement('li');
+    li.textContent = S.found.has(c) ? `${ITEMS[a].n} + ${ITEMS[b].n} = ${ITEMS[c].n}` : '??? + ??? = ???';
+    ul.appendChild(li);
+  });
+  const lk = document.createElement('li'); lk.className='locked';
+  lk.textContent = '🔒 Schlüssel – Transmutation erst ab dem 2. Lehrjahr (zu komplex)';
+  ul.appendChild(lk);
+  $('#book').style.display='flex';
+};
+$('#btnBookClose').onclick = () => $('#book').style.display='none';
+function closeModals(){ document.querySelectorAll('.modal').forEach(m=>m.style.display='none'); }
+
+
+
+/* ---------- Start ---------- */
+S.walking=false; S.pose='idle'; S.y=690; setPlayer(); renderInv(); setStage(0);
+setTimeout(()=> say('Mein erster Tag an der Akademie … Ich sollte mit Magister Uhu sprechen. Er sitzt oben auf der Tafel.'), 400);
+</script>
+</body>
+</html>

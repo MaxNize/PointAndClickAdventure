@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" width="400" height="800"><title>Erzalchemist – front</title><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern><radialGradient id="glowOrange"><stop offset="0" stop-color="#ffc070" stop-opacity=".9"/><stop offset="1" stop-color="#ff9a40" stop-opacity="0"/></radialGradient></defs><style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+
+.erobe,.elin,.etunic,.ehat,.ewood,.epants{fill:#140e10;stroke:#140e10;stroke-width:1.2}
+.erobet{fill:#140e10;stroke:none;opacity:.8}
+.ebeard{fill:#221a1e;stroke:#140e10;stroke-width:1.2}.ebeardsh{fill:#1a1316}
+.estole{fill:#26121a;stroke:#140e10;stroke-width:1.2}
+.esym{stroke:#e0ad4a;stroke-width:1.3;opacity:.5}.especs{stroke:#ffb35a;stroke-width:1.8}.eglass{display:none}
+.eorb{fill:#ffb35a}.glowo{fill:url(#glowOrange)}
+.wrinkle,.ebeardline{display:none}
+</style><rect width="400" height="800" fill="#a8604e"/>
+<g id="character">
+  <ellipse class="groundshadow" cx="210" cy="772" rx="72" ry="7"/>
+  <path class="erobet" d="M162,330 L238,330 L256,700 L144,700 Z"/>
+  <g id="front_leg_l"><path class="epants" d="M168,360 C165,440 167,540 170,600 C170,650 172,700 174,734 L196,734 C197,700 198,650 197,600 C199,540 200,440 200,360 Z"/></g><g id="front_leg_r"><path class="epants" d="M232,360 C235,440 233,540 230,600 C230,650 228,700 226,734 L204,734 C203,700 202,650 203,600 C201,540 200,440 200,360 Z"/></g>
+  <g id="boot_l"><path class="boot" d="M168,724 L198,724 L199,760 Q200,773 186,773 L170,773 Q158,771 164,758 Z"/><path class="bootdark" d="M162,766 L200,766 L199,773 L166,773 Z"/></g><g id="boot_r"><path class="boot" d="M232,724 L202,724 L201,760 Q200,773 214,773 L230,773 Q242,771 236,758 Z"/><path class="bootdark" d="M238,766 L200,766 L201,773 L234,773 Z"/></g>
+  <g id="e_body">
+    <rect class="skin" x="192" y="190" width="16" height="30"/>
+    <path class="etunic" d="M174,214 Q200,206 226,214 L232,362 L168,362 Z"/>
+    <path class="erobet" d="M162,222 L146,240 C140,340 136,520 130,702 L172,696 L182,362 L188,240 Z"/>
+    <path class="erobet" d="M238,222 L254,240 C260,340 264,520 270,702 L228,696 L218,362 L212,240 Z"/>
+    <path class="erobe" d="M162,222 L146,240 C142,300 141,340 140,362 L182,362 L188,240 Z"/>
+    <path class="erobe" d="M238,222 L254,240 C258,300 259,340 260,362 L218,362 L212,240 Z"/>
+    <path class="elin" d="M172,696 L182,362 L176,362 L164,697 Z"/><path class="elin" d="M228,696 L218,362 L224,362 L236,697 Z"/>
+    <path class="estole" d="M180,212 L190,215 L186,430 L170,426 Z"/><path class="estole" d="M220,212 L210,215 L214,430 L230,426 Z"/>
+    <circle class="esym" cx="179" cy="300" r="5"/><circle class="esym" cx="179" cy="300" r="1"/><path class="esym" d="M179,342 L185,353 L173,353 Z"/><path class="esym" d="M179,390 L185,401 L173,401 Z M173,397 L185,397"/><circle class="esym" cx="221" cy="300" r="5"/><circle class="esym" cx="221" cy="300" r="1"/><path class="esym" d="M221,342 L227,353 L215,353 Z"/><path class="esym" d="M221,390 L227,401 L215,401 Z M215,397 L227,397"/>
+    <path class="elin" d="M166,354 Q200,364 234,354 L234,368 Q200,378 166,368 Z"/>
+    <rect class="vialglass" x="172" y="368" width="8" height="22" rx="3"/><rect class="liquid" x="173.5" y="378" width="5" height="11" rx="2"/>
+    <rect class="vialglass" x="222" y="368" width="8" height="18" rx="3"/><rect class="liquid2" x="223.5" y="376" width="5" height="9" rx="2"/>
+    <rect class="elin" x="184" y="368" width="12" height="40" rx="2"/><path class="esym" d="M186,376 L194,376 M186,384 L194,384 M186,392 L192,392"/>
+  </g>
+  <g id="arm_l">
+    <path class="erobe" d="M160,222 C144,228 138,250 138,280 L126,376 L168,380 L164,286 C165,262 167,244 172,236 Z"/>
+    <path class="elin" d="M126,370 L168,374 L166,386 L124,382 Z"/>
+    <path class="skin" d="M136,384 Q132,402 140,408 Q148,412 154,406 Q158,396 154,384 Z"/>
+    <path class="wrinkle" d="M140,394 L150,394 M141,400 L150,400"/>
+  </g>
+  <g id="arm_r">
+    <circle class="glowo" cx="282" cy="82" r="44"/><rect class="ewood" x="277.5" y="92" width="9" height="680" rx="3"/><rect class="brass" x="275.5" y="102" width="13" height="6" rx="2"/><rect class="brass" x="275.5" y="182" width="13" height="6" rx="2"/><rect class="brass" x="275.5" y="712" width="13" height="6" rx="2"/><circle class="eorb" cx="282" cy="82" r="11"/><path class="brass" d="M268,96 Q262,78 276,64 M296,96 Q302,78 288,64 M282,98 L282,93 M273,98 Q278,86 280,70 M291,98 Q286,86 284,70" fill="none" stroke-width="3"/><rect class="brass" x="272" y="94" width="20" height="7" rx="2"/><path class="brass" d="M276,64 Q282,54 288,64" fill="none" stroke-width="3"/>
+    <path class="erobe" d="M240,222 C258,228 264,252 264,280 L270,336 L298,334 L286,276 C283,252 274,234 256,226 Z"/>
+    <path class="elin" d="M268,328 L298,326 L299,338 L269,340 Z"/>
+    <path class="skin" d="M272,338 Q270,352 278,356 Q290,358 294,350 Q296,340 292,336 Z"/>
+    <path class="wrinkle" d="M276,344 L290,344 M276,349 L290,349"/>
+  </g>
+  
+  <g id="head" transform="translate(0 8)">
+    <path class="ebeard" d="M150,118 C132,160 134,220 144,262 L158,246 L162,264 L170,206 L168,128 Z"/>
+    <path class="ebeard" d="M250,118 C268,160 266,220 256,262 L242,246 L238,264 L230,206 L232,128 Z"/>
+    <path class="ebeardline" d="M150,150 C146,190 148,226 154,250 M250,150 C254,190 252,226 246,250"/>
+    <circle class="skin" cx="153" cy="157" r="7"/><circle class="skin" cx="247" cy="157" r="7"/>
+    <path class="skin" d="M154,124 C153,160 162,186 186,198 Q200,203 214,198 C238,186 247,160 246,124 Q200,114 154,124 Z"/>
+    <path class="cel" d="M154,124 L156,134 Q200,146 244,134 L246,124 Q200,114 154,124 Z"/>
+    <path class="wrinkle" d="M180,130 Q200,126 220,130 M184,136 Q200,133 216,136"/>
+    <g id="e_eye_l">
+      <clipPath id="eclip_l"><path d="M168,159 Q178,154 188,158 Q187,163 178,164 Q169,163 168,159 Z"/></clipPath>
+      <path class="eyewhite" d="M168,159 Q178,154 188,158 Q187,163 178,164 Q169,163 168,159 Z"/>
+      <g clip-path="url(#eclip_l)"><ellipse class="iris" cx="177.5" cy="160" rx="4.6" ry="5.6"/>
+        <ellipse class="pupil" cx="177.5" cy="160" rx="2" ry="2.8"/></g>
+      <circle class="hl" cx="179.6" cy="158.4" r="1.3"/>
+      <path class="lash" d="M167,159 Q178,152.5 189,157.5"/>
+      <path class="wrinkle" d="M169,166 Q178,168.5 187,165.5 M191,156 l3,-2 M191,160 l4,0 M191,164 l3,2"/>
+      <path class="ebeard" d="M162,148 Q175,139 193,145 L196,151 Q179,145 164,153 Z"/>
+      <circle class="eglass" cx="178" cy="159" r="11"/><circle class="especs" cx="178" cy="159" r="11"/>
+    </g><g id="e_eye_r">
+      <clipPath id="eclip_r"><path d="M232,159 Q222,154 212,158 Q213,163 222,164 Q231,163 232,159 Z"/></clipPath>
+      <path class="eyewhite" d="M232,159 Q222,154 212,158 Q213,163 222,164 Q231,163 232,159 Z"/>
+      <g clip-path="url(#eclip_r)"><ellipse class="iris" cx="222.5" cy="160" rx="4.6" ry="5.6"/>
+        <ellipse class="pupil" cx="222.5" cy="160" rx="2" ry="2.8"/></g>
+      <circle class="hl" cx="220.4" cy="158.4" r="1.3"/>
+      <path class="lash" d="M233,159 Q222,152.5 211,157.5"/>
+      <path class="wrinkle" d="M231,166 Q222,168.5 213,165.5 M209,156 l-3,-2 M209,160 l-4,0 M209,164 l-3,2"/>
+      <path class="ebeard" d="M238,148 Q225,139 207,145 L204,151 Q221,145 236,153 Z"/>
+      <circle class="eglass" cx="222" cy="159" r="11"/><circle class="especs" cx="222" cy="159" r="11"/>
+    </g>
+    <path class="especs" d="M189,158 Q200,153 211,158"/>
+    <path class="nose" d="M201,160 Q197,174 203,177 Q200,179 196,177"/>
+    <path class="ebeard" d="M162,174 C160,200 168,232 176,262 C182,292 190,318 200,338 C210,318 218,292 224,262 C232,232 240,200 238,174 C226,192 214,198 200,198 C186,198 174,192 162,174 Z"/>
+    <path class="ebeardsh" d="M200,338 C210,318 218,292 224,262 C232,232 240,200 238,174 L232,186 C228,222 220,262 210,300 Z"/>
+    <path class="ebeardline" d="M184,212 Q188,256 196,300 M200,204 L200,320 M216,212 Q212,256 204,300 M172,196 Q176,224 182,250"/>
+    <path class="ebeard" d="M200,180 Q184,176 172,192 Q186,188 200,186 Q214,188 228,192 Q216,176 200,180 Z"/>
+    <path class="mouthline" d="M194,190 Q200,193 206,190"/>
+    
+    <g id="e_hat">
+      <path class="ehat" d="M146,118 C150,84 174,40 212,14 Q232,2 250,12 Q266,22 266,46 Q256,32 242,32 C236,56 244,90 254,118 Z"/>
+      <path class="cel" d="M146,118 C147,108 149,100 152,94 Q200,110 250,92 C252,100 253,108 254,118 Z"/>
+      <path class="line" d="M186,40 Q178,74 180,104"/>
+      <path class="brass" d="M266,46 L266,58" fill="none" stroke-width="2"/><circle class="brass" cx="266" cy="62" r="5"/>
+      <path class="ehat" d="M126,120 Q200,102 274,120 Q278,131 200,137 Q122,131 126,120 Z"/>
+      <path class="brass" d="M148,104 Q200,96 252,104 L253,116 Q200,108 147,116 Z"/>
+      <circle class="esym" cx="214" cy="60" r="6"/><circle class="esym" cx="214" cy="60" r="1.2"/>
+      <path class="esym" d="M182,78 L189,90 L175,90 Z M228,84 L234,94 L222,94 Z M222,90 L234,90"/>
+      <circle class="brass" cx="170" cy="104" r="13"/><circle class="eorb" cx="170" cy="104" r="8"/>
+      <path class="lensshine" d="M165,100 L170,96 L173,99 L168,103 Z"/>
+      <circle class="brass" cx="196" cy="108" r="4"/>
+    </g>
+  </g>
+</g>
+</svg>

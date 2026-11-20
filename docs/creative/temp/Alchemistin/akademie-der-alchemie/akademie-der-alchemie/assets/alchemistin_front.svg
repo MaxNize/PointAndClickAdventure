@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" width="400" height="800">
+<title>Alchemistin – Anime-Proportionen im Scherenschnitt-Stil</title>
+<defs><radialGradient id="bgG" cx=".5" cy=".38" r=".7"><stop offset="0" stop-color="#f2c27a"/><stop offset=".55" stop-color="#b8624a"/><stop offset="1" stop-color="#3a1f2b"/></radialGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#7dffb0" stop-opacity=".95"/><stop offset=".4" stop-color="#3fe08a" stop-opacity=".45"/><stop offset="1" stop-color="#3fe08a" stop-opacity="0"/></radialGradient></defs>
+<style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+</style>
+<g id="background"><rect width="400" height="800" fill="url(#bgG)"/><rect y="764" width="400" height="36" fill="#140e10"/></g>
+
+<g id="character">
+  <ellipse class="groundshadow" cx="200" cy="772" rx="72" ry="7"/>
+
+  <g id="skirt_back">
+    <path class="skirtback" d="M172,316 C128,380 108,500 90,640 Q128,608 150,662 Q176,614 200,656 Q224,614 250,662 Q272,608 310,640 C292,500 272,380 228,316 Z"/>
+    <path class="shade" d="M206,380 C240,460 252,560 250,662 Q224,614 200,656 Z"/>
+  </g>
+
+  <path id="hair_back" class="hair" d="M150,112 C126,170 124,250 130,304 L145,284 L150,316 L163,278 L168,236 L232,236 L237,278 L250,316 L255,284 L270,304 C276,250 274,170 250,112 Z"/><path class="cel" d="M136,240 C134,270 134,290 136,296 L145,284 L150,316 L158,290 C150,270 146,250 146,236 Z"/>
+
+  <g id="legs"><path class="stocking" d="M161,346 C155,420 160,500 165,545 C159,600 163,680 167,745 L180,745 C183,690 188,620 185,560 C189,505 194,430 199,350 Z"/><path class="shade" d="M199,350 C194,430 189,505 185,560 C188,620 183,690 180,745 L176,745 C179,680 182,600 179,552 C183,490 187,430 191,350 Z"/><path class="stocking" d="M239,346 C245,420 240,500 235,545 C241,600 237,680 233,745 L220,745 C217,690 212,620 215,560 C211,505 206,430 201,350 Z"/><path class="shade" d="M201,350 C206,430 211,505 215,560 C212,620 217,690 220,745 L224,745 C221,680 218,600 221,552 C217,490 213,430 209,350 Z"/>
+    <path class="tattoo" d="M159,470 Q174,477 190,470 M168,478 L180,478"/>
+  </g>
+  <g id="boot_l"><path class="boot" d="M157,574 L189,574 L186,594 C184,650 182,700 181,744 L184,762 Q179,773 169,773 Q156,773 157,764 L163,744 C162,700 161,650 160,594 Z"/><path class="shade" d="M186,594 C184,650 182,700 181,744 L175,744 C177,700 179,650 180,594 Z"/><path class="bootdark" d="M154,566 L192,566 L189,590 L158,590 Z"/><path class="strap" d="M160,644 L185,638 L185,645 L160,651 Z"/><rect class="buckle" x="173" y="637" width="7" height="9" rx="1"/><path class="strap" d="M161,704 L183,698 L183,705 L161,711 Z"/><rect class="buckle" x="173" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="162" cy="578" r="1.6"/><circle class="brass" cx="185" cy="578" r="1.6"/><circle class="brass" cx="162" cy="584" r="1.6"/><circle class="brass" cx="185" cy="584" r="1.6"/></g><g id="boot_r"><path class="boot" d="M243,574 L211,574 L214,594 C216,650 218,700 219,744 L216,762 Q221,773 231,773 Q244,773 243,764 L237,744 C238,700 239,650 240,594 Z"/><path class="shade" d="M214,594 C216,650 218,700 219,744 L225,744 C223,700 221,650 220,594 Z"/><path class="bootdark" d="M246,566 L208,566 L211,590 L242,590 Z"/><path class="strap" d="M240,644 L215,638 L215,645 L240,651 Z"/><rect class="buckle" x="220" y="637" width="7" height="9" rx="1"/><path class="strap" d="M239,704 L217,698 L217,705 L239,711 Z"/><rect class="buckle" x="220" y="697" width="7" height="9" rx="1"/><circle class="brass" cx="238" cy="578" r="1.6"/><circle class="brass" cx="215" cy="578" r="1.6"/><circle class="brass" cx="238" cy="584" r="1.6"/><circle class="brass" cx="215" cy="584" r="1.6"/></g>
+
+  <g id="skirt_front">
+    <path class="bloomers" d="M168,366 L232,366 L236,408 Q230.9,413.0 225.7,408.0 Q220.6,413.0 215.4,408.0 Q210.3,413.0 205.1,408.0 Q200.0,413.0 194.9,408.0 Q189.7,413.0 184.6,408.0 Q179.4,413.0 174.3,408.0 Q169.1,413.0 164.0,408.0 Z"/>
+    <path class="skirt2" d="M170,330 L230,330 C250,350 262,372 272,396 Q264.8,404.0 257.6,396.0 Q250.4,404.0 243.2,396.0 Q236.0,404.0 228.8,396.0 Q221.6,404.0 214.4,396.0 Q207.2,404.0 200.0,396.0 Q192.8,404.0 185.6,396.0 Q178.4,404.0 171.2,396.0 Q164.0,404.0 156.8,396.0 Q149.6,404.0 142.4,396.0 Q135.2,404.0 128.0,396.0 C138,372 150,350 170,330 Z"/>
+    <path class="shade" d="M230,330 C250,350 262,372 272,396 Q263,404 254,396 C244,370 236,350 222,330 Z"/>
+    <path class="skirt1" d="M176,312 Q200,318 224,312 C240,332 250,352 258,372 Q251.6,379.0 245.1,372.0 Q238.7,379.0 232.2,372.0 Q225.8,379.0 219.3,372.0 Q212.9,379.0 206.4,372.0 Q200.0,379.0 193.6,372.0 Q187.1,379.0 180.7,372.0 Q174.2,379.0 167.8,372.0 Q161.3,379.0 154.9,372.0 Q148.4,379.0 142.0,372.0 C150,352 160,332 176,312 Z"/>
+    <path class="line" d="M186,322 Q182,346 174,368 M200,324 L200,372 M214,322 Q218,346 226,368"/>
+  </g>
+
+  <g id="torso">
+    <rect class="skin" x="193" y="186" width="14" height="34"/>
+    <path class="shade" d="M193,186 L207,186 L207,202 Q200,207 193,202 Z"/>
+    <path class="blouse" d="M167,222 Q200,213 233,222 C237,240 235,255 230,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="shade" d="M167,222 L176,220 C172,238 172,254 176,268 L170,268 C165,255 163,240 167,222 Z"/>
+    <path class="jabot" d="M191,204 Q200,199 209,204 L210,216 Q207.5,220.0 205.0,216.0 Q202.5,220.0 200.0,216.0 Q197.5,220.0 195.0,216.0 Q192.5,220.0 190.0,216.0 Z"/><path class="jabot" d="M188,217 Q200,212 212,217 L213,229 Q209.8,233.0 206.5,229.0 Q203.2,233.0 200.0,229.0 Q196.8,233.0 193.5,229.0 Q190.2,233.0 187.0,229.0 Z"/><path class="jabot" d="M185,230 Q200,225 215,230 L216,242 Q212.0,246.0 208.0,242.0 Q204.0,246.0 200.0,242.0 Q196.0,246.0 192.0,242.0 Q188.0,246.0 184.0,242.0 Z"/>
+    <circle class="brass" cx="200" cy="211" r="5"/><circle class="gem" cx="200" cy="211" r="2.5"/>
+    <path class="strap" d="M178,221 L185,220 L189,266 L182,266 Z"/>
+    <path class="strap" d="M222,221 L215,220 L211,266 L218,266 Z"/>
+    <rect class="buckle" x="180" y="238" width="7" height="8"/><rect class="buckle" x="213" y="238" width="7" height="8"/>
+    <path class="corset" d="M171,262 Q200,255 229,262 L231,286 Q222,300 225,318 Q200,325 175,318 Q178,300 169,286 Z"/>
+    <path class="shade" d="M171,262 L179,261 Q176,290 182,320 L175,318 Q178,300 169,286 Z"/>
+    <path class="corsetpanel" d="M192,260 L208,260 L208,322 L192,322 Z"/>
+    <path class="lace" d="M194,266 L206,273 M206,266 L194,273"/><path class="lace" d="M194,273 L206,280 M206,273 L194,280"/><path class="lace" d="M194,280 L206,287 M206,280 L194,287"/><path class="lace" d="M194,287 L206,294 M206,287 L194,294"/><path class="lace" d="M194,294 L206,301 M206,294 L194,301"/><path class="lace" d="M194,301 L206,308 M206,301 L194,308"/><path class="lace" d="M194,308 L206,315 M206,308 L194,315"/>
+    <circle class="brass" cx="178" cy="268" r="2"/><circle class="brass" cx="222" cy="268" r="2"/>
+    <circle class="brass" cx="180" cy="312" r="2"/><circle class="brass" cx="220" cy="312" r="2"/>
+    <path class="strap" d="M174,312 Q200,322 226,312 L227,320 Q200,330 173,320 Z"/>
+    <rect class="vialglass" x="231" y="304" width="6" height="20" rx="3"/>
+    <rect class="liquid2" x="232" y="313" width="4" height="10" rx="2"/>
+    <rect class="pouch" x="222" y="316" width="19" height="19" rx="3"/>
+    <path class="bootdark" d="M222,316 L241,316 L241,323 L222,323 Z"/>
+  </g>
+
+  <!-- LINKER ARM: Hand in der Hüfte -->
+  <g id="arm_l">
+    <path class="blouse" d="M170,222 C147,217 134,240 139,262 L133,292 Q137,301 148,299 L156,274 C162,258 168,244 173,236 Z"/>
+    <path class="shade" d="M139,262 L133,292 Q137,301 148,299 L143,292 Q141,276 146,262 Z"/>
+    <path class="blouse" d="M141,287 L171,309 L165,320 L134,298 Z"/>
+    <path class="jabot" d="M160,304 L174,312 L170,322 Q167.7,320.0 165.3,316.0 Q163.0,320.0 160.7,316.0 Q158.3,320.0 156.0,316.0 Z"/>
+    <path class="skin" d="M168,312 Q178,308 182,316 Q181,326 174,328 Q167,324 168,312 Z"/>
+  </g>
+
+  <!-- RECHTER ARM: hebt den Kolben -->
+  <g id="arm_r">
+    <path class="blouse" d="M230,222 C253,217 266,240 261,262 L267,288 Q263,297 252,295 L246,272 C240,258 234,244 227,236 Z"/>
+    <path class="blouse" d="M254,292 L273,218 L287,222 L268,293 Z"/>
+    <path class="shade" d="M254,292 L273,218 L279,219 L262,293 Z"/>
+    <path class="jabot" d="M270,214 L291,219 L289,231 Q285.5,230.0 282.0,226.0 Q278.5,230.0 275.0,226.0 Q271.5,230.0 268.0,226.0 Z"/>
+    <path class="skin" d="M276,214 Q274,200 282,197 Q291,198 290,208 Q288,216 276,214 Z"/>
+    <g id="flask">
+      <circle class="glow" cx="284" cy="172" r="36"/>
+      <rect class="vialglass" x="278" y="134" width="12" height="22" rx="2"/>
+      <rect class="cork" x="276" y="126" width="16" height="10" rx="2"/>
+      <circle class="vialglass" cx="284" cy="176" r="19"/>
+      <path class="liquid" d="M266,178 Q275,172 284,178 Q293,184 302,178 A18,18 0 0 1 266,178 Z"/>
+      <circle class="bubble" cx="279" cy="186" r="2.3"/><circle class="bubble" cx="290" cy="182" r="1.6"/>
+      <path class="highlight" d="M272,168 Q275,161 280,159"/>
+    </g>
+  </g>
+
+  <!-- KOPF (Anime) -->
+  <g id="head">
+    <circle class="skin" cx="151" cy="154" r="6"/><circle class="skin" cx="249" cy="154" r="6"/>
+    <circle class="brassring" cx="150" cy="164" r="3.5"/><circle class="brassring" cx="250" cy="164" r="3.5"/>
+    <path class="skin" d="M151,124 C149,160 162,184 188,196 Q200,200 212,196 C238,184 251,160 249,124 Q200,114 151,124 Z"/>
+    <!-- Cel-Schatten unter Pony und Mütze -->
+    <path class="cel" d="M152,146 L164,148 L173,149 L184,130 L196,148 L205,128 L217,147 L226,132 L237,151 L248,144 L249,124 Q200,114 151,124 Z"/>
+    <ellipse class="blush" cx="172" cy="176" rx="9" ry="3.5"/><ellipse class="blush" cx="228" cy="176" rx="9" ry="3.5"/>
+    <g id="eye_l">
+      <clipPath id="clip_l"><path d="M168,156 Q179.5,145 191.5,156 Q192,168 180,170 Q168,168 168,156 Z"/></clipPath>
+      <path class="eyewhite" d="M168,156 Q179.5,145 191.5,156 Q192,168 180,170 Q168,168 168,156 Z"/>
+      <g clip-path="url(#clip_l)">
+        <ellipse class="iris" cx="179.5" cy="160" rx="8.2" ry="9.6"/>
+        <ellipse class="irisglow" cx="179.5" cy="165" rx="5.5" ry="3"/>
+        <ellipse class="pupil" cx="179.5" cy="159.5" rx="3" ry="3.6"/>
+        <path class="irisshadow" d="M164,140 L196,140 L196,154 Q180,149 164,154 Z"/>
+      </g>
+      <circle class="hl" cx="183" cy="156.5" r="2.2"/>
+      <circle class="hl" cx="176" cy="164" r="1"/>
+      <path class="lash" d="M167,156 Q179.5,143.5 192.5,156"/>
+      <path class="lash" d="M167,156 L164.5,154"/>
+      <path class="lowlash" d="M168.5,164 Q171,169.5 177,170.5"/>
+    </g>
+    <g id="eye_r">
+      <clipPath id="clip_r"><path d="M232,156 Q220.5,145 208.5,156 Q208,168 220,170 Q232,168 232,156 Z"/></clipPath>
+      <path class="eyewhite" d="M232,156 Q220.5,145 208.5,156 Q208,168 220,170 Q232,168 232,156 Z"/>
+      <g clip-path="url(#clip_r)">
+        <ellipse class="iris" cx="220.5" cy="160" rx="8.2" ry="9.6"/>
+        <ellipse class="irisglow" cx="220.5" cy="165" rx="5.5" ry="3"/>
+        <ellipse class="pupil" cx="220.5" cy="159.5" rx="3" ry="3.6"/>
+        <path class="irisshadow" d="M204,140 L236,140 L236,154 Q220,149 204,154 Z"/>
+      </g>
+      <circle class="hl" cx="217" cy="156.5" r="2.2"/>
+      <circle class="hl" cx="224" cy="164" r="1"/>
+      <path class="lash" d="M233,156 Q220.5,143.5 207.5,156"/>
+      <path class="lash" d="M233,156 L235.5,154"/>
+      <path class="lowlash" d="M231.5,164 Q229,169.5 223,170.5"/>
+    </g>
+    <path class="nose" d="M200.5,174 l-1.5,2"/>
+    <path class="mouthline" d="M196,186 Q200,188.5 204,186"/>
+    <!-- Seitensträhnen -->
+    <path class="hair" d="M158,118 Q144,160 148,206 L156,190 L159,212 Q170,170 168,132 Z"/>
+    <path class="hair" d="M242,118 Q256,160 252,206 L244,190 L241,212 Q230,170 232,132 Z"/>
+    <path class="hairshine" d="M152,160 Q151,172 152,184 L156,176 Z M248,160 Q249,172 248,184 L244,176 Z"/>
+    <!-- Pony mit Zacken -->
+    <path class="hair" d="M152,146 Q150,106 200,100 Q250,106 248,146 L242,136 L237,143 L226,124 L217,139 L205,120 L196,140 L184,122 L173,141 L164,128 L158,144 Z"/>
+    <path class="hairline" d="M184,124 Q190,116 194,110 M205,122 Q206,114 204,108 M226,126 Q224,118 220,112"/>
+    <!-- Augenbrauen (über dem Pony) -->
+    <g id="brows"><path class="brow2" d="M174.5,142.5 Q177.5,135.5 185,135 Q190,135.5 189,140 Q187.5,143 183,142 Q178.5,141.5 174.5,142.5 Z"/><path class="brow2" d="M225.5,142.5 Q222.5,135.5 215,135 Q210,135.5 211,140 Q212.5,143 217,142 Q221.5,141.5 225.5,142.5 Z"/></g>
+    <!-- Mütze, leicht schräg -->
+    <g id="cap" transform="rotate(-7 200 100)">
+      <ellipse class="cap" cx="198" cy="94" rx="70" ry="32"/>
+      <path class="cel" d="M140,104 Q200,126 258,104 Q262,92 255,84 Q200,108 138,90 Z"/>
+      <path class="line" d="M198,62 Q176,78 148,102 M198,62 Q222,78 250,102"/>
+      <path class="capdark" d="M144,106 Q200,122 256,106 Q260,122 200,130 Q140,122 144,106 Z"/>
+      <circle class="capdark" cx="198" cy="63" r="5"/>
+      <path class="strap" d="M130,94 Q198,78 266,94 L266,102 Q198,86 130,102 Z"/>
+      <circle class="brass" cx="178" cy="90" r="15"/><circle class="brass" cx="220" cy="90" r="15"/>
+      <circle class="lens" cx="178" cy="90" r="10"/><circle class="lens" cx="220" cy="90" r="10"/>
+      <path class="lensshine" d="M171,86 L177,82 L180,85 L174,89 Z M213,86 L219,82 L222,85 L216,89 Z"/>
+      <rect class="brass" x="192" y="87" width="14" height="6" rx="2"/>
+    </g>
+  </g>
+</g>
+
+<g id="fx"><path class="sparkle" d="M330,131 L332.25,137.75 L339,140 L332.25,142.25 L330,149 L327.75,142.25 L321,140 L327.75,137.75 Z"/><path class="sparkle" d="M318,209 L319.25,212.75 L323,214 L319.25,215.25 L318,219 L316.75,215.25 L313,214 L316.75,212.75 Z"/><path class="sparkle" d="M250,135 L251.25,138.75 L255,140 L251.25,141.25 L250,145 L248.75,141.25 L245,140 L248.75,138.75 Z"/></g>
+</svg>

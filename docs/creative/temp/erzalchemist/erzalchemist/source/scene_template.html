@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akademie der Alchemie – Demo-Szene</title>
+<style>
+:root{--ui:#2a1a14;--ui2:#3b2620;--gold:#e0ad4a;--cream:#f6ecd8}
+*{box-sizing:border-box}
+html,body{margin:0;background:#140e10;color:var(--cream);font-family:Georgia,"Times New Roman",serif}
+#app{max-width:1280px;margin:0 auto;padding:10px}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:6px 4px 10px}
+header h1{font-size:18px;margin:0;color:var(--gold);letter-spacing:.5px}
+#objective{flex:1;min-width:220px;font-size:14px;background:var(--ui2);border:1px solid #5a3a2c;border-radius:8px;padding:6px 10px}
+#objective b{color:var(--gold)}
+button{font:inherit;font-size:13px;color:var(--cream);background:var(--ui2);border:1px solid #6b4836;border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--gold);color:#fff}
+#stage{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;box-shadow:0 6px 30px #000a}
+#stage svg{display:block;width:100%;height:100%}
+#tip{position:absolute;pointer-events:none;background:#000c;color:#fff;font-size:13px;padding:3px 8px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-150%);display:none}
+#dialog{position:absolute;left:3%;right:3%;bottom:3%;background:#1d1210ee;border:2px solid var(--gold);border-radius:12px;padding:10px 16px;font-size:15px;line-height:1.45;display:none;cursor:pointer}
+#dialog .who{color:var(--gold);font-weight:bold;margin-right:6px}
+#inv{display:flex;gap:8px;flex-wrap:wrap;align-items:center;min-height:68px;margin-top:10px;background:var(--ui);border:1px solid #5a3a2c;border-radius:10px;padding:8px 10px}
+#inv .lbl{font-size:12px;opacity:.7;margin-right:4px}
+.item{display:flex;flex-direction:column;align-items:center;width:74px;padding:4px 2px;border:1px solid #5a3a2c;border-radius:8px;background:var(--ui2);cursor:pointer;font-size:11px;text-align:center;user-select:none}
+.item:hover{border-color:var(--gold)}
+.item.sel{border-color:var(--gold);background:#5a3a1c;box-shadow:0 0 10px #e0ad4a88}
+.item svg{width:30px;height:34px}
+.modal{position:absolute;inset:0;background:#000a;display:none;align-items:center;justify-content:center}
+.card{background:#24170f;border:2px solid var(--gold);border-radius:14px;padding:16px 20px;width:min(560px,92%);max-height:90%;overflow:auto}
+.card h2{margin:0 0 8px;color:var(--gold);font-size:19px}
+.slots{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px 0}
+.slot{width:96px;height:96px;border:2px dashed #8a6a4e;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;cursor:pointer}
+.slot svg{width:36px;height:40px}
+.plus{font-size:26px;color:var(--gold)}
+#alcInv{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}
+#alcMsg{min-height:44px;text-align:center;font-size:14px;margin:8px 0}
+.row{display:flex;gap:8px;justify-content:center}
+#recipes li{margin:5px 0}
+#recipes .locked{opacity:.75;color:#e9a0a0}
+#end h2{font-size:24px}
+body.dark #stage{box-shadow:0 6px 30px #000}
+.bub{animation:bub 1.6s infinite ease-in}
+.b2{animation-delay:.5s}.b3{animation-delay:1s}
+@keyframes bub{0%{transform:translateY(0);opacity:0}20%{opacity:.9}100%{transform:translateY(-34px);opacity:0}}
+.flicker{animation:fl .35s infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+.flicker2{animation:fl .27s infinite alternate-reverse;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes fl{from{transform:scaleY(1)}to{transform:scaleY(1.12) scaleX(.94)}}
+.blink{animation:blink 5s infinite;transform-box:fill-box;transform-origin:50% 50%}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+#crystal{animation:pulse 2s infinite alternate}
+@keyframes pulse{from{opacity:.85}to{opacity:1}}
+#player{pointer-events:none}
+#hits rect{fill:transparent;cursor:pointer}
+#hits rect.floor{cursor:crosshair}
+/* Charakter: Farbe */
+/*CHAR_COLOR*/
+/* Charakter: Scherenschnitt */
+/*CHAR_DARK*/
+/* Szene: Farbe */
+/*SC_COLOR*/
+/* Szene: Scherenschnitt */
+/*SC_DARK*/
+</style>
+</head>
+<body class="dark nolines">
+<div id="app">
+  <header>
+    <h1>⚗ Akademie der Alchemie – Lehrsaal</h1>
+    <div id="objective"><b>Aufgabe:</b> <span id="objText"></span></div>
+    <span id="ver" style="font-size:12px;opacity:.6">Stand: 19.11. 23:42</span>
+    <button id="btnRecipes">📖 Rezeptbuch</button>
+          </header>
+
+  <div id="stage">
+    <svg id="svg" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <defs><!--DEFS--></defs>
+      <!--SCENE-->
+      <g id="player" transform="translate(300,690)">
+        <g id="flip" transform="scale(0.5,0.5)">
+          <g id="bob"><g transform="translate(-200,-773)"><!--PLAYER--></g></g>
+        </g>
+      </g>
+      <g id="hits"></g>
+    </svg>
+    <div id="tip"></div>
+    <div id="dialog"><span class="who"></span><span class="txt"></span></div>
+
+    <div class="modal" id="alchemy"><div class="card">
+      <h2>Kessel der Transmutation</h2>
+      <div style="font-size:13px;opacity:.85">Wähle zwei Stoffe aus deinem Inventar. Klick auf einen Platz, um ihn zu leeren.</div>
+      <div class="slots"><div class="slot" id="slotA">leer</div><div class="plus">+</div><div class="slot" id="slotB">leer</div></div>
+      <div id="alcInv"></div>
+      <div id="alcMsg"></div>
+      <div class="row"><button id="btnTrans">✨ Transmutieren</button><button id="btnAlcClose">Schließen</button></div>
+    </div></div>
+
+    <div class="modal" id="book"><div class="card">
+      <h2>Rezeptbuch – 1. Lehrjahr</h2>
+      <ul id="recipes"></ul>
+      <div class="row"><button id="btnBookClose">Schließen</button></div>
+    </div></div>
+
+    <div class="modal" id="end"><div class="card" style="text-align:center">
+      <h2>Tutorial geschafft! 🎓</h2>
+      <p>Du hast deine ersten Stoffe transmutiert und den Lehrsaal verlassen.<br>
+      Als Nächstes würde der „Gang der Prüfungen“ warten (nicht Teil dieser Demo).</p>
+      <p style="font-size:13px;opacity:.8">Schlüssel selbst herzustellen lernst du übrigens erst im 2. Lehrjahr.</p>
+      <div class="row"><button onclick="location.reload()">Nochmal spielen</button><button onclick="document.getElementById('end').style.display='none'">Weiter umsehen</button></div>
+    </div></div>
+  </div>
+
+  <div id="inv"><span class="lbl">Inventar:</span></div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const svg = $('#svg');
+
+/* ---------- Daten ---------- */
+const ITEMS = {
+  wasser:  {n:'Wasser',        c:'#4aa8e0', d:'Ein Krug klares Quellwasser.'},
+  erde:    {n:'Erde',          c:'#8a5a34', d:'Lockere, dunkle Gartenerde.'},
+  eisen:   {n:'Eisenspäne',    c:'#8d939b', d:'Feine Späne aus der Schulschmiede.'},
+  feuer:   {n:'Feueressenz',   c:'#ff7a2a', d:'Eine Phiole voll gebändigter Flamme.'},
+  kristall:{n:'Funkenkristall',c:'#ffd84a', d:'Knistert leise und schlägt Funken, wenn man ihn reibt.'},
+  schlamm: {n:'Nährschlamm',   c:'#6b8a3a', d:'Riecht nach Frühling. Und ein bisschen nach Moor.'},
+  dampf:   {n:'Dampf',         c:'#dfe8ee', d:'Heißer Dampf, sicher verkorkt.'},
+  barren:  {n:'Eisenbarren',   c:'#6d737b', d:'Ein kleiner Barren rohes Eisen.'},
+  keramik: {n:'Keramik',       c:'#c0693f', d:'Ein Stück gebrannter Ton. Hübsch, aber nutzlos.'},
+  rost:    {n:'Rost',          c:'#a0522d', d:'Rostiges Pulver. Darauf wäre niemand stolz.'},
+  schluessel:{n:'Alter Schlüssel', c:'#e0ad4a', d:'Ein schwerer Messingschlüssel.', key:true},
+};
+const RECIPES = [
+  ['wasser','erde','schlamm'], ['wasser','feuer','dampf'], ['eisen','feuer','barren'],
+  ['erde','feuer','keramik'],  ['eisen','wasser','rost'],
+];
+const OBJECTIVES = [
+  'Sprich mit Magister Uhu (die Eule auf der Tafel).',
+  'Hol Wasser und Erde aus dem Regal.',
+  'Kombiniere Wasser und Erde am Kessel.',
+  'Rette die vertrocknete Pflanze.',
+  'Hol den Funkenkristall oben aus dem Regal.',
+  'Entfache den Athanor (Ofen).',
+  'Befreie den Schlüssel aus dem Eisblock.',
+  'Öffne die Tür.',
+  'Tutorial abgeschlossen!'
+];
+const HINTS = [
+  'Huhu! Willkommen im ersten Lehrjahr. Alchemie heißt: zwei Stoffe im Kessel vereinen und daraus einen neuen erschaffen. Hol dir zuerst Wasser und Erde aus dem Regal.',
+  'Wasser und Erde stehen im Regal, mittleres Fach.',
+  'Geh zum Kessel auf der Werkbank und leg beide Zutaten hinein.',
+  'Diese arme Pflanze … Nährschlamm wirkt Wunder. Wähle ihn im Inventar aus und klick dann auf die Pflanze.',
+  'Mit der Ranke kommst du jetzt bis ganz nach oben ins Regal.',
+  'Ein Funkenkristall entfacht jeden Athanor. Benutz ihn mit dem Ofen.',
+  'Eis schmilzt man sanft, sonst verbiegt der Schlüssel. Was entsteht wohl, wenn Wasser auf Feuer trifft?',
+  'Na los, die Tür wartet!',
+  'Ausgezeichnet! Im zweiten Lehrjahr lernst du dann, Schlüssel selbst zu transmutieren. Huhu!'
+];
+const HS = [ // id, Name, x,y,w,h, Laufziel x, Laufziel y (Bodentiefe vor dem Gegenstand)
+  ['ice','Eisblock',48,370,90,100,150,648], ['window','Fenster',168,90,184,300,262,645],
+  ['crystal','Funkenkristall',392,74,156,84,612,652], ['books','Bücher',394,168,152,130,470,645],
+  ['water','Wasserkrug',400,362,46,60,430,645], ['earth','Erdtopf',454,362,46,60,486,645],
+  ['iron','Eisenspäne',400,462,46,58,430,645], ['plant','Vertrocknete Pflanze',556,515,90,128,660,656],
+  ['owl','Magister Uhu',872,56,46,60,880,645], ['board','Tafel',652,102,276,206,780,645],
+  ['cauldron','Kessel',726,420,108,90,780,652], ['furnace','Athanor',956,236,120,364,1012,645],
+  ['door','Tür',1108,206,154,394,1150,645],
+];
+
+/* ---------- Zustand ---------- */
+const S = {inv:[], sel:null, stage:0, found:new Set(), f:{}, x:300, y:690, dir:1, pose:'idle', busy:false};
+const has = id => S.inv.includes(id);
+
+/* ---------- UI ---------- */
+function flaskIcon(c, isKey){
+  if(isKey) return `<svg viewBox="0 0 30 34"><circle cx="9" cy="17" r="6" fill="none" stroke="${c}" stroke-width="3.5"/><rect x="14" y="15.3" width="14" height="3.4" fill="${c}"/><rect x="22" y="18" width="3" height="6" fill="${c}"/></svg>`;
+  return `<svg viewBox="0 0 30 34"><rect x="11" y="2" width="8" height="5" rx="1" fill="#b88a5a"/><path d="M12,7 L18,7 L18,13 L26,27 Q27,32 22,32 L8,32 Q3,32 4,27 L12,13 Z" fill="#e9f6f3" fill-opacity=".35" stroke="#f6ecd8" stroke-width="1.5"/><path d="M7,22 L23,22 L26,27 Q27,31 22,31 L8,31 Q3,31 4,27 Z" fill="${c}"/></svg>`;
+}
+function renderInv(){
+  const box = $('#inv'); box.innerHTML = '<span class="lbl">Inventar:</span>';
+  if(!S.inv.length) box.innerHTML += '<span class="lbl">(leer)</span>';
+  S.inv.forEach(id=>{
+    const it = ITEMS[id], el = document.createElement('div');
+    el.className = 'item' + (S.sel===id?' sel':'');
+    el.title = it.d;
+    el.innerHTML = flaskIcon(it.c, it.key) + it.n;
+    el.onclick = () => { S.sel = S.sel===id ? null : id; renderInv(); if(S.sel) say(it.d + ' – Klick auf ein Objekt, um es damit zu benutzen.'); };
+    box.appendChild(el);
+  });
+}
+function addItem(id){ if(!has(id)) S.inv.push(id); renderInv(); checkStage(); }
+function removeItem(id){ S.inv = S.inv.filter(i=>i!==id); if(S.sel===id) S.sel=null; renderInv(); }
+let dlgTimer;
+function say(txt, who='Alchemistin'){
+  const d = $('#dialog'); d.querySelector('.who').textContent = who + ':'; d.querySelector('.txt').textContent = txt;
+  d.style.display = 'block'; clearTimeout(dlgTimer);
+  dlgTimer = setTimeout(()=> d.style.display='none', Math.max(3500, txt.length*55));
+}
+$('#dialog').onclick = () => $('#dialog').style.display='none';
+function setStage(n){ if(n>S.stage){ S.stage=n; } $('#objText').textContent = OBJECTIVES[S.stage]; }
+function checkStage(){
+  if(S.stage===1 && has('wasser') && has('erde')) setStage(2);
+}
+const show = (id,on=true) => { $('#'+id).style.display = on ? '' : 'none'; };
+
+/* ---------- Hotspots ---------- */
+const hits = $('#hits');
+const NS = 'http://www.w3.org/2000/svg';
+const floor = document.createElementNS(NS,'rect');
+Object.entries({x:0,y:0,width:1280,height:720,class:'floor'}).forEach(([k,v])=>floor.setAttribute(k,v));
+floor.dataset.hs = 'floor'; hits.appendChild(floor);
+HS.forEach(([id,name,x,y,w,h])=>{
+  const r = document.createElementNS(NS,'rect');
+  Object.entries({x,y,width:w,height:h}).forEach(([k,v])=>r.setAttribute(k,v));
+  r.dataset.hs = id; hits.appendChild(r);
+});
+function hsName(id){
+  const base = HS.find(h=>h[0]===id)[1];
+  if(id==='ice' && S.f.melted) return S.f.keyTaken ? 'Pfütze' : 'Schlüssel';
+  if(id==='plant' && S.f.vine) return 'Kletterranke';
+  if(id==='crystal' && S.f.crystal) return 'Leeres Fach';
+  if(id==='furnace' && S.f.lit) return 'Athanor (brennt)';
+  if(id==='door' && S.f.open) return 'Offene Tür';
+  return base;
+}
+function svgPoint(e){
+  const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+  return p.matrixTransform(svg.getScreenCTM().inverse());
+}
+hits.addEventListener('mousemove', e=>{
+  const t = e.target.dataset.hs, tip = $('#tip');
+  if(!t || t==='floor'){ tip.style.display='none'; return; }
+  const r = $('#stage').getBoundingClientRect();
+  tip.textContent = S.sel ? `Benutze ${ITEMS[S.sel].n} mit ${hsName(t)}` : hsName(t);
+  tip.style.left = (e.clientX - r.left) + 'px'; tip.style.top = (e.clientY - r.top) + 'px'; tip.style.display='block';
+});
+hits.addEventListener('mouseleave', ()=> $('#tip').style.display='none');
+hits.addEventListener('click', e=>{
+  if(S.busy) return;
+  const t = e.target.dataset.hs;
+  if(t==='floor'){ const p = svgPoint(e); walkTo(p.x, null, p.y >= 600 ? p.y : null); return; }
+  const h = HS.find(h=>h[0]===t);
+  walkTo(h[6], ()=>{ face(h[2]+h[4]/2); S.sel ? useOn(S.sel,t) : interact(t); }, h[7]);
+});
+hits.addEventListener('contextmenu', e=>{ e.preventDefault(); S.sel=null; renderInv(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ S.sel=null; renderInv(); closeModals(); } });
+
+/* ---------- Laufen ----------
+   Posen: 'idle' (Frontansicht steht), 'side' (seitlich, nach links gespiegelt),
+   'front' (läuft nach vorn/unten), 'back' (läuft nach hinten/oben).
+   Der Boden reicht von FLOOR_MIN (hinten) bis FLOOR_MAX (vorn); hinten wird die Figur kleiner. */
+const FLOOR_MIN = 645, FLOOR_MAX = 705, DEPTH = 2.2;   // DEPTH: Tiefe ist gestaucht -> langsamer in y
+let walkCb=null, target=null, last=0, phase=0, running=false;
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+function depthScale(y){ return 0.44 + (y-FLOOR_MIN)/(FLOOR_MAX-FLOOR_MIN)*0.08; }
+function setPlayer(){
+  const sc = depthScale(S.y), sx = S.pose==='side' ? sc*S.dir : sc;
+  $('#player').setAttribute('transform',`translate(${S.x.toFixed(1)},${S.y.toFixed(1)})`);
+  $('#flip').setAttribute('transform',`scale(${sx.toFixed(4)},${sc.toFixed(4)})`);
+}
+function setPose(p){
+  if(p===true) p='side'; if(p===false) p='idle';
+  S.pose = p; S.walking = p!=='idle';
+  $('#character').style.display = (p==='idle'||p==='front') ? '' : 'none';
+  $('#characterSide').style.display = p==='side' ? '' : 'none';
+  $('#characterBack').style.display = p==='back' ? '' : 'none';
+  resetJoints();
+  if(p==='idle'){ phase = 0; $('#bob').removeAttribute('transform'); }
+  setPlayer();
+}
+const rot = (sel,deg,cx,cy) => $(sel).setAttribute('transform',`rotate(${deg.toFixed(2)} ${cx} ${cy})`);
+const lift = (sel,dy) => $(sel).setAttribute('transform',`translate(0 ${dy.toFixed(2)})`);
+/* Laufstil je Figur: Standardwerte = Gang der Alchemistin; eine Seite kann window.WALK_STYLE vorher setzen. */
+const WALK = Object.assign({hip:20, knee:44, arm:16, fore:16, lean:3, swag:0, lift:13, bob:6, sway:1.6, armOut:4, speed:330}, window.WALK_STYLE || {});
+const LEG_T = 198, LEG_S = 223, LEG = LEG_T + LEG_S, HIP_A = WALK.hip;   // Ober-/Unterschenkel (lokale Einheiten), Hüftausschlag
+const STRIDE_PER_RAD = 2*LEG*Math.sin(HIP_A*Math.PI/180)/Math.PI;    // Weg pro Phasen-Radiant -> Füße rutschen nicht
+function animateSide(ph){
+  /* Seitlicher Gang: Hüfte schwingt, das Schwungbein beugt das Knie früh nach dem Abdrücken.
+     Die Körperhöhe wird aus der Beinstellung berechnet, so dass das Standbein immer den Boden berührt. */
+  let ground = Infinity;
+  [['#side_leg_near', ph], ['#side_leg_far', ph + Math.PI]].forEach(([sel,p])=>{
+    const hip = -HIP_A*Math.sin(p);
+    const swing = Math.max(0, Math.cos(p + 0.6));
+    const knee = 4 + WALK.knee*Math.pow(swing, 1.4);
+    rot(sel, hip, 205, 352); rot(sel+'_shin', knee, 206, 550);
+    const h = hip*Math.PI/180, k = (hip + knee)*Math.PI/180;
+    ground = Math.min(ground, LEG - (LEG_T*Math.cos(h) + LEG_S*Math.cos(k)));   // wie weit der Fuß über dem Boden schwebt
+  });
+  [['#side_arm_near', ph + Math.PI], ['#side_arm_far', ph]].forEach(([sel,p])=>{
+    rot(sel, -WALK.arm*Math.sin(p), 205, 232); rot(sel+'_fore', -12 - WALK.fore*Math.max(0, Math.sin(p)), 204, 288);
+  });
+  const lean = WALK.lean + WALK.swag*Math.sin(2*ph);
+  $('#bob').setAttribute('transform', `translate(0 ${ground.toFixed(2)}) rotate(${lean.toFixed(2)} 205 770)`);
+}
+function animateStraight(ph, legs, arms){
+  /* Laufen auf die Kamera zu oder weg: Beine heben sich weich abwechselnd,
+     der Körper ist am höchsten, wenn ein Bein durchschwingt, und pendelt leicht. */
+  const a = Math.sin(ph), sl = Math.max(0, a), sr = Math.max(0, -a);
+  const hl = -WALK.lift*sl*sl*(3-2*sl), hr = -WALK.lift*sr*sr*(3-2*sr);
+  legs[0].forEach(sel => lift(sel, hl)); legs[1].forEach(sel => lift(sel, hr));
+  if(arms){
+    // Von hinten schwingen die Arme vor/zurück: leichte Verkürzung, Pendeln nur nach außen, nie über den Körper.
+    const sw = (sel, out, cx, k) => $(sel).setAttribute('transform',
+      `rotate(${out.toFixed(2)} ${cx} 230) translate(${cx} 230) scale(1 ${k.toFixed(3)}) translate(${-cx} -230)`);
+    sw(arms[0],  WALK.armOut*sl, 168, 1 - 0.09*sr);
+    sw(arms[1], -WALK.armOut*sr, 232, 1 - 0.09*sl);
+  }
+  const bob = -Math.abs(a)*WALK.bob, sway = WALK.sway*a;
+  $('#bob').setAttribute('transform', `translate(0 ${bob.toFixed(2)}) rotate(${sway.toFixed(2)} 200 770)`);
+}
+function animateWalk(ph){
+  if(S.pose==='side') animateSide(ph);
+  else if(S.pose==='front') animateStraight(ph, [['#front_leg_l','#boot_l'],['#front_leg_r','#boot_r']]);
+  else if(S.pose==='back') animateStraight(ph, [['#back_leg_l'],['#back_leg_r']], ['#back_arm_l','#back_arm_r']);   // Stiefel + Absatz stecken in der Beingruppe
+}
+function animateJoints(ph){ animateSide(ph); }   // Kompatibilität (Tests)
+function resetJoints(){
+  ['#side_leg_near','#side_leg_far','#side_arm_near','#side_arm_far','#side_leg_near_shin','#side_leg_far_shin',
+   '#side_arm_near_fore','#side_arm_far_fore','#front_leg_l','#front_leg_r','#boot_l','#boot_r',
+   '#back_leg_l','#back_leg_r','#back_boot_l','#back_boot_r','#back_arm_l','#back_arm_r']
+    .forEach(s=>{ const el=$(s); if(el) el.removeAttribute('transform'); });
+}
+function face(){ /* Frontansicht bleibt im Stand immer ungespiegelt */ }
+function choosePose(dx, dy){
+  const p = Math.abs(dy)*DEPTH > Math.abs(dx) ? (dy < 0 ? 'back' : 'front') : 'side';
+  if(Math.abs(dx) > 0.5) S.dir = dx > 0 ? 1 : -1;
+  if(p !== S.pose) setPose(p); else setPlayer();
+}
+function walkTo(x, cb, y){
+  target = {x: clamp(x, 60, 1220), y: (y===undefined || y===null) ? S.y : clamp(y, FLOOR_MIN, FLOOR_MAX)};
+  walkCb = cb || null;
+  const dx = target.x - S.x, dy = target.y - S.y;
+  if(Math.hypot(dx, dy*DEPTH) < 3){ target=null; setPose('idle'); const c=walkCb; walkCb=null; c&&c(); return; }
+  choosePose(dx, dy);
+  if(!running){ running = true; last = 0; requestAnimationFrame(step); }
+}
+function step(ts){
+  if(!target){ running=false; return; }
+  const dt = last ? Math.min(.05,(ts-last)/1000) : 0; last = ts;
+  const dx = target.x - S.x, dy = target.y - S.y;
+  const dist = Math.hypot(dx, dy*DEPTH), mv = WALK.speed*dt;
+  if(dist <= mv){
+    S.x = target.x; S.y = target.y; target = null; running = false; setPose('idle');
+    const c = walkCb; walkCb = null; c && c(); return;
+  }
+  S.x += dx/dist*mv; S.y += dy/dist*mv;
+  phase += mv/(STRIDE_PER_RAD*depthScale(S.y));
+  animateWalk(phase); setPlayer(); requestAnimationFrame(step);
+}
+
+/* ---------- Interaktion ohne Gegenstand ---------- */
+function takeBase(id, msg){
+  if(has(id)) return say(`Ich habe schon ${ITEMS[id].n} dabei.`);
+  addItem(id); say(msg);
+}
+function interact(id){
+  const f = S.f;
+  switch(id){
+    case 'owl':
+      say(HINTS[S.stage], 'Magister Uhu'); if(S.stage===0) setStage(1); return;
+    case 'board':
+      return say('Auf der Tafel steht: „Wasser + Erde = ?“ und „Wasser + Feuer = ?“. Darunter, dick unterstrichen: „Schlüssel ⇒ erst im 2. Lehrjahr!“');
+    case 'window':
+      return say('Die Sterne stehen günstig für Transmutationen. Sagt jedenfalls Magister Uhu.');
+    case 'books':
+      return say('„Grundlagen der Transmutation, Band 1“. Band 2, „Schlösser & Schlüssel“, ist für Erstjährige gesperrt.');
+    case 'water': return takeBase('wasser','Ich fülle eine Phiole mit Wasser.');
+    case 'earth': return takeBase('erde','Eine Handvoll Erde. Ganz schön krümelig.');
+    case 'iron':  return takeBase('eisen','Eisenspäne. Vorsichtig, die pieksen.');
+    case 'crystal':
+      if(f.crystal) return say('Das Fach ist jetzt leer.');
+      if(!f.vine) return say('Ganz oben im Regal funkelt ein Kristall. Viel zu hoch für mich …');
+      f.crystal = true; show('crystal',false); addItem('kristall'); setStage(5);
+      return say('Ich klettere die Ranke hoch … geschafft! Der Funkenkristall gehört mir.');
+    case 'plant':
+      return say(f.vine ? 'Die Ranke reicht bis ganz nach oben ins Regal.' : 'Eine völlig vertrocknete Kletterpflanze. Die braucht mehr als nur Wasser.');
+    case 'cauldron': return openAlchemy();
+    case 'furnace':
+      if(!f.lit) return say('Der Athanor ist kalt. Ich bräuchte etwas, das Funken schlägt …');
+      return takeBase('feuer','Ich fange etwas Feuer in einer Phiole ein. Autsch, heiß!');
+    case 'ice':
+      if(!f.melted) return say('Ein Eisblock … und darin eingefroren: ein Schlüssel! Mit bloßen Händen bekomme ich den nie heraus.');
+      if(f.keyTaken) return say('Nur noch eine Pfütze.');
+      f.keyTaken = true; show('keyLoose',false); addItem('schluessel'); setStage(7);
+      return say('Der Schlüssel! Damit komme ich hier raus.');
+    case 'door':
+      return say(f.open ? 'Der Weg ist frei!' : 'Verschlossen. Ein großes Messingschloss.');
+  }
+}
+
+/* ---------- Gegenstand benutzen mit ---------- */
+function useOn(item, id){
+  const f = S.f, n = ITEMS[item].n;
+  if(id==='cauldron') return openAlchemy(item);
+  if(id==='plant' && item==='schlamm' && !f.vine){
+    removeItem('schlamm'); f.vine = true; show('plantDead',false); show('vine'); setStage(4);
+    return say('Die Pflanze saugt den Schlamm auf – und wächst und wächst! Die Ranke reicht bis ganz oben ins Regal.');
+  }
+  if(id==='plant' && item==='wasser') return say('Wasser allein reicht nicht. Die Erde im Topf ist völlig ausgelaugt.');
+  if(id==='furnace' && item==='kristall' && !f.lit){
+    removeItem('kristall'); f.lit = true; show('fire'); setStage(6);
+    return say('Ich reibe den Kristall – Funken sprühen, und der Athanor erwacht fauchend zum Leben!');
+  }
+  if(id==='ice' && !f.melted){
+    if(item==='dampf'){
+      removeItem('dampf'); f.melted = true; show('iceBlock',false); show('puddle'); show('keyLoose');
+      return say('Der heiße Dampf schmilzt das Eis ganz sanft. Da liegt der Schlüssel!');
+    }
+    if(item==='feuer') return say('Direktes Feuer? Das würde den Schlüssel verformen. Ich brauche etwas Sanfteres …');
+    if(item==='wasser') return say('Noch mehr Wasser macht nur noch mehr Eis.');
+  }
+  if(id==='door' && !f.open){
+    if(item==='schluessel'){
+      removeItem('schluessel'); f.open = true; setStage(8);
+      show('doorPanel',false); show('doorLeaf');
+      $('#doorway').setAttribute('class','s-doorlight');
+      say('Klick! Die Tür schwingt auf. Mein erstes Rätsel ist gelöst!');
+      setTimeout(()=> $('#end').style.display='flex', 1600);
+      return;
+    }
+    if(item==='barren') return say('Ich könnte versuchen, aus dem Barren einen Schlüssel zu transmutieren … aber Schlüssel sind viel zu komplex. Das lernt man erst im 2. Lehrjahr.');
+    return say(`Mit ${n} bekomme ich die Tür nicht auf.`);
+  }
+  if(id==='owl') return say('Huhu! Zeig mir das lieber, wenn du etwas damit erreicht hast.', 'Magister Uhu');
+  say(`${n} mit ${hsName(id)}? Das funktioniert so nicht.`);
+}
+
+/* ---------- Alchemie ---------- */
+const slots = [null,null];
+function openAlchemy(pre){
+  slots[0]=null; slots[1]=null; if(pre){ slots[0]=pre; S.sel=null; renderInv(); }
+  $('#alcMsg').textContent=''; renderAlc(); $('#alchemy').style.display='flex';
+}
+function renderAlc(){
+  ['#slotA','#slotB'].forEach((s,i)=>{
+    const id = slots[i];
+    $(s).innerHTML = id ? flaskIcon(ITEMS[id].c, ITEMS[id].key) + ITEMS[id].n : 'leer';
+    $(s).onclick = () => { slots[i]=null; renderAlc(); };
+  });
+  const box = $('#alcInv'); box.innerHTML='';
+  if(!S.inv.length) box.innerHTML = '<span style="opacity:.7;font-size:13px">Dein Inventar ist leer.</span>';
+  S.inv.filter(id=>!slots.includes(id)).forEach(id=>{
+    const el = document.createElement('div'); el.className='item';
+    el.innerHTML = flaskIcon(ITEMS[id].c, ITEMS[id].key) + ITEMS[id].n;
+    el.onclick = () => { const i = slots[0]===null?0:(slots[1]===null?1:-1); if(i>=0){ slots[i]=id; renderAlc(); } };
+    box.appendChild(el);
+  });
+}
+$('#btnTrans').onclick = () => {
+  const [a,b] = slots, msg = $('#alcMsg');
+  if(!a || !b) return msg.textContent = 'Ich brauche zwei Stoffe.';
+  if(a==='schluessel' || b==='schluessel') return msg.textContent = 'Den Schlüssel schmelze ich bestimmt nicht ein!';
+  const r = RECIPES.find(r => (r[0]===a&&r[1]===b)||(r[0]===b&&r[1]===a));
+  if(!r){
+    if(a==='barren'||b==='barren') return msg.textContent = 'Daraus einen Schlüssel formen? Schlüssel-Transmutation steht erst im 2. Lehrjahr auf dem Lehrplan – viel zu komplex!';
+    return msg.textContent = 'Die Stoffe stoßen sich ab. Nichts passiert.';
+  }
+  const out = r[2];
+  removeItem(a); removeItem(b); addItem(out); S.found.add(out);
+  document.documentElement.style.setProperty('--brew', ITEMS[out].c);
+  slots[0]=null; slots[1]=null; renderAlc();
+  msg.innerHTML = `✨ Es brodelt und zischt … <b>${ITEMS[out].n}</b> entsteht!<br><span style="font-size:12px;opacity:.8">${ITEMS[out].d}</span>`;
+  if(out==='schlamm' && S.stage<=2) setStage(3);
+};
+$('#btnAlcClose').onclick = () => $('#alchemy').style.display='none';
+
+/* ---------- Rezeptbuch ---------- */
+$('#btnRecipes').onclick = () => {
+  const ul = $('#recipes'); ul.innerHTML='';
+  RECIPES.forEach(([a,b,c])=>{
+    const li = document.createElement('li');
+    li.textContent = S.found.has(c) ? `${ITEMS[a].n} + ${ITEMS[b].n} = ${ITEMS[c].n}` : '??? + ??? = ???';
+    ul.appendChild(li);
+  });
+  const lk = document.createElement('li'); lk.className='locked';
+  lk.textContent = '🔒 Schlüssel – Transmutation erst ab dem 2. Lehrjahr (zu komplex)';
+  ul.appendChild(lk);
+  $('#book').style.display='flex';
+};
+$('#btnBookClose').onclick = () => $('#book').style.display='none';
+function closeModals(){ document.querySelectorAll('.modal').forEach(m=>m.style.display='none'); }
+
+
+
+/* ---------- Start ---------- */
+S.walking=false; S.pose='idle'; S.y=690; setPlayer(); renderInv(); setStage(0);
+setTimeout(()=> say('Mein erster Tag an der Akademie … Ich sollte mit Magister Uhu sprechen. Er sitzt oben auf der Tafel.'), 400);
+</script>
+</body>
+</html>

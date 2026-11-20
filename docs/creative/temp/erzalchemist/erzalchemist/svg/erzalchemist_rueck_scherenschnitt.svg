@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" width="400" height="800"><title>Erzalchemist – rueck</title><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern><radialGradient id="glowOrange"><stop offset="0" stop-color="#ffc070" stop-opacity=".9"/><stop offset="1" stop-color="#ff9a40" stop-opacity="0"/></radialGradient></defs><style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+
+.erobe,.elin,.etunic,.ehat,.ewood,.epants{fill:#140e10;stroke:#140e10;stroke-width:1.2}
+.erobet{fill:#140e10;stroke:none;opacity:.8}
+.ebeard{fill:#221a1e;stroke:#140e10;stroke-width:1.2}.ebeardsh{fill:#1a1316}
+.estole{fill:#26121a;stroke:#140e10;stroke-width:1.2}
+.esym{stroke:#e0ad4a;stroke-width:1.3;opacity:.5}.especs{stroke:#ffb35a;stroke-width:1.8}.eglass{display:none}
+.eorb{fill:#ffb35a}.glowo{fill:url(#glowOrange)}
+.wrinkle,.ebeardline{display:none}
+</style><rect width="400" height="800" fill="#a8604e"/>
+<g id="characterBack" >
+  <ellipse class="groundshadow" cx="200" cy="772" rx="66" ry="7"/>
+  <g id="back_legs"><g id="back_leg_l"><path class="epants" d="M168,360 C165,440 167,540 170,600 C170,650 172,700 174,734 L196,734 C197,700 198,650 197,600 C199,540 200,440 200,360 Z"/><path class="boot" d="M168,724 L198,724 L199,760 Q200,773 186,773 L170,773 Q158,771 164,758 Z"/><path class="bootdark" d="M162,766 L200,766 L199,773 L166,773 Z"/></g><g id="back_leg_r"><path class="epants" d="M232,360 C235,440 233,540 230,600 C230,650 228,700 226,734 L204,734 C203,700 202,650 203,600 C201,540 200,440 200,360 Z"/><path class="boot" d="M232,724 L202,724 L201,760 Q200,773 214,773 L230,773 Q242,771 236,758 Z"/><path class="bootdark" d="M238,766 L200,766 L201,773 L234,773 Z"/></g></g>
+  <path class="erobet" d="M156,222 Q200,212 244,222 C254,340 262,520 268,704 L210,698 L200,640 L190,698 L132,704 C138,520 146,340 156,222 Z"/>
+  <path class="erobe" d="M156,222 Q200,212 244,222 C248,270 250,320 252,362 L148,362 C150,320 152,270 156,222 Z"/>
+  <path class="elin" d="M148,354 L252,354 L252,368 L148,368 Z"/>
+  <path class="line" d="M200,380 L200,640"/>
+  <g id="back_arm_l"><circle class="glowo" cx="138" cy="80" r="44"/><rect class="ewood" x="133.5" y="90" width="9" height="682" rx="3"/><rect class="brass" x="131.5" y="100" width="13" height="6" rx="2"/><rect class="brass" x="131.5" y="180" width="13" height="6" rx="2"/><rect class="brass" x="131.5" y="712" width="13" height="6" rx="2"/><circle class="eorb" cx="138" cy="80" r="11"/><path class="brass" d="M124,94 Q118,76 132,62 M152,94 Q158,76 144,62 M138,96 L138,91 M129,96 Q134,84 136,68 M147,96 Q142,84 140,68" fill="none" stroke-width="3"/><rect class="brass" x="128" y="92" width="20" height="7" rx="2"/><path class="brass" d="M132,62 Q138,52 144,62" fill="none" stroke-width="3"/><g transform="rotate(6 168 230)"><path class="erobe" d="M170,222 C150,220 140,242 143,266 L132,372 L170,376 L166,268 C168,252 172,244 178,232 Z"/><path class="elin" d="M132,366 L170,370 L169,382 L131,378 Z"/><path class="skin" d="M140,380 Q136,398 144,404 Q152,408 158,402 Q162,392 158,380 Z"/></g></g><g id="back_arm_r"><g transform="rotate(-6 232 230)"><path class="erobe" d="M230,222 C250,220 260,242 257,266 L268,372 L230,376 L234,268 C232,252 228,244 222,232 Z"/><path class="elin" d="M268,366 L230,370 L231,382 L269,378 Z"/><path class="skin" d="M260,380 Q264,398 256,404 Q248,408 242,402 Q238,392 242,380 Z"/></g></g>
+  <g id="back_head" transform="translate(0 8)">
+    <path class="ebeard" d="M148,116 C134,160 134,240 146,300 L162,282 L170,304 L182,284 L192,310 L200,288 L208,310 L218,284 L230,304 L238,282 L254,300 C266,240 266,160 252,116 Z"/>
+    <path class="ebeardline" d="M170,140 C166,200 168,250 174,290 M200,130 L200,300 M230,140 C234,200 232,250 226,290"/>
+    <circle class="skin" cx="150" cy="156" r="7"/><circle class="skin" cx="250" cy="156" r="7"/>
+    <g id="e_back_hat">
+      <path class="ehat" d="M146,118 C150,84 168,40 196,16 Q212,4 230,12 Q246,22 248,40 Q236,30 222,32 C222,60 240,92 254,118 Z"/>
+      <path class="brass" d="M248,40 L248,52" fill="none" stroke-width="2"/><circle class="brass" cx="248" cy="56" r="5"/>
+      <path class="ehat" d="M126,120 Q200,102 274,120 Q278,131 200,137 Q122,131 126,120 Z"/>
+      <path class="brass" d="M148,104 Q200,96 252,104 L253,116 Q200,108 147,116 Z"/>
+      <circle class="esym" cx="200" cy="66" r="6"/><circle class="esym" cx="200" cy="66" r="1.2"/>
+      <path class="esym" d="M180,84 L187,96 L173,96 Z M218,86 L225,98 L211,98 Z"/>
+    </g>
+  </g>
+</g>
+</svg>
