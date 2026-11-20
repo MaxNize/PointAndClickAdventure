@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -130 520 920" width="520" height="920"><title>Schmied – rueck</title><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern><radialGradient id="glowRed"><stop offset="0" stop-color="#ff8a5a" stop-opacity=".9"/><stop offset="1" stop-color="#ff4a2a" stop-opacity="0"/></radialGradient></defs><style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+
+.sshirt,.sshirtdk,.sglove,.spants,.siron,.sirondk,.swood,.sband,.sapdk,.sbeard{fill:#140e10;stroke:#140e10;stroke-width:1.2}
+.sapron{fill:#261a1d;stroke:#140e10;stroke-width:1.2}
+.sstitch,.sbeardline,.sblush{display:none}
+.shot{fill:#ff6a3c}.glowr{fill:url(#glowRed)}.spark{fill:#ffd27a}.slens{fill:#ff7a5a;stroke:none}.ssmoke{fill:#e8b8a8;opacity:.16}
+</style><rect x="-60" y="-130" width="520" height="920" fill="#a8604e"/>
+<g id="characterBack"  transform="translate(200 773) scale(1.28) translate(-200 -773)">
+  <ellipse class="groundshadow" cx="200" cy="773" rx="120" ry="9"/>
+  <g id="back_legs"><g id="back_leg_l"><path class="spants" d="M136,470 C126,560 130,650 138,722 L192,722 C194,650 195,560 192,470 Z"/><path class="boot" d="M124,704 L198,704 L199,752 Q201,774 174,774 L140,774 Q116,774 120,752 Z"/><path class="sirondk" d="M120,744 Q160,730 199,744 L199,760 L120,760 Z"/><path class="bootdark" d="M118,764 L201,764 L200,774 L120,774 Z"/></g><g id="back_leg_r"><path class="spants" d="M264,470 C274,560 270,650 262,722 L208,722 C206,650 205,560 208,470 Z"/><path class="boot" d="M276,704 L202,704 L201,752 Q199,774 226,774 L260,774 Q284,774 280,752 Z"/><path class="sirondk" d="M280,744 Q240,730 201,744 L201,760 L280,760 Z"/><path class="bootdark" d="M282,764 L199,764 L200,774 L280,774 Z"/></g></g>
+  <path class="sshirt" d="M112,222 Q200,186 288,222 C334,262 342,340 328,416 C316,488 266,536 200,540 C134,536 84,488 72,416 C58,340 66,262 112,222 Z"/>
+  <path class="line" d="M200,232 L200,500 M150,260 Q130,360 150,470 M250,260 Q270,360 250,470"/>
+  <path class="sapron" d="M160,210 L176,208 L252,420 L236,424 Z"/><path class="sapron" d="M240,210 L224,208 L148,420 L164,424 Z"/>
+  <path class="sapron" d="M84,424 Q200,458 316,424 L314,442 Q200,476 86,442 Z"/>
+  <path class="sapron" d="M200,446 L164,420 L156,446 L170,452 L160,486 L184,458 Z"/>
+  <path class="sapron" d="M200,446 L236,420 L244,446 L230,452 L240,486 L216,458 Z"/>
+  <circle class="sapron" cx="200" cy="448" r="9"/>
+  <path class="sapron" d="M100,440 L100,600 Q110,610 122,600 L124,452 Z"/><path class="sapron" d="M300,440 L300,600 Q290,610 278,600 L276,452 Z"/>
+  <g id="back_arm_l"><g><g transform="translate(-22 0) rotate(12 128 222)"><path class="sshirt" d="M146,210 C96,212 74,256 80,306 L140,314 L154,248 Z"/><path class="sshirtdk" d="M72,298 L144,308 L142,328 L70,318 Z"/><path class="skin" d="M72,316 L142,326 C156,380 150,450 134,500 L90,500 C68,450 62,380 72,316 Z"/><circle class="sglove" cx="112" cy="518" r="33"/><path class="sapdk" d="M82,492 L142,492 L142,506 L82,506 Z"/></g></g></g><g id="back_arm_r"><g><g transform="translate(22 0) rotate(-12 272 222)"><path class="sshirt" d="M254,210 C304,212 326,256 320,306 L260,314 L246,248 Z"/><path class="sshirtdk" d="M328,298 L256,308 L258,328 L330,318 Z"/><path class="skin" d="M328,316 L258,326 C244,380 250,450 266,500 L310,500 C332,450 338,380 328,316 Z"/><circle class="glowr" cx="262" cy="616" r="34"/><path class="ssmoke" d="M258,602 Q248,580 260,562 Q268,548 260,532 Q276,550 268,566 Q260,582 268,600 Z"/><path class="sirondk" d="M285,524 L255,610 L259,611 L291,524 Z"/><path class="siron" d="M292,524 L263,608 L267,609 L297,524 Z"/><rect class="shot" x="250" y="610" width="26" height="12" rx="3" transform="rotate(14 263 616)"/><circle class="spark" cx="280" cy="604" r="1.8"/><circle class="spark" cx="286" cy="618" r="1.4"/><circle class="spark" cx="248" cy="620" r="1.5"/><circle class="spark" cx="274" cy="630" r="1.2"/><circle class="skin" cx="288" cy="516" r="30"/><path class="line" d="M304,508 L272,508 M304,520 L272,520"/></g></g></g>
+  <g id="s_hammer_back"><g transform="translate(100 420) rotate(-58.9)"><rect class="swood" x="0" y="-5" width="360" height="10" rx="4"/><rect class="sirondk" x="54" y="-6.5" width="14" height="13" rx="2"/><rect class="siron" x="354" y="-26" width="34" height="52" rx="5"/><rect class="sirondk" x="362" y="-26" width="6" height="52"/><rect class="sirondk" x="378" y="-26" width="6" height="52"/></g></g>
+  <g id="back_head" transform="translate(0 34) translate(200 196) scale(0.84) translate(-200 -196)">
+    <path class="sbeard" d="M136,124 C130,154 132,182 142,200 L126,214 C144,226 166,226 184,212 L184,200 C200,206 216,206 216,200 L216,212 C234,226 256,226 274,214 L258,200 C268,182 270,154 264,124 Z"/>
+    <path class="sbeardline" d="M158,140 C152,162 152,182 158,198 M200,132 L200,198 M242,140 C248,162 248,182 242,198"/>
+    <circle class="skin" cx="140" cy="160" r="8"/><circle class="skin" cx="260" cy="160" r="8"/>
+    <g id="s_back_band">
+      <path class="sband" d="M142,128 C140,88 166,66 200,64 C234,66 260,88 258,128 Q200,114 142,128 Z"/>
+      <path class="sapdk" d="M144,104 Q200,96 256,104 L257,115 Q200,107 143,115 Z"/>
+      <path class="sband" d="M196,110 L168,148 L186,150 L200,124 L214,150 L232,148 L204,110 Z"/>
+      <circle class="sband" cx="200" cy="110" r="8"/>
+    </g>
+  </g>
+</g>
+</svg>

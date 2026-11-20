@@ -108,6 +108,27 @@ Schrift: Serifenschrift aus dem System (`Georgia, "Times New Roman", serif`), ke
 - Personen, mit denen man spricht, unterscheiden sich durch Umriss und Akzentfarbe. Die Sprechtextfarbe (`textColor` in `character.json`) ist die Akzentfarbe der Figur.
 - Keine Filter (Asset-Vertrag, Bildrate).
 
+## Weitere Charaktere
+
+Jede Figur ist allein am Umriss erkennbar und hat eine eigene Leuchtfarbe, die sie auch im Dunkeln unterscheidet. Alle Tonstufen einer Figur sind dunkler als die dunkelste Stelle der Szene (hellste Figurstufe höchstens `#26191d`). Neue Figuren bekommen eine noch freie Leuchtfarbe, z. B. Eisblau-Weiß, Magenta oder Smaragd.
+
+| Figur | Körperbau, Umriss | Leuchtfarbe | Träger |
+|---|---|---|---|
+| Alchemistin | zierlich, Rock, Schutzbrille | `#ffcf6b`, `#7dffb0` | Brille, Augen, Trank |
+| Lehrling | jugendlich, schmal, langer Mantel | `#7fe3ff` | Brillengläser, Glasröhre im Rucksack |
+| Meister | kräftig, Schulterplatten mit Stacheln, breiter Stand | `#ffe066`, `#c38bff` | Reaktorkern auf der Brust, Röhren, Brille |
+| Erzalchemist | gebrechlich, Buckel, stützt sich auf einen Stab | `#ffb35a` | Stabkern, Brillenränder, Monokel |
+| Schmied | Hüne (Skalierung 1,28), Fassbauch, kleiner Kopf, Zange | `#ff6a3c`, Funken `#ffd27a` | glühender Barren, Funken, Brille |
+
+| Figur | Vorn | Seite | Hinten |
+|---|---|---|---|
+| Lehrling | ![Lehrling vorn](artstyle/lehrling-front.svg) | ![Lehrling Seite](artstyle/lehrling-seite.svg) | ![Lehrling hinten](artstyle/lehrling-rueck.svg) |
+| Meister | ![Meister vorn](artstyle/meister-front.svg) | ![Meister Seite](artstyle/meister-seite.svg) | ![Meister hinten](artstyle/meister-rueck.svg) |
+| Erzalchemist | ![Erzalchemist vorn](artstyle/erzalchemist-front.svg) | ![Erzalchemist Seite](artstyle/erzalchemist-seite.svg) | ![Erzalchemist hinten](artstyle/erzalchemist-rueck.svg) |
+| Schmied | ![Schmied vorn](artstyle/schmied-front.svg) | ![Schmied Seite](artstyle/schmied-seite.svg) | ![Schmied hinten](artstyle/schmied-rueck.svg) |
+
+Wie bei der Alchemistin sind die Dateien Stilreferenz, keine Assets.
+
 ## Gegenstände
 
 - **Im Raum:** gleiche Regeln wie Möbel. Ein Gegenstand, den man aufnehmen kann, trägt mindestens eine Leuchtfarbe, damit er sich von der Silhouette abhebt.
@@ -165,3 +186,4 @@ Die Demo ist ein Stil-Muster, kein Asset. Der Vertrag wurde um Raumteile erweite
 - Abstimmung mit Fabian, danach Status „Festgelegt“ und Eintrag in den [Entscheidungen](../entscheidungen.md).
 - Die Engine-Funktion für Raumteile ist als Anforderung ohne ID vorgeschlagen ([Anforderungsvorschläge](../architektur/anforderungs-vorschlaege.md)). Die ID vergibt der PO.
 - Kontrast der Leuchtfarben auf den dunklen Silhouetten im echten Spiel prüfen, vor allem `#c9824a` auf `#3a242b`.
+- Das Rig der Figuren-Demos (Knie- und Ellbogengelenke, Laufstil je Figur) ist feiner als das Standard-Rig im [Asset-Vertrag: Figur](../architektur/asset-vertrag/figur.md). Bei der Übernahme der ersten Figur (#75) abgleichen.
