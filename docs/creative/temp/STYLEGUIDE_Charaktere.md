@@ -157,7 +157,13 @@ Das abgestimmte Profil (Pfad `side_face` in `side.py`) wird von allen Figuren wi
 - Von der Nase schräg zurück über die Lippen. Das Kinn liegt hinter der Nasenspitze.
 - Kurzer gerader Kiefer, der in einem Bogen zum Ohr hochläuft.
 - **Auge im Profil:** schmales, hohes Oval **ohne sichtbares Augenweiß**, mit Glanzlicht oben, Wimpernbogen um das Auge und Unterlid nach hinten.
-- Varianten (größere Nase, Bart) werden **zusätzlich** über das Standardprofil gelegt.
+- **Hauptfiguren** (Alchemistin, Lehrling, Meister, Erzalchemist, Schmied) behalten ihre abgestimmten Profile.
+- **NPCs und neue Nebenfiguren** bekommen ein eigenes Profil aus dem Generator `profile.py` (`profile(...)` bzw. `preset(name)`). Stirn, Hinterkopf und Halsanschluss sind bei allen gleich, deshalb passen Haare und Hüte weiter. Variiert werden:
+  - `nose`: `pointy` (Anime-Standard), `straight`, `upturned` (Stupsnase), `button` (Knollennase), `hook` (Hakennase)
+  - `L` Nasenlänge, `ty` Höhe der Nasenspitze, `lip` Lippenposition
+  - `chin`, `cy` Kinnvorsprung und -höhe, `jaw` (`soft`, `round`, `square`), `jx` Kieferlänge, `double` Doppelkinn
+- Faustregel: Junge Figuren haben kurze Stupsnasen und kleine runde Kinne. Kräftige Figuren haben gerade Nasen und kantige, tiefe Kinne. Alte oder gelehrte Figuren haben Hakennasen und fliehende Kinne. Die Silhouette soll das Profil allein am Umriss unterscheidbar machen.
+- Den Mundstrich liefert der Generator passend mit (`["mouth"]`).
 
 ---
 
@@ -431,6 +437,7 @@ Prüfe die Checkliste aus Abschnitt 12, insbesondere durchgängige Haare in der 
 | `anime2.py` | Körper der Alchemistin (Front) |
 | `anime_dark.py` | Scherenschnitt-Basis (`css`) |
 | `side.py`, `back.py` | Seiten- und Rückansicht der Alchemistin, abgestimmtes Profil `side_face` |
+| `profile.py` | Profil-Generator und Presets für die NPCs |
 | `boy.py` | Lehrling, Hilfsfunktion `mir()` (Spiegeln) und `girl_profile()` |
 | `mentor.py` | Meister, Hilfsfunktionen `gear()`, `spike()`, `pauldron()` |
 | `elder.py` | Erzalchemist, `staff()`, `symbols()` |

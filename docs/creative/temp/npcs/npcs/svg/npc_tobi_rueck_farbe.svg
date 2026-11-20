@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 400 820" width="400" height="820"><title>NPC Tobi – rueck</title><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern></defs><style>
+*{stroke-linejoin:round;stroke-linecap:round}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.skirtback,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.vialglass,.eyewhite{stroke:#3b2219;stroke-width:2.2}
+.skin{fill:#fde4d4}.cel{fill:#c4685a;opacity:.32}
+.hair{fill:#b8482c}.hairshine{fill:#f28a5e}.hairline{fill:none;stroke:#6e2416;stroke-width:1.3}
+.cap{fill:#7b5038}.capdark{fill:#4f3021}
+.brass{fill:#e0ad4a}.brassring{fill:none;stroke:#e0ad4a;stroke-width:2}.lens{fill:#7fd3c8;stroke:#3b2219;stroke-width:1.5}.lensshine{fill:#fff;opacity:.9}
+.eyewhite{fill:#fff;stroke-width:0}.iris{fill:url(#irisG);stroke:#5a2a10;stroke-width:.8}.pupil{fill:#2a120a}.irisshadow{fill:#3b2219;opacity:.35}
+.hl{fill:#fff}.lash{fill:none;stroke:#2a140c;stroke-width:2.2}.crease{fill:none;stroke:#8a4a3a;stroke-width:1;opacity:.7}.irisglow{fill:#ffe9a8;opacity:.55}.blush{fill:#f59a92;opacity:.4}.mouthline{fill:none;stroke:#8a3a32;stroke-width:1.5}.lowlash{fill:none;stroke:#3b2219;stroke-width:1.2}
+.nose{fill:none;stroke:#c98a76;stroke-width:1.5}.mouth{fill:#c0544c;stroke:#3b2219;stroke-width:1.2}
+.blushline{fill:none;stroke:#ee7f7a;stroke-width:1.4;opacity:.8}
+.blouse{fill:#fbf3e3}.jabot{fill:#fff8ec}.gem{fill:#8a2f5a}
+.strap{fill:#64402c}.buckle{fill:none;stroke:#e0ad4a;stroke-width:2}
+.corset{fill:#57321f}.corsetpanel{fill:#8c5c3c}.lace{stroke:#f6d9a8;stroke-width:1.6;fill:none}
+.skirt1{fill:#7d4c32}.skirt2{fill:#a3745a}.skirtback{fill:#9c7a9a;opacity:.85}
+.bloomers{fill:#fff8ec}.stocking{fill:#f6d6c2}.tattoo{fill:none;stroke:#c2463e;stroke-width:1.6}
+.boot{fill:#432619}.bootdark{fill:#2c1810}.pouch{fill:#7b5038}
+.vialglass{fill:#eafaf6;fill-opacity:.45}.liquid{fill:#3fe08a}.liquid2{fill:#ff8c4a}.cork{fill:#b88a5a}
+.bubble{fill:#eafff1}.highlight{fill:none;stroke:#fff;stroke-width:2.2}
+.glow{fill:url(#glowG)}.shade{fill:#5b2a4a;opacity:.22}.line{fill:none;stroke:#3b2219;stroke-width:1.2;opacity:.6}
+.groundshadow{fill:#5b2a4a;opacity:.25}
+.sparkle{fill:#fff6c9}.brow2{fill:#8a2f1c;stroke:#6e2416;stroke-width:.6}
+.ntop{fill:#7a6a52;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nskirt{fill:#7a6a52;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nlow{fill:#4a4440;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nshoe{fill:#4a3226;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nhair{fill:#4a3424;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nbelt{fill:#5a3e2a;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.napron{fill:#e8e0cc;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.ncollar{fill:#ddd3bc;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nprop{fill:#7a5232;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.npropdk{fill:#5a3e2a;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nhat{fill:#5a5048;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.nhatdk{fill:#3e3630;stroke:#3b2219;stroke-width:2.2;stroke-linejoin:round}.niris{fill:#6a5040}.nbrow{fill:none;stroke:#5a3e2a;stroke-width:2;stroke-linecap:round}.nglass{fill:none;stroke:#8a7a60;stroke-width:1.6}</style><rect y="-20" width="400" height="820" fill="#e9dcc8"/><g id="characterBack"  transform="translate(200 773) scale(1.0) translate(-200 -773)">
+  <ellipse class="groundshadow" cx="200" cy="773" rx="63" ry="7"/>
+  <g id="back_leg_l"><path class="nlow" d="M166,350 C163,450 167,620 170,730 L194,730 C196,620 196,450 195,350 Z"/><path class="nshoe" d="M165.0,722 L196.0,722 L197.0,760 Q197.0,773 184.5,773 L168.0,773 Q160.0,771 163.0,760 Z"/></g><g id="back_leg_r"><path class="nlow" d="M234,350 C237,450 233,620 230,730 L206,730 C204,620 204,450 205,350 Z"/><path class="nshoe" d="M235,722 L204,722 L203,760 Q203,773 215.5,773 L232,773 Q240,771 237,760 Z"/></g>
+  <path class="ntop" d="M167,222 Q200,212 233,222 C237,270 231,306 227,342 L173,342 C169,306 163,270 167,222 Z"/>
+  
+  <path class="nbelt" d="M171,326 L229,326 L229,336 L171,336 Z"/>
+  
+  <rect class="nprop" x="147" y="326" width="30" height="26" rx="4"/><path class="nprop" d="M225,222 L167,330 L173,336 L231,230 Z"/>
+  <g id="back_arm_l"><g transform="rotate(6 168 230)"><path class="ntop" d="M173,224 C153,228 147,252 147,282 L143,360 L165,363 L169,286 C171,262 175,244 179,236 Z"/><ellipse class="skin" cx="154" cy="374" rx="9" ry="11"/></g></g><g id="back_arm_r"><g transform="rotate(-6 232 230)"><g transform="translate(400 0) scale(-1 1)"><path class="ntop" d="M173,224 C153,228 147,252 147,282 L143,360 L165,363 L169,286 C171,262 175,244 179,236 Z"/><ellipse class="skin" cx="154" cy="374" rx="9" ry="11"/></g></g></g>
+  <g id="back_head">
+    <rect class="skin" x="192" y="182" width="16" height="40"/>
+    <circle class="skin" cx="152" cy="156" r="6.5"/><circle class="skin" cx="248" cy="156" r="6.5"/>
+    <path class="skin" d="M156,130 C156,104 178,92 200,92 C222,92 244,104 244,130 L244,176 C232,194 168,194 156,176 Z"/>
+    <path class="nhair" d="M148,118 C140,138 142,166 150,184 L160,180 L168,188 L178,182 L188,190 L200,184 L212,190 L222,182 L232,188 L240,180 L250,184 C258,166 260,138 252,118 C254,96 230,82 200,82 C170,82 146,96 148,118 Z"/>
+    
+  </g>
+</g></svg>

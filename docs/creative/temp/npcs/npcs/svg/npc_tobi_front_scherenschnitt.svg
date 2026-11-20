@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 400 820" width="400" height="820"><title>NPC Tobi – front</title><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern></defs><style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+.ntop,.nskirt,.nlow,.nshoe,.nhair,.nbelt,.napron,.ncollar,.nprop,.npropdk,.nhat,.nhatdk{fill:#140e10;stroke:#140e10;stroke-width:1.2}.niris,.nbrow,.nglass{display:none}.hl{fill:#cdbfae;opacity:.55}</style><rect y="-20" width="400" height="820" fill="#a8604e"/><g id="character" transform="translate(200 773) scale(1.0) translate(-200 -773)">
+  <ellipse class="groundshadow" cx="200" cy="773" rx="63" ry="7"/>
+  <g id="front_leg_l"><path class="nlow" d="M166,350 C163,450 167,620 170,730 L194,730 C196,620 196,450 195,350 Z"/></g><g id="front_leg_r"><path class="nlow" d="M234,350 C237,450 233,620 230,730 L206,730 C204,620 204,450 205,350 Z"/></g>
+  <g id="boot_l"><path class="nshoe" d="M165.0,722 L196.0,722 L197.0,760 Q197.0,773 184.5,773 L168.0,773 Q160.0,771 163.0,760 Z"/></g><g id="boot_r"><path class="nshoe" d="M235,722 L204,722 L203,760 Q203,773 215.5,773 L232,773 Q240,771 237,760 Z"/></g>
+  <rect class="skin" x="192" y="188" width="16" height="32"/>
+  <path class="ntop" d="M167,222 Q200,212 233,222 C237,270 231,306 227,342 L173,342 C169,306 163,270 167,222 Z"/>
+  <path class="ncollar" d="M188,214 L200,230 L212,214 L216,220 L200,238 L184,220 Z"/>
+  
+  <path class="nbelt" d="M171,326 L229,326 L229,336 L171,336 Z"/>
+  <path class="nprop" d="M175,222 L233,330 L227,336 L169,230 Z"/><rect class="nprop" x="221" y="326" width="30" height="26" rx="4"/><path class="npropdk" d="M221,326 L251,326 L251,336 L221,336 Z"/>
+  <g id="arm_l"><path class="ntop" d="M173,224 C153,228 147,252 147,282 L143,360 L165,363 L169,286 C171,262 175,244 179,236 Z"/><ellipse class="skin" cx="154" cy="374" rx="9" ry="11"/></g><g id="arm_r"><path class="ntop" d="M227,224 C247,228 253,252 253,282 L257,360 L235,363 L231,286 C229,262 225,244 221,236 Z"/><ellipse class="skin" cx="246" cy="374" rx="9" ry="11"/></g>
+  <g id="head"><path class="nhair" d="M150,120 C143,134 143,152 147,166 L156,160 L158,128 Z"/><path class="nhair" d="M250,120 C257,134 257,152 253,166 L244,160 L242,128 Z"/><circle class="skin" cx="152" cy="156" r="6.5"/><circle class="skin" cx="248" cy="156" r="6.5"/><path class="skin" d="M153,124 C152,158 164,182 190,195 Q200,199 210,195 C236,182 248,158 247,124 Q200,114 153,124 Z"/><path class="eyewhite" d="M172,158 Q181,153 190,157 Q189,162 181,163 Q173,162 172,158 Z"/><ellipse class="niris" cx="180.5" cy="158.5" rx="3.6" ry="4.4"/><circle class="pupil" cx="180.5" cy="158.5" r="1.7"/><circle class="hl" cx="182.2" cy="157.2" r="1"/><path class="lash" d="M171,158 Q181,151.5 191,156.5" style="stroke-width:1.8"/><path class="nbrow" d="M170,146 Q181,142.5 191,144.5"/><path class="eyewhite" d="M228,158 Q219,153 210,157 Q211,162 219,163 Q227,162 228,158 Z"/><ellipse class="niris" cx="219.5" cy="158.5" rx="3.6" ry="4.4"/><circle class="pupil" cx="219.5" cy="158.5" r="1.7"/><circle class="hl" cx="217.8" cy="157.2" r="1"/><path class="lash" d="M229,158 Q219,151.5 209,156.5" style="stroke-width:1.8"/><path class="nbrow" d="M230,146 Q219,142.5 209,144.5"/><path class="nose" d="M200.5,170 l-1.6,2.4"/><path class="mouthline" d="M195,182 Q200,183.5 205,182"/><path class="nhair" d="M150,140 Q148,102 200,98 Q252,102 250,140 L242,128 L236,136 L226,122 L214,132 L200,120 L186,132 L174,122 L164,136 L158,128 Z"/></g>
+</g></svg>

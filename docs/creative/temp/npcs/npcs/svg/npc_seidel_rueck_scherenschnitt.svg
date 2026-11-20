@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 400 820" width="400" height="820"><title>NPC Frau Seidel – rueck</title><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern></defs><style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+.ntop,.nskirt,.nlow,.nshoe,.nhair,.nbelt,.napron,.ncollar,.nprop,.npropdk,.nhat,.nhatdk{fill:#140e10;stroke:#140e10;stroke-width:1.2}.niris,.nbrow,.nglass{display:none}.hl{fill:#cdbfae;opacity:.55}</style><rect y="-20" width="400" height="820" fill="#a8604e"/><g id="characterBack"  transform="translate(200 773) scale(1.0) translate(-200 -773)">
+  <ellipse class="groundshadow" cx="200" cy="773" rx="60" ry="7"/>
+  <g id="back_leg_l"><path class="nlow" d="M169,350 C166,450 170,620 173,730 L194,730 C196,620 196,450 195,350 Z"/><path class="nshoe" d="M168.0,722 L196.0,722 L197.0,760 Q197.0,773 186.0,773 L171.0,773 Q163.0,771 166.0,760 Z"/></g><g id="back_leg_r"><path class="nlow" d="M231,350 C234,450 230,620 227,730 L206,730 C204,620 204,450 205,350 Z"/><path class="nshoe" d="M232,722 L204,722 L203,760 Q203,773 214,773 L229,773 Q237,771 234,760 Z"/></g>
+  <path class="ntop" d="M170,222 Q200,212 230,222 C234,270 230,306 226,342 L174,342 C170,306 166,270 170,222 Z"/>
+  <path class="nskirt" d="M172,330 L228,330 C252.0,499.0 278,638 278,668 Q200,676 122,668 C122,638 148.0,499.0 172,330 Z"/>
+  <path class="nbelt" d="M172,326 L228,326 L228,336 L172,336 Z"/>
+  
+  
+  <g id="back_arm_l"><g transform="rotate(6 168 230)"><path class="ntop" d="M176,224 C156,228 150,252 150,282 L146,360 L168,363 L172,286 C174,262 178,244 182,236 Z"/><ellipse class="skin" cx="157" cy="374" rx="9" ry="11"/></g></g><g id="back_arm_r"><g transform="rotate(-6 232 230)"><g transform="translate(400 0) scale(-1 1)"><path class="ntop" d="M176,224 C156,228 150,252 150,282 L146,360 L168,363 L172,286 C174,262 178,244 182,236 Z"/><ellipse class="skin" cx="157" cy="374" rx="9" ry="11"/><rect class="nprop" x="152" y="368" width="10" height="34" rx="4"/><rect class="npropdk" x="150" y="366" width="14" height="5" rx="2"/><rect class="npropdk" x="150" y="399" width="14" height="5" rx="2"/></g></g></g>
+  <g id="back_head">
+    <rect class="skin" x="192" y="182" width="16" height="40"/>
+    <circle class="skin" cx="152" cy="156" r="6.5"/><circle class="skin" cx="248" cy="156" r="6.5"/>
+    <path class="skin" d="M156,130 C156,104 178,92 200,92 C222,92 244,104 244,130 L244,176 C232,194 168,194 156,176 Z"/>
+    <path class="nhair" d="M148,118 C140,140 144,170 156,186 Q200,198 244,186 C256,170 260,140 252,118 C254,96 230,82 200,82 C170,82 146,96 148,118 Z"/><circle class="nhair" cx="200" cy="100" r="21"/><path class="hairline" d="M186,96 Q200,88 214,96"/>
+    
+  </g>
+</g></svg>

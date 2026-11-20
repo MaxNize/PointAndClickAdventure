@@ -1,0 +1,167 @@
+[
+  {
+    "id": "lena",
+    "name": "Lena",
+    "role": "Mitschülerin",
+    "lines": [
+      "Hast du die Hausaufgabe zur Transmutation schon?",
+      "Ich hab die halbe Nacht in der Bibliothek verbracht.",
+      "Pass auf, Magister Uhu sieht alles."
+    ],
+    "walk": {
+      "lean": 2,
+      "bob": 6,
+      "sway": 1.6,
+      "speed": 320
+    }
+  },
+  {
+    "id": "tobi",
+    "name": "Tobi",
+    "role": "Mitschüler",
+    "lines": [
+      "Mein Trank ist schon wieder explodiert.",
+      "Weißt du, wann es Mittagessen gibt?",
+      "Im zweiten Lehrjahr dürfen wir endlich Schlüssel machen!"
+    ],
+    "walk": {
+      "lean": 1,
+      "bob": 7,
+      "sway": 1.8,
+      "speed": 350,
+      "arm": 18
+    }
+  },
+  {
+    "id": "grombart",
+    "name": "Herr Grombart",
+    "role": "Hausmeister",
+    "lines": [
+      "Nicht auf den frisch gewischten Boden!",
+      "Wer hat schon wieder Schwefel verschüttet?",
+      "Hmpf. Lehrlinge."
+    ],
+    "walk": {
+      "lean": 3,
+      "bob": 4,
+      "sway": 2.4,
+      "speed": 260,
+      "arm": 10
+    }
+  },
+  {
+    "id": "seidel",
+    "name": "Frau Seidel",
+    "role": "Bibliothekarin",
+    "lines": [
+      "Psst! Hier wird gelesen.",
+      "Band zwei ist für Erstjährige gesperrt.",
+      "Bitte bring die Bücher pünktlich zurück."
+    ],
+    "walk": {
+      "lean": 1,
+      "bob": 4,
+      "sway": 1.2,
+      "speed": 270
+    }
+  },
+  {
+    "id": "maren",
+    "name": "Maren",
+    "role": "Küchenhilfe",
+    "lines": [
+      "Heute gibt's Rübensuppe. Schon wieder.",
+      "Kannst du mir die Kräuter aus dem Garten holen?",
+      "Die Köchin ist heute schlecht gelaunt."
+    ],
+    "walk": {
+      "lean": 2,
+      "bob": 7,
+      "sway": 2,
+      "speed": 330
+    }
+  },
+  {
+    "id": "fynn",
+    "name": "Fynn",
+    "role": "Botenjunge",
+    "lines": [
+      "Eilbrief für den Erzalchemisten!",
+      "Ich hab keine Zeit, ich muss weiter!",
+      "Die Treppen hier bringen mich noch um."
+    ],
+    "walk": {
+      "lean": 3,
+      "bob": 8,
+      "sway": 1.8,
+      "speed": 380,
+      "arm": 20
+    }
+  },
+  {
+    "id": "brandt",
+    "name": "Herr Brandt",
+    "role": "Gelehrter",
+    "lines": [
+      "Faszinierend, diese Kristallstrukturen.",
+      "Zu meiner Zeit hatten wir noch keine Athanore.",
+      "Hm? Ach, entschuldige, ich war in Gedanken."
+    ],
+    "walk": {
+      "lean": 4,
+      "bob": 3,
+      "sway": 1.2,
+      "speed": 240,
+      "arm": 8
+    }
+  },
+  {
+    "id": "ilse",
+    "name": "Ilse",
+    "role": "Händlerin",
+    "lines": [
+      "Frische Kräuter! Getrocknete Pilze!",
+      "Für Lehrlinge mach ich einen guten Preis.",
+      "Mondtau ist heute leider ausverkauft."
+    ],
+    "walk": {
+      "lean": 1,
+      "bob": 5,
+      "sway": 2.2,
+      "speed": 300
+    }
+  },
+  {
+    "id": "kurt",
+    "name": "Kurt",
+    "role": "Pförtner",
+    "lines": [
+      "Ausweis? Ach, du bist's.",
+      "Das Tor schließt bei Sonnenuntergang.",
+      "Nichts los heute. Wie immer."
+    ],
+    "walk": {
+      "lean": 0,
+      "bob": 4,
+      "sway": 2.6,
+      "speed": 270,
+      "arm": 12
+    }
+  },
+  {
+    "id": "yara",
+    "name": "Yara",
+    "role": "Studentin",
+    "lines": [
+      "Ich übe gerade Transmutationsformeln.",
+      "Erde und Wasser? Das ist doch Nährschlamm.",
+      "Viel Glück bei deiner Prüfung!"
+    ],
+    "walk": {
+      "lean": 1,
+      "bob": 6,
+      "sway": 1.6,
+      "speed": 330
+    }
+  }
+]
