@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -50 440 840" width="440" height="840"><title>Professor Odilo Gernegroß – seite</title><defs><linearGradient id="irisG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2410"/><stop offset=".55" stop-color="#b8701e"/><stop offset="1" stop-color="#ffd36a"/></linearGradient>
+<radialGradient id="glowG"><stop offset="0" stop-color="#8dffbd" stop-opacity=".85"/><stop offset="1" stop-color="#8dffbd" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c9"/><stop offset="1" stop-color="#f3b9a4"/></linearGradient>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2.2" fill="#e58f7e" opacity=".5"/></pattern><radialGradient id="glowMagenta"><stop offset="0" stop-color="#ff8ae0" stop-opacity=".8"/><stop offset="1" stop-color="#ff6ad5" stop-opacity="0"/></radialGradient></defs><style>
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{fill:#140e10}
+.skirtback{fill:#140e10;opacity:.82}.jabot{stroke:#140e10}
+.brassring,.buckle{fill:none;stroke:#140e10;stroke-width:2}
+.lens{fill:#ffcf6b}.glint{fill:#ffcf6b}
+.eye,.lid,.brow,.nose,.mouth,.blush,.freckle,.line,.tattoo,.shade,.lace{display:none}
+.vialglass{fill:#140e10}.liquid{fill:#7dffb0}.liquid2{fill:#ff9a4f}.bubble{fill:#eafff1}
+.highlight{fill:none;stroke:#ffe3a3;stroke-width:1.5;stroke-linecap:round}
+.glow{fill:url(#glowG)}.groundshadow{display:none}#hair_back{display:none}
+
+.eyewhite,.iris,.pupil,.irisshadow,.irisglow,.crease,.lash,.lowlash,.brow2,.hairshine,.hairline,.cel,.mouthline,.blushline{display:none}
+.hl{fill:#ffcf6b}.lensshine{fill:#fff3d0}.sparkle{fill:#fff1c4}
+.lens{fill:#ffcf6b}
+.skin,.hair,.cap,.capdark,.blouse,.jabot,.strap,.corset,.corsetpanel,.skirt1,.skirt2,.bloomers,.stocking,.boot,.bootdark,.pouch,.brass,.cork,.gem{stroke:#140e10;stroke-width:1.2}
+
+.pcoat,.pcoatt,.pcoatsh,.pvest,.pshirt,.ptie,.ppants,.pshoe,.phair,.pboard,.ppaper,.plid{fill:#140e10;stroke:#140e10;stroke-width:1.2}
+.phairline,.pbrow,.pglint{display:none}.pchain{stroke:#e0ad4a;opacity:.35}
+.pglass{fill:none;stroke:#ff6ad5;stroke-width:1.6;opacity:.9}
+.pcirc{stroke:#ff6ad5;stroke-width:1.8}.glowm{fill:url(#glowMagenta)}
+</style><rect x="-20" y="-50" width="440" height="840" fill="#a8604e"/>
+<g id="characterSide"  transform="translate(200 773) scale(1.06) translate(-200 -773)">
+  <ellipse class="groundshadow" cx="210" cy="773" rx="40" ry="5"/>
+  <path class="pcoatt" d="M190,320 L212,320 L198,584 L162,574 Z"/>
+  <g id="side_arm_far"><g id="side_arm_far_fore"><path class="pcoat" d="M198,284 L213,284 L211,350 L200,350 Z"/><path class="pcoatsh" d="M196,346 L215,346 L218,364 L193,364 Z"/><ellipse class="skin" cx="206" cy="372" rx="7" ry="9"/><path class="shade" d="M198,284 L213,284 L211,350 L200,350 Z"/></g><path class="pcoat" d="M196,226 C188,242 189,272 198,290 L214,290 C220,272 220,242 212,226 Z"/><path class="shade" d="M196,226 C188,242 189,272 198,290 L214,290 C220,272 220,242 212,226 Z"/></g>
+  <g id="side_leg_far"><path class="ppants" d="M194,352 C191,430 196,500 199,550 L213,553 C216,500 219,430 216,352 Z"/><path class="shade" d="M194,352 C191,430 196,500 199,550 L213,553 C216,500 219,430 216,352 Z"/><g id="side_leg_far_shin"><circle class="ppants" cx="206" cy="550" r="7.5"/><path class="ppants" d="M199,546 C195,600 198,680 200,730 L212,730 C213,690 215,620 213,553 Z"/><path class="pshoe" d="M197,722 L213,722 L213,744 L246,756 Q252,764 242,768 L201,768 L197,760 Z"/><circle class="shade" cx="206" cy="550" r="7.5"/><path class="shade" d="M199,546 C195,600 198,680 200,730 L212,730 C213,690 215,620 213,553 Z"/><path class="shade" d="M197,722 L213,722 L213,744 L246,756 Q252,764 242,768 L201,768 L197,760 Z"/></g></g>
+  <g id="side_leg_near"><path class="ppants" d="M194,352 C191,430 196,500 199,550 L213,553 C216,500 219,430 216,352 Z"/><g id="side_leg_near_shin"><circle class="ppants" cx="206" cy="550" r="7.5"/><path class="ppants" d="M199,546 C195,600 198,680 200,730 L212,730 C213,690 215,620 213,553 Z"/><path class="pshoe" d="M197,722 L213,722 L213,744 L246,756 Q252,764 242,768 L201,768 L197,760 Z"/></g></g>
+  <g id="side_torso">
+    <rect class="skin" x="198" y="184" width="14" height="40"/>
+    <path class="pcoat" d="M190,222 C180,250 180,300 186,344 L222,344 C226,300 226,252 220,230 Q212,220 204,218 Z"/>
+    <path class="pvest" d="M214,232 L222,236 C226,270 226,306 224,340 L216,340 Z"/>
+    <path class="pshirt" d="M210,206 L222,214 L216,224 Z"/>
+    <path class="ptie" d="M214,214 L226,218 L222,230 L228,246 L220,250 L216,230 Z"/>
+    <path class="pcoatsh" d="M206,214 L224,232 L216,256 Z"/>
+    <path class="pchain" d="M218,296 Q224,306 222,314"/>
+  </g>
+  <g id="side_arm_near"><g id="side_arm_near_fore"><path class="pcoat" d="M198,284 L213,284 L211,350 L200,350 Z"/><path class="pcoatsh" d="M196,346 L215,346 L218,364 L193,364 Z"/><g transform="rotate(6 214 382)"><circle class="glowm" cx="214" cy="382" r="30"/><rect class="pboard" x="196" y="358" width="36" height="48" rx="3"/><rect class="ppaper" x="200" y="364" width="28" height="38" rx="1"/><rect class="brass" x="207" y="355" width="14" height="6" rx="2"/><circle class="pcirc" cx="214" cy="382" r="10"/><path class="pcirc" d="M214,372 L223,387 L206,388 Z M204,379 L225,390 M218,369 l3,-3"/></g><ellipse class="skin" cx="206" cy="372" rx="7" ry="9"/></g><path class="pcoat" d="M196,226 C188,242 189,272 198,290 L214,290 C220,272 220,242 212,226 Z"/></g>
+  <g id="side_head" transform="rotate(-5 205 190) translate(205 150) scale(0.95 1.08) translate(-205 -150)">
+    <path class="skin" d="M162,140 C162,102 186,96 200,96.5 C215,96.8 230,104 239,114 C243.5,119 245.5,124 245.5,130 L245.5,143 C245.5,146.5 243.7,148 243.7,150.5 C245.7,154.5 257.5,157.5 260.5,160 L259.9,162.2 C258.0,165 251.7,166 249.7,167 C249.7,169 250.5,169 250.5,172 L247.9,174.8 C249.5,175.8 249.6,176.20000000000002 249.6,178.20000000000002 C249.6,180.20000000000002 244.4,180.70000000000002 243.4,182.70000000000002 C243.4,184.70000000000002 245,188 245,191 C245,194 243,196 239,196 L210,196.3 C205,196 204,193 201.5,188 C200,185 199,183 197.5,182 C190,184 176,178 168,166 C162,158 162,150 162,140 Z"/>
+    <path class="phair" d="M154,118 C150,100 176,90 206,92 C222,94 236,100 244,112 L230,112 L218,118 C214,140 214,160 212,178 L210,200 L203,210 L197,200 L189,214 L182,200 L174,212 L167,198 L159,204 C150,172 148,140 154,118 Z"/>
+    <path class="phairline" d="M170,104 C162,140 162,174 168,204 M186,100 C178,140 178,178 184,208 M202,98 C196,130 194,170 198,200"/>
+    <path class="skin" d="M199.5,181 C195,183.5 189,180.5 186,176 C183,171 182.2,165 182.6,161 C183.2,157 185.5,154.4 188,154.2 C190.6,154 192.6,155.6 193.6,157.8 C195.5,162 197.5,168 199,173 Z"/>
+    <path class="line" d="M187.5,159.5 Q185.2,166.5 189.5,173.5"/>
+    <ellipse class="iris" cx="232.5" cy="155" rx="2.5" ry="4"/><circle class="hl" cx="233.2" cy="156.4" r="0.9"/>
+    <path class="plid" d="M225,150 Q232,147 240,151 L240,153.6 Q232,151.5 225,154 Z" style="stroke:none"/>
+    <path class="lash" d="M225,154 Q232,151.4 240,153.4" style="stroke-width:2"/>
+    <path class="pbrow" d="M224,143 Q232,135.5 243,139"/>
+    <path class="mouthline" d="M248.5,174.8 Q245.5,175.60000000000002 242.9,175.0"/>
+    <rect class="pglass" x="226" y="149" width="18" height="11" rx="1.2"/>
+    <path class="pglint" d="M230,158 L234,151 M235,158 L238,153"/>
+    <path class="pglass" d="M226,153 L196,151" fill="none"/>
+    <path class="phair" d="M212,100 C232,100 248,112 251,132 L244,126 L243,146 L236,124 L230,138 L226,116 Z"/>
+    <path class="phair" d="M190,94 Q182,80 170,78 Q182,84 186,96 Z M214,96 Q222,82 236,84 Q224,88 218,98 Z M156,120 Q142,116 136,124 Q146,120 156,128 Z"/>
+  </g>
+</g>
+</svg>
