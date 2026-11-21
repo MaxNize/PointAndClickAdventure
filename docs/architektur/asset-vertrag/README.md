@@ -24,7 +24,7 @@ Dieser Vertrag legt fest, wie Inhaltsdateien unter `content/` aussehen müssen, 
 - **Version:** Jede JSON-Datei beginnt mit `"schemaVersion": 1`. Bricht eine Vertragsänderung bestehende Dateien, steigt die Version.
 - **Texte** stehen auf Deutsch direkt im JSON.
 - **Koordinaten** in Raumdateien sind viewBox-Einheiten des Raums (0–1920 × 0–1080). Koordinaten in Figuren und Gegenständen beziehen sich auf deren eigene viewBox.
-- **Anforderungs-IDs**, die noch nicht im Katalog stehen, sind vorläufig ([Anforderungsvorschläge](../anforderungs-vorschlaege.md)).
+- **Anforderungen** ohne Katalog-ID stehen in den [Anforderungsvorschlägen](../anforderungs-vorschlaege.md).
 - **Beispiele** sind Ausschnitte aus einem neutralen Testinhalt ohne Handlung. Verweise auf nicht gezeigte Dateien (z. B. `nebenraum`, `kegel`) sind angenommen.
 
 ## Begriffe

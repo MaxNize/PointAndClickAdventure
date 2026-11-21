@@ -4,7 +4,7 @@ Stand 2026-11-19, Vorschlag der Architektur. Vorgeschlagene Reihenfolge der Stor
 
 **Verbindlichkeit:** Die Reihenfolge ist ein Vorschlag, zu prüfen, nicht erzwungen. Schritte sind keine Sprints. Sprint, Aufwand, Priorität und Zuweisung legen Planning und PO fest ([Issues aus Anforderungen](../prozess/issues-aus-anforderungen.md)). Erzwungene Abhängigkeiten („Blockiert durch“) stehen nur in den Issues und nur, wo Katalog oder Engine-Konzept sie stützen.
 
-**IDs:** Kursiv gesetzte IDs sind vorläufig. Sie stehen in den [Anforderungsvorschlägen](anforderungs-vorschlaege.md) oder in Issue #78 und werden erst nach Entscheidung des PO zu Issues. Alle anderen IDs stehen im [Katalog](../voranalyse/03-anforderungen.md) und haben schon Issues.
+**IDs:** Alle IDs stehen im [Katalog](../voranalyse/03-anforderungen.md). Kursiv gesetzte IDs kamen am 2026-11-21 aus den Vorschlägen der Architektur und aus Issue #78 dazu.
 
 ## Prinzip
 
@@ -41,8 +41,7 @@ Gate-Stories aus Schritt 0 sind Gate-Änderungen. Sie gehen als eigene PRs mit F
 
 ## Issues
 
-- Für Stories mit Katalog-ID gibt es die Issues schon. Ändert der PO FA-E-05 oder FA-E-07, werden #24 und #25 im selben PR nachgezogen.
-- Für vorläufige IDs entstehen Issues erst nach Aufnahme in den Katalog und dem Merge. Die Vorschau dafür steht in den [Anforderungsvorschlägen](anforderungs-vorschlaege.md#vorschau-der-issues).
+- Für jede Katalog-ID gibt es ein Issue (EP-21). Die Texte von #24 und #25 sind an den neuen Wortlaut von FA-E-05 und FA-E-07 angepasst.
 - Der Spike wird als Prozessaufgabe angelegt (Template `prozess.yml`, Bereich Creative), nach Vorschau an den PO.
 
 ## Nicht in der Erstimplementierung
