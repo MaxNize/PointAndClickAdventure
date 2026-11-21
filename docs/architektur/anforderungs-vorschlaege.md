@@ -60,6 +60,15 @@ Herkunft: [Autoren-Workflow](autoren-workflow.md), Persona-Vorschlag P-04. Alle 
 | FA-DEV-14 | Sequenz ab Schritt | Entwickler | Das System muss eine Zwischensequenz über `?cutscene=<id>&step=<n>` ab Schritt n abspielen. | Unit-Test: Erster ausgeführter Schritt = n. Zustand entspricht dem nach `skip` der Schritte 0 bis n−1. |
 | FA-DEV-15 | Figuren-Vorschau | Entwickler | Das System muss jede Animation einer Figur im Entwicklungsmodus je Ansicht abspielen. | E2E-Test: Anzahl abspielbarer Einträge = Anzahl Animation × Ansicht in `animations.json`. |
 
+## Ohne ID: Raumteile (Artstyle, Issue #1)
+
+Stand 2026-11-20. Die Demo-Szene zum [Artstyle](../creative/artstyle.md) braucht Raumgrafik, die sich mit dem Zustand ändert, und Bewegung im Raum. Das Format steht im [Asset-Vertrag](asset-vertrag/raum.md). Die IDs vergibt der PO bei Aufnahme in den Katalog.
+
+| ID | Bereich | Nutzerrolle | Anforderung | Akzeptanzkriterium |
+|---|---|---|---|---|
+| offen | Raumteile | Spieler | Das System muss jedes Raumteil mit `visibleIf` nur anzeigen, solange seine Bedingung erfüllt ist. | E2E-Test im Testraum: Nach Setzen des Flags wechselt die Anzeige innerhalb von 100 ms, angezeigte Teile mit nicht erfüllter Bedingung: 0. |
+| offen | Raumanimation | Spieler | Das System muss jede Raumanimation in Schleife abspielen, solange ihr Teil sichtbar ist. | E2E-Test: Der Transform jedes animierten Teils ändert sich innerhalb von 500 ms. Ausgeblendete Teile: 0 laufende Animationen. |
+
 ## Vorschau der Issues
 
 Nach der Anleitung, Schritt 2: erst nach Aufnahme in den Katalog und Merge, Vorschau vorher an den PO. Typ `Story`, Label `story`, Bereich `Fullstack` für alle Zeilen. Titel = `<ID> <Bereich>`, z. B. `FA-E-06 Kontextmenü`.

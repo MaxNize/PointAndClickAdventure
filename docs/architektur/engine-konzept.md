@@ -112,6 +112,7 @@ Raum, Figuren und Gegenstände liegen inline im selben DOM.
 - Das **Raum-SVG** bleibt unverändert. Es ist immer nur ein Raum im DOM, und die `hotspot-`-IDs bleiben für FA-E-05, FA-DEV-05 und NF-V-01 direkt zählbar.
 - **Figuren und Gegenstände** präfixt die Engine beim Einbetten: Jede ID wird zu `<instanz>--<id>`, Verweise in `url(#…)` und `href` werden umgeschrieben.
 - Der Vertrag verbietet `<style>`-Elemente, weil CSS-Klassen über Dateien hinweg kollidieren würden.
+- **Raumteile** (`data-part` im Raum-SVG) blendet die Engine über `display` ein und aus und animiert sie mit GSAP. Sonst bleibt das Raum-SVG unverändert ([Asset-Vertrag: Raum](asset-vertrag/raum.md)).
 
 ## Fehlerbehandlung
 
