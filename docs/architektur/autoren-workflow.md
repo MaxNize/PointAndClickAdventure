@@ -1,6 +1,6 @@
 # Autoren-Workflow
 
-Wie Creative aus Assets ein spielbares Spiel baut. Entschieden am 2026-11-19 ([Entscheidungen](../entscheidungen.md)). Die Werkzeug-IDs FA-DEV-07 bis FA-DEV-15 sind vorläufig ([Anforderungsvorschläge](anforderungs-vorschlaege.md)).
+Wie Creative aus Assets ein spielbares Spiel baut. Entschieden am 2026-11-19 ([Entscheidungen](../entscheidungen.md)). Die Werkzeuge stehen als FA-DEV-07 bis FA-DEV-15 im [Katalog](../voranalyse/03-anforderungen.md).
 
 ## Grundsatz
 
@@ -82,7 +82,7 @@ Positionen beschreibt Creative nur grob. Die genauen Koordinaten setzt Creative 
 
 ## Persona-Vorschlag P-04
 
-Für Creative als Autor gibt es noch keine Persona. Vorschlag zur Aufnahme in die [Personas](../voranalyse/02-personas.md), Entscheidung durch den PO zusammen mit den [Anforderungsvorschlägen](anforderungs-vorschlaege.md).
+Für Creative als Autor gibt es noch keine Persona. Vorschlag zur Aufnahme in die [Personas](../voranalyse/02-personas.md), Entscheidung durch den PO.
 
 | | |
 |---|---|
@@ -94,4 +94,4 @@ Für Creative als Autor gibt es noch keine Persona. Vorschlag zur Aufnahme in di
 | Ziel | Einen neuen Raum spielbar machen, ohne auf Entwickler zu warten |
 | Frust | Koordinaten raten, Fehler erst im Review sehen, für jede Kleinigkeit neu laden und von vorn spielen |
 | Zitat | „Ich will sehen, wo die Figur laufen kann, und es mit der Maus verschieben.“ |
-| Treibt | FA-DEV-07 bis FA-DEV-15 (vorläufig), NF-W-01, NF-V-01 |
+| Treibt | FA-DEV-07 bis FA-DEV-15, NF-W-01, NF-V-01 |

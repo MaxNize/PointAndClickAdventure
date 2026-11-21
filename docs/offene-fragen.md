@@ -11,7 +11,7 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] Bewertungskriterien und Abgabeform
 
 ## Produkt
-- [ ] Spielkonzept: Setting, Ton, Länge, erstes Release. FA-Vorgabe (mind. 15) ist mit 19 erfüllt.
+- [ ] Spielkonzept: Setting, Ton, Länge, erstes Release. FA-Vorgabe (mind. 15) ist mit 47 erfüllt.
 - [ ] Projektsteckbrief: Projektname, Ziel, Abgrenzung
 
 ## Rückfragen an Creative (Fabian, Benedict)
@@ -29,8 +29,8 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 
 Beantwortet 2026-11-19 (siehe [Entscheidungen](entscheidungen.md)):
 - Inhaltsformat für Gegenstände: im [Asset-Vertrag](architektur/asset-vertrag/gegenstand.md), Entwurf
-- FA-E-07-Einheit (viewBox-Einheiten) und Klick außerhalb der Fläche: Der Wortlaut im Katalog und in Issue #25 ändert sich erst nach Entscheidung des PO ([Anforderungsvorschläge](architektur/anforderungs-vorschlaege.md))
-- E-Liste: als Architektur-Liste erarbeitet, Projekt-IDs vorläufig
+- FA-E-07-Einheit (viewBox-Einheiten) und Klick außerhalb der Fläche: im Katalog (FA-E-07, FA-E-09)
+- E-Liste: als Architektur-Liste erarbeitet, im Katalog als FA-E-02 bis FA-E-22
 - `content/` als Wurzel
 
 ## Asset-Vertrag und Werkzeuge
@@ -46,7 +46,7 @@ Beantwortet 2026-11-19 (siehe [Entscheidungen](entscheidungen.md)):
 - [ ] Claim gegen Doppelarbeit: bei 7 Personen plus Agenten wahrscheinlich nötig
 
 ## Mit dem Team bestätigen
-- [ ] Zusage: 16 NF, 19 FA, 23 EP
-- [ ] [Anforderungsvorschläge der Architektur](architektur/anforderungs-vorschlaege.md) im Planning am 26.11. entscheiden, zusammen mit Issue #78: 25 neue FA mit vorläufiger ID, Änderungen an FA-E-05 und FA-E-07. Dabei prüfen, ob der Umfang im Semester realistisch ist (Qualitätskriterium 5).
+- [ ] Zusage: 16 NF, 47 FA, 24 EP
+- [ ] Im Planning am 26.11. prüfen, ob der Umfang von 47 FA im Semester realistisch ist (Qualitätskriterium 5). Die Vorschläge der Architektur und aus Issue #78 stehen seit 2026-11-21 im Katalog.
 - [ ] Akzeptanz-Vorschläge NF-A-01 (Browser) und NF-A-02 (ab 1280 px Fensterbreite) bestätigen
 - [ ] Personas P-01 bis P-03 als Arbeitsgrundlage, dazu der Vorschlag P-04 Creative ([Autoren-Workflow](architektur/autoren-workflow.md#persona-vorschlag-p-04))
