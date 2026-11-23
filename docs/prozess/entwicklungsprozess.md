@@ -62,7 +62,7 @@ Ein Ticket ist fertig, wenn alles gilt:
 
 Der Autor gibt seinen PR nie selbst frei (EP-03). Wer einen Agenten startet, gilt als Autor. Die **Abnahme** ist davon getrennt: Der PO prüft die Story gegen das Akzeptanzkriterium und ist dafür Reviewer im PR. Hat der PO die Story selbst umgesetzt, nimmt der Scrum Master ab (PR-02).
 
-Die Regel ist beschlossen ([Entscheidungen](../entscheidungen.md)). Technisch erzwungen wird sie erst, wenn die Architekten `CODEOWNERS` und das Ruleset umgesetzt haben (EP-02, EP-03, EP-11). Bis dahin gilt sie als Absprache.
+Die Regel ist beschlossen ([Entscheidungen](../entscheidungen.md)). Das Ruleset für `main` erzwingt eine Freigabe durch eine andere Person als den Autor (EP-03, [Ruleset](../architektur/gates.md#github-ruleset)). Neue Commits nach der Freigabe brauchen eine neue Freigabe. Wer nach Zuständigkeit freigibt, erzwingt erst `CODEOWNERS` (EP-11), bis dahin gilt das als Absprache.
 
 ## Aufgaben ohne Story-ID
 
