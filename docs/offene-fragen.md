@@ -40,7 +40,7 @@ Beantwortet 2026-11-19 (siehe [Entscheidungen](entscheidungen.md)):
 - [ ] **Flags:** In v1 nur boolesch. Reicht das für die Rätsel aus dem Spielkonzept, oder braucht es Zähler?
 
 ## Technik
-- [ ] Rulesets auf GitHub einrichten (EP-02 bis EP-04, EP-11), sobald das Team Zugriff hat
+- [ ] Rulesets auf GitHub einrichten: EP-03 und EP-04 stehen im Ruleset `main` ([Ruleset](architektur/gates.md#github-ruleset)), offen sind EP-02 und EP-11
 - [ ] Agenten-Werkzeug: bestimmt die Umsetzung von EP-12 und EP-15
 - [ ] Speicherort der Spielstände: Browser oder Server (NF-V-03). Ein Server würde die nicht übernommenen Gates wieder relevant machen.
 - [ ] Claim gegen Doppelarbeit: bei 7 Personen plus Agenten wahrscheinlich nötig

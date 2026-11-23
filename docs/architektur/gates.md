@@ -38,6 +38,26 @@ Ein Fund steht als `<regel> <datei>:<zeile> <meldung>` auf stderr, Exit-Code 1.
 - Zeilen mit „gestrichen“ zählen in EP-20 nicht.
 - EP-21 überspringt Issues mit Label `prozess` und Issues ohne ID im Titel.
 
+## GitHub-Ruleset
+
+Schützt `main` auf GitHub. Die Datei [`.github/rulesets/main.json`](../../.github/rulesets/main.json) ist die Quelle, im Format der REST-API. Ausnahmen gibt es keine, auch nicht für Admins. Änderungen geben nur Architekten frei (EP-11). EP-02 und EP-11 ergänzen später dasselbe Ruleset.
+
+| ID | Regel im Ruleset | Wirkung |
+|---|---|---|
+| EP-03 | `pull_request` | Merge nur per PR mit 1 Freigabe einer anderen Person. Neue Commits machen die Freigabe ungültig, den letzten Push gibt jemand anderes frei. |
+| EP-04 | `non_fast_forward` | Force-Push auf `main` wird abgewiesen. |
+
+Einspielen kann nur ein Admin des Repos:
+
+```sh
+gh api --method POST repos/MaxNize/PointAndClickAdventure/rulesets --input .github/rulesets/main.json   # anlegen
+gh api repos/MaxNize/PointAndClickAdventure/rulesets --jq '.[] | select(.name=="main") | .id'          # ID
+gh api --method PUT repos/MaxNize/PointAndClickAdventure/rulesets/<id> --input .github/rulesets/main.json  # aktualisieren
+gh api repos/MaxNize/PointAndClickAdventure/rules/branches/main                                        # prüfen, mit Schreibrecht
+```
+
+Notfall: Ein Admin setzt `enforcement` vorübergehend auf `disabled` und danach wieder auf `active`. `node --test tools/repo/ruleset.test.mjs` prüft nur die Datei.
+
 ## Offen
 
 - markdownlint kommt, sobald das Projektgerüst (npm) steht.
