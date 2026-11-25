@@ -1,35 +1,4 @@
 {
   "_comment": "Baseline für EP-19: vorläufige IDs aus den Vorschlägen der Architektur (docs/architektur/anforderungs-vorschlaege.md, Issue #78), die der Katalog noch nicht kennt. Die Liste darf nur schrumpfen. Wird eine ID im Katalog definiert oder nirgends mehr verwiesen, schlägt EP-19 an (docs.id_baseline_stale) und der Eintrag muss raus.",
-  "provisional": [
-    "EP-16",
-    "FA-DEV-07",
-    "FA-DEV-08",
-    "FA-DEV-09",
-    "FA-DEV-10",
-    "FA-DEV-11",
-    "FA-DEV-12",
-    "FA-DEV-13",
-    "FA-DEV-14",
-    "FA-DEV-15",
-    "FA-E-02",
-    "FA-E-03",
-    "FA-E-04",
-    "FA-E-06",
-    "FA-E-08",
-    "FA-E-09",
-    "FA-E-11",
-    "FA-E-12",
-    "FA-E-13",
-    "FA-E-14",
-    "FA-E-15",
-    "FA-E-17",
-    "FA-E-18",
-    "FA-E-19",
-    "FA-E-20",
-    "FA-E-21",
-    "FA-E-22",
-    "FA-G-09",
-    "FA-G-10",
-    "FA-G-11"
-  ]
+  "provisional": []
 }

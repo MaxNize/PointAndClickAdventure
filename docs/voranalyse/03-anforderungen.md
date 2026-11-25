@@ -11,7 +11,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 
 **Begriffe:** *Spiellogik* = `src/engine/core`, reines TypeScript mit Zustand und Regeln. *Spielinhalt* = Räume, Figuren, Gegenstände, Animationen, Dialoge, Lösungsweg als SVG- und JSON-Dateien unter `content/`. *Gate-Lauf* = `make ci`, lokal und in der CI gleich. *Nutzerrolle*: Systemrollen Spieler und Entwickler, Projektrollen Team, Architekt und Agent (siehe [Stakeholder und Rollen](01-stakeholder-und-rollen.md)). In Teil 3 meint „System“ das Repository mit seiner Pipeline.
 
-**Umfang der Zusage:** 16 NF, 19 FA (5 Engine, 8 Gegenstände, 6 Entwicklungsmodus), 23 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
+**Umfang der Zusage:** 16 NF, 47 FA (21 Engine, 11 Gegenstände, 15 Entwicklungsmodus), 24 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
 
 ## 1. Nicht-funktionale Anforderungen
 
@@ -57,19 +57,36 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 
 ### 2.1 Engine
 
-Aus dem [Engine-Konzept](../architektur/engine-konzept.md) der Architektur. Die Nummern folgen der Architektur-Liste, Lücken sind dort noch nicht geliefert.
+Aus dem [Engine-Konzept](../architektur/engine-konzept.md) der Architektur. Die Nummern folgen der Architektur-Liste E-01 bis E-22. Unit-Tests laufen gegen den Kern, E2E-Tests im Referenz-Testraum. *Einheit* = viewBox-Einheit des Raums. *Akteur*, *Interaktionsziel*, *Anker*, *Basislinie*: siehe [Asset-Vertrag](../architektur/asset-vertrag/README.md#begriffe).
 
 | ID | Bereich | Nutzerrolle | Anforderung | Akzeptanzkriterium |
 |---|---|---|---|---|
 | FA-E-01 | Raum laden | Spieler | Das System muss Räume aus einer JSON-Raumdefinition laden. | E2E-Test: Alle Ebenen des Testraums werden angezeigt. |
-| FA-E-05 | Hotspots | Spieler | Das System muss SVG-Elemente mit ID-Präfix `hotspot-` als anklickbare Hotspots registrieren. | E2E-Test: Ein Klick löst die hinterlegte Aktion aus. |
-| FA-E-07 | Laufen | Spieler | Das System muss die Spielfigur nach einem Klick auf die begehbare Fläche zum Zielpunkt bewegen. | Endposition höchstens 2 px vom Klickpunkt entfernt. |
+| FA-E-02 | Zeichenreihenfolge | Spieler | Das System muss alle Elemente zwischen Hinter- und Vordergrundebene nach ihrer Basislinie sortiert zeichnen. | Unit-Test: Zeichenreihenfolge im Testraum aufsteigend nach Basislinie, 0 Abweichungen. E2E-Test: Figur mit Fußpunkt unter der Basislinie einer Mittelebene liegt im DOM nach dieser Ebene. |
+| FA-E-03 | Spielstart | Spieler | Das System muss ein neues Spiel im Startraum aus `game.json` beginnen. | E2E-Test: Nach dem Start ist `startRoom` aktiv, die Spielfigur steht höchstens 2 Einheiten vom Spawn `startSpawn` entfernt. |
+| FA-E-04 | Platzierung | Spieler | Das System muss jeden sichtbaren Akteur an seiner Position aus der Raumdefinition anzeigen. | E2E-Test: Anker jedes Akteurs im Testraum höchstens 2 Einheiten von der Position entfernt. Akteure mit nicht erfüllter `visibleIf`-Bedingung: 0 angezeigt. |
+| FA-E-05 | Hotspots | Spieler | Das System muss SVG-Elemente mit ID-Präfix `hotspot-` als Interaktionsziele registrieren. | E2E-Test: Ein Rechtsklick auf jedes `hotspot-`-Element des Testraums öffnet das Kontextmenü genau dieses Hotspots. |
+| FA-E-06 | Kontextmenü | Spieler | Das System muss bei Rechtsklick auf ein Interaktionsziel ein Kontextmenü mit dessen Verben anzeigen. | E2E-Test je Interaktionsziel im Testraum: Einträge = „Ansehen“ + definierte Verben + Gegenstands-Eintrag bei nichtleerem Inventar. Auswahl eines Eintrags führt dessen Effekte aus. |
+| FA-E-07 | Laufen | Spieler | Das System muss die Spielfigur nach einem Klick auf die begehbare Fläche zum Zielpunkt bewegen. | Endposition höchstens 2 Einheiten vom Klickpunkt entfernt. |
+| FA-E-08 | Wegsuche | Spieler | Das System muss die Spielfigur auf einem Weg innerhalb der begehbaren Fläche führen. | Unit-Test mit Polygonen mit und ohne Löcher: 0 Wegsegmente außerhalb der Fläche. |
+| FA-E-09 | Klick außerhalb | Spieler | Das System muss die Spielfigur nach einem Klick außerhalb der begehbaren Fläche zum nächstgelegenen Punkt der Fläche bewegen. | Unit-Test: Endposition höchstens 2 Einheiten vom nächstgelegenen Randpunkt entfernt. |
 | FA-E-10 | Tiefenskalierung | Spieler | Das System muss die Spielfigur abhängig von ihrer y-Position skalieren. | Unit-Test: Abweichung vom Sollwert an oberem und unterem Rand der begehbaren Fläche höchstens 1 %. |
+| FA-E-11 | Ansicht | Spieler | Das System muss die Ansicht einer laufenden Figur aus ihrer Laufrichtung wählen. | Unit-Test mit 8 Richtungen: Ansicht und Spiegelung wie im Engine-Konzept, 0 Abweichungen. |
+| FA-E-12 | Figurenanimation | Spieler | Das System muss für jede Figur die Animation ihres aktuellen Zustands abspielen. | E2E-Test: stehen → `idle`, laufen → `walk`, sprechen → `talk`. Die Transforms der animierten Teile ändern sich innerhalb von 500 ms. |
+| FA-E-13 | – | – | gestrichen, die Funktion „Aufnehmen“ steht unter FA-G-09 (Issue #78). | – |
+| FA-E-14 | Gegenstand anwenden | Spieler | Das System muss einen Inventar-Gegenstand auf ein Interaktionsziel anwenden. | Unit-Test: Mit Eintrag in `useItem` bzw. `give` laufen dessen Effekte, ohne Eintrag erscheint der Standardtext aus `game.json`. Deckt den Mechanismus hinter FA-G-02 und FA-G-08. |
+| FA-E-15 | Kombinieren | Spieler | Das System muss zwei Inventar-Gegenstände kombinieren. | Unit-Test: Beide Reihenfolgen führen dieselben Effekte aus. Ohne Eintrag erscheint der Standardtext, alle Gegenstände bleiben unverändert (vgl. FA-G-04). |
 | FA-E-16 | Raumwechsel | Spieler | Das System muss beim Anklicken eines Ausgang-Hotspots den verknüpften Zielraum laden. | E2E-Test: Die Figur erscheint am definierten Eintrittspunkt. |
+| FA-E-17 | Bedingungen | Spieler | Das System muss eine bedingte Aktion nur bei erfüllter Bedingung ausführen. | Unit-Test je Bedingungstyp (`flag`, `hasItem`, `not`, `all`, `any`): erfüllt → `then`, nicht erfüllt → `else`, 0 Abweichungen. |
+| FA-E-18 | Sprechtext | Spieler | Das System muss Sprechtext über der sprechenden Figur anzeigen. | E2E-Test: Textblase liegt oberhalb der Figur, Anzeigedauer nach Formel aus `game.json` ± 100 ms. |
+| FA-E-19 | Dialog | Spieler | Das System muss Dialoge aus einer Dialogdefinition abspielen. | Unit-Test mit Testdialog: angebotene Optionen = Optionen mit erfüllter Bedingung. Die Auswahl folgt `next`, `end` beendet den Dialog. |
+| FA-E-20 | Zwischensequenz | Spieler | Das System muss Zwischensequenzen ohne Spielereingabe abspielen. | Unit-Test: Schritte in Reihenfolge, Befehle außer `skip` während der Sequenz verworfen. Nach `skip` ist der Zustand gleich dem nach vollständigem Ablauf. |
+| FA-E-21 | Speichern | Spieler | Das System muss den Spielstand im Ruhezustand im Browser speichern. | E2E-Test: Gespeicherter Zustand besteht die Schemaprüfung mit 0 Fehlern. Speichern während eines Dialogs liefert `save.busy`. |
+| FA-E-22 | Spielende | Spieler | Das System muss nach dem Effekt `endGame` den Endbildschirm anzeigen. | E2E-Test ab Testzustand vor dem Ende: Endbildschirm sichtbar, Klicks auf den Raum lösen 0 Befehle aus. |
 
 ### 2.2 Gegenstände
 
-Von Creative, Begriffe und Änderungen am Wortlaut: [Gegenstände](../creative/gegenstaende.md).
+Von Creative, Begriffe und Änderungen am Wortlaut: [Gegenstände](../creative/gegenstaende.md). FA-G-09 bis FA-G-11 stammen aus Issue #78.
 
 | ID | Bereich | Nutzerrolle | Anforderung | Akzeptanzkriterium |
 |---|---|---|---|---|
@@ -81,10 +98,13 @@ Von Creative, Begriffe und Änderungen am Wortlaut: [Gegenstände](../creative/g
 | FA-G-06 | Ressourcen | Spieler | Das System muss Ressourcen für die Herstellung von Alchemiegegenständen unbegrenzt bereitstellen. | Unit-Test: 100 Herstellungen desselben Gegenstands hintereinander gelingen. Der Ressourcenbestand ist danach unverändert. |
 | FA-G-07 | Questgegenstände | Spieler | Das System muss die Anzahl jedes Questgegenstands auf die für die Quest festgelegte Menge begrenzen. | Bei erreichter Menge wird jeder weitere Erhalt abgelehnt. Inventarbestand = festgelegte Menge. |
 | FA-G-08 | Einsetzen: Information | Spieler | Das System muss dem Spieler ermöglichen, einen hergestellten Alchemiegegenstand zum Freischalten einer Information zu verwenden. | Wird der vorgesehene Alchemiegegenstand am vorgesehenen Hotspot eingesetzt, wird die hinterlegte Information angezeigt. |
+| FA-G-09 | Aufnehmen | Spieler | Das System muss dem Spieler ermöglichen, einen Gegenstand aus dem Raum aufzunehmen. | E2E-Test: Rechtsklick auf den Gegenstand → „Nehmen“ entfernt ihn aus dem Raum und setzt das Flag der Raumdefinition. |
+| FA-G-10 | Inventar | Spieler | Das System muss aufgenommene und hergestellte Gegenstände im Inventar anzeigen. | E2E-Test: Nach dem Aufnehmen zeigt das Inventar genau 1 Eintrag mit dem Icon des Gegenstands. |
+| FA-G-11 | Inhaltsformat Gegenstände | Team | Das System muss Gegenstandstyp, Höchstmenge, Rezepte, erlaubte Kombinationen und Einsatzorte aus JSON-Dateien mit Zod-Schema laden. | Validator-Test: Eine Beispieldatei wird akzeptiert, jede Datei mit einem fehlenden Pflichtfeld wird mit Fehlercode abgelehnt. |
 
 ### 2.3 Entwicklungsmodus
 
-Beim Testen direkt an eine Stelle des Spiels springen (Persona P-03). Testzustände entstehen aus den Checkpoints des Lösungswegs, den Creative pflegt. Ändert sich ein Raum, fällt ein veralteter Zustand im Gate auf.
+Beim Testen direkt an eine Stelle des Spiels springen (Persona P-03). Testzustände entstehen aus den Checkpoints des Lösungswegs, den Creative pflegt. Ändert sich ein Raum, fällt ein veralteter Zustand im Gate auf. FA-DEV-07 bis FA-DEV-15 sind Werkzeuge für Creative aus dem [Autoren-Workflow](../architektur/autoren-workflow.md). Wie der ganze Entwicklungsmodus gibt es sie nur im Entwicklungs-Build (FA-DEV-06).
 
 | ID | Bereich | Nutzerrolle | Anforderung | Akzeptanzkriterium |
 |---|---|---|---|---|
@@ -94,6 +114,15 @@ Beim Testen direkt an eine Stelle des Spiels springen (Persona P-03). Testzustä
 | FA-DEV-04 | Unbekannte ID | Entwickler | Das System muss eine unbekannte Zustands-ID mit dem Fehlercode `state.unknown` ablehnen. | E2E-Test mit nicht vorhandener ID: Fehlercode sichtbar, Spiel bleibt im Startraum. |
 | FA-DEV-05 | Hotspots anzeigen | Entwickler | Das System muss im Entwicklungsmodus die Trefferflächen aller Hotspots des Raums einblenden. | E2E-Test: Anzahl eingeblendeter Flächen = Anzahl `hotspot-`-Elemente im Raum-SVG. |
 | FA-DEV-06 | Auslieferung | Spieler | Das System muss den Entwicklungsmodus in der ausgelieferten Version deaktivieren. | E2E-Test gegen den Produktions-Build: `?state=<id>` startet im Startraum. |
+| FA-DEV-07 | Vertragsfehler anzeigen | Entwickler | Das System muss Verstöße gegen den Asset-Vertrag im laufenden Entwicklungs-Build anzeigen. | E2E-Test: Fehlerhafte Datei unter `content/` speichern → Overlay zeigt Fehlercode und Dateipfad innerhalb von 2 s. |
+| FA-DEV-08 | Hot Reload | Entwickler | Das System muss geänderte Inhaltsdateien ohne Verlust des Spielzustands neu laden. | E2E-Test: `room.json` ändern → Änderung innerhalb von 2 s sichtbar, abweichende Zustandsfelder: 0. |
+| FA-DEV-09 | Gerüst | Entwickler | Das System muss je Asset-Typ ein vertragskonformes Gerüst erzeugen. | Skript-Test für Raum, Figur, Gegenstand, Rezept: Erzeugtes Gerüst besteht den Validator mit 0 Fehlern. |
+| FA-DEV-10 | Koordinaten setzen | Entwickler | Das System muss im Entwicklungsmodus gesetzte Koordinaten in die zugehörige Inhaltsdatei schreiben. | E2E-Test, zwei Fälle: (1) Polygonpunkt im Raum-Overlay verschieben, speichern → `room.json` enthält die neue Koordinate. (2) Drehpunkt in der Figuren-Vorschau verschieben, speichern → `pivots` in `character.json` enthält ihn. Je Fall: Validator 0 Fehler, geänderte Dateien außerhalb von `content/`: 0. |
+| FA-DEV-11 | Lösungsweg aufzeichnen | Entwickler | Das System muss gespielte Befehle im Entwicklungsmodus als Lösungsweg aufzeichnen. | Aufzeichnung ohne Browser abspielen: abweichende Zustandsfelder gegenüber dem aufgezeichneten Endzustand: 0. |
+| FA-DEV-12 | Inhaltsgraph | Entwickler | Das System muss aus den Inhaltsdateien einen Inhaltsgraphen erzeugen. | Skript-Test mit Testinhalt bekannter Verweise: Der Graph enthält je Flag und je Gegenstand die setzenden und lesenden Stellen sowie je Dialog alle Knoten und Übergänge. Fehlende Kanten: 0. Nie gesetzte Flags werden gemeldet. |
+| FA-DEV-13 | Dialog starten | Entwickler | Das System muss einen Dialog über den URL-Parameter `?dialog=<id>&node=<knoten>` starten. | E2E-Test: Angezeigter Knoten = angegebener Knoten. Unbekannte ID: Fehlercode `content.ref-missing` sichtbar. |
+| FA-DEV-14 | Sequenz ab Schritt | Entwickler | Das System muss eine Zwischensequenz über `?cutscene=<id>&step=<n>` ab Schritt n abspielen. | Unit-Test: Erster ausgeführter Schritt = n. Zustand entspricht dem nach `skip` der Schritte 0 bis n−1. |
+| FA-DEV-15 | Figuren-Vorschau | Entwickler | Das System muss jede Animation einer Figur im Entwicklungsmodus je Ansicht abspielen. | E2E-Test: Anzahl abspielbarer Einträge = Anzahl Animation × Ansicht in `animations.json`. |
 
 Exportierte Zustände (FA-DEV-03) liegen unter `content/states/manual/`. Der Content-Validator prüft sie mit. Bricht eine Inhaltsänderung einen davon, wird er gelöscht oder neu exportiert.
 
@@ -118,6 +147,7 @@ Diese Anforderungen betreffen Repository und Pipeline, nicht das Spiel. Sie zäh
 | EP-13 | Agentenregeln | Agent | Das System muss die Arbeitsregeln für Agenten in der Datei `AGENTS.md` bereitstellen. | Prüfskript bestätigt die Pflichtabschnitte: Story-Referenz, Gate-Lauf, Worktree, verbotene Befehle. |
 | EP-14 | Isolation | Agent | Das System muss jede Agentenaufgabe in einem eigenen Git-Worktree starten. | `make worktree STORY=<id>` legt Worktree und Branch an. Start im Hauptverzeichnis: Exit-Code 1. |
 | EP-15 | Fertig-Meldung | Agent | Das System muss eine Fertig-Meldung ohne Gate-Lauf nach der letzten Codeänderung zurückweisen. | Stop-Hook vergleicht letzte Änderung mit letztem `make ci`. Liegt die Änderung später, meldet er den fehlenden Lauf. |
+| EP-16 | Projektgerüst | Team | Das System muss sich nach `npm ci` mit `npm run dev` lokal starten und mit `npm run build` bauen lassen. | Beide Befehle enden auf einem frischen Klon mit Exit-Code 0. |
 | EP-17 | Doku-Links | Team | Das System muss alle relativen Links und Anker in Markdown-Dateien auflösbar halten. | `node tools/check/docs/check-links.mjs` über alle versionierten `.md`-Dateien: 0 nicht auflösbare Links oder Anker. Fehler nennt `docs.link_broken`, Datei und Zeile. |
 | EP-18 | Katalog-IDs | Team | Das System muss jede ID des Anforderungskatalogs genau einmal definieren. | `node tools/check/docs/check-ids.mjs`: 0 doppelt definierte IDs in `03-anforderungen.md`. Fehler nennt `docs.id_duplicate`, Datei und Zeile. |
 | EP-19 | ID-Verweise | Team | Das System muss jeden Verweis auf eine Projekt-ID auf eine im Katalog definierte ID zeigen lassen. | `node tools/check/docs/check-ids.mjs`: 0 Verweise auf nicht definierte IDs in allen versionierten `.md`-Dateien. Ausgenommen sind die vorläufigen IDs in `tools/check/docs/ids.baseline.json`. Die Baseline darf nur schrumpfen. Fehler nennt `docs.id_undefined` oder `docs.id_baseline_stale`, Datei und Zeile. |

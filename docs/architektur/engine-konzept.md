@@ -4,7 +4,7 @@ Vorgabe der Architektur (PR-03), eingegangen 2026-11-17, ausgebaut 2026-11-19. D
 
 Das Format der Inhaltsdateien regelt der [Asset-Vertrag](asset-vertrag/README.md). Wie Creative daraus ein Spiel baut, beschreibt der [Autoren-Workflow](autoren-workflow.md). Die Reihenfolge der Umsetzung steht im [Umsetzungsplan](umsetzungsplan.md).
 
-Anforderungs-IDs, die noch nicht im Katalog stehen (z. B. FA-E-06, FA-E-09, FA-DEV-10), sind vorläufig. Sie stehen in den [Anforderungsvorschlägen](anforderungs-vorschlaege.md) und gelten erst nach Entscheidung des PO.
+Alle hier genannten Anforderungs-IDs stehen im [Katalog](../voranalyse/03-anforderungen.md). Offene Vorschläge ohne ID stehen in den [Anforderungsvorschlägen](anforderungs-vorschlaege.md).
 
 ## Überblick
 
@@ -149,33 +149,33 @@ Die Formate im Detail regelt der [Asset-Vertrag](asset-vertrag/README.md).
 | Architektur | Projekt-ID | Anmerkung |
 |---|---|---|
 | E-01 | FA-E-01 | übernommen |
-| E-02 | FA-E-02 | neu 2026-11-19, ID vorläufig |
-| E-03 | FA-E-03 | neu 2026-11-19, ID vorläufig |
-| E-04 | FA-E-04 | neu 2026-11-19, ID vorläufig |
-| E-05 | FA-E-05 | übernommen. Änderung des Kriteriums an das Eingabemodell vorgeschlagen ([Anforderungsvorschläge](anforderungs-vorschlaege.md)) |
-| E-06 | FA-E-06 | neu 2026-11-19, ID vorläufig |
-| E-07 | FA-E-07 | übernommen. Einheit geklärt (viewBox-Einheiten), Änderung des Kriteriums vorgeschlagen |
-| E-08 | FA-E-08 | neu 2026-11-19, ID vorläufig |
-| E-09 | FA-E-09 | neu 2026-11-19, ID vorläufig |
+| E-02 | FA-E-02 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-03 | FA-E-03 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-04 | FA-E-04 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-05 | FA-E-05 | übernommen, Kriterium 2026-11-21 an das Eingabemodell angepasst |
+| E-06 | FA-E-06 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-07 | FA-E-07 | übernommen, Kriterium 2026-11-21 auf viewBox-Einheiten umgestellt |
+| E-08 | FA-E-08 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-09 | FA-E-09 | neu 2026-11-19, im Katalog seit 2026-11-21 |
 | E-10 | FA-E-10 | übernommen |
-| E-11 | FA-E-11 | neu 2026-11-19, ID vorläufig |
-| E-12 | FA-E-12 | neu 2026-11-19, ID vorläufig |
+| E-11 | FA-E-11 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-12 | FA-E-12 | neu 2026-11-19, im Katalog seit 2026-11-21 |
 | E-13 | FA-G-09 | neu 2026-11-19, entspricht „Aufnehmen“ aus Issue #78, das Vorrang hat. Keine eigene FA-E-13. |
-| E-14 | FA-E-14 | neu 2026-11-19, ID vorläufig |
-| E-15 | FA-E-15 | neu 2026-11-19, ID vorläufig |
+| E-14 | FA-E-14 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-15 | FA-E-15 | neu 2026-11-19, im Katalog seit 2026-11-21 |
 | E-16 | FA-E-16 | übernommen |
-| E-17 | FA-E-17 | neu 2026-11-19, ID vorläufig |
-| E-18 | FA-E-18 | neu 2026-11-19, ID vorläufig |
-| E-19 | FA-E-19 | neu 2026-11-19, ID vorläufig |
-| E-20 | FA-E-20 | neu 2026-11-19, ID vorläufig |
-| E-21 | FA-E-21 | neu 2026-11-19, ID vorläufig |
-| E-22 | FA-E-22 | neu 2026-11-19, ID vorläufig |
+| E-17 | FA-E-17 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-18 | FA-E-18 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-19 | FA-E-19 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-20 | FA-E-20 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-21 | FA-E-21 | neu 2026-11-19, im Katalog seit 2026-11-21 |
+| E-22 | FA-E-22 | neu 2026-11-19, im Katalog seit 2026-11-21 |
 | N-01 | NF-W-01 | ersetzt die bisherige Fassung. Eingeordnet unter Wartbarkeit statt Akzeptanz, weil es um Erweiterbarkeit geht. |
 | N-04 | NF-V-04 | übernommen |
 | N-06 | NF-E-02 | übernommen, manuelle Messung |
 | N-07 | NF-E-03 | übernommen, Rückfrage zu den Messbedingungen |
 | N-11 | NF-W-02 | zusammengeführt. „React- oder DOM-APIs“ verstößt gegen die Regel „keine und/oder-Ketten“, daher „Browser-Abhängigkeiten“ mit Liste im Akzeptanzkriterium. |
 
-Die E-Liste der Architektur ist seit 2026-11-19 vollständig. „ID vorläufig“ heißt: Die Anforderung steht in den [Anforderungsvorschlägen](anforderungs-vorschlaege.md), nicht im Katalog. Über die Aufnahme entscheidet der PO (siehe [Offene Fragen](../offene-fragen.md)). Die N-Liste hat noch Lücken (N-02, N-03, N-05, N-08 bis N-10).
+Die E-Liste der Architektur ist seit 2026-11-19 vollständig. Seit 2026-11-21 stehen alle zugeordneten IDs im Katalog. Die N-Liste hat noch Lücken (N-02, N-03, N-05, N-08 bis N-10).
 
 Die Gegenstandsanforderungen FA-G-01 bis FA-G-08 stammen von Creative ([Gegenstände](../creative/gegenstaende.md)) und haben keine E-Nummer. Die Engine setzt sie über das Inventar, `useItem`, `combine` und `craft` um.
