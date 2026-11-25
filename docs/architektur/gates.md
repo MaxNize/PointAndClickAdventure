@@ -12,7 +12,7 @@
 
 Ein Fehler steht als `<regel> <datei> <meldung>` auf stderr, darüber die Ausgabe der Prüfung selbst (z. B. `docs.link_broken <datei>:<zeile>` oder der rote Test). Exit-Code ungleich 0.
 
-**Voraussetzungen:** GNU Make (Windows: `scoop install make`), Node ≥ 22, `gh` angemeldet (für EP-21), einmal pro Klon `make setup`.
+**Voraussetzungen:** GNU Make (Windows: `scoop install make`), Node ≥ 22.12 (`.nvmrc`), `gh` angemeldet (für EP-21), einmal pro Klon `make setup`. Es setzt die Hooks und installiert die Abhängigkeiten mit `npm ci`. Ohne `node_modules` schlägt der Test des Projektgerüsts fehl (EP-16).
 
 ## Doku-Gates
 

@@ -1,0 +1,4 @@
+# Abhängigkeiten und Build (EP-16)
+node_modules/
+dist/
+*.tsbuildinfo
