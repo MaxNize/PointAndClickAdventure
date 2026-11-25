@@ -1,0 +1,8 @@
+# Abhängigkeiten und Build (EP-16)
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Playwright (FA-E-01)
+test-results/
+playwright-report/

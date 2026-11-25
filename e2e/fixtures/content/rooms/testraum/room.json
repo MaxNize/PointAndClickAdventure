@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "testraum",
+  "name": "Testraum für E2E-Tests",
+  "walkable": {
+    "outer": [
+      [
+        100,
+        700
+      ],
+      [
+        1820,
+        700
+      ],
+      [
+        1820,
+        1060
+      ],
+      [
+        100,
+        1060
+      ]
+    ]
+  },
+  "depth": {
+    "far": {
+      "y": 700,
+      "scale": 0.6
+    },
+    "near": {
+      "y": 1060,
+      "scale": 1.0
+    }
+  },
+  "spawns": {
+    "start": {
+      "x": 300,
+      "y": 950,
+      "facing": "right"
+    }
+  },
+  "layers": {
+    "layer-mid-block": {
+      "baseline": 900
+    },
+    "layer-mid-saeule": {
+      "baseline": 750
+    }
+  },
+  "hotspots": {
+    "hotspot-kiste": {
+      "name": "Kiste",
+      "walkTo": {
+        "x": 600,
+        "y": 800
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Eine graue Kiste."
+          }
+        ]
+      }
+    }
+  },
+  "items": [
+    {
+      "item": "kugel",
+      "x": 1200,
+      "y": 800,
+      "walkTo": {
+        "x": 1150,
+        "y": 820
+      }
+    }
+  ],
+  "characters": [
+    {
+      "character": "figur-b",
+      "x": 1400,
+      "y": 980,
+      "facing": "left",
+      "walkTo": {
+        "x": 1300,
+        "y": 980
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Figur B."
+          }
+        ]
+      }
+    },
+    {
+      "character": "figur-c",
+      "x": 700,
+      "y": 1000,
+      "facing": "front",
+      "walkTo": {
+        "x": 700,
+        "y": 950
+      },
+      "visibleIf": {
+        "flag": "nie-gesetzt"
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Figur C."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -9,10 +9,11 @@
 | 1 | `git config core.hooksPath` ist `.githooks` (EP-24), sonst `make setup` | `ci.hooks_missing` |
 | 2 | jede versionierte `*.test.mjs` einzeln mit `node --test` | `ci.test_failed` |
 | 3 | Doku-Gates EP-17 bis EP-23 über `run-all.mjs` | `ci.step_failed` |
+| 4 | E2E-Tests im Browser (Playwright, Chromium) über `playwright.config.ts`, Testinhalte aus `e2e/fixtures/content/` | `ci.e2e_failed` |
 
 Ein Fehler steht als `<regel> <datei> <meldung>` auf stderr, darüber die Ausgabe der Prüfung selbst (z. B. `docs.link_broken <datei>:<zeile>` oder der rote Test). Exit-Code ungleich 0.
 
-**Voraussetzungen:** GNU Make (Windows: `scoop install make`), Node ≥ 22, `gh` angemeldet (für EP-21), einmal pro Klon `make setup`.
+**Voraussetzungen:** GNU Make (Windows: `scoop install make`), Node ≥ 22.12 (`.nvmrc`), `gh` angemeldet (für EP-21), einmal pro Klon `make setup`. Es setzt die Hooks und installiert die Abhängigkeiten mit `npm ci`. Ohne `node_modules` schlägt der Test des Projektgerüsts fehl (EP-16).
 
 ## Doku-Gates
 
