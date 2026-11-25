@@ -45,7 +45,7 @@ Ein Agent arbeitet an der Story des Menschen, der ihn startet (PR-06). Fehlt ein
 Ein Ticket ist fertig, wenn alles gilt:
 
 1. Das Akzeptanzkriterium ist durch einen Test belegt, der die Story-ID im Namen trägt (EP-07).
-2. `make ci` endet nach der letzten Änderung mit Exit-Code 0 (EP-01). Bis das Gerüst steht, gelten die vorhandenen Prüfungen und ihr Ergebnis steht im PR.
+2. `make ci` endet nach der letzten Änderung mit Exit-Code 0 (EP-01). Befehl und Exit-Code stehen im PR.
 3. Der PR nutzt die Vorlage, trägt die Story-ID im Titel (EP-08), enthält `Closes #n` und den Abschnitt „KI-Beteiligung“.
 4. Der PR ist freigegeben (siehe unten).
 5. Der PO hat die Story gegen das Akzeptanzkriterium abgenommen, **vor dem Merge**.

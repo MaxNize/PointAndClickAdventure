@@ -1,6 +1,6 @@
-# Pipeline für die Doku-Gates (EP-17 bis EP-23). Der Job heißt `ci-status`, damit EP-02 ihn als
-# Pflicht-Check eintragen kann. Architektur (EP-01) ersetzt die Schritte später durch `make ci`
-# und ergänzt weitere Jobs, die `ci-status` zusammenfasst.
+# Pipeline: führt den Gate-Lauf `make ci` aus (EP-01), lokal und in der CI derselbe Befehl.
+# Der Job heißt `ci-status`, damit EP-02 ihn als Pflicht-Check eintragen kann. Neue Prüfungen
+# kommen in `tools/ci/run-ci.mjs` dazu, nicht als eigene Schritte hier.
 name: CI
 
 on:
@@ -31,11 +31,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
-      - name: Hooks einrichten (EP-24)
-        run: make setup && test "$(git config core.hooksPath)" = ".githooks"
-      - name: Tests der Doku-Gates
-        run: node --test "tools/check/docs/*.test.mjs"
-      - name: Tests der Sprint-Zuordnung (EP-24)
-        run: node --test tools/project/sync-sprint.test.mjs
-      - name: Doku-Gates (EP-17 bis EP-23)
-        run: node tools/check/docs/run-all.mjs
+      - name: Klon einrichten
+        run: make setup
+      - name: Gate-Lauf (EP-01)
+        run: make ci

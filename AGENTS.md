@@ -2,7 +2,7 @@
 
 Regeln für KI-Agenten (Claude Code, Codex, Copilot, …) in diesem Repo. Menschen folgen denselben Regeln.
 
-**Stand:** Voranalyse, noch kein Code. Die Befehle unten (`make ci`, `make worktree`) entstehen mit dem ersten Code. Bis dahin gelten die Regeln sinngemäß.
+**Stand:** Voranalyse, noch kein Spielcode. `make ci` gibt es (EP-01), `make worktree` entsteht mit EP-14. Bis dahin gilt die Worktree-Regel sinngemäß.
 
 ## Bevor du anfängst
 
