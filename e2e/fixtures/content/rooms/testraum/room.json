@@ -60,6 +60,12 @@
             "type": "say",
             "text": "Eine graue Kiste."
           }
+        ],
+        "open": [
+          {
+            "type": "setFlag",
+            "flag": "kiste-offen"
+          }
         ]
       }
     }
@@ -104,7 +110,7 @@
         "y": 950
       },
       "visibleIf": {
-        "flag": "nie-gesetzt"
+        "flag": "kiste-offen"
       },
       "verbs": {
         "look": [

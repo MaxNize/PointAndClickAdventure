@@ -2,7 +2,7 @@
 // (FA-E-01, FA-E-03).
 import { useMemo } from "react";
 import { browserContentFiles } from "../adapters/browserContent.ts";
-import { loadContent } from "../core/content/load.ts";
+import { validateContent } from "../core/content/validate.ts";
 import { sceneActors } from "../core/scene/actors.ts";
 import { initialState } from "../core/state/conditions.ts";
 import { ErrorList } from "./ErrorList.tsx";
@@ -10,7 +10,7 @@ import { RoomView } from "./RoomView.tsx";
 import { buildRoomSvg } from "./roomSvg.ts";
 import "./game.css";
 
-const { content, errors: loadErrors } = loadContent(browserContentFiles());
+const { content, errors: loadErrors } = validateContent(browserContentFiles());
 
 export function Game() {
   const game = content.game;

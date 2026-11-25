@@ -42,7 +42,7 @@ function addItems(c: Collect) {
   const roomId = c.room.def.id;
   for (const p of c.room.def.items ?? []) {
     if (!isVisible(p.visibleIf, c.state) || c.state.flags.has(`item.${roomId}.${p.item}.taken`)) continue;
-    if (!c.content.items.has(p.item)) missing(c, "item.world-missing", `Gegenstand „${p.item}“ hat kein world.svg`);
+    if (c.content.items.get(p.item)?.worldSvg === undefined) missing(c, "item.world-missing", `Gegenstand „${p.item}“ hat kein world.svg`);
     else c.out.actors.push({ key: `gegenstand-${p.item}`, kind: "item", ref: p.item, x: p.x, y: p.y, facing: "front", baseline: p.y });
   }
 }

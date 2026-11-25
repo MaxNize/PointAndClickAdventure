@@ -11,6 +11,7 @@ Teil des [Asset-Vertrags](README.md), **Status: Entwurf**.
 | `content.ref-missing` | Verweis auf eine nicht vorhandene ID |
 | `content.flag-never-set` | Flag wird gelesen, aber nirgends gesetzt |
 | `content.game-missing` | `content/game.json` fehlt |
+| `content.json-invalid` | Datei ist kein gültiges JSON |
 | `svg.parse` | Datei ist kein gültiges SVG |
 | `svg.viewbox` | viewBox fehlt oder falsch |
 | `svg.forbidden-element` | verbotenes Element |

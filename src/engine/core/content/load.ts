@@ -9,8 +9,8 @@ export type ContentFiles = Record<string, unknown>;
 
 export type RoomEntry = { def: Room; svg: string; file: string };
 export type CharacterEntry = { def: Character; svg?: string; animations?: Animations; file: string };
-/** Gegenstand im Raum. item.json folgt mit dem Schema für Gegenstände. */
-export type ItemEntry = { worldSvg: string; file: string };
+/** Gegenstand. item.json wird erst mit dem Schema für Gegenstände geprüft, bis dahin zählt nur, dass es ihn gibt. */
+export type ItemEntry = { worldSvg?: string; file: string };
 
 export type ContentIndex = {
   game?: Game;
@@ -73,9 +73,12 @@ const HANDLERS: Record<ContentFileKind, Handler | undefined> = {
     const def = parse(ctx, "cutscene", id, file);
     if (def) ctx.content.cutscenes.set(id, def);
   },
+  item: (ctx, id, file) => {
+    ctx.content.items.set(id, { ...ctx.content.items.get(id), file });
+  },
   itemWorld: (ctx, id, file) => {
     const svg = ctx.files[file];
-    if (typeof svg === "string") ctx.content.items.set(id, { worldSvg: svg, file });
+    if (typeof svg === "string") ctx.content.items.set(id, { file, ...ctx.content.items.get(id), worldSvg: svg });
   },
   // Raum- und Figuren-SVG sowie animations.json lädt der zugehörige JSON-Handler mit.
   roomSvg: undefined,

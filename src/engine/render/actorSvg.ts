@@ -16,7 +16,7 @@ type Source = { svg: string; file: string; /** Raumeinheiten je Einheit der view
 function sourceOf(actor: Actor, content: ContentIndex): Source | ContentError {
   if (actor.kind === "item") {
     const item = content.items.get(actor.ref)!;
-    return { svg: item.worldSvg, file: item.file, unit: () => 1 };
+    return { svg: item.worldSvg!, file: item.file.replace(/item\.json$/, "world.svg"), unit: () => 1 };
   }
   const c = content.characters.get(actor.ref)!;
   const file = c.file.replace(/character\.json$/, "character.svg");

@@ -1,25 +1,15 @@
 // Tests des Loaders (FA-E-01). Der Testraum liegt unter e2e/fixtures/content und dient auch dem E2E-Test.
 import test from "node:test";
 import assert from "node:assert/strict";
-import fs from "node:fs";
 import path from "node:path";
 import { repoRoot } from "../../../../tools/check/docs/lib.mjs";
 import { loadContent } from "./load.ts";
 import { classifyPath } from "./paths.ts";
+import { readContent as readContentDir } from "../../../../tools/content/readContent.mjs";
 
 const FIXTURE = path.join(repoRoot(), "e2e", "fixtures", "content");
 
-/** Liest einen Inhaltsordner wie der Browser-Adapter: JSON geparst, SVG als Text, Schlüssel `content/…`. */
-function readContent(dir) {
-  const files = {};
-  for (const rel of fs.readdirSync(dir, { recursive: true })) {
-    const full = path.join(dir, rel);
-    if (fs.statSync(full).isDirectory()) continue;
-    const text = fs.readFileSync(full, "utf8");
-    files[`content/${rel.split(path.sep).join("/")}`] = rel.endsWith(".json") ? JSON.parse(text) : text;
-  }
-  return files;
-}
+const readContent = (dir) => readContentDir(dir).files;
 
 const codes = (r) => r.errors.map((e) => `${e.code} ${e.file}`);
 
