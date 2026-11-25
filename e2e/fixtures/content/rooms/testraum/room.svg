@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="himmel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2340"/>
+      <stop offset="1" stop-color="#d0a080"/>
+    </linearGradient>
+  </defs>
+  <g id="layer-background">
+    <rect x="0" y="0" width="1920" height="1080" fill="url(#himmel)"/>
+    <rect x="550" y="600" width="120" height="100" fill="#808080"/>
+  </g>
+  <g id="layer-mid-block">
+    <rect x="800" y="760" width="200" height="140" fill="#505050"/>
+  </g>
+  <g id="layer-mid-saeule">
+    <rect x="1300" y="400" width="80" height="350" fill="#605848"/>
+  </g>
+  <g id="layer-foreground">
+    <rect x="0" y="1000" width="200" height="80" fill="#404040"/>
+  </g>
+  <g id="hotspots">
+    <rect id="hotspot-kiste" x="550" y="600" width="120" height="100" fill="transparent"/>
+  </g>
+</svg>
