@@ -1,4 +1,4 @@
-# Export der Figuren in die Engine
+# Export der Figuren und des Lehrsaals in die Engine
 
 Die Generatoren schreiben je Figur sechs SVGs: drei Ansichten mal zwei Stile. Die Engine erwartet je Figur **eine** `character.svg` und eine `character.json` nach dem Asset-Vertrag (`docs/architektur/asset-vertrag/figur.md` auf `main`). Dieser Ordner wandelt die Scherenschnitt-Dateien um. So ist es am 20.11. entschieden: Der Generator liefert vertragskonform, die Engine bekommt kein Import-Skript.
 
@@ -43,3 +43,32 @@ Geprüft am 2026-11-25: Alle 16 Figuren laufen in der Engine (Prototyp, PRs #140
 ## In der Engine ansehen
 
 Die Engine braucht außerdem `content/game.json` und einen Raum. Den legt der Skill `raum-anlegen` an, die Anleitung dazu steht in `docs/creative/mit-der-engine-arbeiten.md` auf `main`.
+
+## Raum: Lehrsaal der Alchemie
+
+```
+python docs/creative/temp/Charaktere/export/export_raum.py
+```
+
+Liest die gebaute Demo `Alchemistin/akademie-der-alchemie/akademie-der-alchemie/index.html` (Ausgabe von `build_scene.py`) und die Hotspot-Tabelle `HS` aus `source/scene_template.html`. Ergebnis: `content/rooms/lehrsaal/room.svg` und `room.json`.
+
+| Demo | Export |
+|---|---|
+| 1280×720 | 1920×1080. Die Koordinaten werden umgerechnet, damit Teile und Animationen in Raumeinheiten stehen. Es gibt keine `scale`-Gruppe. |
+| Farben über `body.dark #scene .s-…` und `body.nolines` | Attribute, wie im Spielstil der Demo |
+| eine Gruppe `#scene` | `layer-background`, die Vignette in `layer-foreground` |
+| Hotspots als JS-Tabelle `HS` | `hotspot-<name>` in `hotspots`, dazu `walkTo` in `room.json` |
+| Zustände über `show(id)` | Raumteile mit `data-part` und `visibleIf` |
+| CSS-Animationen (Flackern, Blasen, Blinzeln, Kristall) | Raumanimationen in `room.json` |
+| Laufbereich `FLOOR_MIN`/`FLOOR_MAX`, `depthScale` | `walkable`, `depth`, Spawn `start` |
+| 9 `<text>` (Tafel, Glasetiketten, ATHANOR) | **weggelassen**, Liste im Bericht des Exports |
+
+Namen: Hotspots `eisblock`, `fenster`, `kristall`, `buecher`, `wasserkrug`, `erdtopf`, `eisenspaene`, `pflanze`, `eule`, `tafel`, `kessel`, `athanor`, `tuer`. Teile `eisblock`, `pfuetze`, `schluessel-lose`, `kristall`, `pflanze-vertrocknet`, `ranke`, `feuer`, `tuer-zu`, `tuer-offen`, `tuer-licht`. Die Flags für `visibleIf` sind Vorschläge (`lehrsaal.eis-geschmolzen` usw.).
+
+**Geprüft am 2026-11-25:** SVG ohne Verstöße gegen die SVG-Regeln. In der Engine mit Alchemistin als Spielfigur gerendert, 0 Konsolenfehler.
+
+**Was noch fehlt:**
+- **Spiellogik:** Die Verben haben nur Platzhalter („Tafel.“). Die Logik aus `interact()` und `useOn()` im Template übersetzt ein Agent mit dem Skill `raum-anlegen`. Bis dahin meldet der Validator 11× `content.flag-never-set`, weil die Flags der Teile noch niemand setzt. Das ist die offene Arbeit.
+- **Zustände in der Engine:** Raumteile und Raumanimationen haben noch keine Anforderungs-ID. Bis sie umgesetzt sind, zeigt die Engine alle Zustände gleichzeitig (Eis und Pfütze, Tür zu und offen) und spielt keine Animation ab.
+- **Schrift:** als Pfad mit welcher Schrift und Lizenz, oder ganz ohne? Die Tafel ist Teil des Rätsels („Wasser + Erde = ?“).
+- **Kesselfarbe:** In der Demo wechselt sie per CSS-Variable je Ergebnis. Im Export ist sie fest `#9be7ff`, abhängig von der Entscheidung zur Alchemie-Mechanik.
