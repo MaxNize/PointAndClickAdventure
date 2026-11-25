@@ -5,9 +5,20 @@ Ein Point-and-Click-Adventure als Web App. Teamprojekt im Modul Agile Software E
 - **Agentic first:** KI-Agenten schreiben Code und Spielinhalte. Menschen setzen Ziele, prüfen und geben frei.
 - **Quality Gating:** Jede Anforderung hat ein Akzeptanzkriterium, das ein Skript prüft. Ein roter Lauf blockiert den Merge.
 
-**Stand:** Voranalyse. Noch kein Code.
+**Stand:** Projektgerüst steht (EP-16). Die Engine entsteht nach dem [Umsetzungsplan](docs/architektur/umsetzungsplan.md).
 
 **Stack:** React, TypeScript, Vite. Räume als SVG mit Zod-validierter JSON-Definition, Animation mit GSAP. Details: [Engine-Konzept](docs/architektur/engine-konzept.md).
+
+## Lokal starten
+
+Voraussetzungen: Node 22 (siehe `.nvmrc`), GNU Make (Windows: `scoop install make`).
+
+```sh
+make setup      # einmal pro Klon: Git-Hooks und Abhängigkeiten (npm ci)
+npm run dev     # Spiel im Browser unter der angezeigten Adresse
+npm run build   # Produktions-Build nach dist/
+make ci         # alle Prüfungen, wie in der CI
+```
 
 ## Dokumentation
 

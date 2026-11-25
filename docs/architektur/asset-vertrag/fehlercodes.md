@@ -10,6 +10,8 @@ Teil des [Asset-Vertrags](README.md), **Status: Entwurf**.
 | `content.unknown-file` | Datei passt nicht ins Verzeichnisschema |
 | `content.ref-missing` | Verweis auf eine nicht vorhandene ID |
 | `content.flag-never-set` | Flag wird gelesen, aber nirgends gesetzt |
+| `content.game-missing` | `content/game.json` fehlt |
+| `svg.parse` | Datei ist kein gültiges SVG |
 | `svg.viewbox` | viewBox fehlt oder falsch |
 | `svg.forbidden-element` | verbotenes Element |
 | `svg.forbidden-attribute` | Event-Attribut |
@@ -18,6 +20,7 @@ Teil des [Asset-Vertrags](README.md), **Status: Entwurf**.
 | `svg.id-format` | ID verletzt das ID-Format |
 | `svg.filter-in-character` | `<filter>` in einer Figur |
 | `svg.hotspot-unmapped` | Hotspot im SVG ohne Eintrag in `room.json` |
+| `room.svg-missing` | `room.svg` fehlt neben `room.json` |
 | `room.layer-missing` | `layer-background` fehlt |
 | `room.unknown-layer` | unbekannte oberste Gruppe |
 | `room.hotspot-outside-group` | Hotspot außerhalb der Gruppe `hotspots` |
