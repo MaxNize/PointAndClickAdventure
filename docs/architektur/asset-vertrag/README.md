@@ -18,8 +18,8 @@ Dieser Vertrag legt fest, wie Inhaltsdateien unter `content/` aussehen müssen, 
 
 ## Grundsätze
 
-- **Eine Regel, eine Prüfung.** Jede Regel hier hat eine Prüfung im Content-Validator mit Fehlercode `<bereich>.<grund>`. Eine Regel ohne Prüfung gehört nicht in diesen Vertrag.
-- **Zod ist die Quelle.** Sobald es Code gibt, sind die Zod-Schemas in `src/engine/core` maßgeblich. Dieses Dokument ist ihre lesbare Fassung und wird in derselben Änderung nachgezogen.
+- **Eine Regel, eine Prüfung.** Jede Regel hier hat eine Prüfung im Content-Validator mit Fehlercode `<bereich>.<grund>`. Eine Regel ohne Prüfung gehört nicht in diesen Vertrag. Prüfen: `npm run validate` für `content/`, `npm run validate -- <ordner>` für einen anderen Ordner. Dieselben Fehler zeigt das Spiel im Browser. Die SVG-Regeln prüft bisher nur das Spiel im Browser.
+- **Zod ist die Quelle.** Die Zod-Schemas in [`src/engine/core/schema/`](../../../src/engine/core/schema/) sind maßgeblich. Dieses Dokument ist ihre lesbare Fassung und wird in derselben Änderung nachgezogen. Die JSON-Beispiele für Spiel, Raum, Figur, Animationen, Dialog und Zwischensequenz sind Testfälle: Besteht eines sein Schema nicht, ist `make ci` rot (NF-V-01). Gegenstände und Rezepte haben noch kein Schema.
 - **SVG ist Grafik, JSON ist Spiel.** SVG-Dateien enthalten nur Grafik und Namen. Alles, was das Spiel tut, und alle Koordinaten, die Werkzeuge setzen, stehen im JSON. So bleiben die SVGs aus Claude Design unverändert.
 - **Version:** Jede JSON-Datei beginnt mit `"schemaVersion": 1`. Bricht eine Vertragsänderung bestehende Dateien, steigt die Version.
 - **Texte** stehen auf Deutsch direkt im JSON.
