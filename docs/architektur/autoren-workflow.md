@@ -74,7 +74,7 @@ Positionen beschreibt Creative nur grob. Die genauen Koordinaten setzt Creative 
 | FA-DEV-14 | Zwischensequenz ab Schritt | URL-Parameter `?cutscene=<id>&step=<n>` | Sequenz ab Schritt n |
 | FA-DEV-15 | Figuren-Vorschau | Seite im Entwicklungsmodus | alle Animationen je Ansicht abspielbar |
 
-**Agenten-Skills** (Projektdateien, keine FA): „Raum aus Prosa-Beschreibung anlegen“, „Dialog anlegen“, „Zwischensequenz anlegen“, „Animation anlegen“. Jeder Skill liest den Asset-Vertrag, schreibt nur unter `content/` und endet mit dem Validator-Lauf.
+**Agenten-Skills** (Projektdateien, keine FA): „Raum aus Prosa-Beschreibung anlegen“, „Dialog anlegen“, „Zwischensequenz anlegen“, „Animation anlegen“. Jeder Skill liest den Asset-Vertrag, schreibt nur unter `content/` und endet mit dem Validator-Lauf (`npm run validate`). Die ersten drei liegen unter [`.claude/skills/`](../../.claude/skills/), „Animation anlegen“ folgt mit der Figuren-Vorschau (FA-DEV-15). Einstieg für Creative: [Mit der Engine arbeiten](../creative/mit-der-engine-arbeiten.md).
 
 **Schreibweg:** Werkzeuge im Browser schreiben über einen Endpunkt des Vite-Dev-Servers (`/__dev/content`). Er nimmt nur JSON-Dateien unter `content/` an und existiert nur im Entwicklungs-Build (FA-DEV-06). SVG-Dateien schreibt kein Werkzeug.
 
