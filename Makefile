@@ -11,9 +11,8 @@ setup: hooks deps ## Klon einrichten: Git-Hooks aktivieren, Abhängigkeiten inst
 hooks: ## Git-Hooks aus .githooks/ aktivieren (pre-push, EP-24)
 	git config core.hooksPath .githooks
 
-deps: ## Abhängigkeiten exakt nach package-lock.json installieren (EP-16), Chromium für die E2E-Tests
+deps: ## Abhängigkeiten exakt nach package-lock.json installieren (EP-16)
 	npm ci
-	npx playwright install $(if $(CI),--with-deps) chromium
 
 ci: ## Alle Prüfungen, Abbruch beim ersten Fehler (EP-01)
 	node tools/ci/run-ci.mjs

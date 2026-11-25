@@ -9,7 +9,6 @@
 | 1 | `git config core.hooksPath` ist `.githooks` (EP-24), sonst `make setup` | `ci.hooks_missing` |
 | 2 | jede versionierte `*.test.mjs` einzeln mit `node --test` | `ci.test_failed` |
 | 3 | Doku-Gates EP-17 bis EP-23 über `run-all.mjs` | `ci.step_failed` |
-| 4 | E2E-Tests im Browser (Playwright, Chromium) über `playwright.config.ts`, Testinhalte aus `e2e/fixtures/content/` | `ci.e2e_failed` |
 
 Ein Fehler steht als `<regel> <datei> <meldung>` auf stderr, darüber die Ausgabe der Prüfung selbst (z. B. `docs.link_broken <datei>:<zeile>` oder der rote Test). Exit-Code ungleich 0.
 

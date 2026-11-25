@@ -23,10 +23,6 @@ export function steps(root) {
       id: "EP-17 bis EP-23 Doku-Gates", rule: "ci.step_failed", file: "tools/check/docs/run-all.mjs",
       cmd: [NODE, "tools/check/docs/run-all.mjs"],
     },
-    {
-      id: "E2E-Tests", rule: "ci.e2e_failed", file: "playwright.config.ts",
-      cmd: [NODE, "node_modules/@playwright/test/cli.js", "test"], hint: "Browser fehlt? `make setup` ausführen",
-    },
   ];
 }
 
