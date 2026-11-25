@@ -1,7 +1,7 @@
 {
   "_comment": "Erlaubte Einträge im Repo-Root (EP-23). * ist Platzhalter. Die Einträge für das Projektgerüst sind vorab eingetragen, damit der erste Gerüst-PR nicht rot wird. Architektur pflegt die Liste.",
   "entries": [
-    ".github", ".githooks", ".gitignore", ".gitattributes", ".editorconfig", ".nvmrc",
+    ".claude", ".github", ".githooks", ".gitignore", ".gitattributes", ".editorconfig", ".nvmrc",
     "AGENTS.md", "CLAUDE.md", "README.md", "LICENSE", "Makefile",
     "docs", "tools", "src", "content", "public", "e2e",
     "package.json", "package-lock.json", "index.html",

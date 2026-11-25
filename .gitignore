@@ -1,0 +1,11 @@
+# Abhängigkeiten und Build (EP-16)
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Playwright (FA-E-01)
+test-results/
+playwright-report/
+
+# Persönliche Einstellungen von Claude Code (nicht versionieren)
+.claude/settings.local.json

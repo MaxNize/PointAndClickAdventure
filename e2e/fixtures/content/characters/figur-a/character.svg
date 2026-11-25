@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400">
+  <defs>
+    <linearGradient id="hose" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#303040"/><stop offset="1" stop-color="#101018"/></linearGradient>
+  </defs>
+  <g id="view-side">
+    <g data-part="koerper">
+      <rect x="70" y="120" width="60" height="150" fill="#3060a0"/>
+      <g data-part="kopf"><circle cx="100" cy="80" r="40" fill="#f0c090"/>
+      <rect x="128" y="70" width="14" height="8" fill="#e0b080"/>
+      </g>
+    </g>
+    <g data-part="bein-links"><rect x="78" y="265" width="20" height="134" fill="url(#hose)"/></g>
+    <g data-part="bein-rechts"><rect x="102" y="265" width="20" height="134" fill="url(#hose)"/></g>
+    <circle data-part="anchor" cx="100" cy="399" r="1" fill="none"/>
+  </g>
+  <g id="view-front">
+    <g data-part="koerper">
+      <rect x="70" y="120" width="60" height="150" fill="#3060a0"/>
+      <g data-part="kopf"><circle cx="100" cy="80" r="40" fill="#f0c090"/>
+      </g>
+    </g>
+    <g data-part="bein-links"><rect x="78" y="265" width="20" height="134" fill="url(#hose)"/></g>
+    <g data-part="bein-rechts"><rect x="102" y="265" width="20" height="134" fill="url(#hose)"/></g>
+    <circle data-part="anchor" cx="100" cy="399" r="1" fill="none"/>
+  </g>
+  <g id="view-back">
+    <g data-part="koerper">
+      <rect x="70" y="120" width="60" height="150" fill="#202020"/>
+      <g data-part="kopf"><circle cx="100" cy="80" r="40" fill="#f0c090"/>
+      </g>
+    </g>
+    <g data-part="bein-links"><rect x="78" y="265" width="20" height="134" fill="url(#hose)"/></g>
+    <g data-part="bein-rechts"><rect x="102" y="265" width="20" height="134" fill="url(#hose)"/></g>
+    <circle data-part="anchor" cx="100" cy="399" r="1" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "title": "Testspiel",
+  "startRoom": "testraum",
+  "startSpawn": "start",
+  "player": "figur-a",
+  "defaults": {
+    "look": "Nichts Besonderes.",
+    "useItem": "Das funktioniert so nicht.",
+    "give": "Das möchte ich nicht.",
+    "combine": "Das passt nicht zusammen."
+  },
+  "text": { "minMs": 1500, "msPerChar": 70 }
+}

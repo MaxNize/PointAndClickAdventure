@@ -14,6 +14,7 @@
 | – | [Asset-Vertrag](architektur/asset-vertrag/README.md) | Format aller Inhaltsdateien unter `content/`, Fehlercodes (Entwurf bis Spike) |
 | – | [Briefing Claude Design](architektur/claude-design-briefing.md) | Prompt-Vorlagen für Räume, Figuren, Gegenstände |
 | – | [Autoren-Workflow](architektur/autoren-workflow.md) | Wie Creative aus Assets ein Spiel baut, Werkzeuge |
+| – | [Mit der Engine arbeiten](creative/mit-der-engine-arbeiten.md) | Für Creative: Einrichten, Raum sichtbar machen, Inhalte mit Agenten-Skills schreiben, Fehler lesen |
 | – | [Anforderungsvorschläge](architektur/anforderungs-vorschlaege.md) | In den Katalog übernommen. Offen: Raumteile ohne ID |
 | – | [Umsetzungsplan](architektur/umsetzungsplan.md) | Vorgeschlagene Reihenfolge der Erstimplementierung |
 
