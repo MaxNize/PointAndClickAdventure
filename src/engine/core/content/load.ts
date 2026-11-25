@@ -9,11 +9,14 @@ export type ContentFiles = Record<string, unknown>;
 
 export type RoomEntry = { def: Room; svg: string; file: string };
 export type CharacterEntry = { def: Character; svg?: string; animations?: Animations; file: string };
+/** Gegenstand im Raum. item.json folgt mit dem Schema für Gegenstände. */
+export type ItemEntry = { worldSvg: string; file: string };
 
 export type ContentIndex = {
   game?: Game;
   rooms: Map<string, RoomEntry>;
   characters: Map<string, CharacterEntry>;
+  items: Map<string, ItemEntry>;
   dialogs: Map<string, Dialog>;
   cutscenes: Map<string, Cutscene>;
 };
@@ -70,7 +73,11 @@ const HANDLERS: Record<ContentFileKind, Handler | undefined> = {
     const def = parse(ctx, "cutscene", id, file);
     if (def) ctx.content.cutscenes.set(id, def);
   },
-  // SVGs und animations.json lädt der zugehörige JSON-Handler mit.
+  itemWorld: (ctx, id, file) => {
+    const svg = ctx.files[file];
+    if (typeof svg === "string") ctx.content.items.set(id, { worldSvg: svg, file });
+  },
+  // Raum- und Figuren-SVG sowie animations.json lädt der zugehörige JSON-Handler mit.
   roomSvg: undefined,
   characterSvg: undefined,
   animations: undefined,
@@ -89,7 +96,9 @@ function checkGame(ctx: Ctx) {
 }
 
 export function loadContent(files: ContentFiles): LoadResult {
-  const content: ContentIndex = { rooms: new Map(), characters: new Map(), dialogs: new Map(), cutscenes: new Map() };
+  const content: ContentIndex = {
+    rooms: new Map(), characters: new Map(), items: new Map(), dialogs: new Map(), cutscenes: new Map(),
+  };
   const ctx: Ctx = { files, content, errors: [] };
   for (const file of Object.keys(files).sort()) {
     const c = classifyPath(file);

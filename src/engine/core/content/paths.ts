@@ -8,11 +8,12 @@ export type ContentFileKind =
   | "characterSvg"
   | "animations"
   | "dialog"
-  | "cutscene";
+  | "cutscene"
+  | "itemWorld";
 
 export type ClassifiedPath =
   | { kind: ContentFileKind; id: string }
-  /** im Vertrag vorgesehen, aber noch ohne Schema (Gegenstände, Rezepte, Lösungsweg, Zustände) */
+  /** im Vertrag vorgesehen, aber noch ohne Schema (item.json, Icons, Rezepte, Lösungsweg, Zustände) */
   | { kind: "later" }
   | { kind: "unknown" };
 
@@ -27,7 +28,8 @@ const RULES: ReadonlyArray<[RegExp, ContentFileKind | "later"]> = [
   [new RegExp(`^content/characters/${SEG}/animations\\.json$`), "animations"],
   [new RegExp(`^content/dialogs/${SEG}\\.json$`), "dialog"],
   [new RegExp(`^content/cutscenes/${SEG}\\.json$`), "cutscene"],
-  [/^content\/items\/[^/]+\/(item\.json|world\.svg|icon\.svg)$/, "later"],
+  [new RegExp(`^content/items/${SEG}/world\\.svg$`), "itemWorld"],
+  [/^content\/items\/[^/]+\/(item\.json|icon\.svg)$/, "later"],
   [/^content\/recipes\/[^/]+\.json$/, "later"],
   [/^content\/walkthrough\.json$/, "later"],
   [/^content\/states\/(manual\/)?[^/]+\.json$/, "later"],

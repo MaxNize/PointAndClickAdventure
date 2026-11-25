@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "figur-b",
+  "name": "Figur B",
+  "height": 320,
+  "speed": 300,
+  "textColor": "#ffd84a",
+  "pivots": {
+    "side": {
+      "kopf": [
+        100,
+        115
+      ]
+    },
+    "front": {
+      "kopf": [
+        100,
+        115
+      ]
+    },
+    "back": {
+      "kopf": [
+        100,
+        115
+      ]
+    }
+  }
+}

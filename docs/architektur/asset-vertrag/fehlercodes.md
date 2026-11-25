@@ -34,6 +34,7 @@ Teil des [Asset-Vertrags](README.md), **Status: Entwurf**.
 | `room.part-unmapped` | Teil im SVG ohne Eintrag in `parts` oder `animations` |
 | `room.part-unknown` | Teilname in `room.json` ohne `data-part` im SVG |
 | `room.animation-origin-missing` | Raumanimation mit Drehung oder Skalierung ohne `origin` |
+| `character.svg-missing` | `character.svg` fehlt neben `character.json` |
 | `character.view-missing` | Ansichtsgruppe fehlt |
 | `character.part-duplicate` | Teilname doppelt in einer Ansicht |
 | `character.anchor-missing` | Anker fehlt |
