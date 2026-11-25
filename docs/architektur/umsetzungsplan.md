@@ -19,7 +19,7 @@ Stand 2026-11-19, Vorschlag der Architektur. Vorgeschlagene Reihenfolge der Stor
 | S | Spike Claude Design | Prozessaufgabe ohne Story-ID, Ergebnis im [Asset-Vertrag](asset-vertrag/README.md#spike-claude-design) | #69 Schema, #1 Artstyle |
 | 0 | Fundament | *EP-16* (Projektgerüst, #78), EP-01, EP-06, EP-14, NF-W-02, NF-W-04, NF-W-05 | #42, #47, #55, #17, #19, #20 |
 | 1 | Vertrag ausführbar | NF-V-01 (Zod-Schemas, Validator), *FA-DEV-07*, *FA-DEV-09* | #9, #69, #74 |
-| 2 | Raum sichtbar | FA-E-01, *FA-E-03*, *FA-E-04*, *FA-E-02*, NF-W-01, NF-V-04, *FA-DEV-08*, *FA-DEV-10* (Raum) | #23, #16, #12 |
+| 2 | Raum sichtbar | FA-E-01, *FA-E-03*, *FA-E-04*, *FA-E-02*, FA-E-23, FA-E-24, NF-W-01, NF-V-04, *FA-DEV-08*, *FA-DEV-10* (Raum) | #23, #16, #12 |
 | 3 | Bewegung | FA-E-07, *FA-E-08*, *FA-E-09*, FA-E-10, *FA-E-11*, *FA-E-12*, *FA-DEV-15*, *FA-DEV-10* (Drehpunkte) | #25, #26, #75 Spielfigur |
 | 4 | Interaktion | FA-E-05, *FA-E-06*, *FA-E-17*, *FA-E-18*, *FA-G-09*, *FA-G-10*, *FA-E-14*, *FA-E-15*, FA-E-16, FA-DEV-05 | #24, #27, #40 |
 | 5 | Gegenstände | FA-G-04, FA-G-07, FA-G-02, FA-G-08, FA-G-01, FA-G-03, FA-G-05, FA-G-06 | #28 bis #35, #71 Meilensteine, #76 Gegenstandsliste |

@@ -6,7 +6,7 @@ Modul: Agile Software Engineering und Softwaretechnik. Diese Vorgaben gelten fü
 
 | Liefergegenstand | Vorgabe | Stand |
 |---|---|---|
-| Funktionale Anforderungen | mind. 15 | 47 (21 Engine, 11 Gegenstände, 15 Entwicklungsmodus) |
+| Funktionale Anforderungen | mind. 15 | 49 (23 Engine, 11 Gegenstände, 15 Entwicklungsmodus) |
 | Nicht-funktionale Anforderungen | mind. 5, gegliedert nach Akzeptanz, Verlässlichkeit, Effizienz, Wartbarkeit, messbar | 16 |
 | Projektsteckbrief | Name, Ausgangssituation, Ziel (1–3 Sätze), Zielgruppe und Nutzerrollen, Abgrenzung, Tech-Stack (vorläufig), Entscheidungsbegründung | offen |
 

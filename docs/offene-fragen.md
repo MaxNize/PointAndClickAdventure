@@ -11,7 +11,7 @@ Erledigte Fragen wandern mit Datum in die [Entscheidungen](entscheidungen.md).
 - [ ] Bewertungskriterien und Abgabeform
 
 ## Produkt
-- [ ] Spielkonzept: Setting, Ton, Länge, erstes Release. FA-Vorgabe (mind. 15) ist mit 47 erfüllt.
+- [ ] Spielkonzept: Setting, Ton, Länge, erstes Release. FA-Vorgabe (mind. 15) ist mit 49 erfüllt.
 - [ ] Projektsteckbrief: Projektname, Ziel, Abgrenzung
 
 ## Rückfragen an Creative (Fabian, Benedict)
@@ -46,7 +46,7 @@ Beantwortet 2026-11-19 (siehe [Entscheidungen](entscheidungen.md)):
 - [ ] Claim gegen Doppelarbeit: bei 7 Personen plus Agenten wahrscheinlich nötig
 
 ## Mit dem Team bestätigen
-- [ ] Zusage: 16 NF, 47 FA, 24 EP
-- [ ] Im Planning am 26.11. prüfen, ob der Umfang von 47 FA im Semester realistisch ist (Qualitätskriterium 5). Die Vorschläge der Architektur und aus Issue #78 stehen seit 2026-11-21 im Katalog.
+- [ ] Zusage: 16 NF, 49 FA, 24 EP
+- [ ] Im Planning am 26.11. prüfen, ob der Umfang von 49 FA im Semester realistisch ist (Qualitätskriterium 5). Die Vorschläge der Architektur und aus Issue #78 stehen seit 2026-11-21 im Katalog.
 - [ ] Akzeptanz-Vorschläge NF-A-01 (Browser) und NF-A-02 (ab 1280 px Fensterbreite) bestätigen
 - [ ] Personas P-01 bis P-03 als Arbeitsgrundlage, dazu der Vorschlag P-04 Creative ([Autoren-Workflow](architektur/autoren-workflow.md#persona-vorschlag-p-04))

@@ -184,6 +184,6 @@ Die Demo ist ein Stil-Muster, kein Asset. Der Vertrag wurde um Raumteile erweite
 ## Offene Punkte
 
 - Abstimmung mit Fabian, danach Status „Festgelegt“ und Eintrag in den [Entscheidungen](../entscheidungen.md).
-- Die Engine-Funktion für Raumteile ist als Anforderung ohne ID vorgeschlagen ([Anforderungsvorschläge](../architektur/anforderungs-vorschlaege.md)). Die ID vergibt der PO.
+- Die Engine-Funktion für Raumteile steht im [Katalog](../voranalyse/03-anforderungen.md): FA-E-23 (Raumteile) und FA-E-24 (Raumanimation).
 - Kontrast der Leuchtfarben auf den dunklen Silhouetten im echten Spiel prüfen, vor allem `#c9824a` auf `#3a242b`.
 - Das Rig der Figuren-Demos (Knie- und Ellbogengelenke, Laufstil je Figur) ist feiner als das Standard-Rig im [Asset-Vertrag: Figur](../architektur/asset-vertrag/figur.md). Bei der Übernahme der ersten Figur (#75) abgleichen.

@@ -11,7 +11,7 @@ Schritt 3 der Voranalyse. Herkunft jeder Anforderung: [Personas](02-personas.md)
 
 **Begriffe:** *Spiellogik* = `src/engine/core`, reines TypeScript mit Zustand und Regeln. *Spielinhalt* = Räume, Figuren, Gegenstände, Animationen, Dialoge, Lösungsweg als SVG- und JSON-Dateien unter `content/`. *Gate-Lauf* = `make ci`, lokal und in der CI gleich. *Nutzerrolle*: Systemrollen Spieler und Entwickler, Projektrollen Team, Architekt und Agent (siehe [Stakeholder und Rollen](01-stakeholder-und-rollen.md)). In Teil 3 meint „System“ das Repository mit seiner Pipeline.
 
-**Umfang der Zusage:** 16 NF, 47 FA (21 Engine, 11 Gegenstände, 15 Entwicklungsmodus), 24 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
+**Umfang der Zusage:** 16 NF, 49 FA (23 Engine, 11 Gegenstände, 15 Entwicklungsmodus), 24 Prozess-Gates. Die Vorgabe von mindestens 15 FA ist erfüllt.
 
 ## 1. Nicht-funktionale Anforderungen
 
@@ -83,6 +83,8 @@ Aus dem [Engine-Konzept](../architektur/engine-konzept.md) der Architektur. Die 
 | FA-E-20 | Zwischensequenz | Spieler | Das System muss Zwischensequenzen ohne Spielereingabe abspielen. | Unit-Test: Schritte in Reihenfolge, Befehle außer `skip` während der Sequenz verworfen. Nach `skip` ist der Zustand gleich dem nach vollständigem Ablauf. |
 | FA-E-21 | Speichern | Spieler | Das System muss den Spielstand im Ruhezustand im Browser speichern. | E2E-Test: Gespeicherter Zustand besteht die Schemaprüfung mit 0 Fehlern. Speichern während eines Dialogs liefert `save.busy`. |
 | FA-E-22 | Spielende | Spieler | Das System muss nach dem Effekt `endGame` den Endbildschirm anzeigen. | E2E-Test ab Testzustand vor dem Ende: Endbildschirm sichtbar, Klicks auf den Raum lösen 0 Befehle aus. |
+| FA-E-23 | Raumteile | Spieler | Das System muss jedes Raumteil mit `visibleIf` nur anzeigen, solange seine Bedingung erfüllt ist. | E2E-Test im Testraum: Nach Setzen des Flags wechselt die Anzeige innerhalb von 100 ms, angezeigte Teile mit nicht erfüllter Bedingung: 0. |
+| FA-E-24 | Raumanimation | Spieler | Das System muss jede Raumanimation in Schleife abspielen, solange ihr Teil sichtbar ist. | E2E-Test: Transform oder Deckkraft jedes animierten Teils ändert sich innerhalb von 500 ms. Ausgeblendete Teile: 0 laufende Animationen. |
 
 ### 2.2 Gegenstände
 
