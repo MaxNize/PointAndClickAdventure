@@ -88,12 +88,23 @@ Regeln für `fragen.md`:
 - Beantwortete Fragen fliegen raus. Ihre Antwort steht im Themendokument.
 - Die Datei wird jedes Mal komplett neu geschrieben. Vorher sicherstellen, dass alle Antworten darin verarbeitet sind (Schritt 3).
 
-### 6. Im Chat berichten
+### 6. Committen und pushen
+
+Nach jedem Durchlauf, in dem sich Dateien in `docs/creative/story/` geändert haben, committest und pushst du sofort. Der Nutzer hat das dauerhaft so gewünscht (Benedict, 2026-11-26). Du fragst nicht erneut.
+
+1. **Branch prüfen:** `git branch --show-current`. Auf `main` committest du nie (EP-02). Wechsle dann nicht selbst, sondern frag den Nutzer, auf welchem Branch die Story liegen soll.
+2. **Nur Story-Dateien:** `git add docs/creative/story`. Andere geänderte Dateien bleiben liegen. Erwähne sie im Bericht.
+3. **Commit:** Conventional Commits auf Deutsch, z. B. `docs(story): Kernidee entschieden`. Im Betreff die wichtigste Entscheidung, im Text eine Zeile pro Entscheidung mit ID. Fehlt eine Git-Identität, committe nicht unter einem geratenen Namen, sondern melde es dem Nutzer.
+4. **Push:** `git push origin <aktueller Branch>`. Nie `--force` (EP-04), nie `--no-verify` (EP-12). Schlägt der Push fehl, weil der entfernte Branch weiter ist: `git pull --rebase`, Konflikte nicht selbst in Menschen-Text auflösen, sondern melden.
+5. **Ergebnis prüfen:** Commit-Hash und Exit-Code des Push notieren. Den Hash trägst du beim nächsten Durchlauf als Ausgangspunkt in den Sitzungslog ein.
+
+### 7. Im Chat berichten
 
 Kurz, auf Deutsch:
 
 - was verarbeitet wurde (ein Satz pro Entscheidung)
 - was du im Hintergrund geändert oder neu angelegt hast (Dateien als Links)
+- Commit-Hash und Branch, oder warum nicht committet wurde
 - Widersprüche oder Punkte für die Architektur, falls vorhanden
 - Hinweis auf [fragen.md](../../../docs/creative/story/fragen.md) mit den neuen Fragen. Die Fragen auch im Chat kurz nennen (nur die Überschriften).
 
@@ -107,5 +118,5 @@ Wenn der Nutzer im Chat direkt diskutieren will, statt die Datei auszufüllen, g
 - **Eigene Ideen** kommen in `ki-plan.md` unter „Ideen“. In Themendokumente oder `fragen.md` nur, wenn sie eine konkrete offene Frage betreffen.
 - **Sprache und Stil:** Deutsch, kurze Sätze, keine Füllwörter, wie die übrigen Dokumente im Repo.
 - **Keine Code-Änderungen.** Dieser Skill ändert nur Dateien in `docs/creative/story/`. Neue Themendokumente sind erlaubt (nächste Nummer, im README eintragen).
-- **Committen nur auf Wunsch**, im Format Conventional Commits, z. B. `docs(story): Kernidee entschieden`.
+- **Committen und pushen nach jedem Durchlauf** (Schritt 6), nur `docs/creative/story/`, nie auf `main`.
 - **Keine Nachbauten** bekannter Spiele, Figuren oder Welten. Elemente als Inspiration ja, Kopien nein.
