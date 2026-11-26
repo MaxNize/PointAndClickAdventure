@@ -110,6 +110,7 @@ Im Spiel sind Figuren dunkle Silhouetten. Sichtbar bleiben nur der Umriss, Glanz
   Antwort (Benedict, 2026-11-20): Es gibt mehrere Auslöser:
   1. Die Spielfigur hat nicht genug Personen gerettet.
   2. Sie nimmt das Angebot an und bietet für den Reichtum ihre eigene Seele.
+  Hinweis (2026-11-24): Laut KI-21 braucht die große Verwandlung ihren Wunsch. Wie Auslöser 1 ohne ihren Wunsch zu Midas führt, ist offen (W-05 in ki-plan). Klären, wenn die Handlung am Ende ist.
   Geändert (Benedict, 2026-11-20): Das Angebot kommt immer, und zwar vom Strippenzieher (EN-15). Die frühere Regel „Angebot nur mit Splitter“ entfällt.
   Ursprüngliche Optionen:
   - A) Nur die Entscheidung im Finale (Angebot annehmen).

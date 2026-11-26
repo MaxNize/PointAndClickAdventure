@@ -14,7 +14,15 @@ Die Regeln, nach denen Transmutation und Homunkuli in dieser Welt funktionieren.
 
 - [x] **AL-02 Gilt ein Gesetz des Ausgleichs?**
   Antwort (Benedict, 2026-11-20): Ja. Auch der Meteor hält sich daran: Der Mehrwert wird mit einem Seelenkrümel bezahlt (KI-03).
-  Offen: Wie heißt das Gesetz in der Welt? Siehe AL-10.
+  Ergänzung (Benedict, 2026-11-24): „Gesetz des äquivalenten Tauschs“. Seele plus Material ergibt besseres Material (KI-20). Eine Seele herstellen oder retten kann man nur mit einer anderen Seele, weil eine Seele mehr wert ist als jedes Material. Deshalb braucht das Incendium Seelen, sonst wäre es längst übermächtig.
+  Folge: Die Mutter der Protagonistin hat ihre ganze Seele gegeben, weil ein Leben eine Seele kostet.
+  Offen: Wie heißt das Gesetz in der Welt? „Äquivalenter Tausch“ ist der Begriff aus *Fullmetal Alchemist*, siehe AL-10.
+
+- [x] **AL-11 Was passiert, wenn ein Leerer betet?**
+  Stand (2026-11-24, Benedict): Das ist eine der Fragen, die die Regierung in den Verliesen erforscht (NA-11). Benedict fragt: Tod?
+  Optionen: A) Tod: Ohne Seele zum Bezahlen nimmt das Gesetz das Leben. B) Nichts: Ohne Seele wirkt kein Gebet. C) Der Körper selbst wird zu Material verdichtet, z. B. zu Gold.
+  Vorschlag: C. Es folgt aus „Seele plus Material ergibt besseres Material“: Fehlt die Seele, zahlt der Körper. Ein Vorgeschmack auf das Midas-Ende, den die Regierung in den Verliesen schon kennt.
+  Antwort (2026-11-24, Benedict): C, „Das ist perfekt.“
 
 - [ ] **AL-03 Nutzen wir die Tria Prima (Salz, Schwefel, Quecksilber = Körper, Seele, Geist)?**
   Warum wichtig: Gibt eine einfache Sprache für die Twist-Erklärung (Körper aus dem Zehnt, Seele aus den Opfern).
@@ -60,6 +68,8 @@ Die Regeln, nach denen Transmutation und Homunkuli in dieser Welt funktionieren.
 
 - [ ] **AL-10 Wie grenzen wir uns von Fullmetal Alchemist ab?**
   Warum wichtig: Dort gibt es das „Gesetz des äquivalenten Tauschs“, einen Stein der Weisen aus Menschenseelen (entsteht durch Massenopfer) und Homunkuli, die einen solchen Stein als Kern tragen. Unsere Story nutzt dieselben drei Bausteine. Einzeln sind sie alte Alchemie, zusammen wirken sie wie eine Kopie. Projektregel: keine Nachbauten bekannter Werke.
+  Hinweis (2026-11-24): Benedict nennt das Gesetz „äquivalenter Tausch“, genau der FMA-Begriff. Ein eigener Name ist weiter offen (Option A).
+  Hinweis (2026-11-24): Die Herkunft der Protagonistin (totes Kind lebt, Mutter verliert die Seele) ist ein Wiederbelebungs-Motiv. In FMA scheitert die Wiederbelebung der Mutter, bei uns gelingt die eines Kindes, und die Mutter zahlt. Das ist eigenständig, sollte aber mitgedacht werden. Laut Benedict wird die Wiederbelebung erst später relevant.
   Unterschiede, die wir schon haben: Unser „Stein der Weisen“ ist ein Wesen aus dem All, kein Seelenstein. Pilger geben nur Krümel, es gibt kein Massenopfer. Unsere Homunkuli sind Ableger des Wesens, keine Verkörperungen menschlicher Eigenschaften.
   Optionen:
   - A) Eigener Name für das Gesetz, z. B. „Gesetz der Waage“ oder „das Gleichgewicht“. Den Ausdruck „äquivalenter Tausch“ vermeiden.

@@ -20,11 +20,11 @@ Entwurf zum Ausfüllen. Jahre sind Platzhalter.
 
 ## Fragen
 
-- [ ] **ZL-01 Wie lange ist der Einschlag her?**
+- [x] **ZL-01 Wie lange ist der Einschlag her?**
   Optionen: A) 10 bis 20 Jahre (Ältere erinnern sich), B) etwa 100 Jahre (Geschichte, aber nah), C) Jahrhunderte (Legende).
   Vorschlag war: B oder etwas kürzer.
   Hinweis (2026-11-20): Laut Benedict (KI-02) hat das Incendium Alchemisten und Menschheit „über Jahrhunderte“ vorangebracht. Das spricht für C. Die Mutter des Strippenziehers pilgerte zu seinen Lebzeiten, das passt zu jedem Zeitraum.
-  Antwort: offen
+  Antwort (2026-11-24, Benedict): Etwa 400 bis 1000 Jahre. Die Gesellschaft hat eine Abhängigkeit entwickelt.
 
 - [ ] **ZL-02 Zählt der Kalender ab dem Einschlag?**
   Beispiel: „Jahr 87 nach dem Stein“. Das zeigt, wie sehr der Meteor die Welt prägt.

@@ -4,11 +4,13 @@
 
 ## Stand
 
-- Letzte Sitzung: 2026-11-20 (Sitzung 9)
-- HEAD zum Zeitpunkt der Sitzung: `2afdd2b` (Story-Ordner und Skill noch nicht committet)
+- Letzte Sitzung: 2026-11-26 (Sitzung 11)
+- HEAD zum Zeitpunkt der Sitzung: `5660ea1` (Branch `creative/temp`)
 - Phase: Der Rahmen steht. Benedict will die Story jetzt Stück für Stück aufbauen, statt Kapitelzahl und Kapitelarten vorab festzulegen. Welle 3 (Story aufbauen) beginnt: Spielfigur, Strippenzieher-Identität, Zeitrahmen, Anfang der Geschichte.
-- Wartet auf: Antworten in `fragen.md` (FG-01, FG-02, FG-04, EN-14, ST-01)
-- Zurückgestellt aus `fragen.md`: KA-01, KA-02 (laut Benedict ergeben sie sich aus der Story), EN-23 (laut Benedict sehr viel später), EN-22 (später), EN-19 (geringe Priorität), KI-15, KI-16, AL-10, KA-03, KA-04.
+- Wartet auf: ST-02, NA-16 (in fragen.md). FG-17 laut Benedict später.
+- Handlung: Abschnitt 1 (Abschied) in 10-handlung.md angelegt.
+- Deutung 2026-11-24: Benedicts „Zu 3: Das machen wir so“ als FG-15 (gefüllt statt geleert) gelesen, weil „Zu 3“ im Chat das Gefäß war. FG-16 (Name) bleibt offen. Im Chat offengelegt.
+- Zurückgestellt aus `fragen.md`: EN-14 (Benedict 2026-11-24: keine Fragen, die erst am Ende beantwortet werden müssen), KA-01, KA-02 (laut Benedict ergeben sie sich aus der Story), EN-23 (laut Benedict sehr viel später), EN-22 (später), EN-19 (geringe Priorität), KI-15, KI-16, AL-10, KA-03, KA-04.
 
 ## Kernbild (Arbeitsstand, nur Entschiedenes)
 
@@ -49,7 +51,7 @@
 
 ## Nächste Schritte
 
-1. Antworten zu FG-01, FG-02, FG-04, EN-14 (Nachfrage), ST-01 einarbeiten. ZL-01 ist für die Nachfrage aus fragen.md genommen, beim nächsten Mal wieder stellen. Danach den Anfang der Story in `10-handlung.md` (angelegt) aufbauen (Prolog, Ankunft, erstes Kapitel), Schritt für Schritt. Kapitelzahl und Kapitelarten ergeben sich daraus (KA-01, KA-02).
+1. Antworten zu FG-01, FG-02, FG-04, ZL-01, ST-01 einarbeiten. EN-14 erst stellen, wenn die Handlung beim Ende angekommen ist. Danach den Anfang der Story in `10-handlung.md` (angelegt) aufbauen (Prolog, Ankunft, erstes Kapitel), Schritt für Schritt. Kapitelzahl und Kapitelarten ergeben sich daraus (KA-01, KA-02).
 2. EN-17 ist entschieden: Splitter sind begrenzt (Questgegenstand mit Höchstmenge, FA-G-07). Splitter beim Brauen ist eine Zusatzoption, kein Rezept braucht ihn (FA-G-06 bleibt). Die generische Engine-Funktion „Splitter löst jedes Rätsel sofort“ ist nötig. Achtung Lösbarkeitstest: Er muss den Weg ohne Splitter prüfen.
 3. EN-04 ist entschieden (kein normales Kapitel). 09-kapitel.md ist angelegt.
 4. Engine-Bedarf ist jetzt umfangreich (siehe unten). Benedict vor dem Planning am 26.11. eine Liste geben.
@@ -79,8 +81,11 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 | KI-16 | Warum zählen Gerettete?                   | teilweise              | zählt fürs Ende (EN-18). Warum in der Welt: offen, zurückgestellt                           |
 | KI-17 | Weiß der Strippenzieher vom Wesen?        | entschieden 2026-11-20 | nein (wie Viktor). Seele durch Splitter-Experimente verloren, handelt nur noch für den Meteor |
 | KI-18 | Meteorsplitter: Herkunft, Verbindung       | entschieden 2026-11-20 | Teil des Wesens, mit Gestein zusammengewachsen. Zugang: RS-09                                  |
+| KI-19 | Wem gehorchen Marionetten? | entschieden 2026-11-24 | dem Incendium, scheinbar der Regierung (Benedict) |
+| KI-21 | Warum braucht das Incendium ein Gefäß? | entschieden 2026-11-24 | N1: Feuer zündet sich nicht selbst an, Verwandlung braucht ihren Wunsch (Benedict) |
+| KI-20 | Wofür zahlt der Pilger mit Seele? | entschieden 2026-11-24 | Seele + Material = besseres Material. Seele nur durch Seele (Benedict) |
 | AL-01 | Alchemie vor dem Meteor?                   | offen                  | –                                                                                             |
-| AL-02 | Gesetz des Ausgleichs                      | entschieden 2026-11-20 | ja, auch für den Meteor                                                                       |
+| AL-02 | Gesetz des Ausgleichs                      | entschieden 2026-11-20 | ja, auch für den Meteor. Ergänzt 2026-11-24: Material nur für Materielles, Seele nur gegen Seele |
 | AL-03 | Tria Prima nutzen                          | offen                  | weniger zentral                                                                                |
 | AL-04 | Aussehen der Alchemie                      | offen                  | Wesen nutzt Alchemie ohne Zirkel                                                               |
 | AL-05 | Entstehung Homunkulus                      | offen                  | Vorschlag: Splitter-Kern, Nährschlamm, Seele                                                  |
@@ -111,13 +116,20 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 | NA-02 | Profil der Nationen                        | offen                  | –                                                                                             |
 | NA-03 | Besitz des Meteors                         | offen                  | –                                                                                             |
 | NA-04 | Krieg um den Meteor                        | offen                  | –                                                                                             |
-| NA-05 | Kult                                       | offen                  | Strippenzieher betet zum Incendium als Gottheit                                                |
+| NA-05 | Kult                                       | teilweise              | Regierung macht Beten attraktiv, fast eine Religion (Benedict). Strippenzieher betet vielleicht |
 | NA-06 | Zweifler                                   | offen                  | –                                                                                             |
 | NA-07 | Gründung Akademie                         | offen                  | –                                                                                             |
 | NA-08 | Schülerschaft                             | offen                  | –                                                                                             |
 | NA-09 | Machtgefüge Akademie                      | offen                  | –                                                                                             |
-| NA-10 | Namensklang                                | offen                  | –                                                                                             |
-| ZL-01 | Wie lange her? | offen | Benedict sagte „über Jahrhunderte“ (KI-02). Aus fragen.md genommen für EN-14-Nachfrage |
+| NA-11 | Umgang mit Leeren | entschieden 2026-11-24 | Verliese mit Experimenten, sonst Marionetten (Benedict) |
+| AL-11 | Gebet eines Leeren | entschieden 2026-11-24 | Körper wird zu Material, z. B. Gold (Benedict: „perfekt“) |
+| NA-12 | Weiß die Regierung, dass Beten leert? | entschieden 2026-11-24 | kann es wissen. Vom Wesen weiß niemand (Benedict) |
+| NA-10 | Namensklang (Schema) | entschieden 2026-11-24 | Gebetsnamen + Materialnamen bis zur Vorstellung (Benedict). Keine Allerweltsnamen |
+| NA-13 | Wie funktioniert der Gebetsname? | entschieden 2026-11-24 | G1: Plakette beim ersten Gebet („Urwunsch“), Name ändert sich nie (Benedict) |
+| NA-14 | Nummer als Beiname? | entschieden 2026-11-24 | Z4: genauer Wunsch, Nummer nur bei Gleichheit unter Lebenden (Benedict) |
+| NA-15 | Vorname immateriell, Nachname materiell? | entschieden 2026-11-24 | ja. Vorname verfälschbar, Nachname eindeutig (Benedict) |
+| NA-16 | Wie wird der Vorname verfälscht? | offen | neu. Vorschlag A (nur Nachname auf Plakette, Vorname selbst gegeben, nur für Vertraute) |
+| ZL-01 | Wie lange her? | entschieden 2026-11-24 | etwa 400–1000 Jahre, Gesellschaft abhängig (Benedict) |
 | ZL-02 | Kalender                                   | offen                  | –                                                                                             |
 | ZL-03 | Erste Transmutation                        | offen                  | –                                                                                             |
 | ZL-04 | Aufstieg zur Attraktion                    | offen                  | –                                                                                             |
@@ -127,17 +139,26 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 | ZL-08 | Frist                                      | offen                  | –                                                                                             |
 | ZL-09 | Welt nach dem Spiel                        | offen                  | –                                                                                             |
 | ZL-10 | Kapitelaufbau                              | teilweise              | jedes Kapitel mit eigenem Aufbau, siehe 09-kapitel.md                                          |
-| ST-01 | Wo beginnt die Geschichte? | gestellt | in 10-handlung.md |
-| FG-01 | Spielfigur                                 | gestellt               | –                                                                                             |
-| FG-02 | Motiv der Spielfigur                       | gestellt               | –                                                                                             |
+| ST-01 | Wo beginnt die Geschichte? | entschieden 2026-11-24 | Abschied von der Adoptivmutter, Gefährt mit Beinen (Benedict) |
+| ST-02 | Abschiedsgeschenk der Mutter | gestellt | Benedict will konkrete Vorschläge. B1–B4, Vorschlag B1 (gefasste Plakette) + B2 (Fingerhut) |
+| ST-03 | Gesichtsblindheit einführen | entschieden 2026-11-24 | Mutter erkennt sie. Silhouette ändert sich mit Vorstellung, Beziehung, einprägsamem Ereignis (Benedict) |
+| ST-04 | Name der Protagonistin | entschieden 2026-11-24 | Vita, Wunsch der Mutter. Sich selbst erfüllende Prophezeiung (Benedict) |
+| FG-01 | Spielfigur                                 | entschieden 2026-11-24 | die Alchemistin (Benedict)                                                                    |
+| FG-02 | Motiv der Spielfigur                       | teilweise              | Herkunft steht: Totgeburt, Vater Suizid, Mutter betet mit totem Kind, verliert ganze Seele, vertuscht. Welt aus V1+V3. Ziel: FG-13 |
 | FG-03 | Spielfigur austauschbar?                   | offen                  | Splitter-Seelenverlust ist eine weichere Form davon                                            |
-| FG-04 | Wer ist der Strippenzieher?                | gestellt               | Vorschlag: Meister (Mentor, Reaktorkern = Splitter)                                            |
+| FG-04 | Wer ist der Strippenzieher?                | entschieden 2026-11-24 | der Professor, leere Maske (Benedict). Name neu: FG-16. Meister nicht Aufpasser, später        |
 | FG-05 | Falsche Fährte                            | offen                  | –                                                                                             |
 | FG-06 | Verräterische Leuchtfarbe                 | offen                  | –                                                                                             |
 | FG-07 | Anzahl Opfer | offen | Kapitelzahl und Gefährdete pro Kapitel offen |
 | FG-08 | Wer verschwindet?                          | teilweise              | meist Freunde, nicht nur                                                                       |
 | FG-09 | Lieblingsopfer                             | offen                  | –                                                                                             |
 | FG-10 | Verbündete | offen | Vorschlag: gerettete Freunde halten die Spielfigur im Finale (nicht entschieden) |
+| FG-12 | Gesichtsblindheit | entschieden 2026-11-24 | ja, feste Spielregel. Silhouette ändert sich mit Beziehung oder Ereignis, nicht automatisch beim ersten Gespräch (Benedict) |
+| FG-13 | Ziel an der Akademie | entschieden 2026-11-24 | L3 + Traum: beste Alchemistin der Welt, ewiges Leben zum Lernen (Benedict) |
+| FG-14 | Was wissen die Adoptiveltern? | entschieden 2026-11-24 | wenig, echte Liebe, aber Geld angenommen. Wie Annie aus The Boys (Benedict). Gabe ist wirklich angeboren |
+| FG-15 | Zahlt sie für Splitter? | entschieden 2026-11-24 | wird vom Incendium gefüllt statt geleert, Regierung hält es für Erfolg (Benedict) |
+| FG-16 | Name des Professors | entschieden 2026-11-26 | Ovatio Gutta (Benedict) |
+| FG-17 | Wer verteilt die Test-Splitter? | offen | nicht der Meister. Später (Benedict) |
 | FG-11 | Wesen als Figur? | offen | spricht nie selbst (KI-05). Braucht es überhaupt eine Darstellung? |
 | KA-01 | Anzahl Kapitel                             | offen                  | ergibt sich aus der Story (Benedict)                                                           |
 | KA-02 | Art der Rettung pro Kapitel                | offen                  | später, erst Story aufbauen (Benedict)                                                        |
@@ -156,7 +177,7 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 | EN-11 | Zeitablauf (Architektur)                   | offen                  | Kapitel statt Tage                                                                             |
 | EN-12 | Zwei Enden ohne Sackgasse (Architektur)    | offen                  | –                                                                                             |
 | EN-13 | Spieltest                                  | offen                  | auch: Ist der Splitter-Preis verständlich?                                                    |
-| EN-14 | Verteilung Midas/Ernte | gestellt | korrigiert: nicht entschieden. Midas schlecht (fest), Ernte gut (unbestätigt) |
+| EN-14 | Verteilung Midas/Ernte | offen | nicht entschieden. Midas schlecht (fest), Ernte gut (unbestätigt). Zurückgestellt, bis die Handlung am Ende ist |
 | EN-15 | Finale ohne Kampf                          | teilweise              | Angebot immer vom Strippenzieher (Benedict). Ablauf und Ablehnen: EN-22                        |
 | EN-16 | Darstellung der Enden                      | offen                  | –                                                                                             |
 | EN-17 | Splitter-Mechanik                          | entschieden 2026-11-20 | begrenzt, wertvoll, überall einsetzbar. Preis verborgen. Seele → Dialogoptionen weg          |
@@ -170,6 +191,36 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 ## Entscheidungslog
 
 Neueste oben. Format: Datum, ID, Entscheidung, wer.
+
+- 2026-11-26, FG-16: Der Professor heißt Ovatio Gutta. (Benedict)
+- 2026-11-24, NA-15: Zwei Namen. Vorname = immaterieller Wunsch, verfälschbar. Nachname = Material, eindeutig. (Benedict)
+- 2026-11-24, NA-14: Die Plakette prägt den genauen Wunsch. Nummer nur, wenn zwei Lebende genau denselben haben. (Benedict)
+- 2026-11-24, NA-13: G1. Das erste Gebet heißt Urwunsch, die Plakette zeigt den wahren Wunsch, der Name ändert sich nie. (Benedict)
+- 2026-11-24, ST-04: Die Protagonistin heißt Vita, nach dem Wunsch ihrer Mutter. Sie hatte selbst noch keinen Wunsch. Sich selbst erfüllende Prophezeiung zum ewigen Leben. (Benedict)
+- 2026-11-24, NA-10 präzisiert: Nur ein Name, der größte Wunsch auf Latein. Kein Vorname. (Benedict)
+- 2026-11-24, NA-10: Gebetsnamen. Materialnamen, solange man jemanden zum ersten Mal sieht oder er sich nicht vorgestellt hat. Professor mit Initialen O. G. Keine Allerweltsnamen wie „Kurt“. (Benedict)
+- 2026-11-24, ST-03/FG-12: Die Mutter erkennt sie. Silhouetten ändern sich mit Vorstellung, Beziehung oder einprägsamem Ereignis. (Benedict)
+- 2026-11-24, ST-01: Spiel beginnt mit dem Abschied von der Adoptivmutter, Gefährt mit Beinen statt Rädern. (Benedict)
+- 2026-11-24, ZL-01: Etwa 400 bis 1000 Jahre, die Gesellschaft ist abhängig geworden. (Benedict)
+- 2026-11-24, KI-21: N1. Das Incendium hat keine Wünsche, eine Verwandlung braucht den Wunsch einer Seele. Für die größte Verwandlung braucht es sie. (Benedict)
+- 2026-11-24, FG-14 korrigiert: Die Gabe ist durch die Wiedergeburt wirklich angeboren, keine Lüge. (Benedict)
+- 2026-11-24, FG-14: Eltern wissen wenig, lieben sie, haben Geld angenommen. Vorbild Annie aus The Boys. (Benedict)
+- 2026-11-24, FG-15: Sie wird vom Incendium gefüllt statt geleert. Graue Dialogoptionen = ersetzte Erinnerungen. Regierung hält es für Erfolg. (Benedict, aus KI-Vorschlag)
+- 2026-11-24, FG-04: Der Professor ist der Strippenzieher (S2). Name „Gernegroß“ abgelehnt. Meister ist nicht Aufpasser, Rolle später. (Benedict)
+- 2026-11-24, FG-13: Traum: beste Alchemistin der Welt, ewiges Leben, um immer mehr zu lernen. (Benedict)
+- 2026-11-24, FG-13: L3, die Betende ohne Preis. Splitter-Test an der Akademie, Splitter als Belohnung sind der Test. (Benedict)
+- 2026-11-24, AL-11: Betet ein Leerer, wird sein Körper zu Material. (Benedict)
+- 2026-11-24, NA-11: Leere kommen in Verliese, als Versuchskaninchen. (Benedict)
+- 2026-11-24, KI-19: Marionetten gehorchen dem Incendium, scheinbar der Regierung. Das Incendium will Abhängigkeit, die Regierung spielt ihm in die Hände. (Benedict)
+- 2026-11-24, KI-20: Seele plus Material ergibt besseres Material. Seele herstellen oder retten nur mit Seele. (Benedict)
+- 2026-11-24, FG-12: Gesichtsblindheit ist feste Spielregel. (Benedict)
+- 2026-11-24, FG-13 (teilweise): Leben voller Lügen. Von der Regierung als Wiedergeburt zur Adoption gegeben, unbemerkt zur Alchemie gelenkt. (Benedict)
+- 2026-11-24, NA-12: Die Regierung kann wissen, dass Beten leer macht. Vom Wesen weiß niemand. (Benedict)
+- 2026-11-24, AL-02 ergänzt: Material des Meteors bezahlt nur Materielles, Seele nur gegen Seele. Deshalb braucht das Incendium Seelen. (Benedict)
+- 2026-11-24, FG-02 ergänzt: Die Protagonistin erinnert sich nicht an ihre Herkunft. Die Wiederbelebung wird erst später relevant. (Benedict)
+- 2026-11-24, FG-02 (teilweise): Herkunft der Protagonistin: Totgeburt, Vater nimmt sich das Leben, Mutter betet mit dem toten Kind, verliert die ganze Seele, Kind lebt. Vertuscht. Besondere Verbindung zur Alchemie. (Benedict)
+- 2026-11-24, NA-05/NA-11 (teilweise): Regierung macht Beten attraktiv, fast Religion. Leere verschwinden oder werden Marionetten. (Benedict, aus V1+V3)
+- 2026-11-24, FG-01: Die Alchemistin ist die Protagonistin. (Benedict)
 
 - 2026-11-20, KI-14 ergänzt: Abhängigkeit als Teil des Themas. (Benedict)
 - 2026-11-20, KI-08: Vorgeschichte „leere Mutter“ (G1), ausgebaut mit Gottheit und drei Hoffnungen. (Benedict)
@@ -197,6 +248,14 @@ Neueste oben. Format: Datum, ID, Entscheidung, wer.
 
 ## Widersprüche
 
+- **W-05 (offen, 2026-11-24, zurückgestellt bis zum Ende):** KI-21: Die große Verwandlung braucht ihren Wunsch. EN-18: Midas kommt auch, wenn zu wenige gerettet wurden. Wer wünscht dann? Nicht jetzt fragen (Benedict: keine Fragen fürs Ende). Mögliche Richtung (Vorschlag): Ohne Freunde, die sie halten, kann sie dem Angebot nicht widerstehen.
+
+- **W-04 (gelöst 2026-11-24, Benedict: Sie wird gefüllt statt geleert):** FG-13 L3 (Regierung hofft, sie betet ohne Preis) gegen EN-17 (Splitter kosten Seele, Dialogoptionen fallen weg). Kein Widerspruch, solange die Hoffnung falsch ist. Nicht selbst entscheiden → FG-15.
+
+- **W-03 (gelöst 2026-11-24, Benedict: Seele plus Material ergibt besseres Material):** AL-02 neu: Material nur für Materielles, Seele nur gegen Seele. KI-03/KI-06: Pilger zahlen den materiellen Mehrwert mit einem Seelenkrümel. Wofür zahlt der Krümel dann? → KI-20.
+
+- **W-02 (gelöst 2026-11-24, Benedict: Regierung kann es wissen, vom Wesen weiß niemand; Mutter: Seele nur gegen Seele):** Ausgangsidee Punkt 12: „Niemand weiß vom Seelenverlust“. Neu (Benedict): Die Regierung lässt Leere verschwinden und macht Beten trotzdem attraktiv. Löst sich, wenn die Regierung Leere für Krankheit hält. Nicht selbst entscheiden → NA-12. Dazu KI-03: Pilger spüren nur wenige Sekunden etwas, die Mutter verlor in einem Gebet die ganze Seele. Mögliche Erklärung (Vorschlag): Gesetz des Ausgleichs, ein Leben kostet eine ganze Seele.
+
 - **W-01 (gelöst 2026-11-20, Benedict: Angebot immer vom Strippenzieher):** Benedict (EN-18): Das Angebot bekommt nur, wer einen Splitter benutzt hat. Mein Vorschlag (EN-15 B): Das Angebot kommt immer, ohne Splitter durch den Mund des Strippenziehers. Benedict hat selbst gefragt, ob der Strippenzieher das Angebot immer machen soll. Nicht selbst entscheiden. In 00 steht B nur im Vorschlagsteil.
 
 Beobachtungen:
@@ -204,6 +263,8 @@ Beobachtungen:
 - Meine Deutung des Namens („das Feuer lebt“) war falsch. Benedict meint: Feuer, das bei zu viel Sauerstoff und zu viel Abhängigkeit alles verbrennt. Namen und Symbole nicht über das hinaus deuten, was Benedict sagt. Eigene Deutungen als Vorschlag kennzeichnen.
 - Benedict hat bemängelt, dass ich die Rolle des Strippenziehers als Sprecher des Angebots nicht überall nachgezogen hatte. Bei jeder Entscheidung alle Dokumente nach alten Formulierungen durchsuchen (grep), nicht nur die betroffene Frage.
 - Sprachhinweis an Benedict gegeben: *philosophorum*, nicht *philosophum*.
+- Fehler 2026-11-24: Beim Vorbild Annie hatte ich „hält ihre Gabe für angeboren“ als Lüge eingetragen. Benedict: Die Gabe ist durch die Wiedergeburt wirklich angeboren. Vorbilder nur so weit übertragen, wie sie zu unserer Geschichte passen.
+- Korrektur 2026-11-24: Ich hatte geschrieben, beide Zeilen der Plakette seien unfälschbar. Benedict: Der Vorname ist verfälschbar, nur der Nachname eindeutig.
 - Missverständnis 2026-11-20: Ich hatte „immer benutzbar“ geschrieben, Benedict las „unbegrenzt“. Künftig Menge (begrenzt) und Einsatzorte (überall) klar trennen.
 - Benedicts verborgener Preis ersetzt meine frühere Fairnessregel „Preis vorher zeigen“. Kein Widerspruch zwischen Entscheidungen. Fairness jetzt über Warnzeichen (EN-21), den Strippenzieher als Warnung und Lösbarkeit ohne Splitter.
 - Korrektur 2026-11-20 (Benedict: „Kapitelstruktur, pro Kapitel ein Freund rettbar ist falsch“, alle Dateien prüfen): Mehrere Stellen enthielten Dinge, die nicht besprochen waren: „ein Freund pro Kapitel“, EN-14 als entschieden, „betet zum Incendium“ ohne „vielleicht“, frühe Warnzeichen in der Einschätzung, Wesen „spricht im Finale“ (FG-11), „Strippenzieher entdeckt das Wesen“ (Timeline). Alles korrigiert. Regel: Nur das als entschieden eintragen, was Benedict ausdrücklich gesagt hat. Zustimmung zu einer Idee („gute Idee“) ist keine Entscheidung über Details meines Vorschlags. Eigene Ergänzungen immer als Vorschlag kennzeichnen.
@@ -222,9 +283,11 @@ Beobachtungen:
 | Splitter an jedem Hotspot und bei jedem Rezept benutzbar, löst das Rätsel sofort (generische Regel)                                                       | EN-20            | Bedarf steht fest |
 | Warnzeichen nach Splitterzahl (Dialogoptionen grau ohne Erklärung, Bildschwanken nach Gebrauch)                           | EN-21            | Bedarf steht fest |
 | Fremder Text, der je nach Splitterzahl teilweise übersetzt erscheint                                                      | EN-23            | wartet            |
-| Figurvarianten nach Spielstand (SVG, Leuchtfarbe, Laufstil, Dialog)                                                        | EN-01, FG-08     | wartet            |
+| Figurvarianten nach Spielstand (SVG, Leuchtfarbe, Laufstil, Dialog). Auch: Einheitssilhouette, bis eine Bedingung erfüllt ist (vorgestellt, Beziehung, Ereignis) (FG-12) | EN-01, FG-08, FG-12 | Bedarf steht fest (FG-12) |
 | Kapitelwechsel mit anderer Raum- und Figurenbelegung                                                                       | ZL-10            | wartet            |
 | Zwei Enden im Lösbarkeitstest, Lösbarkeit ohne Splitter                                                                  | EN-07, EN-17     | wartet            |
+| Laufendes Gefährt mit Beinen als Raumanimation oder Figur, Fahrt zur Akademie (Prolog) | ST-01 | wartet, vermutlich mit Raumanimationen lösbar |
+| Anzeigename einer Figur abhängig vom Spielstand (Materialname, bis die Figur sich vorgestellt hat) | NA-10, FG-12 | Bedarf steht fest |
 | Epilog als Folge von Standbildern mit Text, Farbwechsel ins Gold                                                           | EN-16            | wartet            |
 
 Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) und FA-G-07 (begrenzte Questgegenstände). Splitter als Questgegenstand mit Höchstmenge passt zu FA-G-07.
@@ -254,7 +317,49 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 - Prolog als Pilgerfahrt mit der Familie: zeigt das Wunder und das „seltsame Gefühl für ein paar Sekunden“ gleich zu Beginn, ohne es zu erklären.
 - Kapitel 1 mit unbewusster Rettung: Der Spieler erfährt erst im Epilog oder in einem späteren Kapitel, dass seine kleine Tat jemanden gerettet hat. Das lohnt einen zweiten Durchgang.
 
+- Die Protagonistin erkennt Homunkuli nicht am Gesicht, sondern am Material (Splitter-Kern, Nährschlamm). Ihre Schwäche wird im Werwolf-Kapitel zur Stärke (FG-12, EN-19).
+- Ihre Mutter lebt als Marionette, vielleicht an der Akademie. Die Protagonistin erkennt sie nicht, weil sie gesichtsblind ist und die Mutter keine Leuchtfarbe hat (verbindet FG-12, NA-11 und die Köchin-Idee).
+- Die Mutter des Strippenziehers ist eine der Verschwundenen. Er weiß nicht, wo sie ist. Das gäbe ihm einen Grund, in den Verliesen zu forschen.
+- Einheitssilhouette für Unbekannte spart Grafik: eine Silhouette statt vieler, bis die Figur bekannt ist.
+
+- Seele nur gegen Seele: Das tote Kind brauchte eine Seele. Trägt die Protagonistin die Seele ihrer Mutter? Erst später relevant (Benedict), nicht in fragen.md stellen.
+- Die Regierung weiß, dass Beten leert, und macht es trotzdem attraktiv: Sie hängt selbst am Incendium. Gleiches Motiv wie beim Strippenzieher, im Großen.
+
+- Die Verliese versuchen, nachzubauen, was bei der Protagonistin gelungen ist (früher Teil von L1, mit L3 vereinbar).
+- Gesichtsblindheit als Folge der Wiederbelebung: Sie sieht die Welt so, wie das Wesen sie sieht, als Material und Dichte. Erst später aufdecken.
+- Ihr Bogen ist das Thema in einer Figur: zugeschriebener Sinn (wie Gold) gegen selbst gegebenen Sinn.
+
+- Die Regierung beobachtet ihre Splitter-Nutzung. Graue Dialogoptionen sind für die Regierung Messdaten, die sie falsch deutet.
+- Strippenzieher und Regierung testen sie beide mit Splittern, aus verschiedenen Gründen. Doppelte Quelle erklärt, warum sie so viele bekommt.
+
+- Wird sie vom Incendium gefüllt statt geleert, deutet die Regierung das als Erfolg: Beten ohne Preis. Die Hoffnung scheint wahr, die Wahrheit ist schlimmer.
+- Ewiges Leben als ihre persönliche Verlockung im Finale, neben dem Reichtum. Nicht vorziehen, Ende kommt später.
+
+- Die Mutter ist die einzige Figur, die die Protagonistin am Material sicher erkennt. Später: Wird sie durch einen Homunkulus ersetzt, merkt sie es am Material.
+- Namen zeigen die Gesellschaft: Nach Jahrhunderten Abhängigkeit heißen viele nach Gold und Reichtum (Aurum, Divitiae). Man hört die Abhängigkeit an jedem zweiten Namen.
+- Marionetten werden nur mit Nummern oder Titeln angesprochen (G2 verworfen, Name ändert sich nie).
+- Wunschregister: Die Regierung kennt jeden Urwunsch und lockt die Menschen gezielt damit zum Beten (NA-05).
+- Vita trägt einen fremden Wunsch als Namen, der sich nie ändert. Ihren eigenen Wunsch muss sie trotzdem finden. Das Thema in einem Wort: zugeschriebener Sinn gegen selbst gegebenen.
+- Teures Abschiedsgeschenk als erster versteckter Hinweis auf das Geld der Regierung.
+
+- Vitas Plakette: Die obere Zeile sagt *Vita*, die untere ist leer oder seltsam, weil das Material ihr eigener toter Körper war. Ein Rätsel, das erst spät aufgelöst wird. Nicht vorziehen.
+- Der Professor nennt Vita einen falschen Vornamen (verfälschbar, NA-15). Sein Nachname verrät die Wahrheit, wenn man ihn versteht.
+
 ## Verworfen
+
+- 2026-11-24: NA-14 Z2 allein (Nummer nur im Register). Benedict: Dann heißen in einer Bank hundert Leute Aurum.
+- 2026-11-24: NA-13 G2 (Name wandert mit) und G3 (Gemeinschaft gibt Namen). Benedict: Name ändert sich nie.
+- 2026-11-24: NA-13 erste Optionen (Priester deutet, selbst wählen, Familie wählt). Benedict: Man könnte lügen.
+- 2026-11-24: Vorname + Gebetsname als Zweitname. Benedict: nur ein Name.
+- 2026-11-24: Renata, Ambra als Name der Protagonistin. Benedict wählt Vita.
+- 2026-11-24: NA-10 N-A (Wertnamen). Benedict wählt Gebetsnamen.
+- 2026-11-24: Name „Kurt“ für den Pförtner in Vorschlägen (Benedict: schlechter Name).
+- 2026-11-24: ST-01 A (Pilgerfahrt mit Familie), D, E, F. Benedict wählt Abschied von der Adoptivmutter.
+- 2026-11-24: KI-21 A–C (Bewegung, Seele nur gegen Seele, Same). Benedict: gefallen noch nicht. B steckt als Tatsache trotzdem in AL-02.
+- 2026-11-24: Meister als Aufpasser der Regierung (S1). Benedict: Rolle später.
+- 2026-11-24: Name „Gernegroß“ für den Strippenzieher (Benedict: schlechter Name).
+- 2026-11-24: FG-13 L1 (lebendes Experiment) und L2 (Aushängeschild). Benedict wählt L3.
+- 2026-11-24: FG-02 A–C (Stipendium, Geschwister suchen, zufällige Begabung). Benedict: zu gewöhnlich.
 
 - 2026-11-20: Meteor als Phiole, Wesen als Urhomunkulus (Benedict: falscher Begriff).
 - 2026-11-20: Ouroboros, Uhrwerk-Wesen, Prima Materia, Kristallwesen (durch KI-04 überholt).
@@ -287,6 +392,21 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 - Benedict prüft die Logik von Motiven streng („Warum sollte er denselben Fehler machen?“). Vorschläge vorher auf innere Widersprüche prüfen.
 - Benedict mag sprechende Namen mit Latein und Alchemiebezug (Incendium philosophorum).
 - Benedict will die Story Stück für Stück aufbauen, nicht top-down Struktur festlegen (Kapitelzahl, Kapitelarten). Fragen nach Struktur erst stellen, wenn genug Handlung steht.
+- Benedict will nur Fragen, die die Story von vorn aufbauen. Keine Fragen, die erst am Ende beantwortet werden müssen (Enden, Finale, Epilog). Diese zurückstellen, bis die Handlung dort ist (2026-11-24).
+- Benedict will innovative, ergreifende Backstories, keine üblichen Motive. Referenz *Attack on Titan* (2026-11-24): Prinzipien übernehmen (verschwiegene Wahrheit, Schutz vor den eigenen Leuten, Kraft vom Feind, unterdrücktes Volk), keine Titanen, Mauern-Optik oder Handlung 1:1.
+- Benedict mischt Vorschläge und baut eigene, persönliche Backstories mit schweren Themen (Totgeburt, Suizid). Ernst nehmen, nicht abschwächen, Fragen danach knapp halten.
+- Benedict will Enthüllungen spät halten (Wiederbelebung). Fragen dazu nicht vorziehen.
+- Benedict beantwortet Fragen gern mit eigenen Ideen statt Optionen und stellt dabei neue Fragen („Tod?“). Diese als neue Fragen aufnehmen.
+- Benedict fragt nach, wenn ein Begriff unklar ist („Was meinst du mit Aufpasser?“). Rollenbegriffe beim ersten Mal kurz erklären.
+- Benedict sagt deutlich, wenn ihm etwas nicht gefällt (Name). Das ist eine Entscheidung, keine Kränkung.
+- Benedict nennt weiter Vorbilder aus Serien (The Boys). Rolle übernehmen, sonst nichts.
+- Benedict lehnt naheliegende, mechanische Begründungen ab (Bewegung, Wirt). Er will Begründungen, die mit Thema und Bildern verbunden sind.
+- Benedict bringt eigene Bilder für Szenen (Gefährt mit Beinen). Ausbauen, nicht ersetzen.
+- Benedict möchte über Systeme sprechen statt Einzelentscheidungen (Benennungsschema statt Einzelname).
+- **Namen:** Keine schlichten Allerweltsnamen (Kurt, Ilse usw.). Benedict will besondere, sprechende Namen mit Latein oder Alchemiebezug. Vorhandene Asset-Namen nicht ungeprüft in Vorschläge übernehmen (2026-11-24).
+- Benedict will an vorhandene Assets anknüpfen, wo es passt (Initialen O. G. des Professors).
+- Benedict prüft Regeln auf Missbrauch („Sie könnte ja lügen“). Mechanismen so bauen, dass sie in der Welt nicht zu umgehen sind.
+- Benedict bringt Ideen mit eingebautem Gegenargument („spricht dagegen“). Lösungen anbieten, die den Nachteil zur Stärke machen.
 - Benedict schreibt manchmal Englisch und Deutsch gemischt. Dokumente bleiben auf Deutsch.
 - Herkunft immer mit Namen angeben, nie „Creative“ (Korrektur von Benedict, 2026-11-20: „Wieso Idee von Creative? Ich bin Benedict“). Der Nutzer im Chat ist bisher immer Benedict. Ideen aus dem Treffen als *Treffen* (Fabian und Benedict) kennzeichnen.
 
@@ -304,3 +424,20 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 | 2026-11-20 | `2afdd2b` | Name Incendium/Cometes philosophorum, Wesen spricht nie selbst, Einwand zur leeren Mutter, Splitterquellen, späte Warnzeichen, keine normalen Kapitel                                | 00, 01, 04, 06, 08, neu 09, README, ki-plan, fragen    |
 | 2026-11-20 | `2afdd2b` | Incendium philosophorum mit Bedeutung, Vorgeschichte Strippenzieher entschieden und ausgebaut, Telepathie/Kapitelzahl/Kapitelarten vertagt, Wunsch: Story Stück für Stück aufbauen | 00, 01, 05, 06, 07, 08, 09, ki-plan, fragen            |
 | 2026-11-20 | `2afdd2b` | Korrektur von Benedict: „pro Kapitel ein Freund“ falsch, alle Dateien auf Unbesprochenes prüfen | 00 (neu nummeriert), 01, 04, 05, 06, 07, 08, 09, README, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | Wunsch: Fragen Stück für Stück, keine Fragen fürs Ende | fragen (EN-14 raus, ZL-01 rein), ki-plan |
+| 2026-11-24 | `5660ea1` | FG-01 Alchemistin; FG-02 Wunsch nach eigenständiger Backstory, Referenz AoT | 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | FG-02 Herkunft, Welt aus V1+V3 (Staatsreligion, Leere verschwinden/Marionetten), Idee Gesichtsblindheit | 00, 01, 02, 05, 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | NA-12, AL-02 ergänzt (Seele nur gegen Seele), Wiederbelebung erst später | 00, 01, 02, 05, 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | NA-11 Verliese, KI-19, KI-20, FG-12 ja, FG-13 Leben voller Lügen | 00, 01, 02, 05, 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | FG-13 L3, AL-11 C, FG-14 zwei Möglichkeiten, Wunsch nach Strippenzieher-Vorschlägen | 00, 02, 04, 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | FG-04 Professor, Name abgelehnt; FG-14 Empfehlung erbeten; Gefäß-Idee; Traum ewiges Leben | 00, 01, 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | FG-14 wie Annie (The Boys), FG-15 gefüllt statt geleert, KI-21 erste Optionen abgelehnt | 00, 01, 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | Korrektur FG-14 (Gabe wirklich angeboren), KI-21 N1 | 00, 01, 07, 08, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | ST-01 Abschied, ZL-01 400–1000 Jahre, Wunsch nach Benennungsschema | 00, 05, 06, 07, 10, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | NA-10 Gebetsnamen + Materialnamen, Professor O. G., keine Allerweltsnamen, ST-03 Silhouette wächst mit Beziehung | 00, 05, 07, 10, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | NA-10 nur ein Name, Einwand Lügen (NA-13), ST-04 Vita | 00, 05, 07, 10, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | NA-13 G1 + Urwunsch, Idee Nummer als Beiname (NA-14) | 00, 05, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | Einwand gegen Register-Nummer (gleiche Namen im Alltag) | 05, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | NA-14 Z4, Einwand oberflächliche Wünsche, Idee Vor-/Nachname (NA-15) | 05, 07, ki-plan, fragen |
+| 2026-11-24 | `5660ea1` | NA-15 Vorname verfälschbar, Nachname eindeutig; Vorschläge Professor (Latein + Deutsch) und Abschiedsgeschenk | 05, 07, 10, ki-plan, fragen |
+| 2026-11-26 | `5660ea1` | FG-16 Ovatio Gutta, Wunsch nach Commit und Push | 00, 07, ki-plan, fragen |

@@ -21,7 +21,24 @@ Die Fragen, an denen alles andere hängt. Hintergrund: [00-ausgangsidee.md](00-a
   Antwort (Benedict, 2026-11-20): Die Transmutation folgt dem Ausgleich. Der Pilger gibt einen winzigen Teil seiner Seele. Er spürt nur ein seltsames Gefühl für ein paar Sekunden, das ihm neben dem Gewinn nichts bedeutet.
   Offen bleibt: Ist Beten dafür nötig, oder nur Aberglaube? (Vorschlag: Das Wesen reagiert auf starken Wunsch. Beten ist die Form, in der Menschen ihn zeigen.)
 
+- [x] **KI-20 Wofür zahlt der Pilger mit Seele?**
+  Warum wichtig: Benedict (2026-11-24): Material des Meteors bezahlt nur Materielles, Seele nur Seele (AL-02). Die Verdichtung (10 kg Stein → 100 g Gold) ist Material gegen Material. Dann ist offen, wofür der Seelenkrümel des Pilgers bezahlt (KI-03, KI-06).
+  Optionen: A) Der Krümel ist kein Tausch, sondern der Preis, den das Wesen verlangt, eine Gebühr. B) Der Wunsch selbst braucht Seele: Ohne Seele kein Wille, ohne Willen keine Verwandlung. C) Der Krümel bezahlt die Arbeit des Wesens, nicht das Material.
+  Vorschlag: A. Das Gesetz bleibt sauber, und das Wesen ist ein Händler, der immer einen Schnitt macht.
+  Antwort (2026-11-24, Benedict): Seele plus Material ergibt besseres Material. Eine Seele herstellen oder retten kann man nur mit einer Seele, weil eine Seele mehr wert ist als jedes Material.
+
 ## Das Wesen
+
+- [x] **KI-21 Warum braucht das Incendium ein Gefäß?**
+  Stand (2026-11-24, Benedict, als Idee): Bei der Protagonistin überträgt sich ein Teil der Seele des Incendiums, weil sie als Gefäß für ihn vorgesehen ist. Benedict fragt: Warum sollte er ein Gefäß brauchen?
+  Erste Optionen (KI, 2026-11-24): Bewegung, Seele nur gegen Seele, Same. Benedict: gefallen noch nicht.
+  Neue Optionen (KI, 2026-11-24):
+  - N1) **Ein Feuer zündet sich nicht selbst an.** Das Incendium hat keinen Willen und keine Wünsche, nur den Ausbreitungstrieb. Eine Transmutation braucht aber einen Wunsch, und einen Wunsch hat nur eine Seele. Darum braucht es Beter. Für die größte Verwandlung, die ganze Zivilisation zu Gold, reicht kein Pilger. Dafür braucht es einen Menschen, der aus vollem Herzen wünscht und dabei nicht leer wird, weil das Incendium durch ihn zahlt. Das ist sie. Ihr Wunsch nach ewigem Leben und Wissen ist der Funke. Bezug: Benedicts Feuer-Bild (KI-02), Thema (das Wesen hat keinen Sinn, nur Menschen geben Sinn), Midas-Angebot (EN-15).
+  - N2) **Seine Werkzeuge sind leer.** Jede Seele, die es nimmt, hinterlässt einen Leeren, der nicht mehr beten kann (AL-11). Marionetten und Strippenzieher sind Sackgassen. Es frisst seine eigenen Quellen. Ein Gefäß ist voll, gehört ihm und bringt andere zum Beten, als „Wiedergeborene“, die die Menschen ans Incendium führt. Die Regierung glaubt, sie benutzt das Mädchen, in Wahrheit benutzt das Incendium die Regierung.
+  - N3) **Der Stein wird verbraucht.** Mit jeder Transmutation wird der Meteor dünner (KI-06). Sich selbst erhalten will das Incendium nicht, aber ohne Stein kann es sich nicht weiter ausbreiten. Das Gefäß ist der nächste Träger: lebendig, beweglich, und eines Tages der Kern eines neuen Meteors, der ins All geschickt wird.
+  Vorschlag: N1. Es verbindet Gefäß, Midas-Ende, ihren Traum und das Thema in einem Gedanken.
+  Antwort (2026-11-24, Benedict): N1 ist gut. Ein Feuer zündet sich nicht selbst an: Das Incendium hat keine Wünsche, eine Verwandlung braucht den Wunsch einer Seele. Für die größte Verwandlung braucht es die Protagonistin, die wünscht, ohne leer zu werden.
+  Folge: Das Midas-Ende braucht ihren Wunsch. Wie der Auslöser „zu wenige Gerettete“ (EN-18) dazu passt, ist offen (W-05). Erst klären, wenn die Handlung am Ende ist.
 
 - [x] **KI-04 Was ist das Wesen im Meteor?**
   Antwort (Benedict, 2026-11-20): Ein Wesen einer weit fortgeschrittenen Zivilisation von einem anderen Planeten. Diese Zivilisation will andere Planeten übernehmen. Ihre Wesen haben keinen Selbsterhaltungstrieb, nur einen Ausbreitungstrieb. Sie schicken sich selbst ins All, viele treiben sinnlos umher oder landen auf toten Planeten. Aussehen: menschenähnlich, übermenschlich, ein wenig „falsch“. Begründung: Menschliche Gestalt zeigt Intelligenz und Seele, ein tierhaftes Alien wäre nicht einzuschätzen.
@@ -73,6 +90,7 @@ Die Fragen, an denen alles andere hängt. Hintergrund: [00-ausgangsidee.md](00-a
   - G3) G verwerfen und H, I oder etwas Neues nehmen.
   Vorschlag war: G1.
   Antwort (Benedict, 2026-11-20): G1, also die leere Mutter. Er kennt die Ursache nicht. Niemand weiß vom Seelenverlust, also hieß es, die Mutter sei „schwermütig“. Er sucht ein Heilmittel und greift zum stärksten Werkzeug der Alchemie, den Splittern. So macht er denselben Fehler wie sie, ohne es zu wissen, und die Wahrheit am Ende trifft ihn umso härter.
+  Ergänzung (2026-11-24, Benedict): Die Regierung kann wissen, dass Beten leer macht. „Niemand weiß“ gilt also für das Volk und für ihn, nicht für die Regierung. Vom Wesen weiß niemand.
   Benedicts Ausbau: Vielleicht bringt er beides nicht miteinander in Verbindung. Oder er sieht im Meteor eine Gottheit und betet weiter zu ihr, weil sie seine Mutter verflucht hat. Er hat drei Hoffnungen:
   1. War es nicht der Stein, kann er die Mutter mit dem Stein zurückholen.
   2. War es der Stein, und er hat die Mutter für unwürdig gehalten und verflucht, dann ist er ein allmächtiges Wesen. Er kann sie auch wieder heilen, wenn er ihn für würdig hält.
@@ -125,6 +143,13 @@ Die Fragen, an denen alles andere hängt. Hintergrund: [00-ausgangsidee.md](00-a
   - B) Der Meteor gibt sie bei Transmutationen ab, als Abrieb.
   - C) Nur die Akademie besitzt Splitter, aus einer Expedition kurz nach dem Einschlag.
   Vorschlag war: A. Benedict hat stattdessen geantwortet, dass Splitter ein Teil des Wesens sind. Wie sie auf den Planeten verteilt wurden, ist nicht festgelegt.
+
+- [x] **KI-19 Wem gehorchen die Marionetten?**
+  Stand (2026-11-24, Benedict): Ein Teil der Leeren wird als Marionetten benutzt (NA-11).
+  Warum wichtig: Laut KI-17 handelt, wer seine Seele verloren hat, nur noch für den Meteor. Dann wären die Marionetten der Regierung in Wahrheit Werkzeuge des Wesens.
+  Optionen: A) Die Leeren gehorchen jedem, der ihnen Befehle gibt. B) Sie gehorchen der Regierung, aber handeln im Zweifel für das Wesen. C) Nur Splitter-Nutzer wie der Strippenzieher werden zu Werkzeugen des Wesens, Pilger nicht.
+  Vorschlag: B. Die Regierung glaubt, sie hält die Fäden, und hängt selbst daran.
+  Antwort (2026-11-24, Benedict): Dem Incendium. Der Schein ist, dass sie der Regierung dienen. Das Incendium will die Abhängigkeit von den Gebeten, das Verhalten der Regierung spielt ihm genau in die Hände.
 
 ## Der Ausbruch
 

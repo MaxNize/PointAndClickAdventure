@@ -6,19 +6,65 @@ Jeder Abschnitt hält fest, was passiert, wer beteiligt ist und was der Spieler 
 
 ## Fragen
 
-- [ ] **ST-01 Wo beginnt die Geschichte?**
+- [x] **ST-01 Wo beginnt die Geschichte?**
   Warum wichtig: Der Anfang legt fest, was der Spieler zuerst über das Incendium glaubt.
   Optionen:
   - A) **Prolog am Incendium:** Die Spielfigur pilgert mit ihrer Familie zum Meteor. Ein Gegenstand verwandelt sich, alle jubeln, die Spielfigur fühlt sich für ein paar Sekunden seltsam. Danach Sprung an die Akademie.
   - B) **Ankunft an der Akademie:** erster Tag, Begrüßung durch den Leiter, der das Incendium erklärt.
   - C) **Mitten im Unterricht:** Der Spieler steigt mit einer Transmutationsstunde ein.
   Vorschlag: A. Der Spieler erlebt das Wunder und den verborgenen Preis gleich zu Beginn, ohne dass ihn jemand erklärt. Beim zweiten Durchgang sieht er die Szene mit anderen Augen.
+  Stand (2026-11-24): Option A passt nicht mehr. Die Protagonistin ist adoptiert und weiß nichts von ihrer Herkunft (FG-02, FG-13).
+  Neue Optionen (KI, 2026-11-24):
+  - D) **Aufnahmeprüfung:** Sie transmutiert besser als alle anderen, jemand notiert das.
+  - E) **Einführungsgebet der Erstjährigen am Incendium:** Alle spüren den seltsamen Moment, sie spürt etwas anderes. Um sie herum lauter gleiche Silhouetten (FG-12).
+  - F) **Abschied von den Adoptiveltern** vor der Abreise zur Akademie.
+  Vorschlag: E. Eine Szene zeigt Incendium, Staatsreligion und Gesichtsblindheit und setzt den ersten Hinweis auf das Gefäß (KI-21).
+  Antwort (2026-11-24, Benedict): Das Spiel beginnt mit der Adoptivmutter. Sie fährt die Protagonistin mit einem Gefährt, das Beine statt Räder hat, zur Akademie und verabschiedet sie liebevoll. Danach findet man Stück für Stück in die Welt.
+
+- [x] **ST-04 Wie heißt die Protagonistin?**
+  Warum wichtig: Die Mutter spricht sie im ersten Gespräch an. Ein Gebetsname fehlt ihr vielleicht noch (NA-13).
+  Vorschläge (KI): A) **Renata** (lat. „die Wiedergeborene“). Die Regierung hat sie so genannt, der Hinweis steht die ganze Zeit im Namen. B) **Ambra** (Bernstein, wie ihre Leuchtfarbe). C) **Vita** (lat. „Leben“).
+  Vorschlag: A.
+  Antwort (2026-11-24, Benedict): **Vita.** Sie hatte noch keinen eigenen Wunsch, als sie am Incendium war. Deshalb wurde sie nach dem Wunsch ihrer Mutter benannt, die sich ihr Leben wünschte. Sich selbst erfüllende Prophezeiung: Durch ihre Verbindung zum Incendium strebt sie nach ewigem Leben.
+
+- [ ] **ST-02 Was gibt die Mutter ihr zum Abschied mit?**
+  Warum wichtig: Das erste Gespräch des Spiels. Ein Gegenstand von der Mutter ist ihr erstes Inventarstück und zeigt, dass die Liebe echt ist (FG-14).
+  Optionen (KI): A) Etwas Selbstgemachtes ohne Geldwert, z. B. ein genähtes Säckchen für Zutaten. B) Etwas Teures, das zeigt, dass Geld da ist, obwohl die Familie nicht reich wirkt (Hinweis auf die Bezahlung). C) Beides: ein teures Geschenk „von uns“ und ein kleines selbstgemachtes nur von der Mutter.
+  Vorschlag: C. Das teure Geschenk ist der erste versteckte Hinweis auf das Geld der Regierung, das selbstgemachte zeigt die echte Liebe.
+  Benedict (2026-11-24): „Gute Frage. Gib Vorschläge.“
+  Konkrete Vorschläge (KI, 2026-11-24):
+  - B1) **Ihre eigene Plakette in einer Fassung.** Die Mutter hat Vitas Plakette als Anhänger fassen lassen. Die Fassung ist teuer (Geld der Regierung) und verdeckt die untere Zeile, den Nachnamen. „Damit du weißt, wer du bist.“ Das Rätsel ihrer Herkunft hängt ihr vom ersten Moment an um den Hals.
+  - B2) **Der Fingerhut der Mutter.** Aus Messing, abgegriffen, ohne Wert. Messing ist das Material, an dem Vita ihre Mutter erkennt (ST-03). Im Spiel nützlich als Maß beim Brauen.
+  - B3) **Eine Taschenuhr, viel zu teuer.** „Wir haben lange gespart.“ Innen eingraviert: „Für unser Wunder.“ Nützlich für Rätsel mit Zeit, verdächtig für den, der genau hinsieht.
+  - B4) **Ein Brief, „erst öffnen, wenn du Heimweh hast“.** Was darin steht, entscheiden wir später.
+  Vorschlag: B1 und B2. Die Plakette trägt das Geheimnis und das Geld, der Fingerhut die echte Liebe.
   Antwort: offen
+
+- [x] **ST-03 Wie lernt der Spieler die Gesichtsblindheit kennen?**
+  Warum wichtig: Die Mutter ist die erste Figur. Woran erkennt die Protagonistin sie, wenn nicht am Gesicht?
+  Optionen (KI): A) An einem Material, das die Mutter immer trägt (Leuchtfarbe am Gegenstand). Kurz darauf am Tor sind alle anderen gleiche Silhouetten. B) Die Mutter sagt zum Abschied etwas wie „Du erkennst mich ja an …“, so wird es gleich ausgesprochen. C) Erst an der Akademie, wenn sie die ersten Fremden trifft.
+  Vorschlag: A, mit einem Satz aus B. Zeigen statt erklären, aber nicht rätseln lassen.
+  Antwort (2026-11-24, Benedict): Ihre Mutter erkennt sie. Die Silhouette einer Person ändert sich, wenn sie sich vorstellt und man mehr mit ihr zu tun hat, oder nach einem einprägsamen Ereignis. Die Mutter hat also von Anfang an ihre eigene Silhouette, Fremde am Tor nicht.
 
 ## Ablauf
 
-Noch leer. Abschnitte entstehen, sobald ST-01, FG-01 und FG-02 entschieden sind.
-
 | # | Abschnitt | Stand |
 |---|---|---|
-| 1 | Anfang (ST-01) | offen |
+| 1 | Abschied (ST-01) | Rahmen entschieden, Details: ST-02, ST-03 |
+| 2 | Ankunft an der Akademie | offen |
+
+### 1. Abschied
+
+**Entschieden (Benedict, 2026-11-24):** Die Adoptivmutter fährt die Protagonistin in einem Gefährt mit Beinen statt Rädern zur Akademie. Sie verabschiedet sie liebevoll. Danach findet der Spieler Stück für Stück in die Welt.
+
+**Was der Spieler mitnimmt:** Diese Mutter liebt ihre Tochter. Das ist wahr (FG-14). Er weiß noch nicht, dass sie dafür bezahlt wurde.
+
+**Vorschläge (KI):**
+
+- Das Gefährt ist das erste Bild des Spiels: ein Laufwagen, der im Gegenlicht über die Straße stakst. Es zeigt sofort, dass die Welt reich an alchemischer Technik ist.
+- Am Wegrand oder am Horizont ist das Incendium zu sehen, ohne Erklärung.
+- Der Abschied ist zugleich das erste Gespräch und erklärt die Steuerung.
+
+### 2. Ankunft an der Akademie
+
+Offen. Vorschlag (KI): Am Tor wartet der Pförtner, die erste fremde Silhouette. Er heißt im Spiel zunächst nach seinem Material (NA-10), bis er sich vorstellt.

@@ -64,6 +64,7 @@ Was die Welt antreibt, was wertvoll ist und wie das zum Alchemiesystem im Spiel 
   - **Gesamtzahl:** etwa sechs bis acht im ganzen Spiel. Genug, dass die Verlockung immer da ist, aber jeder einzelne zählt.
   Vorschlag war: Schule, Belohnungen und Strippenzieher zusammen.
   Antwort (Benedict, 2026-11-20): Schule zu Beginn, später Questbelohnungen, dazu der Strippenzieher als Gönner. Eine Gesamtzahl sagt nichts, solange der Umfang offen ist. Arbeitsannahme: etwa zwei Splitter pro Kapitel.
+  Ergänzung (2026-11-24, Benedict, FG-13): Die Belohnungen sind in Wahrheit ein Test der Regierung. Sie prüft unbemerkt, ob Splitter bei der Protagonistin Auswirkungen haben. Die Begründung „weil niemand vom Seelenverlust weiß“ gilt nur noch für das Volk (NA-12).
   Hinweis: Eine Höchstmenge passt zu Questgegenständen (FA-G-07). Splitter beim Brauen (EN-17) ist eine freiwillige Zusatzoption und hebt FA-G-06 nicht auf, solange kein Rezept einen Splitter braucht.
 
 - [ ] **RS-08 Welche Zutaten gibt es im Spiel?**
