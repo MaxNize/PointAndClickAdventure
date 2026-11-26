@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "grombart",
+  "name": "Herr Grombart",
+  "height": 640,
+  "speed": 300,
+  "textColor": "#e8dcc8",
+  "pivots": {
+    "side": {
+      "bein-links": [
+        205,
+        352
+      ],
+      "bein-rechts": [
+        205,
+        352
+      ],
+      "bein-links-unten": [
+        206,
+        550
+      ],
+      "bein-rechts-unten": [
+        206,
+        550
+      ],
+      "arm-links": [
+        205,
+        232
+      ],
+      "arm-rechts": [
+        205,
+        232
+      ],
+      "arm-links-unten": [
+        204,
+        288
+      ],
+      "arm-rechts-unten": [
+        204,
+        288
+      ]
+    },
+    "front": {},
+    "back": {
+      "arm-links": [
+        168,
+        230
+      ],
+      "arm-rechts": [
+        232,
+        230
+      ]
+    }
+  }
+}

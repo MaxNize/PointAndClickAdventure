@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "id": "lehrsaal",
+  "name": "Lehrsaal der Alchemie",
+  "walkable": {
+    "outer": [
+      [
+        90,
+        967.5
+      ],
+      [
+        1830,
+        967.5
+      ],
+      [
+        1830,
+        1057.5
+      ],
+      [
+        90,
+        1057.5
+      ]
+    ]
+  },
+  "depth": {
+    "far": {
+      "y": 967.5,
+      "scale": 0.846
+    },
+    "near": {
+      "y": 1057.5,
+      "scale": 1
+    }
+  },
+  "spawns": {
+    "start": {
+      "x": 450,
+      "y": 1035,
+      "facing": "front"
+    }
+  },
+  "hotspots": {
+    "hotspot-eisblock": {
+      "name": "Eisblock",
+      "walkTo": {
+        "x": 225.0,
+        "y": 972.0
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Eisblock."
+          }
+        ]
+      }
+    },
+    "hotspot-fenster": {
+      "name": "Fenster",
+      "walkTo": {
+        "x": 393.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Fenster."
+          }
+        ]
+      }
+    },
+    "hotspot-kristall": {
+      "name": "Funkenkristall",
+      "walkTo": {
+        "x": 918.0,
+        "y": 978.0
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Funkenkristall."
+          }
+        ]
+      }
+    },
+    "hotspot-buecher": {
+      "name": "Bücher",
+      "walkTo": {
+        "x": 705.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Bücher."
+          }
+        ]
+      }
+    },
+    "hotspot-wasserkrug": {
+      "name": "Wasserkrug",
+      "walkTo": {
+        "x": 645.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Wasserkrug."
+          }
+        ]
+      }
+    },
+    "hotspot-erdtopf": {
+      "name": "Erdtopf",
+      "walkTo": {
+        "x": 729.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Erdtopf."
+          }
+        ]
+      }
+    },
+    "hotspot-eisenspaene": {
+      "name": "Eisenspäne",
+      "walkTo": {
+        "x": 645.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Eisenspäne."
+          }
+        ]
+      }
+    },
+    "hotspot-pflanze": {
+      "name": "Vertrocknete Pflanze",
+      "walkTo": {
+        "x": 990.0,
+        "y": 984.0
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Vertrocknete Pflanze."
+          }
+        ]
+      }
+    },
+    "hotspot-eule": {
+      "name": "Magister Uhu",
+      "walkTo": {
+        "x": 1320.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Magister Uhu."
+          }
+        ]
+      }
+    },
+    "hotspot-tafel": {
+      "name": "Tafel",
+      "walkTo": {
+        "x": 1170.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Tafel."
+          }
+        ]
+      }
+    },
+    "hotspot-kessel": {
+      "name": "Kessel",
+      "walkTo": {
+        "x": 1170.0,
+        "y": 978.0
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Kessel."
+          }
+        ]
+      }
+    },
+    "hotspot-athanor": {
+      "name": "Athanor",
+      "walkTo": {
+        "x": 1518.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Athanor."
+          }
+        ]
+      }
+    },
+    "hotspot-tuer": {
+      "name": "Tür",
+      "walkTo": {
+        "x": 1725.0,
+        "y": 967.5
+      },
+      "verbs": {
+        "look": [
+          {
+            "type": "say",
+            "text": "Tür."
+          }
+        ]
+      }
+    }
+  },
+  "parts": {
+    "pfuetze": {
+      "visibleIf": {
+        "flag": "lehrsaal.eis-geschmolzen"
+      }
+    },
+    "eisblock": {
+      "visibleIf": {
+        "not": {
+          "flag": "lehrsaal.eis-geschmolzen"
+        }
+      }
+    },
+    "schluessel-lose": {
+      "visibleIf": {
+        "all": [
+          {
+            "flag": "lehrsaal.eis-geschmolzen"
+          },
+          {
+            "not": {
+              "flag": "lehrsaal.schluessel-genommen"
+            }
+          }
+        ]
+      }
+    },
+    "kristall": {
+      "visibleIf": {
+        "not": {
+          "flag": "lehrsaal.kristall-genommen"
+        }
+      }
+    },
+    "pflanze-vertrocknet": {
+      "visibleIf": {
+        "not": {
+          "flag": "lehrsaal.ranke-gewachsen"
+        }
+      }
+    },
+    "ranke": {
+      "visibleIf": {
+        "flag": "lehrsaal.ranke-gewachsen"
+      }
+    },
+    "feuer": {
+      "visibleIf": {
+        "flag": "lehrsaal.athanor-an"
+      }
+    },
+    "tuer-zu": {
+      "visibleIf": {
+        "not": {
+          "flag": "lehrsaal.tuer-offen"
+        }
+      }
+    },
+    "tuer-offen": {
+      "visibleIf": {
+        "flag": "lehrsaal.tuer-offen"
+      }
+    },
+    "tuer-licht": {
+      "visibleIf": {
+        "flag": "lehrsaal.tuer-offen"
+      }
+    }
+  },
+  "animations": [
+    {
+      "part": "flamme-1",
+      "duration": 0.7,
+      "origin": [
+        300.0,
+        555.0
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "scaleY": 1,
+          "scaleX": 1,
+          "ease": "inOut"
+        },
+        {
+          "t": 0.35,
+          "scaleY": 1.12,
+          "scaleX": 0.94,
+          "ease": "inOut"
+        },
+        {
+          "t": 0.7,
+          "scaleY": 1,
+          "scaleX": 1,
+          "ease": "inOut"
+        }
+      ]
+    },
+    {
+      "part": "kristall",
+      "duration": 4,
+      "keyframes": [
+        {
+          "t": 0,
+          "opacity": 0.85
+        },
+        {
+          "t": 2,
+          "opacity": 1,
+          "ease": "inOut"
+        },
+        {
+          "t": 4,
+          "opacity": 0.85,
+          "ease": "inOut"
+        }
+      ]
+    },
+    {
+      "part": "eule-pupillen",
+      "duration": 5,
+      "origin": [
+        1342.5,
+        121.5
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "scaleY": 1
+        },
+        {
+          "t": 4.7,
+          "scaleY": 1
+        },
+        {
+          "t": 4.8,
+          "scaleY": 0.1
+        },
+        {
+          "t": 5,
+          "scaleY": 1
+        }
+      ]
+    },
+    {
+      "part": "blase-1",
+      "duration": 1.6,
+      "keyframes": [
+        {
+          "t": 0,
+          "y": 0,
+          "opacity": 0
+        },
+        {
+          "t": 0.32,
+          "y": -10.2,
+          "opacity": 0.9,
+          "ease": "in"
+        },
+        {
+          "t": 1.6,
+          "y": -51,
+          "opacity": 0,
+          "ease": "in"
+        }
+      ]
+    },
+    {
+      "part": "blase-2",
+      "duration": 1.6,
+      "keyframes": [
+        {
+          "t": 0,
+          "y": 0,
+          "opacity": 0
+        },
+        {
+          "t": 0.32,
+          "y": -10.2,
+          "opacity": 0.9,
+          "ease": "in"
+        },
+        {
+          "t": 1.6,
+          "y": -51,
+          "opacity": 0,
+          "ease": "in"
+        }
+      ],
+      "delay": 0.5
+    },
+    {
+      "part": "blase-3",
+      "duration": 1.6,
+      "keyframes": [
+        {
+          "t": 0,
+          "y": 0,
+          "opacity": 0
+        },
+        {
+          "t": 0.32,
+          "y": -10.2,
+          "opacity": 0.9,
+          "ease": "in"
+        },
+        {
+          "t": 1.6,
+          "y": -51,
+          "opacity": 0,
+          "ease": "in"
+        }
+      ],
+      "delay": 1.0
+    },
+    {
+      "part": "flamme-2",
+      "duration": 0.7,
+      "origin": [
+        1525.5,
+        876.0
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "scaleY": 1,
+          "scaleX": 1,
+          "ease": "inOut"
+        },
+        {
+          "t": 0.35,
+          "scaleY": 1.12,
+          "scaleX": 0.94,
+          "ease": "inOut"
+        },
+        {
+          "t": 0.7,
+          "scaleY": 1,
+          "scaleX": 1,
+          "ease": "inOut"
+        }
+      ]
+    },
+    {
+      "part": "flamme-3",
+      "duration": 0.54,
+      "origin": [
+        1528.5,
+        876.0
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "scaleY": 1.12,
+          "scaleX": 0.94,
+          "ease": "inOut"
+        },
+        {
+          "t": 0.27,
+          "scaleY": 1,
+          "scaleX": 1,
+          "ease": "inOut"
+        },
+        {
+          "t": 0.54,
+          "scaleY": 1.12,
+          "scaleX": 0.94,
+          "ease": "inOut"
+        }
+      ]
+    }
+  ]
+}
