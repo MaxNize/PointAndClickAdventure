@@ -29,18 +29,27 @@ Jeder Abschnitt hält fest, was passiert, wer beteiligt ist und was der Spieler 
 
 - [x] **ST-02 Was gibt die Mutter ihr zum Abschied mit?**
   Warum wichtig: Das erste Gespräch des Spiels. Ein Gegenstand von der Mutter ist ihr erstes Inventarstück und zeigt, dass die Liebe echt ist (FG-14).
-  Antwort (2026-11-28, Fabian): Die Mutter gibt ihr eine kleine Box zum Abschied. Vita darf sie aber erst öffnen, wenn die Zeit dafür gekommen ist. Was in der Box ist und woran man erkennt, dass die Zeit gekommen ist: offen (ST-05).
+  Antwort (2026-11-28, Fabian): Die Mutter gibt ihr eine kleine Box zum Abschied. Vita darf sie aber erst öffnen, wenn die Zeit dafür gekommen ist. Was in der Box ist: offen, bewusst spät zu klären. Wann sie aufgeht: ST-05, ST-07.
 
 - [ ] **ST-05 Woran erkennt Vita, dass die Zeit für die Box gekommen ist?**
   Warum wichtig: Die Box ist das erste Inventarstück und ein Versprechen an den Spieler. Er soll sie nicht vergessen, aber auch nicht zu früh aufbrechen können. Fairness: Das Spiel darf ohne die Box nie in eine Sackgasse laufen (P-02).
-  Optionen (KI): A) Die Mutter sagt es zum Abschied: „Öffne sie, wenn du nicht mehr weiter weißt.“ B) Die Box geht von selbst auf, wenn ein Ereignis eintritt (z. B. der erste Splitter). C) Die Mutter nennt keine Bedingung, Vita spürt es. D) Die Box ist nach einem bestimmten Kapitel offen, ohne dass etwas Besonderes geschieht.
-  Vorschlag: A, später mit B kombinierbar. Ein Satz der Mutter bleibt hängen und lässt sich beim zweiten Durchgang neu lesen (wie die Zitate, KA-05).
+  Antwort (2026-11-28, Fabian): Die Mutter sagt es kryptisch, weil die Eltern ja Bescheid wissen vom Programm. Geöffnet werden darf die Box nach einem bestimmten Schuljahr.
+  Deutung (KI): Die Mutter nennt keinen klaren Zeitpunkt und keinen Grund. Sie kennt ihn aus dem Programm (Regierung, FG-14), darf oder will ihn aber nicht aussprechen. Welches Schuljahr es ist: ST-07.
+
+- [x] **ST-06 Wer empfängt Vita an der Akademie?**
+  Warum wichtig: Die erste fremde Silhouette. Hier sieht der Spieler zum ersten Mal, wie Gesichtsblindheit und Materialnamen wirken (ST-03, NA-10).
+  Antwort (2026-11-28, Fabian): Der Professor holt sie ab. Der Professor ist Ovatio Gutta (FG-04, FG-16). Wie die Übergabe läuft: ST-08.
+
+- [ ] **ST-07 Nach welchem Schuljahr darf Vita die Box öffnen?**
+  Warum wichtig: Damit die Box nach einem Schuljahr aufgeht, muss das Spiel mehrere Schuljahre umfassen. Das bestimmt, wie viel Zeit im Spiel vergeht (ZL-07).
+  Optionen (KI): A) Nach dem ersten Schuljahr. B) Nach der Hälfte der Schulzeit. C) Nach dem vorletzten Schuljahr, kurz vor dem Ende.
+  Vorschlag: B. Der Spieler trägt die Box lange mit sich, und es bleibt noch Spiel danach. Ein Satz der Mutter bleibt hängen und lässt sich beim zweiten Durchgang neu lesen (wie die Zitate, KA-05).
   Antwort: offen
 
-- [ ] **ST-06 Wer empfängt Vita an der Akademie?**
-  Warum wichtig: Die erste Fremde Silhouette. Hier sieht der Spieler zum ersten Mal, wie Gesichtsblindheit und Materialnamen wirken (ST-03, NA-10).
-  Optionen (KI): A) Der Pförtner am Tor, genannt nach seinem Material, bis er sich vorstellt. B) Eine gleichaltrige Erstjährige, die ebenfalls ankommt. C) Professor Ovatio Gutta selbst. D) Niemand. Vita geht allein hinein.
-  Vorschlag: A. Der Pförtner ist beiläufig, so fällt die Regel auf, ohne dass sie erklärt wird.
+- [ ] **ST-08 Wie verläuft die Übergabe an den Professor, und kennt die Mutter ihn?**
+  Warum wichtig: Die Mutter weiß vom Programm (ST-05). Kennt sie den Professor, zeigt schon die erste Szene, dass sie mehr weiß, als sie sagt.
+  Optionen (KI): A) Mutter und Professor kennen sich aus dem Programm. Die Übergabe ist höflich, die Mutter wirkt angespannt. B) Die Mutter sieht ihn zum ersten Mal, er stellt sich vor. C) Die Mutter bleibt im Gefährt, der Professor nimmt Vita am Tor in Empfang.
+  Vorschlag: A. Der Spieler merkt nur, dass etwas nicht stimmt, ohne zu wissen, was.
   Antwort: offen
 
 - [x] **ST-03 Wie lernt der Spieler die Gesichtsblindheit kennen?**
@@ -53,14 +62,14 @@ Jeder Abschnitt hält fest, was passiert, wer beteiligt ist und was der Spieler 
 
 | # | Abschnitt | Stand |
 |---|---|---|
-| 1 | Abschied (ST-01) | Rahmen und Abschiedsgeschenk entschieden, offen: ST-05 |
-| 2 | Ankunft an der Akademie | offen: ST-06 |
+| 1 | Abschied (ST-01) | Rahmen und Abschiedsgeschenk entschieden, offen: Schuljahr der Box (ST-07) |
+| 2 | Ankunft an der Akademie | Professor holt sie ab, offen: Übergabe (ST-08) |
 
 ### 1. Abschied
 
 **Entschieden (Benedict, 2026-11-24):** Die Adoptivmutter fährt die Protagonistin in einem Gefährt mit Beinen statt Rädern zur Akademie. Sie verabschiedet sie liebevoll. Danach findet der Spieler Stück für Stück in die Welt.
 
-**Entschieden (Fabian, 2026-11-28):** Zum Abschied gibt die Mutter ihr eine kleine Box, die sie erst öffnen darf, wenn die Zeit dafür gekommen ist (ST-02). Auch der Prolog beginnt mit einem Zitat aus einem Werk dieser Welt (KA-05, [09-kapitel.md](09-kapitel.md)).
+**Entschieden (Fabian, 2026-11-28):** Zum Abschied gibt die Mutter ihr eine kleine Box, die sie erst öffnen darf, wenn die Zeit dafür gekommen ist (ST-02). Die Mutter bleibt kryptisch, weil sie vom Programm weiß. Die Box darf nach einem bestimmten Schuljahr geöffnet werden (ST-05, offen: welches, ST-07). Auch der Prolog beginnt mit einem Zitat aus einem Werk dieser Welt (KA-05, [09-kapitel.md](09-kapitel.md)).
 
 **Was der Spieler mitnimmt:** Diese Mutter liebt ihre Tochter. Das ist wahr (FG-14). Er weiß noch nicht, dass sie dafür bezahlt wurde.
 
@@ -72,4 +81,11 @@ Jeder Abschnitt hält fest, was passiert, wer beteiligt ist und was der Spieler 
 
 ### 2. Ankunft an der Akademie
 
-Offen (ST-06). Vorschlag (KI): Am Tor wartet der Pförtner, die erste fremde Silhouette. Er heißt im Spiel zunächst nach seinem Material (NA-10), bis er sich vorstellt.
+**Entschieden (Fabian, 2026-11-28):** Der Professor holt Vita ab (ST-06). Er ist Ovatio Gutta, der Strippenzieher (FG-04, FG-16). Der Spieler weiß das nicht.
+
+**Offen:** Ablauf der Übergabe und ob die Mutter ihn kennt (ST-08).
+
+**Vorschläge (KI):**
+
+- Für Vita ist er zunächst eine fremde Silhouette ohne Namen. Im Spiel heißt er nach seinem Material (NA-10, Initialen O. G.), bis er sich vorstellt. Danach ändert sich seine Silhouette (ST-03).
+- Der Professor ist der Strippenzieher. Schon sein erster Auftritt kann einen stillen Hinweis tragen (EN-01), den man erst beim zweiten Durchgang liest, z. B. eine Leuchtfarbe, die zu den Splittern passt.

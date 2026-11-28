@@ -4,12 +4,13 @@
 
 ## Stand
 
-- Letzte Sitzung: 2026-11-28 (Sitzung 13)
-- HEAD zum Zeitpunkt der Sitzung: `771395e` (Branch `creative/temp`)
+- Letzte Sitzung: 2026-11-28 (Sitzung 14)
+- HEAD zum Zeitpunkt der Sitzung: `485a57f` (Branch `creative/temp`)
 - Neu 2026-11-28: Fabian hat `docs/creative/meta/kapitel-zitate.md` angelegt (außerhalb des Story-Ordners, nicht von mir, bisher nicht committet). Konzept „Zitat pro Kapitel“ ist festgelegt, gilt auch für den Prolog, und es ist ein Ausschnitt aus einem Werk der Welt (Witcher-Bücher als Form-Inspiration). Die Datei führt ME-01 noch als offen. Der Skill ändert sie nicht (Fabian: Skill nur im Story-Ordner).
-- Offen zum Zitat-Konzept: ME-02 (ein oder mehrere Werke), Länge des Ausschnitts, Zahl der Kapitel (KA-01).
+- Offen zum Zitat-Konzept: ME-03 (wie viel vom Werk in der Bibliothek), Länge des Ausschnitts, Zahl der Kapitel (KA-01).
+- Folge aus ST-05: Die Box öffnet sich nach einem Schuljahr, das Spiel umfasst vermutlich mehrere Schuljahre. ZL-07 Vorschlag B (Prüfungswoche) passt dann wohl nicht mehr (im Dokument vermerkt). Nicht selbst auflösen, hängt an ST-07.
 - Phase: Der Rahmen steht. Benedict will die Story jetzt Stück für Stück aufbauen, statt Kapitelzahl und Kapitelarten vorab festzulegen. Welle 3 (Story aufbauen) beginnt: Spielfigur, Strippenzieher-Identität, Zeitrahmen, Anfang der Geschichte.
-- Wartet auf: ST-05, ST-06, ME-02 (in fragen.md). NA-16 laut Fabian vorerst offen gelassen, nicht erneut stellen. FG-17 laut Benedict später.
+- Wartet auf: ST-07, ST-08, ME-03 (in fragen.md). NA-16 laut Fabian vorerst offen gelassen, nicht erneut stellen. FG-17 laut Benedict später.
 - Handlung: Abschnitt 1 (Abschied) in 10-handlung.md angelegt.
 - Deutung 2026-11-24: Benedicts „Zu 3: Das machen wir so“ als FG-15 (gefüllt statt geleert) gelesen, weil „Zu 3“ im Chat das Gefäß war. FG-16 (Name) bleibt offen. Im Chat offengelegt.
 - Zurückgestellt aus `fragen.md`: EN-14 (Benedict 2026-11-24: keine Fragen, die erst am Ende beantwortet werden müssen), KA-01, KA-02 (laut Benedict ergeben sie sich aus der Story), EN-23 (laut Benedict sehr viel später), EN-22 (später), EN-19 (geringe Priorität), KI-15, KI-16, AL-10, KA-03, KA-04.
@@ -143,8 +144,10 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 | ZL-10 | Kapitelaufbau                              | teilweise              | jedes Kapitel mit eigenem Aufbau, siehe 09-kapitel.md                                          |
 | ST-01 | Wo beginnt die Geschichte? | entschieden 2026-11-24 | Abschied von der Adoptivmutter, Gefährt mit Beinen (Benedict) |
 | ST-02 | Abschiedsgeschenk der Mutter | entschieden 2026-11-28 | kleine Box, erst öffnen, wenn die Zeit gekommen ist (Fabian). Inhalt und Zeitpunkt: ST-05 |
-| ST-05 | Woran erkennt Vita, dass die Zeit für die Box gekommen ist? | gestellt | neu. Vorschlag A (Satz der Mutter), später mit B (Ereignis) kombinierbar |
-| ST-06 | Wer empfängt Vita an der Akademie? | gestellt | neu. Vorschlag A (Pförtner, Materialname) |
+| ST-05 | Woran erkennt Vita, dass die Zeit für die Box gekommen ist? | entschieden 2026-11-28 | Mutter bleibt kryptisch, weil die Eltern vom Programm wissen. Box darf nach einem bestimmten Schuljahr geöffnet werden (Fabian). Welches: ST-07 |
+| ST-06 | Wer empfängt Vita an der Akademie? | entschieden 2026-11-28 | der Professor holt sie ab (Fabian) |
+| ST-07 | Nach welchem Schuljahr darf Vita die Box öffnen? | gestellt | neu. Vorschlag B (nach der Hälfte der Schulzeit) |
+| ST-08 | Übergabe an den Professor, kennt die Mutter ihn? | gestellt | neu. Vorschlag A (kennen sich aus dem Programm, Mutter angespannt) |
 | ST-03 | Gesichtsblindheit einführen | entschieden 2026-11-24 | Mutter erkennt sie. Silhouette ändert sich mit Vorstellung, Beziehung, einprägsamem Ereignis (Benedict) |
 | ST-04 | Name der Protagonistin | entschieden 2026-11-24 | Vita, Wunsch der Mutter. Sich selbst erfüllende Prophezeiung (Benedict) |
 | FG-01 | Spielfigur                                 | entschieden 2026-11-24 | die Alchemistin (Benedict)                                                                    |
@@ -170,7 +173,8 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 | KA-04 | Verbindung der Kapitel                     | offen                  | neu                                                                                            |
 | KA-05 | Zitat am Kapitelanfang | entschieden 2026-11-28 | jedes Kapitel und der Prolog beginnen mit einem Ausschnitt aus einem Werk der Welt, zwei Lesarten, nie erklärt, am Ende nicht wiederholt (Fabian, meta/kapitel-zitate.md) |
 | ME-01 | Zitate als zusammenhängendes Gedicht? | entschieden 2026-11-28 | nein. Stattdessen ein kleiner Ausschnitt aus einem Werk der Welt vor jedem Kapitel, wie bei den Witcher-Büchern (Fabian) |
-| ME-02 | Zitate aus einem Werk oder aus mehreren? | gestellt | neu. Vorschlag B (mehrere Werke verschiedener Art) |
+| ME-02 | Zitate aus einem Werk oder aus mehreren? | entschieden 2026-11-28 | aus mehreren Werken. Optional findet der Spieler sie in der Bibliothek der Akademie (Fabian) |
+| ME-03 | Wie viel vom Werk findet man in der Bibliothek? | gestellt | neu. Vorschlag B (Passage mit Umgebung, ohne Deutung) |
 | EN-01 | Hinweiskanäle                             | offen                  | –                                                                                             |
 | EN-02 | Grad der Subtilität                       | offen                  | –                                                                                             |
 | EN-03 | Lehrmoment                                 | offen                  | –                                                                                             |
@@ -199,6 +203,9 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 
 Neueste oben. Format: Datum, ID, Entscheidung, wer.
 
+- 2026-11-28, ME-02: Die Zitate stammen aus mehreren Werken. Optional kann der Spieler diese Werke in der Bibliothek der Akademie finden. (Fabian)
+- 2026-11-28, ST-06: Der Professor holt Vita ab. (Fabian)
+- 2026-11-28, ST-05: Die Mutter bleibt kryptisch, weil die Eltern vom Programm wissen. Die Box darf nach einem bestimmten Schuljahr geöffnet werden. (Fabian)
 - 2026-11-28, ST-02: Die Mutter gibt Vita eine kleine Box, die sie erst öffnen darf, wenn die Zeit dafür gekommen ist. (Fabian)
 - 2026-11-28, ME-01: Kein zusammenhängendes Gedicht. Vor jedem Kapitel steht ein kleiner Ausschnitt aus einem Werk dieser Welt, wie bei den Witcher-Büchern. (Fabian)
 - 2026-11-28, KA-05 ergänzt: Das Zitat gilt auch für den Prolog. (Fabian)
@@ -304,12 +311,15 @@ Beobachtungen:
 | Anzeigename einer Figur abhängig vom Spielstand (Materialname, bis die Figur sich vorgestellt hat) | NA-10, FG-12 | Bedarf steht fest |
 | Epilog als Folge von Standbildern mit Text, Farbwechsel ins Gold                                                           | EN-16            | wartet            |
 | Textkarte vor dem ersten Raum eines Kapitels, auch vor dem Prolog (Zitat und Quelle aus dem Kapitel-JSON, ohne Zustand) | KA-05 | wartet, Story-Vorschlag, wenn es die Funktion nicht gibt |
-| Gegenstand, der sich erst bei einer Bedingung öffnen lässt (Box der Mutter). Bedingung hängt an ST-05. Spiel darf ohne Öffnen nie blockieren | ST-02, ST-05 | wartet |
+| Gegenstand, der sich erst nach einem bestimmten Schuljahr öffnen lässt (Box der Mutter). Braucht Zeitstand oder Kapitel-/Jahreszähler (EN-11). Spiel darf ohne Öffnen nie blockieren | ST-02, ST-05, ST-07 | wartet |
+| Lesbare Bücher in der Bibliothek (Titel, Autor, Passage als Text aus JSON), optional, an kein Rätsel gebunden | ME-02, ME-03 | wartet, vermutlich mit Hotspot-Text lösbar |
 
 Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) und FA-G-07 (begrenzte Questgegenstände). Splitter als Questgegenstand mit Höchstmenge passt zu FA-G-07.
 
 ## Ideen
 
+- Professor als Abholer (ST-06), Vorschläge: Sein erster Auftritt trägt einen stillen Hinweis (z. B. Leuchtfarbe wie die Splitter). Die Mutter kennt ihn aus dem Programm, wirkt angespannt (ST-08 A). Ein Lehrbuch von Ovatio Gutta kann eines der Werke in der Bibliothek sein, mit Zitat aus dem zweiten Kapitel.
+- Bibliothek (ME-02), Vorschlag: Die Zitate gehören jeweils zu einem Buch mit eigenem Autor. Beim zweiten Durchgang führt das Autorenschild zu den Figuren. Ein Werk könnte auch von der Mutter des Strippenziehers oder von Vitas Mutter stammen.
 - Box (ST-02), Vorschläge, nicht gefragt: Inhalt erst spät klären (Benedict will Enthüllungen spät). Mögliche Inhalte: Vitas Plakette samt Rätsel um die untere Zeile, ein Brief, etwas aus dem Geld der Regierung. Die Box ist Hinweis auf die Bezahlung und die echte Liebe zugleich, wenn die Mutter sie selbst gebaut hat und der Inhalt gekauft ist. Die verworfenen Geschenke (Plakette in Fassung, Fingerhut, Uhr, Brief) können Inhalt werden.
 - Werke der Welt (ME-02), Vorschläge: Die Quelle selbst darf Hinweis sein. Ein Lehrbuch der Akademie von Ovatio Gutta wäre beim zweiten Durchgang verräterisch (Name = Beifall/Tropfen). Ein Pilgerbuch der Regierung zeigt, wie Beten schöngeredet wird. Ein Brief der Mutter oder Köchin passt zur leeren Mutter.
 - Zitate (KA-05), Vorschläge: Beispiel B in meta/kapitel-zitate.md („Ich kenne dein Gesicht so gut, dass ich es nie ansehe“) trägt bei Vita eine dritte Lesart: Sie ist gesichtsblind. Prüfen, ob das den Twist im ersten Durchgang zu sehr anstupst. Ein Zitat im Prolog könnte aus einem Kinderreim über den Wunsch der Mutter stammen (Vita). Nur Vorschläge, nicht gefragt.
@@ -366,6 +376,9 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 
 ## Verworfen
 
+- 2026-11-28: ST-06 A, B, D (Pförtner, Erstjährige, niemand). Fabian wählt den Professor (C).
+- 2026-11-28: ST-05 B, C, D und der Satz „wenn du nicht mehr weiter weißt“ in A (Ereignis, Spüren, Kapitel). Fabian: kryptisch plus nach einem Schuljahr.
+- 2026-11-28: ME-02 A und C (ein Werk, ein Werk je Weltrichtung). Fabian wählt mehrere Werke.
 - 2026-11-28: ST-02 B1–B4 und A–C (Plakette in Fassung, Fingerhut, Taschenuhr, Brief). Fabian wählt die Box. Als Inhalt der Box möglich (siehe Ideen).
 - 2026-11-28: ME-01 B und C (Zitate als zusammenhängendes oder lose passendes Gedicht). Fabian: Ausschnitte aus Werken der Welt.
 
@@ -432,6 +445,7 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 - Benedict schreibt manchmal Englisch und Deutsch gemischt. Dokumente bleiben auf Deutsch.
 - Fabian arbeitet direkt in Dateien, auch außerhalb des Story-Ordners (`docs/creative/meta/`), und trägt eigene offene Fragen dort ein (ME-01). Der Nutzer im Chat kann Fabian sein, nicht nur Benedict. Annahme 2026-11-28: Die Chatantworten dieser Sitzung stammen von Fabian (Windows-Nutzer, Meta-Datei). Bei Zweifel nachfragen.
 - Fabian will, dass der Skill weiterhin nur den Story-Ordner ändert (2026-11-28). `meta/` wird gelesen und verlinkt, nie geschrieben und nie committet. Bei Änderungen dort im Bericht darauf hinweisen, dass `meta/` noch offene Stände führt.
+- Fabian verbindet Antworten mit eigenen Begründungen („weil die Eltern ja Bescheid wissen vom Programm“) und ergänzt Optionen („Option B: nach einem bestimmten Schuljahr“). Bei Mischantworten die Deutung im Dokument kennzeichnen (2026-11-28). Er denkt in Folgen für die Welt (Programm, Bibliothek als optionaler Ort).
 - Fabian beantwortet Fragen nummeriert und knapp im Chat, auch mit „erstmal offen“ (zurückstellen) und „nein, stattdessen …“ (eigene Alternative statt Optionen). Inspiration aus Büchern (Witcher) nur als Form, nicht als Inhalt.
 - Herkunft immer mit Namen angeben, nie „Creative“ (Korrektur von Benedict, 2026-11-20: „Wieso Idee von Creative? Ich bin Benedict“). Der Nutzer im Chat ist bisher immer Benedict. Ideen aus dem Treffen als *Treffen* (Fabian und Benedict) kennzeichnen.
 
@@ -467,4 +481,5 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 | 2026-11-24 | `5660ea1` | NA-15 Vorname verfälschbar, Nachname eindeutig; Vorschläge Professor (Latein + Deutsch) und Abschiedsgeschenk | 05, 07, 10, ki-plan, fragen |
 | 2026-11-26 | `5660ea1` | FG-16 Ovatio Gutta, Wunsch nach Commit und Push | 00, 07, ki-plan, fragen |
 | 2026-11-28 | `ed4bd10` (Commit der Sitzung: `2fa98cd`) | Fabians neue Datei meta/kapitel-zitate.md (Zitat pro Kapitel, ME-01), keine Antworten in fragen.md | 08, 09, README, ki-plan, fragen |
+| 2026-11-28 | `485a57f` | Fabian: ST-05 kryptisch + nach einem Schuljahr, ST-06 Professor, ME-02 mehrere Werke (optional in der Bibliothek) | 06, 07, 09, 10, ki-plan, fragen |
 | 2026-11-28 | `771395e` | Fabian: Skill nur im Story-Ordner, Zitat auch im Prolog, ST-02 Box, NA-16 offen lassen, ME-01 nein (Ausschnitt aus Werk der Welt, Witcher-Form) | 05, 09, 10, ki-plan, fragen |

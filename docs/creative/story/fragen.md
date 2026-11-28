@@ -1,60 +1,58 @@
 # Fragen an Benedict und Fabian
 
-Stand: Die Mutter gibt Vita eine Box mit, und vor jedem Kapitel (auch vor dem Prolog) steht ein Ausschnitt aus einem Werk dieser Welt. Jetzt: wann die Box aufgeht, wer Vita an der Akademie empfängt und woher die Ausschnitte stammen. Fragen zum Ende kommen erst, wenn die Handlung dort ist. Antworte hier oder im Chat, danach `/story` aufrufen.
+Stand: Die Box geht nach einem Schuljahr auf, der Professor holt Vita ab, und die Zitate stammen aus mehreren Werken der Welt. Jetzt: welches Schuljahr, wie die Übergabe läuft und was die Bibliothek verrät. Fragen zum Ende kommen erst, wenn die Handlung dort ist. Antworte hier oder im Chat, danach `/story` aufrufen.
 
-## 1. Woran erkennt Vita, dass die Zeit für die Box gekommen ist?
+## 1. Nach welchem Schuljahr darf Vita die Box öffnen?
 
-Die Box ist ihr erstes Inventarstück. Der Spieler soll sie nicht vergessen, aber auch nicht zu früh aufbrechen können. Das Spiel darf ohne die Box nie in eine Sackgasse laufen.
+Damit die Box nach einem Schuljahr aufgeht, muss das Spiel mehrere Schuljahre umfassen. Das bestimmt, wie viel Zeit im Spiel vergeht.
 
-- **A** Die Mutter sagt es zum Abschied: „Öffne sie, wenn du nicht mehr weiter weißt.“
-- **B** Die Box geht von selbst auf, wenn etwas passiert (z. B. der erste Splitter).
-- **C** Die Mutter nennt keine Bedingung, Vita spürt es.
-- **D** Die Box ist nach einem bestimmten Kapitel offen, ohne dass etwas Besonderes geschieht.
+- **A** Nach dem ersten Schuljahr.
+- **B** Nach der Hälfte der Schulzeit.
+- **C** Nach dem vorletzten Schuljahr, kurz vor dem Ende.
 
-Mein Vorschlag: A, später mit B kombinierbar. Ein Satz der Mutter bleibt hängen und lässt sich beim zweiten Durchgang neu lesen.
-
-**Deine Antwort:**
-
-<sub>Details: [ST-05](10-handlung.md)</sub>
-
-## 2. Wer empfängt Vita an der Akademie?
-
-Das ist die erste fremde Silhouette. Hier sieht der Spieler zum ersten Mal, wie Gesichtsblindheit und Materialnamen wirken.
-
-- **A** Der Pförtner am Tor, genannt nach seinem Material, bis er sich vorstellt.
-- **B** Eine gleichaltrige Erstjährige, die ebenfalls ankommt.
-- **C** Professor Ovatio Gutta selbst.
-- **D** Niemand. Vita geht allein hinein.
-
-Mein Vorschlag: A, weil der Pförtner beiläufig ist und die Regel auffällt, ohne erklärt zu werden.
+Mein Vorschlag: B, weil der Spieler die Box lange trägt und danach noch Spiel bleibt.
 
 **Deine Antwort:**
 
-<sub>Details: [ST-06](10-handlung.md)</sub>
+<sub>Details: [ST-07](10-handlung.md)</sub>
 
-## 3. Stammen die Ausschnitte aus einem Werk oder aus mehreren?
+## 2. Wie verläuft die Übergabe an den Professor, und kennt die Mutter ihn?
 
-Ein Ausschnitt braucht eine Quelle in der Welt. Sie bestimmt, wie die Texte klingen und was die Quelle selbst verrät.
+Die Mutter weiß vom Programm. Kennt sie den Professor, zeigt schon die erste Szene, dass sie mehr weiß, als sie sagt.
 
-- **A** Ein einziges Werk, z. B. eine Chronik oder ein Lehrbuch der Akademie, aus dem jedes Kapitel einen Ausschnitt bringt.
-- **B** Mehrere Werke verschiedener Art (Chronik, Pilgerlied, Brief, Lehrbuch), je Kapitel eines.
-- **C** Je ein Werk aus drei Richtungen der Welt: etwas Staatliches, etwas Frommes, etwas Privates.
+- **A** Mutter und Professor kennen sich aus dem Programm. Die Übergabe ist höflich, die Mutter wirkt angespannt.
+- **B** Die Mutter sieht ihn zum ersten Mal, er stellt sich vor.
+- **C** Die Mutter bleibt im Gefährt, der Professor nimmt Vita am Tor in Empfang.
 
-Mein Vorschlag: B, weil verschiedene Quellen die Welt von mehreren Seiten zeigen und kein einzelner Autor den ganzen Twist kennen muss.
+Mein Vorschlag: A, weil der Spieler dann nur merkt, dass etwas nicht stimmt, ohne zu wissen, was.
 
 **Deine Antwort:**
 
-<sub>Details: [ME-02](09-kapitel.md)</sub>
+<sub>Details: [ST-08](10-handlung.md)</sub>
+
+## 3. Wie viel vom Werk findet man in der Bibliothek?
+
+Die Bibliothek ist optional. Sie darf die Zitate nicht erklären, sonst verliert der zweite Durchgang seinen Reiz.
+
+- **A** Nur Titel und Autor am Buchrücken, dazu dieselbe Passage wie im Zitat.
+- **B** Dieselbe Passage mit etwas Umgebung davor und danach, ohne Deutung.
+- **C** Ein kurzer, lesbarer Text mit mehreren Passagen, die weitere Hinweise geben.
+
+Mein Vorschlag: B, weil Kontext den Fund lohnend macht, ohne die zweite Lesart auszusprechen.
+
+**Deine Antwort:**
+
+<sub>Details: [ME-03](09-kapitel.md)</sub>
 
 ---
 
 ## Zuletzt entschieden
 
+- Die Zitate stammen aus mehreren Werken. Optional findet der Spieler sie in der Bibliothek der Akademie (Fabian, ME-02).
+- Der Professor holt Vita ab (Fabian, ST-06).
+- Die Mutter bleibt bei der Box kryptisch, weil die Eltern vom Programm wissen. Die Box darf nach einem bestimmten Schuljahr geöffnet werden (Fabian, ST-05).
 - Die Mutter gibt Vita eine kleine Box, die sie erst öffnen darf, wenn die Zeit dafür gekommen ist (Fabian, ST-02).
-- Kein Gedicht. Vor jedem Kapitel steht ein kleiner Ausschnitt aus einem Werk dieser Welt, wie bei den Witcher-Büchern (Fabian, ME-01).
-- Das Zitat gilt auch für den Prolog (Fabian, KA-05).
-- Die Frage nach dem Verfälschen des Vornamens bleibt erstmal offen (Fabian, NA-16).
-- Der Professor heißt Ovatio Gutta (FG-16).
+- Kein Gedicht, sondern Ausschnitte aus Werken der Welt vor jedem Kapitel und dem Prolog (Fabian, ME-01, KA-05).
 
 ## Sonstiger Input
 

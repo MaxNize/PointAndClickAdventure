@@ -50,6 +50,7 @@ Entwurf zum Ausfüllen. Jahre sind Platzhalter.
   Optionen: A) ein Tag, B) eine Prüfungswoche, ein Tag pro Akt, C) ein Semester mit Sprüngen.
   Vorschlag: B. Jede Nacht verschwindet jemand. Jeden Morgen sind alle wieder da, als wäre nichts. Das gibt einen klaren Takt und wenige Räume, die man mehrmals besucht.
   Hinweis: Die Dialoge erwähnen eine Prüfung und eine Klausur. Das passt dazu.
+  Stand (2026-11-28, Fabian): Die Box der Mutter darf nach einem bestimmten Schuljahr geöffnet werden (ST-05). Das Spiel umfasst also vermutlich mehrere Schuljahre. Der Vorschlag B (Prüfungswoche) passt dann nicht mehr. Entscheidend ist ST-07.
   Antwort: offen
 
 - [ ] **ZL-08 Gibt es eine Frist, die der Spieler kennt?**
