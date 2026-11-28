@@ -4,10 +4,12 @@
 
 ## Stand
 
-- Letzte Sitzung: 2026-11-26 (Sitzung 11)
-- HEAD zum Zeitpunkt der Sitzung: `5660ea1` (Branch `creative/temp`)
+- Letzte Sitzung: 2026-11-28 (Sitzung 12)
+- HEAD zum Zeitpunkt der Sitzung: `ed4bd10` (Branch `creative/temp`)
+- Neu 2026-11-28: Fabian hat `docs/creative/meta/kapitel-zitate.md` angelegt (außerhalb des Story-Ordners, noch nicht committet, nicht von mir). Konzept „Zitat pro Kapitel“ ist festgelegt, ME-01 offen. Von mir nur verlinkt, nicht inhaltlich geändert.
+- Offen zum Zitat-Konzept (nicht gefragt, hängt an der Handlung): Gilt es auch für den Prolog (Abschied)? Wie viele Kapitel gibt es (KA-01)?
 - Phase: Der Rahmen steht. Benedict will die Story jetzt Stück für Stück aufbauen, statt Kapitelzahl und Kapitelarten vorab festzulegen. Welle 3 (Story aufbauen) beginnt: Spielfigur, Strippenzieher-Identität, Zeitrahmen, Anfang der Geschichte.
-- Wartet auf: ST-02, NA-16 (in fragen.md). FG-17 laut Benedict später.
+- Wartet auf: ST-02, NA-16, ME-01 (in fragen.md). FG-17 laut Benedict später.
 - Handlung: Abschnitt 1 (Abschied) in 10-handlung.md angelegt.
 - Deutung 2026-11-24: Benedicts „Zu 3: Das machen wir so“ als FG-15 (gefüllt statt geleert) gelesen, weil „Zu 3“ im Chat das Gefäß war. FG-16 (Name) bleibt offen. Im Chat offengelegt.
 - Zurückgestellt aus `fragen.md`: EN-14 (Benedict 2026-11-24: keine Fragen, die erst am Ende beantwortet werden müssen), KA-01, KA-02 (laut Benedict ergeben sie sich aus der Story), EN-23 (laut Benedict sehr viel später), EN-22 (später), EN-19 (geringe Priorität), KI-15, KI-16, AL-10, KA-03, KA-04.
@@ -164,6 +166,8 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 | KA-02 | Art der Rettung pro Kapitel                | offen                  | später, erst Story aufbauen (Benedict)                                                        |
 | KA-03 | Erfährt der Spieler, wen er gerettet hat? | offen                  | neu                                                                                            |
 | KA-04 | Verbindung der Kapitel                     | offen                  | neu                                                                                            |
+| KA-05 | Zitat am Kapitelanfang | entschieden 2026-11-28 | jedes Kapitel beginnt mit einem Zitat mit zwei Lesarten, nie erklärt, am Ende nicht wiederholt (Fabian, meta/kapitel-zitate.md) |
+| ME-01 | Zitate als zusammenhängendes Gedicht? | gestellt | Fabian, Vorschlag A (ein Zitat pro Kapitel, eigenständig). Steht in meta/kapitel-zitate.md |
 | EN-01 | Hinweiskanäle                             | offen                  | –                                                                                             |
 | EN-02 | Grad der Subtilität                       | offen                  | –                                                                                             |
 | EN-03 | Lehrmoment                                 | offen                  | –                                                                                             |
@@ -191,6 +195,8 @@ Status: `offen`, `gestellt` (steht in fragen.md), `teilweise`, `entschieden`, `h
 ## Entscheidungslog
 
 Neueste oben. Format: Datum, ID, Entscheidung, wer.
+
+- 2026-11-28, KA-05 (neue ID für das Meta-Konzept): Jedes Kapitel beginnt mit einem poetischen Zitat. Erster Durchgang rätselhaft oder schön, zweiter Durchgang andere Bedeutung mit Twist-Wissen. Das Spiel erklärt die Zitate nie und wiederholt sie am Ende nicht. Zitate sind erfunden und stammen aus der Spielwelt. (Fabian, in meta/kapitel-zitate.md. Die Beispielzitate dort sind nur Entwürfe.)
 
 - 2026-11-26, FG-16: Der Professor heißt Ovatio Gutta. (Benedict)
 - 2026-11-24, NA-15: Zwei Namen. Vorname = immaterieller Wunsch, verfälschbar. Nachname = Material, eindeutig. (Benedict)
@@ -289,11 +295,13 @@ Beobachtungen:
 | Laufendes Gefährt mit Beinen als Raumanimation oder Figur, Fahrt zur Akademie (Prolog) | ST-01 | wartet, vermutlich mit Raumanimationen lösbar |
 | Anzeigename einer Figur abhängig vom Spielstand (Materialname, bis die Figur sich vorgestellt hat) | NA-10, FG-12 | Bedarf steht fest |
 | Epilog als Folge von Standbildern mit Text, Farbwechsel ins Gold                                                           | EN-16            | wartet            |
+| Textkarte vor dem ersten Raum eines Kapitels (Zitat und Quelle aus dem Kapitel-JSON, ohne Zustand) | KA-05 | wartet, Story-Vorschlag, wenn es die Funktion nicht gibt |
 
 Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) und FA-G-07 (begrenzte Questgegenstände). Splitter als Questgegenstand mit Höchstmenge passt zu FA-G-07.
 
 ## Ideen
 
+- Zitate (KA-05), Vorschläge: Beispiel B in meta/kapitel-zitate.md („Ich kenne dein Gesicht so gut, dass ich es nie ansehe“) trägt bei Vita eine dritte Lesart: Sie ist gesichtsblind. Prüfen, ob das den Twist im ersten Durchgang zu sehr anstupst. Ein Zitat im Prolog könnte aus einem Kinderreim über den Wunsch der Mutter stammen (Vita). Nur Vorschläge, nicht gefragt.
 - Kapitelnamen nach dem Großen Werk: Nigredo, Albedo, Citrinitas, Rubedo.
 - Leuchtfarbe des Wesens für keine Figur vergeben. Sie wird die Farbe der Homunkuli und der Splitter.
 - Am Himmel ist seit dem Einschlag etwas anders: ein Komet fehlt, das Wesen hat ihn „gesammelt“ (PL-03).
@@ -408,6 +416,7 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 - Benedict prüft Regeln auf Missbrauch („Sie könnte ja lügen“). Mechanismen so bauen, dass sie in der Welt nicht zu umgehen sind.
 - Benedict bringt Ideen mit eingebautem Gegenargument („spricht dagegen“). Lösungen anbieten, die den Nachteil zur Stärke machen.
 - Benedict schreibt manchmal Englisch und Deutsch gemischt. Dokumente bleiben auf Deutsch.
+- Fabian arbeitet direkt in Dateien, auch außerhalb des Story-Ordners (`docs/creative/meta/`), und trägt eigene offene Fragen dort ein (ME-01). Beim Stand laden `git status` auf `docs/creative/` ausweiten, nicht nur auf `story/` (2026-11-28). Der Nutzer im Chat kann Fabian sein, nicht nur Benedict.
 - Herkunft immer mit Namen angeben, nie „Creative“ (Korrektur von Benedict, 2026-11-20: „Wieso Idee von Creative? Ich bin Benedict“). Der Nutzer im Chat ist bisher immer Benedict. Ideen aus dem Treffen als *Treffen* (Fabian und Benedict) kennzeichnen.
 
 ## Sitzungslog
@@ -441,3 +450,4 @@ Hinweis für Anforderungen: Splitter berühren FA-G-06 (unbegrenzte Ressourcen) 
 | 2026-11-24 | `5660ea1` | NA-14 Z4, Einwand oberflächliche Wünsche, Idee Vor-/Nachname (NA-15) | 05, 07, ki-plan, fragen |
 | 2026-11-24 | `5660ea1` | NA-15 Vorname verfälschbar, Nachname eindeutig; Vorschläge Professor (Latein + Deutsch) und Abschiedsgeschenk | 05, 07, 10, ki-plan, fragen |
 | 2026-11-26 | `5660ea1` | FG-16 Ovatio Gutta, Wunsch nach Commit und Push | 00, 07, ki-plan, fragen |
+| 2026-11-28 | `ed4bd10` | Fabians neue Datei meta/kapitel-zitate.md (Zitat pro Kapitel, ME-01), keine Antworten in fragen.md | 08, 09, README, ki-plan, fragen |

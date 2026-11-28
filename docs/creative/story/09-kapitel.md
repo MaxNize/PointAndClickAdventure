@@ -12,6 +12,7 @@ Planung der einzelnen Kapitel. Angelegt am 2026-11-20, nachdem Benedict festgele
   - **entlarven:** Im Werwolf-Kapitel findet man den versteckten Homunkulus. Eine falsche Anklage kostet eine Person (EN-19).
 - In jedem Kapitel gibt es etwa zwei Splitter. *(Benedict, Arbeitsannahme, RS-09)*
 - Ein verpasstes Kapitel blockiert nie. Das Spiel geht weiter, die Folgen zeigen sich am Ende. *(Projektvorgabe: Lösbarkeit ohne Sackgassen, P-02)*
+- **Jedes Kapitel beginnt mit einem poetischen Zitat** mit zwei Lesarten: Im ersten Durchgang rätselhaft oder schön, im zweiten Durchgang mit Wissen über den Twist neu lesbar. Das Spiel erklärt die Zitate nie und zeigt sie am Ende nicht noch einmal. *(Fabian, 2026-11-28, Regeln und Beispielentwürfe: [meta/kapitel-zitate.md](../meta/kapitel-zitate.md))*
 
 ## Vorlage pro Kapitel
 
@@ -20,6 +21,7 @@ Jedes Kapitel bekommt einen Abschnitt mit diesen Punkten:
 | Punkt | Inhalt |
 |---|---|
 | Name | Arbeitstitel, optional Stufe des Großen Werks |
+| Zitat | Text, Quelle, erste und zweite Lesart, Bezug im Kapitel (Vorlage in [meta/kapitel-zitate.md](../meta/kapitel-zitate.md)) |
 | Art der Rettung | unbewusst, direkt, entlarven oder eine neue Art |
 | Wer ist in Gefahr | Figur(en) aus [07-figuren.md](07-figuren.md) |
 | Orte | Räume, die das Kapitel braucht |
@@ -52,6 +54,10 @@ Jedes Kapitel bekommt einen Abschnitt mit diesen Punkten:
 - [ ] **KA-04 Was verbindet die Kapitel?**
   Optionen: eine Prüfungswoche (ZL-07), die Spur des Strippenziehers, der schrumpfende Meteor, das nahende Fest.
   Antwort: offen
+
+- [ ] **ME-01 Sollen die Zitate zusammen ein Gedicht ergeben?**
+  Steht mit allen Optionen in [meta/kapitel-zitate.md](../meta/kapitel-zitate.md) (Fabian). Vorschlag dort: A (ein eigenes Zitat pro Kapitel).
+  Antwort: offen (in fragen.md gestellt)
 
 ## Kapitel
 

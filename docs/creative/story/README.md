@@ -31,6 +31,8 @@ Du kannst jedes Themendokument auch direkt lesen und ändern, oder im Chat Input
 | 9 | [09-kapitel.md](09-kapitel.md) | Aufbau der einzelnen Kapitel, Arten der Rettung | `KA` |
 | 10 | [10-handlung.md](10-handlung.md) | Die Story Stück für Stück, von vorn nach hinten | `ST` |
 
+Daneben liegen Vorgaben, die für die ganze Story gelten, in [../meta/](../meta/): derzeit [kapitel-zitate.md](../meta/kapitel-zitate.md) (Zitat am Anfang jedes Kapitels, Fabian).
+
 `KI` zuerst, weil alles andere daran hängt. `PL`, `RS`, `NA` und `ZL` lassen sich danach in beliebiger Reihenfolge klären.
 
 ## Leitplanken aus dem Projekt

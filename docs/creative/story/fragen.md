@@ -1,6 +1,6 @@
 # Fragen an Benedict und Fabian
 
-Stand: Das Namenssystem steht: Vorname ist der immaterielle Wunsch und verfälschbar, Nachname das Material und eindeutig. Der Professor heißt Ovatio Gutta. Jetzt: das Abschiedsgeschenk und eine Nachfrage zum Vornamen. Fragen zum Ende kommen erst, wenn die Handlung dort ist. Antworte hier oder im Chat, danach `/story` aufrufen.
+Stand: Das Namenssystem steht, und jedes Kapitel beginnt mit einem Zitat mit zwei Lesarten (Fabian). Jetzt: das Abschiedsgeschenk, eine Nachfrage zum Vornamen und die Frage, ob die Zitate zusammen ein Gedicht sind. Fragen zum Ende kommen erst, wenn die Handlung dort ist. Antworte hier oder im Chat, danach `/story` aufrufen.
 
 ## 1. Was gibt die Mutter ihr zum Abschied mit?
 
@@ -31,15 +31,29 @@ Mein Vorschlag: A, und den Vornamen nennt man nur Vertrauten. Ein Vertrauensbewe
 
 <sub>Details: [NA-16](05-nationen.md)</sub>
 
+## 3. Sollen die Kapitelzitate zusammen ein Gedicht ergeben?
+
+Fabians Frage aus der Zitat-Vorgabe. Ein verteiltes Gedicht belohnt den zweiten Durchgang zusätzlich, darf aber im ersten nichts verraten und muss auch ohne einzelne Zeile lesbar bleiben.
+
+- **A** Jedes Kapitel hat ein eigenes, einzeln stehendes Zitat.
+- **B** Die Zitate bilden zusammen ein Gedicht.
+- **C** Einzelne Zitate, die lose zusammenpassen.
+
+Mein Vorschlag: A, weil es am einfachsten ist und jedes Zitat seine eigene zweite Lesart tragen kann. (Fabians Vorschlag in der Datei ist ebenfalls A.)
+
+**Deine Antwort:**
+
+<sub>Details: [ME-01](../meta/kapitel-zitate.md)</sub>
+
 ---
 
 ## Zuletzt entschieden
 
+- Jedes Kapitel beginnt mit einem Zitat mit zwei Lesarten. Das Spiel erklärt es nie und wiederholt es am Ende nicht (Fabian, KA-05).
 - Der Professor heißt Ovatio Gutta: „Beifall“ (gelogen) und „Tropfen“ (sein Urwunsch) (FG-16).
 - Zwei Namen: Vorname ist der immaterielle Wunsch und verfälschbar, Nachname das Material und eindeutig (NA-15).
 - Die Plakette prägt den genauen Wunsch. Eine Nummer gibt es nur, wenn zwei Lebende genau denselben haben (NA-14).
 - Das erste Gebet heißt Urwunsch. Der Name ändert sich nie (NA-13).
-- Die Protagonistin heißt Vita, nach dem Wunsch ihrer Mutter (ST-04).
 
 ## Sonstiger Input
 

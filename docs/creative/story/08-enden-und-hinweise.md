@@ -16,6 +16,8 @@ Im Spiel sind Figuren dunkle Silhouetten. Sichtbar bleiben nur der Umriss, Glanz
 | Umgebung | Spiegelbild fehlt, Tiere fliehen, Licht flackert in der Nähe | Raum-SVG |
 | Gegenstände | ein persönlicher Gegenstand fehlt oder liegt verlassen herum | Gegenstand-JSON |
 
+**Zusätzlicher stiller Hinweis (Fabian, 2026-11-28):** Das Zitat am Anfang jedes Kapitels. Es wirkt im ersten Durchgang wie Stimmung und liest sich beim zweiten Durchgang mit Wissen über den Twist neu. Es wird nie erklärt und am Ende nicht wiederholt. Details: [meta/kapitel-zitate.md](../meta/kapitel-zitate.md).
+
 ## Fragen zu den Hinweisen
 
 - [ ] **EN-01 Welche Kanäle nutzen wir?**
