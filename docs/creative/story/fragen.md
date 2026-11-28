@@ -1,59 +1,60 @@
 # Fragen an Benedict und Fabian
 
-Stand: Das Namenssystem steht, und jedes Kapitel beginnt mit einem Zitat mit zwei Lesarten (Fabian). Jetzt: das Abschiedsgeschenk, eine Nachfrage zum Vornamen und die Frage, ob die Zitate zusammen ein Gedicht sind. Fragen zum Ende kommen erst, wenn die Handlung dort ist. Antworte hier oder im Chat, danach `/story` aufrufen.
+Stand: Die Mutter gibt Vita eine Box mit, und vor jedem Kapitel (auch vor dem Prolog) steht ein Ausschnitt aus einem Werk dieser Welt. Jetzt: wann die Box aufgeht, wer Vita an der Akademie empfängt und woher die Ausschnitte stammen. Fragen zum Ende kommen erst, wenn die Handlung dort ist. Antworte hier oder im Chat, danach `/story` aufrufen.
 
-## 1. Was gibt die Mutter ihr zum Abschied mit?
+## 1. Woran erkennt Vita, dass die Zeit für die Box gekommen ist?
 
-Das wird ihr erstes Inventarstück.
+Die Box ist ihr erstes Inventarstück. Der Spieler soll sie nicht vergessen, aber auch nicht zu früh aufbrechen können. Das Spiel darf ohne die Box nie in eine Sackgasse laufen.
 
-- **A** Ihre eigene Plakette, von der Mutter teuer als Anhänger gefasst. Die Fassung verdeckt die untere Zeile, den Nachnamen. „Damit du weißt, wer du bist.“
-- **B** Der abgegriffene Messing-Fingerhut der Mutter, ohne Wert. Am Messing erkennt Vita ihre Mutter. Im Spiel ein Maß beim Brauen.
-- **C** Eine viel zu teure Taschenuhr: „Wir haben lange gespart.“ Innen eingraviert: „Für unser Wunder.“
-- **D** Ein Brief, „erst öffnen, wenn du Heimweh hast“.
+- **A** Die Mutter sagt es zum Abschied: „Öffne sie, wenn du nicht mehr weiter weißt.“
+- **B** Die Box geht von selbst auf, wenn etwas passiert (z. B. der erste Splitter).
+- **C** Die Mutter nennt keine Bedingung, Vita spürt es.
+- **D** Die Box ist nach einem bestimmten Kapitel offen, ohne dass etwas Besonderes geschieht.
 
-Mein Vorschlag: A und B. Die Plakette trägt das Geheimnis ihrer Herkunft und das Geld der Regierung, der Fingerhut die echte Liebe.
-
-**Deine Antwort:**
-
-<sub>Details: [ST-02](10-handlung.md)</sub>
-
-## 2. Wie lässt sich der Vorname verfälschen?
-
-Du hast gesagt: Der Vorname ist verfälschbar, der Nachname eindeutig.
-
-- **A** Auf der Plakette steht nur der Nachname. Den Vornamen gibt man sich selbst, jeder kann lügen.
-- **B** Beide stehen auf der Plakette, aber die obere Zeile lässt sich umgravieren.
-- **C** Der Vorname steht auf der Plakette, wird aber nie gezeigt. Wer ihn nennt, kann behaupten, was er will.
-
-Mein Vorschlag: A, und den Vornamen nennt man nur Vertrauten. Ein Vertrauensbeweis, der auch eine Lüge sein kann.
+Mein Vorschlag: A, später mit B kombinierbar. Ein Satz der Mutter bleibt hängen und lässt sich beim zweiten Durchgang neu lesen.
 
 **Deine Antwort:**
 
-<sub>Details: [NA-16](05-nationen.md)</sub>
+<sub>Details: [ST-05](10-handlung.md)</sub>
 
-## 3. Sollen die Kapitelzitate zusammen ein Gedicht ergeben?
+## 2. Wer empfängt Vita an der Akademie?
 
-Fabians Frage aus der Zitat-Vorgabe. Ein verteiltes Gedicht belohnt den zweiten Durchgang zusätzlich, darf aber im ersten nichts verraten und muss auch ohne einzelne Zeile lesbar bleiben.
+Das ist die erste fremde Silhouette. Hier sieht der Spieler zum ersten Mal, wie Gesichtsblindheit und Materialnamen wirken.
 
-- **A** Jedes Kapitel hat ein eigenes, einzeln stehendes Zitat.
-- **B** Die Zitate bilden zusammen ein Gedicht.
-- **C** Einzelne Zitate, die lose zusammenpassen.
+- **A** Der Pförtner am Tor, genannt nach seinem Material, bis er sich vorstellt.
+- **B** Eine gleichaltrige Erstjährige, die ebenfalls ankommt.
+- **C** Professor Ovatio Gutta selbst.
+- **D** Niemand. Vita geht allein hinein.
 
-Mein Vorschlag: A, weil es am einfachsten ist und jedes Zitat seine eigene zweite Lesart tragen kann. (Fabians Vorschlag in der Datei ist ebenfalls A.)
+Mein Vorschlag: A, weil der Pförtner beiläufig ist und die Regel auffällt, ohne erklärt zu werden.
 
 **Deine Antwort:**
 
-<sub>Details: [ME-01](../meta/kapitel-zitate.md)</sub>
+<sub>Details: [ST-06](10-handlung.md)</sub>
+
+## 3. Stammen die Ausschnitte aus einem Werk oder aus mehreren?
+
+Ein Ausschnitt braucht eine Quelle in der Welt. Sie bestimmt, wie die Texte klingen und was die Quelle selbst verrät.
+
+- **A** Ein einziges Werk, z. B. eine Chronik oder ein Lehrbuch der Akademie, aus dem jedes Kapitel einen Ausschnitt bringt.
+- **B** Mehrere Werke verschiedener Art (Chronik, Pilgerlied, Brief, Lehrbuch), je Kapitel eines.
+- **C** Je ein Werk aus drei Richtungen der Welt: etwas Staatliches, etwas Frommes, etwas Privates.
+
+Mein Vorschlag: B, weil verschiedene Quellen die Welt von mehreren Seiten zeigen und kein einzelner Autor den ganzen Twist kennen muss.
+
+**Deine Antwort:**
+
+<sub>Details: [ME-02](09-kapitel.md)</sub>
 
 ---
 
 ## Zuletzt entschieden
 
-- Jedes Kapitel beginnt mit einem Zitat mit zwei Lesarten. Das Spiel erklärt es nie und wiederholt es am Ende nicht (Fabian, KA-05).
-- Der Professor heißt Ovatio Gutta: „Beifall“ (gelogen) und „Tropfen“ (sein Urwunsch) (FG-16).
-- Zwei Namen: Vorname ist der immaterielle Wunsch und verfälschbar, Nachname das Material und eindeutig (NA-15).
-- Die Plakette prägt den genauen Wunsch. Eine Nummer gibt es nur, wenn zwei Lebende genau denselben haben (NA-14).
-- Das erste Gebet heißt Urwunsch. Der Name ändert sich nie (NA-13).
+- Die Mutter gibt Vita eine kleine Box, die sie erst öffnen darf, wenn die Zeit dafür gekommen ist (Fabian, ST-02).
+- Kein Gedicht. Vor jedem Kapitel steht ein kleiner Ausschnitt aus einem Werk dieser Welt, wie bei den Witcher-Büchern (Fabian, ME-01).
+- Das Zitat gilt auch für den Prolog (Fabian, KA-05).
+- Die Frage nach dem Verfälschen des Vornamens bleibt erstmal offen (Fabian, NA-16).
+- Der Professor heißt Ovatio Gutta (FG-16).
 
 ## Sonstiger Input
 

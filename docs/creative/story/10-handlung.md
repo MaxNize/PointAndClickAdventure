@@ -27,17 +27,20 @@ Jeder Abschnitt hält fest, was passiert, wer beteiligt ist und was der Spieler 
   Vorschlag: A.
   Antwort (2026-11-24, Benedict): **Vita.** Sie hatte noch keinen eigenen Wunsch, als sie am Incendium war. Deshalb wurde sie nach dem Wunsch ihrer Mutter benannt, die sich ihr Leben wünschte. Sich selbst erfüllende Prophezeiung: Durch ihre Verbindung zum Incendium strebt sie nach ewigem Leben.
 
-- [ ] **ST-02 Was gibt die Mutter ihr zum Abschied mit?**
+- [x] **ST-02 Was gibt die Mutter ihr zum Abschied mit?**
   Warum wichtig: Das erste Gespräch des Spiels. Ein Gegenstand von der Mutter ist ihr erstes Inventarstück und zeigt, dass die Liebe echt ist (FG-14).
-  Optionen (KI): A) Etwas Selbstgemachtes ohne Geldwert, z. B. ein genähtes Säckchen für Zutaten. B) Etwas Teures, das zeigt, dass Geld da ist, obwohl die Familie nicht reich wirkt (Hinweis auf die Bezahlung). C) Beides: ein teures Geschenk „von uns“ und ein kleines selbstgemachtes nur von der Mutter.
-  Vorschlag: C. Das teure Geschenk ist der erste versteckte Hinweis auf das Geld der Regierung, das selbstgemachte zeigt die echte Liebe.
-  Benedict (2026-11-24): „Gute Frage. Gib Vorschläge.“
-  Konkrete Vorschläge (KI, 2026-11-24):
-  - B1) **Ihre eigene Plakette in einer Fassung.** Die Mutter hat Vitas Plakette als Anhänger fassen lassen. Die Fassung ist teuer (Geld der Regierung) und verdeckt die untere Zeile, den Nachnamen. „Damit du weißt, wer du bist.“ Das Rätsel ihrer Herkunft hängt ihr vom ersten Moment an um den Hals.
-  - B2) **Der Fingerhut der Mutter.** Aus Messing, abgegriffen, ohne Wert. Messing ist das Material, an dem Vita ihre Mutter erkennt (ST-03). Im Spiel nützlich als Maß beim Brauen.
-  - B3) **Eine Taschenuhr, viel zu teuer.** „Wir haben lange gespart.“ Innen eingraviert: „Für unser Wunder.“ Nützlich für Rätsel mit Zeit, verdächtig für den, der genau hinsieht.
-  - B4) **Ein Brief, „erst öffnen, wenn du Heimweh hast“.** Was darin steht, entscheiden wir später.
-  Vorschlag: B1 und B2. Die Plakette trägt das Geheimnis und das Geld, der Fingerhut die echte Liebe.
+  Antwort (2026-11-28, Fabian): Die Mutter gibt ihr eine kleine Box zum Abschied. Vita darf sie aber erst öffnen, wenn die Zeit dafür gekommen ist. Was in der Box ist und woran man erkennt, dass die Zeit gekommen ist: offen (ST-05).
+
+- [ ] **ST-05 Woran erkennt Vita, dass die Zeit für die Box gekommen ist?**
+  Warum wichtig: Die Box ist das erste Inventarstück und ein Versprechen an den Spieler. Er soll sie nicht vergessen, aber auch nicht zu früh aufbrechen können. Fairness: Das Spiel darf ohne die Box nie in eine Sackgasse laufen (P-02).
+  Optionen (KI): A) Die Mutter sagt es zum Abschied: „Öffne sie, wenn du nicht mehr weiter weißt.“ B) Die Box geht von selbst auf, wenn ein Ereignis eintritt (z. B. der erste Splitter). C) Die Mutter nennt keine Bedingung, Vita spürt es. D) Die Box ist nach einem bestimmten Kapitel offen, ohne dass etwas Besonderes geschieht.
+  Vorschlag: A, später mit B kombinierbar. Ein Satz der Mutter bleibt hängen und lässt sich beim zweiten Durchgang neu lesen (wie die Zitate, KA-05).
+  Antwort: offen
+
+- [ ] **ST-06 Wer empfängt Vita an der Akademie?**
+  Warum wichtig: Die erste Fremde Silhouette. Hier sieht der Spieler zum ersten Mal, wie Gesichtsblindheit und Materialnamen wirken (ST-03, NA-10).
+  Optionen (KI): A) Der Pförtner am Tor, genannt nach seinem Material, bis er sich vorstellt. B) Eine gleichaltrige Erstjährige, die ebenfalls ankommt. C) Professor Ovatio Gutta selbst. D) Niemand. Vita geht allein hinein.
+  Vorschlag: A. Der Pförtner ist beiläufig, so fällt die Regel auf, ohne dass sie erklärt wird.
   Antwort: offen
 
 - [x] **ST-03 Wie lernt der Spieler die Gesichtsblindheit kennen?**
@@ -50,12 +53,14 @@ Jeder Abschnitt hält fest, was passiert, wer beteiligt ist und was der Spieler 
 
 | # | Abschnitt | Stand |
 |---|---|---|
-| 1 | Abschied (ST-01) | Rahmen entschieden, Details: ST-02, ST-03 |
-| 2 | Ankunft an der Akademie | offen |
+| 1 | Abschied (ST-01) | Rahmen und Abschiedsgeschenk entschieden, offen: ST-05 |
+| 2 | Ankunft an der Akademie | offen: ST-06 |
 
 ### 1. Abschied
 
 **Entschieden (Benedict, 2026-11-24):** Die Adoptivmutter fährt die Protagonistin in einem Gefährt mit Beinen statt Rädern zur Akademie. Sie verabschiedet sie liebevoll. Danach findet der Spieler Stück für Stück in die Welt.
+
+**Entschieden (Fabian, 2026-11-28):** Zum Abschied gibt die Mutter ihr eine kleine Box, die sie erst öffnen darf, wenn die Zeit dafür gekommen ist (ST-02). Auch der Prolog beginnt mit einem Zitat aus einem Werk dieser Welt (KA-05, [09-kapitel.md](09-kapitel.md)).
 
 **Was der Spieler mitnimmt:** Diese Mutter liebt ihre Tochter. Das ist wahr (FG-14). Er weiß noch nicht, dass sie dafür bezahlt wurde.
 
@@ -67,4 +72,4 @@ Jeder Abschnitt hält fest, was passiert, wer beteiligt ist und was der Spieler 
 
 ### 2. Ankunft an der Akademie
 
-Offen. Vorschlag (KI): Am Tor wartet der Pförtner, die erste fremde Silhouette. Er heißt im Spiel zunächst nach seinem Material (NA-10), bis er sich vorstellt.
+Offen (ST-06). Vorschlag (KI): Am Tor wartet der Pförtner, die erste fremde Silhouette. Er heißt im Spiel zunächst nach seinem Material (NA-10), bis er sich vorstellt.

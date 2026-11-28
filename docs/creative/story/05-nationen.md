@@ -118,4 +118,5 @@ Wer die Welt regiert, wer den Meteor will und wo die Akademie steht. Im Spiel ta
   Warum wichtig: Benedict: Der Vorname ist verfälschbar (NA-15). Daraus folgt, wem man glauben kann.
   Optionen (KI): A) Nur der Nachname steht auf der Plakette. Den Vornamen gibt man sich selbst, und jeder kann lügen. B) Beide stehen auf der Plakette, aber die obere Zeile verblasst, und man kann sie umgravieren lassen. C) Der Vorname steht auf der Plakette, wird aber nie gezeigt. Wer ihn nennt, kann behaupten, was er will.
   Vorschlag: A, mit der Sitte, den Vornamen nur Vertrauten zu nennen. Ein Vorname ist dann ein Vertrauensbeweis, der auch eine Lüge sein kann.
+  Stand (2026-11-28, Fabian): erstmal offen lassen, zurückgestellt. Nicht erneut stellen, bis Fabian oder Benedict es wollen.
   Antwort: offen
